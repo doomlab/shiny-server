@@ -10,6 +10,7 @@
 library(shiny)
 library(ggplot2)
 library(reshape)
+library(plotly)
 cleanup = theme(panel.grid.major = element_blank(), 
                 panel.grid.minor = element_blank(), 
                 panel.background = element_blank(), 
@@ -17,6 +18,57 @@ cleanup = theme(panel.grid.major = element_blank(),
                 axis.line.y = element_line(color = "black"),
                 legend.key = element_rect(fill = "white"),
                 text = element_text(size = 13))
+
+####load the data for significant and non sig effects####
+#load graph data
+Graph_05 = read.csv("Graph_data.05.csv")
+Graph_005 = read.csv("Graph_data.005.csv")
+
+Graph_data = cbind(Graph_05, Graph_005[ , 4:5])
+colnames(Graph_data) = c("Effect","Significance", "N", "Parametric.05", "Non.Parametric.05", "Bayes", "OOM", "Parametric.005", "Non.Parametric.005")
+
+##delete duplicate NS values, they don't change
+Graph_data[ Graph_data$Significance == "Non", "Parametric.005" ] = NA
+Graph_data[ Graph_data$Significance == "Non", "Non.Parametric.005" ] = NA
+
+##drop NP because results are same as P, all results can been found online if you are interested
+Graph_data = Graph_data[ , -c(5,9)]
+
+##melt the data
+long_graph = melt(Graph_data,
+                  id = c("Effect","Significance","N"))
+colnames(long_graph) = c("Effect","Significance", "N","Analysis","value")
+
+long_graph = na.omit(long_graph)
+long_graph$Analysis = factor(long_graph$Analysis,
+                             levels = c("Parametric.05", 
+                                        "Parametric.005",
+                                        "Bayes","OOM"),
+                             labels = c("NHST .05",
+                                        "NHST .005",
+                                        "Bayes Factors","OOM"))
+
+####load the data for the agreement graphs####
+agree = read.csv("Graph_data_agree.05.csv")
+agree2 = read.csv("Graph_data_agree.005.csv")
+agree_together = cbind(agree, agree2[ , -c(1:2)])
+colnames(agree_together) = c("effect", "N", "omnibus.05",
+                             "onetotwo.05", "twotothree.05",
+                             "omnibus.005", "onetotwo.005", 
+                             "twotothree.005")
+
+agreelong = melt(agree_together,
+                 id = c("effect", "N"))
+colnames(agreelong)[3:4] = c("comparison", "percent")
+
+####load the data for comparison graphs####
+overalleffects = read.csv("overall_sims_shiny.csv")
+overalleffects$stdev = factor(overalleffects$stdev,
+                              labels = c("Large", "Medium", "Small", "None"))
+#make all infinite values the next largest
+large = length(unique(overalleffects$overallBF))
+overalleffects$overallBF[is.infinite(overalleffects$overallBF)] = sort(unique(overalleffects$overallBF))[large-1]
+overalleffects$overallBF = log(overalleffects$overallBF)
 
 ####user interface####
 ui <- fluidPage (
@@ -31,17 +83,43 @@ ui <- fluidPage (
       br(),
       
       ##put input boxes here
+      tags$em("All Graphs:"),
       selectInput("sizeselect", "Select Effect Size:",
                   c("Negligible" = "None",
                     "Small" = "Small",
                     "Medium" = "Medium",
                     "Large" = "Large")),
       
+      tags$em("Percent Graphs:"),
       selectInput("Nselect", "Select N Scaling:",
                   c("N" = "N",
                     "Log N" = "log")),
       
-      htmlOutput("slider_selector")
+      htmlOutput("slider_selector"),
+      
+      tags$em("Comparison Graphs:"),
+      
+      selectInput("graphselect", "Select Graph:",
+                  c("PCC - p" = "pccp",
+                    "PCC - BF" = "pccbf",
+                    "BF - p" = "bfp")),
+      
+      sliderInput("bfrange", "Log BF Range:",
+                  min = 0, max = 1000,
+                  value = c(0,1000),
+                  sep = "",
+                  step = 10),
+      
+      sliderInput("prange", "p Range:",
+                  min = 0, max = 1,
+                  value = c(0,1),
+                  step = .01),
+      
+      sliderInput("pccrange", "PCC Range:",
+                  min = 0, max = 1,
+                  value = c(0,1),
+                  step = .01)
+      
       
     ), #close sidebar panel
     
@@ -59,7 +137,15 @@ ui <- fluidPage (
                  helpText("Complete dataset avaliable at: https://osf.io/u9hf4/")),
         tabPanel("Posthoc Agreement", plotOutput("postagree"),
                  br(),
-                 helpText("Complete dataset avaliable at: https://osf.io/u9hf4/"))
+                 helpText("Complete dataset avaliable at: https://osf.io/u9hf4/")),
+        tabPanel("Criterion Comparison", plotOutput("compare"), 
+                 br(),
+                 helpText("Complete dataset avaliable at: https://osf.io/u9hf4/",br(), 
+                          "BF values have been log transformed to show the entire range of the data.")),
+        tabPanel("3D Comparison", plotlyOutput("compare3d"), 
+                 br(),
+                 helpText("Complete dataset avaliable at: https://osf.io/u9hf4/",br(), 
+                          "BF values have been log transformed to show the entire range of the data."))
       )
       
     ) #close main panel 
@@ -90,34 +176,6 @@ server <- function(input, output) {
    ####SIGNIFICANT EFFECTS####
    output$sigpic <- renderPlot({
 
-     #load graph data
-     Graph_05 = read.csv("Graph_data.05.csv")
-     Graph_005 = read.csv("Graph_data.005.csv")
-     
-     Graph_data = cbind(Graph_05, Graph_005[ , 4:5])
-     colnames(Graph_data) = c("Effect","Significance", "N", "Parametric.05", "Non.Parametric.05", "Bayes", "OOM", "Parametric.005", "Non.Parametric.005")
-     
-     ##delete duplicate NS values, they don't change
-     Graph_data[ Graph_data$Significance == "Non", "Parametric.005" ] = NA
-     Graph_data[ Graph_data$Significance == "Non", "Non.Parametric.005" ] = NA
-     
-     ##drop NP because results are same as P, all results can been found online if you are interested
-     Graph_data = Graph_data[ , -c(5,9)]
-     
-     ##melt the data
-     long_graph = melt(Graph_data,
-                       id = c("Effect","Significance","N"))
-     colnames(long_graph) = c("Effect","Significance", "N","Analysis","value")
-     
-     long_graph = na.omit(long_graph)
-     long_graph$Analysis = factor(long_graph$Analysis,
-                                  levels = c("Parametric.05", 
-                                             "Parametric.005",
-                                             "Bayes","OOM"),
-                                  labels = c("NHST .05",
-                                             "NHST .005",
-                                             "Bayes Factors","OOM"))
-     
      graphdata = subset(long_graph, Significance=="Sig" & Effect == input$sizeselect)
      
      ##log N
@@ -151,34 +209,7 @@ server <- function(input, output) {
    ####NONSIGNIFICANT EFFECTS####
    output$nonpic <- renderPlot({
      
-     nsGraph_05 = read.csv("Graph_data.05.csv")
-     nsGraph_005 = read.csv("Graph_data.005.csv")
-     
-     nsGraph_data = cbind(nsGraph_05, nsGraph_005[ , 4:5])
-     colnames(nsGraph_data) = c("Effect","Significance", "N", "Parametric.05", "Non.Parametric.05", "Bayes", "OOM", "Parametric.005", "Non.Parametric.005")
-     
-     ##delete duplicate NS values, they don't change
-     nsGraph_data[ nsGraph_data$Significance == "Non", "Parametric.005" ] = NA
-     nsGraph_data[ nsGraph_data$Significance == "Non", "Non.Parametric.005" ] = NA
-     
-     ##drop NP because results are same as P, all results can been found online if you are interested
-     nsGraph_data = nsGraph_data[ , -c(5,9)]
-     
-     ##melt the data
-     nslong_graph = melt(nsGraph_data,
-                       id = c("Effect","Significance","N"))
-     colnames(nslong_graph) = c("Effect","Significance", "N","Analysis","value")
-     
-     nslong_graph = na.omit(nslong_graph)
-     nslong_graph$Analysis = factor(nslong_graph$Analysis,
-                                  levels = c("Parametric.05", 
-                                             "Parametric.005",
-                                             "Bayes","OOM"),
-                                  labels = c("NHST .05",
-                                             "NHST .005",
-                                             "Bayes Factors","OOM"))
-     
-     nsgraphdata = subset(nslong_graph, Significance=="Non" & Effect == input$sizeselect)
+     nsgraphdata = subset(long_graph, Significance=="Non" & Effect == input$sizeselect)
      
      ##log N
      if (input$Nselect == "log") { nsgraphdata$N = log(nsgraphdata$N)  
@@ -210,18 +241,6 @@ server <- function(input, output) {
    
    ####OMNIBUS AGREEMENT####
    output$omniagree <- renderPlot({
-     
-     agree = read.csv("Graph_data_agree.05.csv")
-     agree2 = read.csv("Graph_data_agree.005.csv")
-     agree_together = cbind(agree, agree2[ , -c(1:2)])
-     colnames(agree_together) = c("effect", "N", "omnibus.05",
-                                  "onetotwo.05", "twotothree.05",
-                                  "omnibus.005", "onetotwo.005", 
-                                  "twotothree.005")
-     
-     agreelong = melt(agree_together,
-                      id = c("effect", "N"))
-     colnames(agreelong)[3:4] = c("comparison", "percent")
      
      ##log n to get a better graph
      if (input$Nselect == "log") { agreelong$N = log(agreelong$N)
@@ -267,23 +286,11 @@ server <- function(input, output) {
    ####POST HOC AGREEMENT####
    output$postagree <- renderPlot({
      
-     pagree = read.csv("Graph_data_agree.05.csv")
-     pagree2 = read.csv("Graph_data_agree.005.csv")
-     pagree_together = cbind(pagree, pagree2[ , -c(1:2)])
-     colnames(pagree_together) = c("effect", "N", "omnibus.05",
-                                  "onetotwo.05", "twotothree.05",
-                                  "omnibus.005", "onetotwo.005", 
-                                  "twotothree.005")
-     
-     pagreelong = melt(pagree_together,
-                      id = c("effect", "N"))
-     colnames(pagreelong)[3:4] = c("comparison", "percent")
-     
      ##log n to get a better graph
      if (input$Nselect == "log") { pagreelong$N = log(pagreelong$N)
      xlabel = "Log N" } else { xlabel = "N"}
      
-     pagreelong = subset(pagreelong, comparison != "omnibus.05" & 
+     pagreelong = subset(agreelong, comparison != "omnibus.05" & 
                           comparison != "omnibus.005")
      
      pagreelong$comparison = factor(pagreelong$comparison,
@@ -318,6 +325,73 @@ server <- function(input, output) {
                           values = c("green","red","blue", "purple")) + 
        scale_shape_manual(name = "Comparison",
                           values = c(3, 4, 3, 4))
+   })
+   
+   ####COMPARISON GRAPHS####
+   output$compare <- renderPlot({
+     
+     if (input$graphselect == "pccp"){
+       
+       overallgraph = subset(overalleffects, 
+                             #overallBF >= input$bfrange[1] & overallBF <= input$bfrange[2] &
+                               omniP >= input$prange[1] & omniP <= input$prange[2] &
+                               oompcc >= input$pccrange[1] & oompcc <= input$pccrange[2] &
+                               stdev == input$sizeselect)
+       
+       ggplot(overallgraph, aes(oompcc, omniP, color = N)) + 
+         cleanup +
+         geom_point() +
+         xlab("OOM PCC Value") + 
+         ylab("Omnibus ANOVA p-Value")
+     } else if (input$graphselect == "pccbf"){
+       
+       overallgraph2 = subset(overalleffects, 
+                             overallBF >= input$bfrange[1] & overallBF <= input$bfrange[2] &
+                             #omniP >= input$prange[1] & omniP <= input$prange[2] &
+                               oompcc >= input$pccrange[1] & oompcc <= input$pccrange[2] &
+                               stdev == input$sizeselect)
+       
+       ggplot(overallgraph2, aes(oompcc, overallBF, color = N)) + 
+         cleanup +
+         geom_point() +
+         xlab("OOM PCC Value") + 
+         ylab("Bayes Factor")
+     } else if (input$graphselect == "bfp"){
+       overallgraph3 = subset(overalleffects, 
+                              overallBF >= input$bfrange[1] & overallBF <= input$bfrange[2] &
+                                omniP >= input$prange[1] & omniP <= input$prange[2] &
+                                #oompcc >= input$pccrange[1] & oompcc <= input$pccrange[2] &
+                                stdev == input$sizeselect)
+       
+       ggplot(overallgraph3, aes(omniP, overallBF, color = N)) + 
+         cleanup +
+         geom_point() +
+         xlab("Omnibus ANOVA p-Value") + 
+         ylab("Bayes Factor")
+     }
+     
+   })
+   
+   ####3D COMPARISON GRAPHS####
+   output$compare3d <- renderPlotly({
+     
+     overallgraph3d = subset(overalleffects, 
+                             overallBF >= input$bfrange[1] & overallBF <= input$bfrange[2] &
+                               omniP >= input$prange[1] & omniP <= input$prange[2] &
+                               oompcc >= input$pccrange[1] & oompcc <= input$pccrange[2] &
+                               stdev == input$sizeselect)
+     overall = plot_ly(overallgraph3d, 
+                       x = ~overallBF,
+                       y = ~oompcc,
+                       z = ~omniP,
+                       color = ~N) %>%
+       add_markers() %>%
+       layout(scene = list(xaxis = list(title = 'Bayes Factors'),
+                           yaxis = list(title = 'OOM PCC'),
+                           zaxis = list(title = 'p-Value')))
+     
+     overall
+     
    })
    
    
