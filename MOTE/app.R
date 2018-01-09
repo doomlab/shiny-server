@@ -1,0 +1,71 @@
+####Measure of the Effect: A Shiny App using the MOTE library####
+##Developed by: Erin M. Buchanan, Will Padfield, Abbie Van Nuland, Addie Wikowsky
+##MOTE library maintained by Erin M. Buchanan, John E. Scofield, K.D. Valentine
+
+####libraries####
+library(shiny)
+library(MOTE)
+
+####user interface####
+ui <- fluidPage(
+  
+  ####make the navbar pages####
+  shinyUI(
+    navbarPage("MOTE",
+               navbarMenu("Mean Differences",
+                          tabPanel("Z-Test - Means",
+                                   source("ztestM_page.R")$value),
+                          tabPanel("Z-Test - Z",
+                                   source("ztestZ_page.R")$value),
+                          tabPanel("Single Sample t - Means",
+                                   source("singletM_page.R")$value),
+                          tabPanel("Single Sample t - t",
+                                   source("singletT_page.R")$value),
+                          tabPanel("Dependent t Averages - Means",
+                                   source("deptavgM_page.R")$value),
+                          tabPanel("Dependent t Differences - Means",
+                                   source("deptdiffM_page.R")$value),
+                          tabPanel("Dependent t Differences - t",
+                                   source("deptT_page.R")$value),
+                          tabPanel("Dependent t Repeated Measures - Means",
+                                   source("deptrmM_page.R")$value),
+                          tabPanel("Independent t - Means",
+                                   source("indtM_page.R")$value),
+                          tabPanel("Independent t - t",
+                                   source("indtT_page.R")$value),
+                          tabPanel("Independent t Delta - Means",
+                                   source("indtD_page.R")$value),
+                          tabPanel("Independent t g - Means",
+                                   source("indtG_page.R")$value),
+                          tabPanel("Independent Proportions",
+                                   source("prop_page.R")$value)
+                          ), ##close navbarMenu
+               
+               navbarMenu("Variance Overlap",
+                          tabPanel("d to r"),
+                          tabPanel("r"),
+                          tabPanel("Eta"),
+                          tabPanel("Partial Eta"),
+                          tabPanel("Generalized Eta"),
+                          tabPanel("Omega"),
+                          tabPanel("Partial Omega"),
+                          tabPanel("Epsilon"),
+                          tabPanel("Chi-square V"),
+                          tabPanel("Chi-square Odds")
+                          ) ##close navbarMenu
+                     ) ##close navbarpage
+          ) ##close shinyUI
+  
+) ## close fluid page
+
+
+####server section####
+server <- function(input, output) {
+  
+  
+  
+} ##close server
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
