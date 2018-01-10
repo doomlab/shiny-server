@@ -351,6 +351,8 @@ server <- function(input, output) {
          ylab("Omnibus ANOVA p-Value") +
          scale_color_discrete(name = colorlabel1) 
        
+       ##dumb
+       
      } else if (input$graphselect == "pccbf"){
        
        overallgraph2 = subset(overalleffects, 
