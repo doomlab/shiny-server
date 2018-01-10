@@ -106,8 +106,8 @@ ui <- fluidPage (
                     "BF - p" = "bfp")),
       
       sliderInput("bfrange", "Log BF Range:",
-                  min = 0, max = 1000,
-                  value = c(0,1000),
+                  min = -5, max = 600,
+                  value = c(-5,600),
                   sep = "",
                   step = 10),
       
@@ -346,12 +346,13 @@ server <- function(input, output) {
        
        ggplot(overallgraph, aes(oompcc, omniP, color = N)) + 
          cleanup +
-         geom_point() +
+         geom_point(data = overallgraph, aes(shape = star)) +
          xlab("OOM PCC Value") + 
          ylab("Omnibus ANOVA p-Value") +
-         scale_color_discrete(name = colorlabel1) 
-       
-       ##dumb
+         scale_color_discrete(name = colorlabel1) + 
+         scale_shape_manual(name = "c-Value",
+                              labels = c(">.05", "<=.05"),
+                              values = c(16,4))
        
      } else if (input$graphselect == "pccbf"){
        
@@ -368,10 +369,13 @@ server <- function(input, output) {
        
        ggplot(overallgraph2, aes(oompcc, overallBF, color = N)) + 
          cleanup +
-         geom_point() +
+         geom_point(data = overallgraph2, aes(shape = star)) +
          xlab("OOM PCC Value") + 
          ylab("Bayes Factor") +
-         scale_color_discrete(name = colorlabel2)
+         scale_color_discrete(name = colorlabel2) + 
+         scale_shape_manual(name = "c-Value",
+                            labels = c(">.05", "<=.05"),
+                            values = c(16,4))
        
      } else if (input$graphselect == "bfp"){
        overallgraph3 = subset(overalleffects, 
@@ -387,10 +391,13 @@ server <- function(input, output) {
        
        ggplot(overallgraph3, aes(omniP, overallBF, color = N)) + 
          cleanup +
-         geom_point() +
+         geom_point(data = overallgraph2, aes(shape = star)) +
          xlab("Omnibus ANOVA p-Value") + 
          ylab("Bayes Factor") +
-         scale_color_discrete(name = colorlabel3)
+         scale_color_discrete(name = colorlabel3) + 
+         scale_shape_manual(name = "c-Value",
+                            labels = c(">.05", "<=.05"),
+                            values = c(16,4))
      }
      
    })
@@ -407,13 +414,19 @@ server <- function(input, output) {
      if (input$Nselect == "log") { overallgraph3d$N = round(log(overallgraph3d$N),2)
      colorlabel = "Log N" } else { colorlabel = "N"}
      
-     overallgraph3d$N = as.factor(overallgraph3d$N)
+     #overallgraph3d$N = as.factor(overallgraph3d$N)
+     overallgraph3d$star = factor(overallgraph3d$star,
+                                     levels = c(0,1),
+                                     labels = c("c > .05", "c <= .05"))
      
      overall = plot_ly(overallgraph3d, 
                        x = ~overallBF,
                        y = ~oompcc,
                        z = ~omniP,
-                       color = ~N) %>%
+                       color = ~N,
+                       symbol = ~star,
+                       symbols=c("circle","cross"),
+                       mode="markers") %>%
        add_markers() %>%
        layout(scene = list(xaxis = list(title = 'Bayes Factors'),
                            yaxis = list(title = 'OOM PCC'),
