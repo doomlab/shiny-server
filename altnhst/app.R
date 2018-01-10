@@ -69,6 +69,7 @@ overalleffects$stdev = factor(overalleffects$stdev,
 large = length(unique(overalleffects$overallBF))
 overalleffects$overallBF[is.infinite(overalleffects$overallBF)] = sort(unique(overalleffects$overallBF))[large-1]
 overalleffects$overallBF = log(overalleffects$overallBF)
+overalleffects$star = as.factor(as.numeric(overalleffects$oomchance <=.05))
 
 ####user interface####
 ui <- fluidPage (
@@ -287,7 +288,7 @@ server <- function(input, output) {
    output$postagree <- renderPlot({
      
      ##log n to get a better graph
-     if (input$Nselect == "log") { pagreelong$N = log(pagreelong$N)
+     if (input$Nselect == "log") { agreelong$N = log(agreelong$N)
      xlabel = "Log N" } else { xlabel = "N"}
      
      pagreelong = subset(agreelong, comparison != "omnibus.05" & 
@@ -338,11 +339,18 @@ server <- function(input, output) {
                                oompcc >= input$pccrange[1] & oompcc <= input$pccrange[2] &
                                stdev == input$sizeselect)
        
+       if (input$Nselect == "log") { overallgraph$N = round(log(overallgraph$N),2)
+       colorlabel1 = "Log N" } else { colorlabel1 = "N"}
+       
+       overallgraph$N = as.factor(overallgraph$N)
+       
        ggplot(overallgraph, aes(oompcc, omniP, color = N)) + 
          cleanup +
          geom_point() +
          xlab("OOM PCC Value") + 
-         ylab("Omnibus ANOVA p-Value")
+         ylab("Omnibus ANOVA p-Value") +
+         scale_color_discrete(name = colorlabel1) 
+       
      } else if (input$graphselect == "pccbf"){
        
        overallgraph2 = subset(overalleffects, 
@@ -351,11 +359,18 @@ server <- function(input, output) {
                                oompcc >= input$pccrange[1] & oompcc <= input$pccrange[2] &
                                stdev == input$sizeselect)
        
+       if (input$Nselect == "log") { overallgraph2$N = round(log(overallgraph2$N),2)
+       colorlabel2 = "Log N" } else { colorlabel2 = "N"}
+       
+       overallgraph2$N = as.factor(overallgraph2$N)
+       
        ggplot(overallgraph2, aes(oompcc, overallBF, color = N)) + 
          cleanup +
          geom_point() +
          xlab("OOM PCC Value") + 
-         ylab("Bayes Factor")
+         ylab("Bayes Factor") +
+         scale_color_discrete(name = colorlabel2)
+       
      } else if (input$graphselect == "bfp"){
        overallgraph3 = subset(overalleffects, 
                               overallBF >= input$bfrange[1] & overallBF <= input$bfrange[2] &
@@ -363,11 +378,17 @@ server <- function(input, output) {
                                 #oompcc >= input$pccrange[1] & oompcc <= input$pccrange[2] &
                                 stdev == input$sizeselect)
        
+       if (input$Nselect == "log") { overallgraph3$N = round(log(overallgraph3$N),2)
+       colorlabel3 = "Log N" } else { colorlabel3 = "N"}
+       
+       overallgraph3$N = as.factor(overallgraph3$N)
+       
        ggplot(overallgraph3, aes(omniP, overallBF, color = N)) + 
          cleanup +
          geom_point() +
          xlab("Omnibus ANOVA p-Value") + 
-         ylab("Bayes Factor")
+         ylab("Bayes Factor") +
+         scale_color_discrete(name = colorlabel3)
      }
      
    })
@@ -380,6 +401,12 @@ server <- function(input, output) {
                                omniP >= input$prange[1] & omniP <= input$prange[2] &
                                oompcc >= input$pccrange[1] & oompcc <= input$pccrange[2] &
                                stdev == input$sizeselect)
+     
+     if (input$Nselect == "log") { overallgraph3d$N = round(log(overallgraph3d$N),2)
+     colorlabel = "Log N" } else { colorlabel = "N"}
+     
+     overallgraph3d$N = as.factor(overallgraph3d$N)
+     
      overall = plot_ly(overallgraph3d, 
                        x = ~overallBF,
                        y = ~oompcc,
@@ -388,7 +415,15 @@ server <- function(input, output) {
        add_markers() %>%
        layout(scene = list(xaxis = list(title = 'Bayes Factors'),
                            yaxis = list(title = 'OOM PCC'),
-                           zaxis = list(title = 'p-Value')))
+                           zaxis = list(title = 'p-Value')),
+              annotations = list(
+                x = 1.13,
+                y = 1.05,
+                text = colorlabel,
+                xref = 'paper',
+                yref = 'paper',
+                showarrow = FALSE
+              ))
      
      overall
      
