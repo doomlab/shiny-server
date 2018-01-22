@@ -1,6 +1,3 @@
-##erin is editing this file##
-
-
 library(shiny)
 library(ggplot2)
 
