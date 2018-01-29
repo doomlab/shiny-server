@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ##This is a practice to do github
 
@@ -6,6 +7,8 @@
 =======
 ###Will is editing!!!!
 >>>>>>> dffa6ac2fa4cb153ea5f74167f3610fef2d0f37f
+=======
+>>>>>>> eb8eac63b35acf305b8262cc092b0dba63d4b003
 library(shiny)
 library(ggplot2)
 
