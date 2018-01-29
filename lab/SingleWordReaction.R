@@ -1,4 +1,4 @@
-setwd("~/Desktop/LAB")
+#setwd("~/Desktop/LAB")
 singleword = read.csv("SingleWordTab.csv")
 
 library(ggplot2)
