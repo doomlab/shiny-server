@@ -1,5 +1,8 @@
-setwd("~/Desktop/LAB")
-singleword = read.csv("SingleWordTab.csv")
+singlewordtable = read.csv("../SingleWordTab.csv")
+singleworddata = read.csv("../single_word.csv")
+
+singlewordtable$Minimum = apply(singleworddata[ , -1], 2, min, na.rm = T)
+
 
 library(ggplot2)
 library(shiny)

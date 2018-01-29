@@ -1,5 +1,4 @@
 ﻿Information,Variable,Label,Minimum,Maximum,M,SD
-,,,,,,
 Associative,QSS,Cue set size – the number of associates a cue word is connected to (neighbors).,1,34,14.4,5.13
 Associative,QCON,Cue concreteness – ranges from low (1) to high (7).,1.18,7,4.61,1.39
 Frequency,KF,Cue word frequency – Kucera and Francis (1967) norms.,1,28852,66.57,549.03
