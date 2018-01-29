@@ -15,14 +15,14 @@ ui <- fluidPage(
 
 server <- function(input, output) {
    
-   output$singletable <- renderDT({
+   output$singletable <- renderDT(server = FALSE, {
      
      datatable(singleword,
                filter = 'top',
                rownames = FALSE,
-               extensions = list("Buttons"),
+               extensions = 'Buttons',
                options = list(
-                 dom = 'Brtp',
+                 dom = 'rtpB',
                  buttons = c('copy', 'csv', 'excel')
                ) #close options
                ) #close data table 
