@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 
+##This is a practice to do github
+
+
+=======
+###Will is editing!!!!
+>>>>>>> dffa6ac2fa4cb153ea5f74167f3610fef2d0f37f
 library(shiny)
 library(ggplot2)
 
