@@ -1,5 +1,5 @@
 setwd("~/Desktop/LAB")
-singleword = read.csv("SingleWordTab.csv")
+singleword = read.csv("SingleWordTable.csv")
 
 library(ggplot2)
 library(shiny)
