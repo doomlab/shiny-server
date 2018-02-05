@@ -1,0 +1,11 @@
+Information,Variable,Label 
+,Cue Word,"The first word in a word pairing.  For semantic variables, the order of pairings is not important.  For the association variables, this value represents the first word given to participants in a free association task."
+,Target Word,"The second word in a word pairing.  For associative variables, this word represents the first word that ""came to mind when shown the cue word"""
+Semantic,Root Cosine,"The feature overlap between two words calculated on root words only.  This value ranges from 0 to 1, where 0 values indicate no overlap between words and 1 values indicate complete overlap between words."
+Semantic,Raw Cosine,"The feature overlap between two words calculated on raw, unfixed words only.  This value ranges from 0 to 1, where 0 values indicate no overlap between words and 1 values indicate complete overlap between words"
+Semantic,Affix Cosine,"The feature overlap between two words calculated on affix overlap.  This value ranges from 0 to 1, where 0 values indicate no overlap between words and 1 values indicate complete overlap between words."
+Semantic,Old Cosine,"The feature overlap between two words calculated on overlap from Buchanan et al. (2012).  This value ranges from 0 to 1, where 0 values indicate no overlap between words and 1 values indicate complete overlap between words."
+Semantic,JCN,"The dictionary distance between words.  Using WordNet, Maki et al. (2004) have calculated the relationship between word pairs.  This variable ranges from 0 to 32 and is reverse coded so that 0 values have a very high semantic relationship."
+Semantic,LSA,Latent Semantic Analysis shows both the semantic and thematic relationship between word pairs.  Low values are close to 0 and high values are close to 1.
+Associative,FSG,Forward strength is the probability of the target word association when shown the cue word (ranges from 0 to 1).
+Associative,BSG,Backward strength is the probability of the cue word association when shown the target word (ranges from 0 to 1).

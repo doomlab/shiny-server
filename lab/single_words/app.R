@@ -10,24 +10,20 @@ ui <- fluidPage(
             pick specific ranges of variables or categories. 
             A complete variable list can be found on the single 
             word norms page."),
-   DTOutput("singletable")
+   div(style = 'overflow-x: scroll', DTOutput("singletable"))
    ) #fluidpage
 
-# Define server logic required to draw a histogram
 server <- function(input, output) {
    
-   output$singletable <- renderDT({
+   output$singletable <- renderDT(server = FALSE, {
      
      datatable(singleword,
                filter = 'top',
-               extensions = list('Scroller', "Buttons"),
+               rownames = FALSE,
+               extensions = 'Buttons',
                options = list(
-                 dom = 'tB',
-                 buttons = c('copy', 'csv', 'excel'),
-                 scrollX = TRUE,
-                 scrollY = 300,
-                 scrollCollapse = TRUE,
-                 paging = FALSE
+                 dom = 'rtpB',
+                 buttons = c('copy', 'csv', 'excel')
                ) #close options
                ) #close data table 
      
