@@ -13,30 +13,30 @@ fluidRow(
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Sample Mean:"), 
-             textInput("mean1", NULL, width = 60)),
+             textInput("ZMmean1", NULL, width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Population Mean:"),
-             textInput("mean2", NULL, width = 60)),
+             textInput("ZMmean2", NULL, width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 110px;",
              strong("Population SD:"),
-             textInput("sd1", NULL, width = 60)), 
+             textInput("ZMsd1", NULL, width = 60)), 
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
              strong("Population SE:"),
-             textInput("se1", NULL, width = 60)),
+             textInput("ZMse1", NULL, width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 110px;",
-             textInput("n", "N:", width = 60)), 
+             textInput("ZMn", "N:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("df", "df:", width = 60)), 
+             textInput("ZMdf", "df:", width = 60)), 
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("ZMalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -44,7 +44,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("stuff")),
+           tabPanel("Summary", textOutput("ZMsummary")),
            tabPanel("Code", helpText("DO THE THING.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
