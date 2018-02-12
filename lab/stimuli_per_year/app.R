@@ -4,9 +4,7 @@ library(shiny)
 library(reshape)
 library(ggplot2)
 
-#setwd("~/Desktop/Practicum")
 tablemain = read.csv("../lab_table.csv")
-library(reshape)
 table = subset(tablemain, select = c(ID, type1, type2, year))
 longtable = melt(table, 
                  id = c("ID", "year"), 
@@ -29,9 +27,9 @@ ui <- fluidPage(
     selectInput(inputId = "select", 
                 label ="Stimuli:", 
                 choices = c("Anagrams" , "Categories" ,
-                            "Cloze/Sentences" , "Color Drawings", 
-                            "Homo/Heterograps", "Letters" ,
-                            "Line Drawings", "Names", 
+                            "Cloze/Sentences" , "Color drawings", 
+                            "Homo/Heterographs", "Letters" ,
+                            "Line drawings", "Names", 
                             "Other", "Phonemes", 
                             "Pictures", "Proverbs",
                             "Sounds", "Syllables",
