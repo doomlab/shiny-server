@@ -5,7 +5,6 @@ options(scipen = 999)
 
 singlewordtable = read.csv("../SingleWordTab.csv")
 singleworddata = read.csv("../single_word.csv")
-singleworddata$Length1 = as.numeric(singleworddata$Length1)
 
 singlewordtable$Minimum = c(apa(apply(singleworddata[ , 2:9], 2, min, na.rm = T), 2), 
                             NA, apa(apply(singleworddata[ , 11:15], 2, min, na.rm = T), 2))

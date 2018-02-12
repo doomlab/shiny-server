@@ -1,25 +1,4 @@
-####z test from means####
-output$zMAPA <- renderText({ 
-  
-  ##check for N
-  if (input$df != "") {
-    n = as.numeric(input$df) + 1
-  } else { n = as.numeric(input$n) }
-  
-  ##check for SE
-  if (input$se1 != "") {
-    sd1 = as.numeric(input$se1) * sqrt(n)
-  } else { sd1 = as.numeric(input$sd1) }
-  
-  d = (as.numeric(input$mean1)-as.numeric(input$mean2)) / sd1
-  dll = as.numeric(d)-qnorm(as.numeric(input$alpha), lower.tail = F)*sd1/sqrt(n)
-  dul = as.numeric(d)+qnorm(as.numeric(input$alpha), lower.tail = F)*sd1/sqrt(n)
-  
-  paste("d = ", apa(d, 3),
-        ", ", (1-as.numeric(input$alpha))*100, "% CI[", apa(dll, 3), 
-        " - ", apa(dul, 3), "]", sep = "")
-  
-}) ##close zAPA
+
 
 ####single sample t from means####
 output$singletMAPA <- renderText({ 

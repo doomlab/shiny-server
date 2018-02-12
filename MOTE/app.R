@@ -62,7 +62,30 @@ ui <- fluidPage(
 ####server section####
 server <- function(input, output) {
   
+##math goes here
   
+  ####z test from means####
+  output$ZMsummary <- renderText({ 
+    
+    ##check for N
+    if (input$ZMdf != "") {
+      n = as.numeric(input$ZMdf) + 1
+    } else { n = as.numeric(input$ZMn) }
+    
+    ##check for SE
+    if (input$ZMse1 != "") {
+      sd1 = as.numeric(input$ZMse1) * sqrt(n)
+    } else { sd1 = as.numeric(input$ZMsd1) }
+    
+    d = (as.numeric(input$ZMmean1)-as.numeric(input$ZMmean2)) / sd1
+    dll = as.numeric(d)-qnorm(as.numeric(input$ZMalpha), lower.tail = F)*sd1/sqrt(n)
+    dul = as.numeric(d)+qnorm(as.numeric(input$ZMalpha), lower.tail = F)*sd1/sqrt(n)
+    
+    paste("d = ", apa(d, 3),
+          ", ", (1-as.numeric(input$ZMalpha))*100, "% CI[", apa(dll, 3), 
+          " - ", apa(dul, 3), "]", sep = "")
+    
+  }) ##close z from means
   
 } ##close server
 
