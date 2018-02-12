@@ -18,7 +18,7 @@ labtable$year = as.numeric(as.character(labtable$year))
 ui <- fluidPage(#open
   
   # Application title
-  titlePanel("Papers Per Year"),
+  titlePanel("Publication Frequency"),
    
   #Select Box
   sidebarPanel(
