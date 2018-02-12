@@ -15,7 +15,7 @@ ui <- fluidPage(
 
 server <- function(input, output) {
    
-   output$singletable <- renderDT(server = FALSE, {
+   output$singletable <- renderDT(server = TRUE, {
      
      datatable(singleword,
                filter = 'top',
