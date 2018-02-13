@@ -1,21 +1,15 @@
 library(shiny)
-library(DT)
-library(MOTE)
 library(plyr)
+library(reshape)
 options(scipen = 999)
-
 
 tablemain = read.csv("../lab_table.csv")
 
-library(reshape)
-
-type = subset(tablemain, select = c(type1, type2))
-longtype = melt(type, 
-                 id = c("type1", "type2"), 
-                 measured = c("type1", "type2"))
-
-colnames(type)[1]="Type 1"
-colnames(type)[2]="Type 2"
+type = subset(tablemain, select = c(ID, type1, type2))
+longtype = reshape::melt(type,
+                         id = "ID",
+                         measured = c("type1", "type2"))
+##use the value column for the table below because it contains all the stimuli names
 
 stimuli = subset(tablemain, select = c(21:66))
 longstimuli = melt(tablemain,
