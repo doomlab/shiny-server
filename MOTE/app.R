@@ -39,7 +39,7 @@ ui <- fluidPage(
                                    source("indtG_page.R")$value),
                           tabPanel("Independent Proportions",
                                    source("prop_page.R")$value)
-                          ), ##close navbarMenu
+               ), ##close navbarMenu
                
                navbarMenu("Variance Overlap",
                           tabPanel("d to r"),
@@ -52,9 +52,9 @@ ui <- fluidPage(
                           tabPanel("Epsilon"),
                           tabPanel("Chi-square V"),
                           tabPanel("Chi-square Odds")
-                          ) ##close navbarMenu
-                     ) ##close navbarpage
-          ) ##close shinyUI
+               ) ##close navbarMenu
+    ) ##close navbarpage
+  ) ##close shinyUI
   
 ) ## close fluid page
 
@@ -62,7 +62,7 @@ ui <- fluidPage(
 ####server section####
 server <- function(input, output) {
   
-##math goes here
+  ##math goes here
   
   ####z test from means####
   output$ZMsummary <- renderText({ 
@@ -86,9 +86,25 @@ server <- function(input, output) {
           " - ", apa(dul, 3), "]", sep = "")
     
   }) ##close z from means
-  
+
+  ####dependent t from t####
+  output$DTTsummary <- renderText({ 
+    
+    ##check for N
+    if (input$DTTdf != "") {
+      n = as.numeric(input$DTTdf) + 1
+    } else { n = as.numeric(input$DTTn) }
+    
+    DTTdscore = d.dep.t.diff.t(as.numeric(input$DTTtscore),
+                               n, as.numeric(input$DTTalpha))
+    
+    paste("d = ", apa(DTTdscore$d, 3),
+          ", ", (1-as.numeric(input$DTTalpha))*100, "%[", apa(DTTdscore$dlow, 3), 
+          " - ", apa(DTTdscore$dhigh, 3), "]", sep = "")
+    
+  }) ##close dependent t from t  
+
 } ##close server
 
 # Run the application 
 shinyApp(ui = ui, server = server)
-
