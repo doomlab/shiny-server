@@ -28,7 +28,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("ITTSummary", textOutput("ITTsummary")),
+           tabPanel("ITTsummary", textOutput("ITTsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

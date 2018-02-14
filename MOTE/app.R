@@ -148,17 +148,66 @@ output$ITMsummary <- renderText({
     
   }) #close ITM
   
-  ####independent t from t
+  ####independent t from t####
 output$ITTsummary <- renderText({ 
   
   dscore = d.ind.t.t(as.numeric(input$ITTt1),
-                   sd1, sd2, as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
+                   as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
   
   paste("d = ", apa(dscore$d, 3),
         ", ", (1-as.numeric(input$ITTalpha))*100, "%[", apa(dscore$dlow, 3), 
         " - ", apa(dscore$dhigh, 3), "]", sep = "")
 }) #close ITT
 
+####independent t delta####
+output$ITDsummary <- renderText({ 
+  ##check for SE
+  if (input$ITDse2 != "") {
+    ITDsd1 = as.numeric(input$ITDse2) * sqrt(ITDn1)
+  } else { ITDsd1 = as.numeric(input$ITDsd1) }
+  
+  dscore = d.ind.t(as.numeric(input$ITDmean1), as.numeric(input$ITDmean2),
+                   as.numeric(input$ITDsd1), as.numeric(input$ITDse1), 
+                   as.numeric(input$ITDn), as.numeric(input$ITDn2), as.numeric(input$ITDalpha))
+  
+  paste("d = ", apa(dscore$d, 3),
+        ", ", (1-as.numeric(input$ITDalpha))*100, "%[", apa(dscore$dlow, 3), 
+        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+}) #close ITD
+
+####independent t g####
+output$ITGsummary = renderText({
+  
+  ##check for SE1
+  if (input$ITGse1 != "") {
+    sd1 = as.numeric(input$ITGse1) * sqrt(input$ITGn)
+  } else { ITGsd1 = as.numeric(input$ITGsd1) }
+  
+  ##check for SE2
+  if (input$ITGse2 != "") {
+    sd2 = as.numeric(input$ITGse2) * sqrt(input$ITGn2)
+  } else { ITGsd2 = as.numeric(input$ITGsd2) }
+  dscore = d.ind.t(as.numeric(input$ITGmean1), as.numeric(input$ITGmean2),
+                   as.numeric(input$ITGsd1), as.numeric(input$ITGsd2), 
+                   as.numeric(input$ITGn), as.numeric(input$ITGn2), 
+                   as.numeric(input$ITGalpha))
+  
+  paste("d = ", apa(dscore$d, 3),
+        ", ", (1-as.numeric(input$ITGalpha))*100, "%[", apa(dscore$dlow, 3), 
+        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  
+}) #close ITG
+
+####independent proportions####
+output$IP = renderText({
+  
+  dscore = d.prop(as.numeric(input$IPprop1), as.numeric(input$IPprop2),
+                  as.numeric(input$IPn), as.numeric(input$IPn2),
+                  as.numeric(input$IPalpha))
+  paste("d = ", apa(dscore$d, 3),
+        ", ", (1-as.numeric(input$IPalpha))*100, "%[", apa(dscore$dlow, 3), 
+        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+}) #close IP
 
 } ##close server
 
