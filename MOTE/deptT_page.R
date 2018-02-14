@@ -8,17 +8,17 @@ fluidRow(
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
              strong("Dependent t Differences - t")),
-
+         
          ##put input boxes here
-         textInput("tscore", "t:", width = 60), 
+         textInput("DTTtscore", "t:", width = 60), 
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n", "N:", width = 60)), 
+             textInput("DTTn", "N:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("df", "df:", width = 60)), 
+             textInput("DTTdf", "df:", width = 60)), 
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("DTTalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -26,14 +26,14 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Here we talk about dependent t.")),
+           tabPanel("Summary", textOutput("DTTsummary")),
            tabPanel("Code", helpText("Include the code, and 
-                                               annotation here about what is what.")),
+                                     annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))
-         ) ## close tabset panel
+           ) ## close tabset panel
          
-  ) ## close column
+         ) ## close column
   
 ) ##close fluid row
