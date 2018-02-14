@@ -104,6 +104,28 @@ server <- function(input, output) {
     
   }) #close deptt.from.tAPA
   
+output$ITMsummary <- renderText({ 
+    
+    ##check for SE1
+    if (input$ITMse1 != "") {
+      sd1 = as.numeric(input$ITMse1) * sqrt(input$ITMn)
+    } else { sd1 = as.numeric(input$ITMsd1) }
+    
+    ##check for SE2
+    if (input$se2 != "") {
+      sd2 = as.numeric(input$ITMse2) * sqrt(input$ITMn2)
+    } else { sd2 = as.numeric(input$ITMsd2) }
+    
+    dscore = d.ind.t(as.numeric(input$ITMmean1), as.numeric(input$ITMmean2),
+                         sd1, sd2, as.numeric(input$ITMn), as.numeric(input$ITMn2), as.numeric(input$ITMalpha))
+    
+    paste("d = ", apa(dscore$d, 3),
+          ", ", (1-as.numeric(input$ITMalpha))*100, "%[", apa(dscore$dlow, 3), 
+          " - ", apa(dscore$dhigh, 3), "]", sep = "")
+    
+  }) #close ITM
+  
+  
 } ##close server
 
 # Run the application 
