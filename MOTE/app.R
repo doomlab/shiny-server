@@ -87,7 +87,29 @@ server <- function(input, output) {
     
   }) ##close z from means
   
-  ####dependent t from t####
+  ####dependent t with difference score standard deviation####
+  output$DTDMsummary <- renderText({ 
+    
+    ##check for N
+    if (input$DTDMdfstuff != "") {
+      n = as.numeric(input$DTDMdfstuff) + 1
+    } else { n = as.numeric(input$DTDMnstuff) }
+    
+    ##check for sediff
+    if (input$DTDMsediff != "" | !is.null(input$DTDMsediff)) {
+      sddiff = as.numeric(input$DTDMsediff) * sqrt(n)
+    } else { sddiff = as.numeric(input$DTDMsddiff) }
+    
+    dscore = d.dep.t.diff(as.numeric(input$DTDMmeandiff),
+                         as.numeric(input$DTDMsddiff), n, as.numeric(input$DTDMalpha))
+    
+    paste("d = ", apa(dscore$d, 3),
+              ", ", (1-as.numeric(input$alpha))*100, "%[", apa(dscore$dlow, 3), 
+              " - ", apa(dscore$dhigh, 3), "]", sep = "")
+    
+  }) #close d.dep.t.diffAPA
+  
+   ####dependent t from t####
   output$DTTsummary <- renderText({ 
     
     ##check for N
@@ -102,8 +124,9 @@ server <- function(input, output) {
           ", ", (1-as.numeric(input$DTTalpha))*100, "%[", apa(dscore$dlow, 3), 
           " - ", apa(dscore$dhigh, 3), "]", sep = "")
     
-  }) #close deptt.from.tAPA
+  }) #close DTT
   
+  ####independent t from means#### 
 output$ITMsummary <- renderText({ 
     
     ##check for SE1
