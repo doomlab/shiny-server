@@ -170,7 +170,18 @@ output$ITMsummary <- renderText({
     
   }) #close ITM
   
+  ####independent t from t
+output$ITTsummary <- renderText({ 
   
+  dscore = d.ind.t.t(as.numeric(input$ITTt1),
+                   sd1, sd2, as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
+  
+  paste("d = ", apa(dscore$d, 3),
+        ", ", (1-as.numeric(input$ITTalpha))*100, "%[", apa(dscore$dlow, 3), 
+        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+}) #close ITT
+
+
 } ##close server
 
 # Run the application 
