@@ -107,7 +107,7 @@ server <- function(input, output) {
               ", ", (1-as.numeric(input$alpha))*100, "%[", apa(dscore$dlow, 3), 
               " - ", apa(dscore$dhigh, 3), "]", sep = "")
     
-  }) #close d.dep.t.diffAPA
+  }) #close DTDM
   
    ####dependent t from t####
   output$DTTsummary <- renderText({ 
@@ -125,7 +125,29 @@ server <- function(input, output) {
           " - ", apa(dscore$dhigh, 3), "]", sep = "")
     
   }) #close DTT
-  
+ 
+ ####dept RM####
+  output$DTRMsummary <- renderText({ 
+    
+    ##check for N
+    if (input$DTRMdf != "") {
+      n = as.numeric(input$DTRMdf) + 1
+    } else { n = as.numeric(input$DTRMn) }
+    
+    ##check for SE1
+    if (input$DTRMse1 != "") {
+      sd1 = as.numeric(input$DTRMse1) * sqrt(n)
+    } else { sd1 = as.numeric(input$DTRMsd1) }
+    
+    dscore = d.dep.t.rm(as.numeric(input$DTRMmean1), as.numeric(input$DTRMmean2),
+                        sd1, as.numeric(input$DTRMsd2), as.numeric(input$DTRMr), n, as.numeric(input$DTRMalpha))
+                        
+                        paste("d = ", apa(dscore$d, 3),
+                              ", ", (1-as.numeric(input$DTRMalpha))*100, "%[", apa(dscore$dlow, 3), 
+                              " - ", apa(dscore$dhigh, 3), "]", sep = "")
+                        
+  }) #close DTRM
+   
   ####independent t from means#### 
 output$ITMsummary <- renderText({ 
     
