@@ -69,21 +69,23 @@ longstimuli = melt(stimuli,
 
 longstimuli = subset(longstimuli, value > 0) 
 
+Journal = tablemain$ref_journal
+
+Language = tablemain$language
 
 ui <- fluidPage( #open ui
   
 fluidPage(sidebarLayout( #open fluid page and sidebar layout
   sidebarPanel( #open sidebarPanel
     
-    selectizeInput('Stimuli', 'Stimuli', choices = longstimuli$variable),
+    selectInput("Stimuli", choices = longstimuli$variable),
     
+    selectInput("Tag", choices = longtype$value),
     
-    selectizeInput('Tag', 'Tag', choices = longtype$variable),
+    selectInput("Journal", choices = Journal),
     
-  
-    selectizeInput('Language', 'Language', choices = NULL),
+    selectInput("Language", choices = Language)
     
-    selectInput('Journal', 'Journal', choices = Journal)
   ), #close sidebar Panel
   mainPanel( #open mainPanel
     verbatimTextOutput('values')
@@ -99,9 +101,7 @@ basicPage( #open basicpage
 
 server <- function(input, output) {
   
-
-  
-  output$stimuli <- renderPlot({
+  output$longstimuli <- renderPlot({
     plot(longstimuli$variable, longtype$value)
   })
 }
