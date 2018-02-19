@@ -11,15 +11,12 @@ longtype = melt(type,
                  id = c("ID"), 
                  measured = c("type1", "type2"))
 
-<<<<<<< HEAD
 colnames(type)[1]="Type 1"
 colnames(type)[2]="Type 2"
 
 
-###use the variable column for the table below because it contains all the stimuli names
-=======
 ##use the variable column for the table below because it has all the tag names
->>>>>>> bf15801234162b0ca2752afa84d46453726c36cf
+
 stimuli = subset(tablemain, select = c(1, 21:66))
 longstimuli = melt(stimuli,
                 id = c("ID"),
@@ -69,11 +66,8 @@ longstimuli = melt(stimuli,
                              "phonemes",
                              "imageagree",
                              "similar"))
-<<<<<<< HEAD
 
-=======
 longstimuli = subset(longstimuli, value > 0) 
->>>>>>> bf15801234162b0ca2752afa84d46453726c36cf
 
 
 ui <- fluidPage( #open ui
@@ -97,8 +91,7 @@ fluidPage(sidebarLayout( #open fluid page and sidebar layout
 ), # close sidebar Layout
 
 basicPage( #open basicpage
-  plotOutput("Stimuli", click = "Stumli_click"),
-  plotOutput("Type", click = "Type_click")
+  plotOutput(longstimuli,longtype)
 )#close basicpage
 ) #close fluidpage
 ) #close ui
@@ -112,3 +105,4 @@ server <- function(input, output) {
     plot(longstimuli$variable, longtype$value)
   })
 }
+
