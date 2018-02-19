@@ -3,7 +3,6 @@ library(reshape)
 library(plyr)
 options(scipen = 999)
 
-
 tablemain = read.csv("../lab_table.csv")
 
 ##use the value column for the table below because it contains all the stimuli names
@@ -12,11 +11,15 @@ longtype = melt(type,
                  id = c("ID"), 
                  measured = c("type1", "type2"))
 
+<<<<<<< HEAD
 colnames(type)[1]="Type 1"
 colnames(type)[2]="Type 2"
 
 
 ###use the variable column for the table below because it contains all the stimuli names
+=======
+##use the variable column for the table below because it has all the tag names
+>>>>>>> bf15801234162b0ca2752afa84d46453726c36cf
 stimuli = subset(tablemain, select = c(1, 21:66))
 longstimuli = melt(stimuli,
                 id = c("ID"),
@@ -66,7 +69,11 @@ longstimuli = melt(stimuli,
                              "phonemes",
                              "imageagree",
                              "similar"))
+<<<<<<< HEAD
 
+=======
+longstimuli = subset(longstimuli, value > 0) 
+>>>>>>> bf15801234162b0ca2752afa84d46453726c36cf
 
 
 ui <- fluidPage( #open ui
