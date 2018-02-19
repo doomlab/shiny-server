@@ -12,27 +12,27 @@ fluidRow(
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Control Mean 1:"), 
-             textInput("mean1", NULL, width = 60)),
+             textInput("ITDmean1", NULL, width = 60)),
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Experimental Mean 2:"),
-             textInput("mean2", NULL, width = 60)), 
+             textInput("ITDmean2", NULL, width = 60)), 
          br(),
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("sd1", "Control SD 1:", width = 60)), 
+             textInput("ITDsd1", "Control SD 1:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("se1", "Control SE 2:", width = 60)), 
+             textInput("ITDse1", "Control SE 2:", width = 60)), 
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n", "N 1:", width = 60)),
+             textInput("ITDn", "N 1:", width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n2", "N 2:", width = 60)), 
+             textInput("ITDn2", "N 2:", width = 60)), 
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("ITDalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -40,7 +40,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Here we talk about dependent t.")),
+           tabPanel("ITDsummary", textOutput("ITDsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

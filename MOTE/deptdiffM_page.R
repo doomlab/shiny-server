@@ -12,22 +12,22 @@ fluidRow(
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Mean Difference:"), 
-             textInput("meandiff", NULL, width = 60)),
+             textInput("DTDMmeandiff", NULL, width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("sddiff", "SD Difference:", width = 60)), 
+             textInput("DTDMsddiff", "SD Difference:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("sediff", "SE Difference:", width = 60)),
+             textInput("DTDMsediff", "SE Difference:", width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("nstuff", "N:", width = 60)), 
+             textInput("DTDMnstuff", "N:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("dfstuff", "df:", width = 60)), 
+             textInput("DTDMdfstuff", "df:", width = 60)), 
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("DTDMalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -35,7 +35,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Here we talk about dependent t.")),
+           tabPanel("Summary", textOutput("DTDMsummary")),
            tabPanel("APA Style", verbatimTextOutput("dzAPA")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 

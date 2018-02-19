@@ -4,6 +4,14 @@ library(shiny)
 library(reshape)
 library(ggplot2)
 
+cleanup = theme(panel.grid.major = element_blank(), 
+                panel.grid.minor = element_blank(), 
+                panel.background = element_blank(), 
+                axis.line.x = element_line(color = "black"),
+                axis.line.y = element_line(color = "black"),
+                legend.key = element_rect(fill = "white"),
+                text = element_text(size = 15))
+
 tablemain = read.csv("../lab_table.csv")
 table = subset(tablemain, select = c(ID, type1, type2, year))
 longtable = melt(table, 
@@ -40,7 +48,7 @@ ui <- fluidPage(
                 "Number of bins:",
                 min = 1,
                 max = 30,
-                value = 1), #close slider
+                value = 15), #close slider
     
     helpText("This graphic indicates the publication frequency of 
               of each type of stimuli across years. Please use the slider 
@@ -63,14 +71,6 @@ server <- function(input, output) {
     graphdata = subset(longtable, value == input$select)
     
     bins <- (length.out = input$bins + 1)
-    
-    cleanup = theme(panel.grid.major = element_blank(), 
-                    panel.grid.minor = element_blank(), 
-                    panel.background = element_blank(), 
-                    axis.line.x = element_line(color = "black"),
-                    axis.line.y = element_line(color = "black"),
-                    legend.key = element_rect(fill = "white"),
-                    text = element_text(size = 15))
     
     # draw the histogram with the specified number of bins
     ggplot(graphdata, aes(year)) + 
