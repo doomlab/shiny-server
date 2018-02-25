@@ -191,7 +191,17 @@ ui <- fluidPage (
                               accept = c("text/csv",
                                          "text/comma-separated-values,text/plain",
                                          ".csv")), ##close file input
-                    checkboxInput("header", "Header", TRUE)),
+                    checkboxInput("header", "Header", TRUE),
+                    radioButtons("sep", "Separator",
+                                 choices = c(Comma = ",",
+                                             Semicolon = ";",
+                                             Tab = "\t"),
+                                 selected = ","),
+                    radioButtons("quote", "Quote",
+                                 choices = c(None = "",
+                                             "Double Quote" = '"',
+                                             "Single Quote" = "'"),
+                                 selected = '"')), #close tabpanel
            
            tabPanel("Your Data", 
                     DTOutput("datasetoutput")),
@@ -226,7 +236,7 @@ ui <- fluidPage (
                         textInput("mancorrect", "Correct Answer", width = 200))),
            
            tabPanel("Output",
-                    helpText("This table will load slowly, as a factor of the sample size.")
+                    helpText("This table will load slowly, as a factor of the sample size."),
                     DTOutput("badoutput"))
            ) ## close tabset panel
          
@@ -247,7 +257,8 @@ server <- function(input, output, session) {
     inFile <- input$file1
     if (is.null(inFile))
       return(NULL)
-    master = read.csv(inFile$datapath, header = input$header)
+    master = read.csv(inFile$datapath, header = input$header, 
+                      sep = input$sep, quote = input$quote)
     master
   })
   
