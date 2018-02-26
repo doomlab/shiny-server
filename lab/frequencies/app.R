@@ -1,39 +1,69 @@
 library(shiny)
-library(DT)
-library(MOTE)
+library(reshape)
 library(plyr)
 options(scipen = 999)
 
-##fix this part here when the new values are avaliable 
-#doublewordtable$Minimum[6:10] = c(apa(apply(doubleworddata[ , 3:7], 2, min, na.rm = T), 2))
-#doublewordtable$Maximum[6:10] = c(apa(apply(doubleworddata[ , 3:7], 2, max, na.rm = T), 2))
-#doublewordtable$M[6:10] = c(apa(apply(doubleworddata[ , 3:7], 2, mean, na.rm = T), 2))
-#doublewordtable$SD[6:10] = c(apa(apply(doubleworddata[ , 3:7], 2, sd, na.rm = T), 2))
+tablemain = read.csv("../lab_table.csv")
 
+##use the value column for the table below because it contains all the stimuli names
+type = subset(tablemain, select = c(ID, type1, type2))
+longtype = melt(type, 
+                 id = c("ID"), 
+                 measured = c("type1", "type2"))
 
-ui = fluidPage(
-  selectInput("Nselect", "Select N Scaling:",
-              c("N" = "N",
-                "Log N" = "log")),
+##use the variable column for the table below because it has all the tag names
+
+stimuli = subset(tablemain, select = c(1, 21:66))
+longstimuli = melt(stimuli,
+                id = c("ID"),
+                measured = c("aoa","ambiguity","arousal","assoc","category",
+                             "cloze","complex","concrete","confusion","dist",
+                             "dominate","easelearn","familiar","freq","gpc",
+                             "identify","identifyld","identifyn","imagevar",
+                             "imagine","intense","meaning","modality","morph",
+                             "nameagree","orthon","pos","phonon","prime","pronounce",
+                             "rt","recall","recognition","rime","semantic",
+                             "sensory","sentcomp","typical","valence","visualcomp",
+                             "wordcomp","syllables","letters","phonemes","imageagree",
+                             "similar"))
+
+longstimuli = subset(longstimuli, value > 0) 
+
+Journal = tablemain$ref_journal
+
+Language = tablemain$language
+
+ui <- fluidPage( #open ui
   
-  htmlOutput("slider_selector")) # ... other stuff)
+fluidPage(sidebarLayout( #open fluid page and sidebar layout
+  sidebarPanel( #open sidebarPanel
+    
+    selectInput("Stimuli", choices = longstimuli$variable),
+    
+    selectInput("Tag", choices = longtype$value),
+    
+    selectInput("Journal", choices = Journal),
+    
+    selectInput("Language", choices = Language)
+    
+  ), #close sidebar Panel
+  mainPanel( #open mainPanel
+    verbatimTextOutput('values')
+  ) #close mainPanel
+), # close sidebar Layout
 
-server = function(input, output) {
-  output$slider_selector = renderUI({
-    
-    if (input$Nselect == "N") { minN = 10; maxN = 1000; stepN = 10}
-    if (input$Nselect == "log") { minN = round(log(10),1) 
-    maxN = round(log(1000),1)
-    stepN = .1}
-    
-    sliderInput("xaxisrange", "X-Axis Range:",
-                min = minN, max = maxN,
-                value = c(minN,maxN),
-                sep = "",
-                round = -1,
-                step = stepN)
-    
-  }
-)
+basicPage( #open basicpage
+  plotOutput(longstimuli,longtype)
+)#close basicpage
+) #close fluidpage
+) #close ui
+
+
+server <- function(input, output) {
+  
+  output$longstimuli <- renderPlot({
+    plot(longstimuli$variable, longtype$value)
+  })
 }
+
 shinyApp(ui, server)
