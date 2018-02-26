@@ -12,21 +12,21 @@ fluidRow(
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Proportion 1:"), 
-             textInput("prop1", NULL, width = 60)),
+             textInput("IPprop1", NULL, width = 60)),
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Proportion 2:"),
-             textInput("prop2", NULL, width = 60)), 
+             textInput("IPprop2", NULL, width = 60)), 
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n", "N 1:", width = 60)),
+             textInput("IPn", "N 1:", width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n2", "N 2:", width = 60)), 
+             textInput("IPn2", "N 2:", width = 60)), 
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("IPalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -34,7 +34,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Here we talk about dependent t.")),
+           tabPanel("Summary", textOutput("IPsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

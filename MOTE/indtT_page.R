@@ -12,15 +12,15 @@ fluidRow(
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("t:"), 
-             textInput("t1", NULL, width = 60)),
+             textInput("ITTt1", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n1", "N 1:", width = 60)), 
+             textInput("ITTn1", "N 1:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n2", "N 2:", width = 60)), 
+             textInput("ITTn2", "N 2:", width = 60)), 
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("ITTalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -28,7 +28,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Here we talk about dependent t.")),
+           tabPanel("Summary", textOutput("ITTsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

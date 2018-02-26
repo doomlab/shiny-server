@@ -12,33 +12,33 @@ fluidRow(
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Mean 1:"), 
-             textInput("mean1", NULL, width = 60)),
+             textInput("ITMmean1", NULL, width = 60)),
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Mean 2:"),
-             textInput("mean2", NULL, width = 60)), 
+             textInput("ITMmean2", NULL, width = 60)), 
          br(),
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("sd1", "SD 1:", width = 60)), 
+             textInput("ITMsd1", "SD 1:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("se1", "SE 2:", width = 60)), 
+             textInput("ITMse1", "SE 2:", width = 60)), 
          
          br(),
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("sd2", "SD 2:", width = 60)), 
+             textInput("ITMsd2", "SD 2:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("se2", "SE 2:", width = 60)), 
+             textInput("ITMse2", "SE 2:", width = 60)), 
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n", "N 1:", width = 60)),
-         
-         br(),
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n2", "N 2:", width = 60)), 
+             textInput("ITMn", "N 1:", width = 60)),
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             textInput("ITMn2", "N 2:", width = 60)), 
+         
+         br(),
+         textInput("ITMalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -46,7 +46,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Here we talk about dependent t.")),
+           tabPanel("Summary", textOutput("ITMsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

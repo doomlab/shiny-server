@@ -10,16 +10,16 @@ fluidRow(
              strong("Single Sample t - t")),
          
          ##put input boxes here
-         textInput("t", "t:", width = 60),
+         textInput("sttt", "T:", width = 60),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n", "N:", width = 60)), 
+             textInput("sttn", "N:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("df", "df:", width = 60)), 
+             textInput("sttdf", "df:", width = 60)), 
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("sttalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -27,7 +27,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Here we talk about dependent t.")),
+           tabPanel("Summary", textOutput("STTsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
