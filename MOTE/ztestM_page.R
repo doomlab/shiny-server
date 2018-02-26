@@ -16,6 +16,15 @@ fluidRow(
              textInput("ZMmean1", NULL, width = 60)),
          
          br(),
+         div(style="display: inline-block;vertical-align:top; width: 110px;",
+             strong("Sample SD:"),
+             textInput("ZMsd1", NULL, width = 60)), 
+         
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             strong("Sample SE:"),
+             textInput("ZMse1", NULL, width = 60)),
+         
+         br(),
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Population Mean:"),
              textInput("ZMmean2", NULL, width = 60)),
@@ -23,11 +32,11 @@ fluidRow(
          br(),
          div(style="display: inline-block;vertical-align:top; width: 110px;",
              strong("Population SD:"),
-             textInput("ZMsd1", NULL, width = 60)), 
+             textInput("ZMsd2", NULL, width = 60)), 
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
              strong("Population SE:"),
-             textInput("ZMse1", NULL, width = 60)),
+             textInput("ZMse2", NULL, width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 110px;",
