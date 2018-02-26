@@ -1,9 +1,10 @@
 library(shiny)
 library(reshape)
 library(plyr)
+
 options(scipen = 999)
 
-tablemain = read.csv("../lab_table.csv")
+tablemain = read.csv("lab_table.csv")
 
 ##use the value column for the table below because it contains all the stimuli names
 type = subset(tablemain, select = c(ID, type1, type2))
@@ -78,13 +79,13 @@ ui <- fluidPage( #open ui
 fluidPage(sidebarLayout( #open fluid page and sidebar layout
   sidebarPanel( #open sidebarPanel
     
-    selectInput("Stimuli", choices = longstimuli$variable),
+    selectInput("Stimuli", 'stimuli', choices = longstimuli$variable),
     
-    selectInput("Tag", choices = longtype$value),
+    selectInput("Tag", 'stimuli', choices = longtype$value),
     
-    selectInput("Journal", choices = Journal),
+    selectInput("Journal", 'journal', choices = Journal),
     
-    selectInput("Language", choices = Language)
+    selectInput("Language", 'language', choices = Language)
     
   ), #close sidebar Panel
   mainPanel( #open mainPanel
@@ -93,7 +94,15 @@ fluidPage(sidebarLayout( #open fluid page and sidebar layout
 ), # close sidebar Layout
 
 basicPage( #open basicpage
-  plotOutput(longstimuli,longtype)
+  plotOutput(longstimuli, width = "100%", height = "400px", 
+             click = NULL, dblclick = NULL, hover = NULL, hoverDelay = NULL,
+             hoverDelayType = NULL, brush = NULL, clickId = NULL, hoverId = NULL,
+             inline = FALSE),
+  
+  plotOutput(longtype, width = "100%", height = "400px", 
+             click = NULL, dblclick = NULL, hover = NULL, hoverDelay = NULL,
+             hoverDelayType = NULL, brush = NULL, clickId = NULL, hoverId = NULL,
+             inline = FALSE)
 )#close basicpage
 ) #close fluidpage
 ) #close ui
