@@ -13,10 +13,14 @@ fluidRow(
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Z:"), 
-             textInput("z", NULL, width = 60)),
+             textInput("ZZz", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("N:"), 
+             textInput("ZZn", NULL, width = 60)),
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("ZZalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1

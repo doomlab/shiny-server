@@ -86,16 +86,16 @@ server <- function(input, output) {
           " - ", apa(dul, 3), "]", sep = "")
     
   }) ##close z from means
-<<<<<<< HEAD
-  
+
   ####Z test from Z####
   output$ZZsummary <- renderText({ 
     
-    d = (as.numeric(input$ZZmean1)-as.numeric(input$ZZmean2)) / sd1
+    ZZdscore = d.z.z(as.numeric(input$ZZz), sig = NA, as.numeric(input$ZZn),
+                     as.numeric(input$ZZalpha))
     
-    paste("d = ", apa(d, 3),
-          ", ", (1-as.numeric(input$ZZalpha))*100, "% CI[", apa(dll, 3), 
-          " - ", apa(dul, 3), "]", sep = "")
+    paste("d = ", apa(ZZdscore$d, 3),
+          ", ", (1-as.numeric(input$ZZalpha))*100, "%[", apa(ZZdscore$dlow, 3), 
+          " - ", apa(ZZdscore$dhigh, 3), "]", sep = "")
     
   }) ##close z from z
   
