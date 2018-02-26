@@ -87,6 +87,85 @@ server <- function(input, output) {
     
   }) ##close z from means
   
+  ####Z test from Z####
+  output$ZZsummary <- renderText({ 
+    
+    d = (as.numeric(input$ZZmean1)-as.numeric(input$ZZmean2)) / sd1
+    
+    paste("d = ", apa(d, 3),
+          ", ", (1-as.numeric(input$ZZalpha))*100, "% CI[", apa(dll, 3), 
+          " - ", apa(dul, 3), "]", sep = "")
+    
+  }) ##close z from z
+  
+  ####Single Sample T From Means####
+  output$STMsummary <- renderText({ 
+    
+    ##check for N
+    if (input$STMdfstuff != "") {
+      n = as.numeric(input$STMdfstuff) + 1
+    } else { n = as.numeric(input$STMnstuff) }
+    
+    ##check for SE
+    if (input$STMsediff != "" | !is.null(input$STMsediff)) {
+      sddiff = as.numeric(input$STMsediff) * sqrt(n)
+    } else { sddiff = as.numeric(input$STMsddiff) }
+    
+    stmdscore = d.single.t(as.numeric(input$stmmean1),
+                          as.numeric(input$stmmean2), as.numeric(input$stmsd1), as.numeric(input$stmn), 
+                        as.numeric(input$stmalpha))
+    
+    paste("d = ", apa(stmdscore$d, 3),
+          ", ", (1-as.numeric(input$stmalpha))*100, "%[", apa(stmdscore$dlow, 3), 
+          " - ", apa(stmdscore$dhigh, 3), "]", sep = "")
+    
+  }) #close STM
+  
+  ####Single Sample T From T####
+  output$STTMsummary <- renderText({ 
+    
+    ##check for N
+    if (input$STTdfstuff != "") {
+      n = as.numeric(input$STTdfstuff) + 1
+    } else { n = as.numeric(input$STTnstuff) }
+    
+    ##check for SE
+    if (input$STTsediff != "" | !is.null(input$STTsediff)) {
+      sddiff = as.numeric(input$STTsediff) * sqrt(n)
+    } else { sddiff = as.numeric(input$STTsddiff) }
+    
+    sttdscore = d.single.t.t(as.numeric(input$sttt),
+                        as.numeric(input$sttn), n, as.numeric(input$sttalpha))
+    
+    paste("d = ", apa(sttdscore$d, 3),
+          ", ", (1-as.numeric(input$sttalpha))*100, "%[", apa(sttdscore$dlow, 3), 
+          " - ", apa(sttdscore$dhigh, 3), "]", sep = "")
+    
+  }) #close STT
+  
+  ####Dependent t Averages from Mean####
+  output$DTAMsummary <- renderText({ 
+    
+    ##check for N
+    if (input$DTAMdf != "") {
+      dtamn = as.numeric(input$DTAMdf) + 1
+    } else { n = as.numeric(input$DTAMn) }
+    
+    ##check for sediff
+    if (input$DTAMsediff != "" | !is.null(input$DTAMsediff)) {
+      sddiff = as.numeric(input$DTAMsediff) * sqrt(n)
+    } else { sddiff = as.numeric(input$DTAMsddiff) }
+    
+    dscore = d.dep.t.avg(as.numeric(input$DTAMm1), as.numeric(input$DTAMm2),
+                          as.numeric(input$DTAMsd1), as.numeric(input$DTAMsd2),
+                         dtamn, as.numeric(input$DTAMalpha))
+    
+    paste("d = ", apa(dscore$d, 3),
+          ", ", (1-as.numeric(input$alpha))*100, "%[", apa(dscore$dlow, 3), 
+          " - ", apa(dscore$dhigh, 3), "]", sep = "")
+    
+  }) #close DTDM
+  
   ####dependent t with difference score standard deviation####
   output$DTDMsummary <- renderText({ 
     

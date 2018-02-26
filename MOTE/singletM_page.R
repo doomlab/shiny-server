@@ -13,27 +13,27 @@ fluidRow(
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Sample Mean:"), 
-             textInput("mean1", NULL, width = 60)),
+             textInput("stmmean1", NULL, width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("Population Mean:"),
-             textInput("mean2", NULL, width = 60)), 
+             textInput("stmmean2", NULL, width = 60)), 
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("sd1", "SD:", width = 60)), 
+             textInput("stmsd1", "SD:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("se1", "SE:", width = 60)), 
+             textInput("stmse1", "SE:", width = 60)), 
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("n", "N:", width = 60)), 
+             textInput("stmn", "N:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("df", "df:", width = 60)), 
+             textInput("stmdf", "df:", width = 60)), 
          
          br(),
-         textInput("alpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("stmalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -41,7 +41,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Here we talk about dependent t.")),
+           tabPanel("Summary", textOutput("STMsummary")),
            tabPanel("Code", helpText("code")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
