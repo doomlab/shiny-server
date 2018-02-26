@@ -21,7 +21,7 @@ fluidRow(
          div(style="display: inline-block;vertical-align:top; width: 100px;",
              textInput("ITGsd1", "SD 1:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("ITGse1", "SE 2:", width = 60)), 
+             textInput("ITGse1", "SE 1:", width = 60)), 
          
          br(),
          
@@ -46,7 +46,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("ITGsummary", textOutput("ITGsummary")),
+           tabPanel("Summary", textOutput("ITGsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

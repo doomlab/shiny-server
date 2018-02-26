@@ -34,7 +34,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("IPsummary", textOutput("IPsummary")),
+           tabPanel("Summary", textOutput("IPsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

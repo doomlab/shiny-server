@@ -8,7 +8,7 @@ fluidRow(
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
              strong("Dependent t Differences - t")),
-         
+
          ##put input boxes here
          textInput("DTTtscore", "t:", width = 60), 
          
@@ -28,12 +28,12 @@ fluidRow(
          tabsetPanel(
            tabPanel("Summary", textOutput("DTTsummary")),
            tabPanel("Code", helpText("Include the code, and 
-                                     annotation here about what is what.")),
+                                               annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))
-           ) ## close tabset panel
+         ) ## close tabset panel
          
-         ) ## close column
+  ) ## close column
   
 ) ##close fluid row

@@ -8,7 +8,7 @@ fluidRow(
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
              strong("Dependent t RM - Means")),
-         
+
          ##put input boxes here
          textInput("DTRMmean1", "Mean 1:", width = 60), 
          textInput("DTRMmean2", "Mean 2:", width = 60), 
@@ -23,7 +23,7 @@ fluidRow(
          div(style="display: inline-block;vertical-align:top; width: 100px;",
              textInput("DTRMsd2", "SD 2:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("DTRMse2", "SE 2:", width = 60)),
+             textInput("DTRMse1", "SE 1:", width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
@@ -46,12 +46,12 @@ fluidRow(
          tabsetPanel(
            tabPanel("Summary", textOutput("DTRMsummary")),
            tabPanel("Code", helpText("Include the code, and 
-                                     annotation here about what is what.")),
+                                               annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))
-           ) ## close tabset panel
+         ) ## close tabset panel
          
-         ) ## close column
+  ) ## close column
   
 ) ##close fluid row

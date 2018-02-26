@@ -39,7 +39,7 @@ ui <- fluidPage(
                                    source("indtG_page.R")$value),
                           tabPanel("Independent Proportions",
                                    source("prop_page.R")$value)
-               ), ##close navbarMenu
+                          ), ##close navbarMenu
                
                navbarMenu("Variance Overlap",
                           tabPanel("d to r"),
@@ -52,9 +52,9 @@ ui <- fluidPage(
                           tabPanel("Epsilon"),
                           tabPanel("Chi-square V"),
                           tabPanel("Chi-square Odds")
-               ) ##close navbarMenu
-    ) ##close navbarpage
-  ) ##close shinyUI
+                          ) ##close navbarMenu
+                     ) ##close navbarpage
+          ) ##close shinyUI
   
 ) ## close fluid page
 
@@ -62,7 +62,7 @@ ui <- fluidPage(
 ####server section####
 server <- function(input, output) {
   
-  ##math goes here
+##math goes here
   
   ####z test from means####
   output$ZMsummary <- renderText({ 
@@ -86,6 +86,7 @@ server <- function(input, output) {
           " - ", apa(dul, 3), "]", sep = "")
     
   }) ##close z from means
+<<<<<<< HEAD
   
   ####Z test from Z####
   output$ZZsummary <- renderText({ 
@@ -167,6 +168,10 @@ server <- function(input, output) {
   }) #close DTDM
   
   ####dependent t with difference score standard deviation####
+=======
+
+ ####dependent t with difference score standard deviation####
+>>>>>>> b8ea514615c455439e9417870f709a20f39e5861
   output$DTDMsummary <- renderText({ 
     
     ##check for N
@@ -180,95 +185,101 @@ server <- function(input, output) {
     } else { sddiff = as.numeric(input$DTDMsddiff) }
     
     dscore = d.dep.t.diff(as.numeric(input$DTDMmeandiff),
-                         as.numeric(input$DTDMsddiff), n, as.numeric(input$DTDMalpha))
+                          as.numeric(input$DTDMsddiff), n, as.numeric(input$DTDMalpha))
     
     paste("d = ", apa(dscore$d, 3),
-              ", ", (1-as.numeric(input$alpha))*100, "%[", apa(dscore$dlow, 3), 
-              " - ", apa(dscore$dhigh, 3), "]", sep = "")
-    
-  }) #close DTDM
-  
-   ####dependent t from t####
-  output$DTTsummary <- renderText({ 
-    
-    ##check for N
-    if (input$DTTdf != "") {
-      n = as.numeric(input$DTTdf) + 1
-    } else { n = as.numeric(input$DTTn) }
-    
-    dscore = d.dep.t.diff.t(as.numeric(input$DTTtscore),
-                            n, as.numeric(input$DTTalpha))
-    
-    paste("d = ", apa(dscore$d, 3),
-          ", ", (1-as.numeric(input$DTTalpha))*100, "%[", apa(dscore$dlow, 3), 
+          ", ", (1-as.numeric(input$alpha))*100, "%[", apa(dscore$dlow, 3), 
           " - ", apa(dscore$dhigh, 3), "]", sep = "")
     
-  }) #close DTT
- 
- ####dept RM####
-  output$DTRMsummary <- renderText({ 
-    
-    ##check for N
-    if (input$DTRMdf != "") {
-      n = as.numeric(input$DTRMdf) + 1
-    } else { n = as.numeric(input$DTRMn) }
-    
-    ##check for SE1
-    if (input$DTRMse1 != "") {
-      sd1 = as.numeric(input$DTRMse1) * sqrt(n)
-    } else { sd1 = as.numeric(input$DTRMsd1) }
-    
-    dscore = d.dep.t.rm(as.numeric(input$DTRMmean1), as.numeric(input$DTRMmean2),
-                        sd1, as.numeric(input$DTRMsd2), as.numeric(input$DTRMr), n, as.numeric(input$DTRMalpha))
-                        
-                        paste("d = ", apa(dscore$d, 3),
-                              ", ", (1-as.numeric(input$DTRMalpha))*100, "%[", apa(dscore$dlow, 3), 
-                              " - ", apa(dscore$dhigh, 3), "]", sep = "")
-                        
-  }) #close DTRM
-   
-  ####independent t from means#### 
-output$ITMsummary <- renderText({ 
-    
-    ##check for SE1
-    if (input$ITMse1 != "") {
-      sd1 = as.numeric(input$ITMse1) * sqrt(input$ITMn)
-    } else { sd1 = as.numeric(input$ITMsd1) }
-    
-    ##check for SE2
-    if (input$se2 != "") {
-      sd2 = as.numeric(input$ITMse2) * sqrt(input$ITMn2)
-    } else { sd2 = as.numeric(input$ITMsd2) }
-    
-    dscore = d.ind.t(as.numeric(input$ITMmean1), as.numeric(input$ITMmean2),
-                         sd1, sd2, as.numeric(input$ITMn), as.numeric(input$ITMn2), as.numeric(input$ITMalpha))
-    
-    paste("d = ", apa(dscore$d, 3),
-          ", ", (1-as.numeric(input$ITMalpha))*100, "%[", apa(dscore$dlow, 3), 
-          " - ", apa(dscore$dhigh, 3), "]", sep = "")
-    
-  }) #close ITM
+  }) #close d.dep.t.diffAPA
   
-  ####independent t from t####
-output$ITTsummary <- renderText({ 
+####dependent t from t####
+output$DTTsummary <- renderText({ 
   
-  dscore = d.ind.t.t(as.numeric(input$ITTt1),
-                   as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
+  ##check for N
+  if (input$DTTdf != "") {
+    n = as.numeric(input$DTTdf) + 1
+  } else { n = as.numeric(input$DTTn) }
+  
+  DTTdscore = d.dep.t.diff.t(as.numeric(input$DTTtscore),
+                             n, as.numeric(input$DTTalpha))
+  
+  paste("d = ", apa(DTTdscore$d, 3),
+        ", ", (1-as.numeric(input$DTTalpha))*100, "%[", apa(DTTdscore$dlow, 3), 
+        " - ", apa(DTTdscore$dhigh, 3), "]", sep = "")
+  
+}) ##close dependent t from t  
+
+####dept RM####
+output$DTRMsummary <- renderText({ 
+  
+  ##check for N
+  if (input$DTRMdf != "") {
+    n = as.numeric(input$DTRMdf) + 1
+  } else { n = as.numeric(input$DTRMn) }
+  
+  ##check for SE1
+  if (input$DTRMse1 != "") {
+    sd1 = as.numeric(input$DTRMse1) * sqrt(n)
+  } else { sd1 = as.numeric(input$DTRMsd1) }
+  
+  dscore = d.dep.t.rm(as.numeric(input$DTRMmean1), as.numeric(input$DTRMmean2),
+                      sd1, as.numeric(input$DTRMsd2), as.numeric(input$DTRMr), n, as.numeric(input$DTRMalpha))
   
   paste("d = ", apa(dscore$d, 3),
-        ", ", (1-as.numeric(input$ITTalpha))*100, "%[", apa(dscore$dlow, 3), 
+        ", ", (1-as.numeric(input$DTRMalpha))*100, "%[", apa(dscore$dlow, 3), 
         " - ", apa(dscore$dhigh, 3), "]", sep = "")
-}) #close ITT
-
-####independent t delta####
-output$ITDsummary <- renderText({ 
-  ##check for SE
-  if (input$ITDse2 != "") {
-    ITDsd1 = as.numeric(input$ITDse2) * sqrt(ITDn1)
-  } else { ITDsd1 = as.numeric(input$ITDsd1) }
   
-  dscore = d.ind.t(as.numeric(input$ITDmean1), as.numeric(input$ITDmean2),
-                   as.numeric(input$ITDsd1), as.numeric(input$ITDse1), 
+}) #close DTRM
+
+####independent t from means####
+output$ITMsummary <- renderText({ 
+  
+  ##check for SE1
+  if (input$ITMse1 != "") {
+    sd1 = as.numeric(input$ITMse1) * sqrt(input$ITMn)
+  } else { sd1 = as.numeric(input$ITMsd1) }
+  
+  ##check for SE2
+  if (input$se2 != "") {
+    sd2 = as.numeric(input$ITMse2) * sqrt(input$ITMn2)
+  } else { sd2 = as.numeric(input$ITMsd2) }
+  
+  dscore = d.ind.t(as.numeric(input$ITMmean1), as.numeric(input$ITMmean2),
+                   sd1, sd2, as.numeric(input$ITMn), as.numeric(input$ITMn2), as.numeric(input$ITMalpha))
+  
+  paste("d = ", apa(dscore$d, 3),
+        ", ", (1-as.numeric(input$ITMalpha))*100, "%[", apa(dscore$dlow, 3), 
+        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  
+}) #close ITM
+
+ ####independent t from t
+  output$ITTsummary <- renderText({ 
+    
+    dscore = d.ind.t.t(as.numeric(input$ITTt1),
+                       as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
+    
+    paste("d = ", apa(dscore$d, 3),
+          ", ", (1-as.numeric(input$ITTalpha))*100, "%[", apa(dscore$dlow, 3), 
+          " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  }) #close ITT
+  
+ ####independent t delta####
+output$ITDsummary <- renderText({ 
+  
+  ##check for SE1
+  if (input$ITDse1 != "") {
+    sd1 = as.numeric(input$ITDse1) * sqrt(input$ITDn)
+  } else { sd1 = as.numeric(input$ITDsd1) }
+  
+  ##check for SE2
+  if (input$se2 != "") {
+    sd2 = as.numeric(input$ITDse2) * sqrt(input$ITDn2)
+  } else { sd2 = as.numeric(input$ITDsd2) }
+  
+  dscore = delta.ind.t(as.numeric(input$ITDmean1), as.numeric(input$ITDmean2),
+                   sd1, sd2, 
                    as.numeric(input$ITDn), as.numeric(input$ITDn2), as.numeric(input$ITDalpha))
   
   paste("d = ", apa(dscore$d, 3),
@@ -276,20 +287,21 @@ output$ITDsummary <- renderText({
         " - ", apa(dscore$dhigh, 3), "]", sep = "")
 }) #close ITD
 
-####independent t g####
+ ####independent t g####
 output$ITGsummary = renderText({
   
   ##check for SE1
   if (input$ITGse1 != "") {
     sd1 = as.numeric(input$ITGse1) * sqrt(input$ITGn)
-  } else { ITGsd1 = as.numeric(input$ITGsd1) }
+  } else { sd1 = as.numeric(input$ITGsd1) }
   
   ##check for SE2
   if (input$ITGse2 != "") {
     sd2 = as.numeric(input$ITGse2) * sqrt(input$ITGn2)
-  } else { ITGsd2 = as.numeric(input$ITGsd2) }
-  dscore = d.ind.t(as.numeric(input$ITGmean1), as.numeric(input$ITGmean2),
-                   as.numeric(input$ITGsd1), as.numeric(input$ITGsd2), 
+  } else { sd2 = as.numeric(input$ITGsd2) }
+  
+  dscore = g.ind.t(as.numeric(input$ITGmean1), as.numeric(input$ITGmean2),
+                   sd1, sd2, 
                    as.numeric(input$ITGn), as.numeric(input$ITGn2), 
                    as.numeric(input$ITGalpha))
   
@@ -299,18 +311,21 @@ output$ITGsummary = renderText({
   
 }) #close ITG
 
-####independent proportions####
-output$IP = renderText({
+ ####independent proportions####
+output$IPsummary = renderText({
   
   dscore = d.prop(as.numeric(input$IPprop1), as.numeric(input$IPprop2),
                   as.numeric(input$IPn), as.numeric(input$IPn2),
                   as.numeric(input$IPalpha))
+  
   paste("d = ", apa(dscore$d, 3),
         ", ", (1-as.numeric(input$IPalpha))*100, "%[", apa(dscore$dlow, 3), 
         " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  
 }) #close IP
 
 } ##close server
 
 # Run the application 
 shinyApp(ui = ui, server = server)
+
