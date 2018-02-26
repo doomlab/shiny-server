@@ -168,10 +168,8 @@ server <- function(input, output) {
   }) #close DTDM
   
   ####dependent t with difference score standard deviation####
-=======
 
  ####dependent t with difference score standard deviation####
->>>>>>> b8ea514615c455439e9417870f709a20f39e5861
   output$DTDMsummary <- renderText({ 
     
     ##check for N
