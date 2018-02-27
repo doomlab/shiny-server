@@ -156,17 +156,19 @@ SAD = function(dat, #data frame of only scale values
   }## end of for loop
   
   ####distribution coding####
+  badDist = rep(NA, nsim)
   for(i in 1:nsim){
     if(dist[i] == 0){
-      dist[i] = 1
-    }
+      badDist[i] = 1
+    } 
     if (dist[i] == 1){
-      dist[i] = 0
-    } else if(dist[i] == 2) {
-      dist[i] = 0
+      badDist[i] = 0
+    } 
+    if (dist[i] == 2) {
+      badDist[i] = 0
     }
   }
-  badDist = as.numeric(dist)
+  badDist = as.numeric(badDist)
   
   ####total up####
   badDF = cbind.data.frame(badChar, badClick, badDist, badScaleCheck, badMC)
