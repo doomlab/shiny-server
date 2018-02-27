@@ -5,6 +5,7 @@
 ####libraries####
 library(shiny)
 library(MOTE)
+source("output_functions.R")
 
 ####user interface####
 ui <- fluidPage(
@@ -62,28 +63,35 @@ ui <- fluidPage(
 ####server section####
 server <- function(input, output) {
   
-##math goes here
-  
   ####z test from means####
-  output$ZMsummary <- renderText({ 
+  output$ZMsummary <- renderUI({ 
     
     ##check for N
-    if (input$ZMdf != "") {
-      n = as.numeric(input$ZMdf) + 1
-    } else { n = as.numeric(input$ZMn) }
+    n = as.numeric(input$ZMn)
     
     ##check for SE
     if (input$ZMse1 != "") {
       sd1 = as.numeric(input$ZMse1) * sqrt(n)
     } else { sd1 = as.numeric(input$ZMsd1) }
     
-    d = (as.numeric(input$ZMmean1)-as.numeric(input$ZMmean2)) / sd1
-    dll = as.numeric(d)-qnorm(as.numeric(input$ZMalpha), lower.tail = F)*sd1/sqrt(n)
-    dul = as.numeric(d)+qnorm(as.numeric(input$ZMalpha), lower.tail = F)*sd1/sqrt(n)
+    if (input$ZMse2 != "") {
+      sd2 = as.numeric(input$ZMse2) * sqrt(n)
+    } else { sd2 = as.numeric(input$ZMsd2) }
     
-    paste("d = ", apa(d, 3),
-          ", ", (1-as.numeric(input$ZMalpha))*100, "% CI[", apa(dll, 3), 
-          " - ", apa(dul, 3), "]", sep = "")
+    ZMdscore = d.z.mean(mu = as.numeric(input$ZMmean2),
+                        m1 = as.numeric(input$ZMmean1),
+                        sig = sd2,
+                        sd1 = sd1,
+                        n = n,
+                        a = as.numeric(input$ZMalpha))
+    
+    HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+      "<b>Effect Size:</b> ", apa_d(ZMdscore, input$ZMalpha), "<p/>", #effect size
+      "<b>Interpretation:</b> ", checkzero(ZMdscore$dlow, ZMdscore$dhigh), "<p/>", #effect size interpretation
+      "<b>Summary Statistics:</b> ", apa_M(ZMdscore, 1, input$ZMalpha), "<p/>", #means
+      "<b>Test Statistic:</b> ", apa_stat(ZMdscore, "Z"), "<p/>", #test stats
+      "<b>Interpretation:</b> ", checkp(ZMdscore$p, input$ZMalpha), #test interpretation
+      sep = ""))
     
   }) ##close z from means
 

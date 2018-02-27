@@ -39,10 +39,9 @@ fluidRow(
              textInput("ZMse2", NULL, width = 60)),
          
          br(),
-         div(style="display: inline-block;vertical-align:top; width: 110px;",
-             textInput("ZMn", "N:", width = 60)), 
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("ZMdf", "df:", width = 60)), 
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("N:"),
+             textInput("ZMn", NULL, width = 60)),
          
          br(),
          textInput("ZMalpha", "Alpha:", width = 60, placeholder = ".05"),
@@ -53,7 +52,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", textOutput("ZMsummary")),
+           tabPanel("Summary", htmlOutput("ZMsummary")),
            tabPanel("Code", helpText("DO THE THING.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
