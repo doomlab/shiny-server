@@ -266,9 +266,13 @@ output$ITMsummary <- renderText({
     dscore = d.ind.t.t(as.numeric(input$ITTt1),
                        as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
     
-    paste("d = ", apa(dscore$d, 3),
-          ", ", (1-as.numeric(input$ITTalpha))*100, "%[", apa(dscore$dlow, 3), 
-          " - ", apa(dscore$dhigh, 3), "]", sep = "")
+    HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+               "<b>Effect Size:</b> ", apa_d(ITTdscore, input$ITTalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(ITTdscore$dlow, ITTdscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Summary Statistics:</b> ", apa_M(ITTdscore, 1, input$ITTalpha), "<p/>", #means
+               "<b>Test Statistic:</b> ", apa_stat(ITTdscore, "t"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(ITTdscore$p, input$ITTalpha), #test interpretation
+               sep = ""))
   }) #close ITT
   
  ####independent t delta####
@@ -288,9 +292,14 @@ output$ITDsummary <- renderText({
                    sd1, sd2, 
                    as.numeric(input$ITDn), as.numeric(input$ITDn2), as.numeric(input$ITDalpha))
   
-  paste("d = ", apa(dscore$d, 3),
-        ", ", (1-as.numeric(input$ITDalpha))*100, "%[", apa(dscore$dlow, 3), 
-        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+             "<b>Effect Size:</b> ", apa_d(ITDdscore, input$ITDalpha), "<p/>", #effect size
+             "<b>Interpretation:</b> ", checkzero(ITDdscore$dlow, ITDdscore$dhigh), "<p/>", #effect size interpretation
+             "<b>Summary Statistics:</b> ", apa_M(ITDdscore, 1, input$ITDalpha), "<p/>", #means
+             "<b>Summary Statistics:</b> ", apa_M(ITDdscore, 2, input$ITDalpha), "<p/>", 
+             "<b>Test Statistic:</b> ", apa_stat(ITDdscore, "t"), "<p/>", #test stats
+             "<b>Interpretation:</b> ", checkp(ITDdscore$p, input$ITDalpha), #test interpretation
+             sep = ""))
 }) #close ITD
 
  ####independent t g####
@@ -311,9 +320,14 @@ output$ITGsummary = renderText({
                    as.numeric(input$ITGn), as.numeric(input$ITGn2), 
                    as.numeric(input$ITGalpha))
   
-  paste("d = ", apa(dscore$d, 3),
-        ", ", (1-as.numeric(input$ITGalpha))*100, "%[", apa(dscore$dlow, 3), 
-        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+             "<b>Effect Size:</b> ", apa_d(ITGdscore, input$ITGalpha), "<p/>", #effect size
+             "<b>Interpretation:</b> ", checkzero(ITGdscore$dlow, ITGdscore$dhigh), "<p/>", #effect size interpretation
+             "<b>Summary Statistics:</b> ", apa_M(ITGdscore, 1, input$ITGalpha), "<p/>", #means
+             "<b>Summary Statistics:</b> ", apa_M(ITGdscore, 2, input$ITGalpha), "<p/>", 
+             "<b>Test Statistic:</b> ", apa_stat(ITGdscore, "t"), "<p/>", #test stats
+             "<b>Interpretation:</b> ", checkp(ITGdscore$p, input$ITGalpha), #test interpretation
+             sep = ""))
   
 }) #close ITG
 
@@ -324,9 +338,14 @@ output$IPsummary = renderText({
                   as.numeric(input$IPn), as.numeric(input$IPn2),
                   as.numeric(input$IPalpha))
   
-  paste("d = ", apa(dscore$d, 3),
-        ", ", (1-as.numeric(input$IPalpha))*100, "%[", apa(dscore$dlow, 3), 
-        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+             "<b>Effect Size:</b> ", apa_d(IPdscore, input$IPalpha), "<p/>", #effect size
+             "<b>Interpretation:</b> ", checkzero(IPdscore$dlow, IPdscore$dhigh), "<p/>", #effect size interpretation
+             "<b>Summary Statistics:</b> ", apa_M(IPdscore, 1, input$IPalpha), "<p/>", #means
+             "<b>Summary Statistics:</b> ", apa_M(IPdscore, 2, input$IPalpha), "<p/>", 
+             "<b>Test Statistic:</b> ", apa_stat(IPdscore, "t"), "<p/>", #test stats
+             "<b>Interpretation:</b> ", checkp(IPdscore$p, input$IPalpha), #test interpretation
+             sep = ""))
   
 }) #close IP
 
