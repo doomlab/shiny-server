@@ -23,7 +23,7 @@ fluidRow(
          div(style="display: inline-block;vertical-align:top; width: 100px;",
              textInput("DTRMsd2", "SD 2:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("DTRMse1", "SE 1:", width = 60)),
+             textInput("DTRMse2", "SE 2:", width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",

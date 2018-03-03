@@ -42,17 +42,6 @@ apa_diff = function(saved.d, alpha, digits = 2) {
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$Mlow, 2), #report low
                    ", ", apa(saved.d$Mhigh, digits), "]", sep = "") #report high
     return(output)}
-
-apa_RM_M = function(saved.d, alpha, digits = 2) { 
-  output = paste("Group 1 M = ", apa(saved.d$M1, digits), #report mean
-                   ", SD = ", apa(saved.d$sd1, digits), #report sd
-                   ", SE = ", apa(saved.d$se1, digits), #report se
-                   "; Group 2 M =", apa(saved.d$M2, digits), #report mean 2
-                   ", SD = ", apa(saved.d$sd2, digits), #report sd 2
-                   ", SE = ", apa(saved.d$se2, digits), #report se 2
-                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$M1low, 2), #report low
-                   ", ", apa(saved.d$M1high, digits), "]", sep = "") #report high
-    return(output)}
   
 apa_stat = function(saved.d, stat, digits = 2) {
   

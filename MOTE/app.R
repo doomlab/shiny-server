@@ -234,41 +234,57 @@ output$DTRMsummary <- renderText({
     sd1 = as.numeric(input$DTRMse1) * sqrt(n)
   } else { sd1 = as.numeric(input$DTRMsd1) }
   
+  ##check for SE2
+  if (input$DTRMse2 != "") {
+    sd2 = as.numeric(input$DTRMse2) * sqrt(n)
+  } else { sd2 = as.numeric(input$DTRMsd2) }
+  
   DTRMdscore = d.dep.t.rm(as.numeric(input$DTRMmean1), 
                           as.numeric(input$DTRMmean2),
-                      sd1, 
-                      as.numeric(input$DTRMsd2), 
-                      as.numeric(input$DTRMr), 
-                      n, 
-                      as.numeric(input$DTRMalpha))
+                          sd1, 
+                          sd2, 
+                          as.numeric(input$DTRMr), 
+                          n, 
+                          as.numeric(input$DTRMalpha))
   
   HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
              "<b>Effect Size:</b> ", apa_d(DTRMdscore, input$DTRMalpha), "<p/>", #effect size
              "<b>Interpretation:</b> ", checkzero(DTRMdscore$dlow, DTRMdscore$dhigh), "<p/>", #effect size interpretation
-             "<b>Summary Statistics:</b> ", apa_RM_M(DTRMdscore, input$DTRMalpha), "<p/>", #means
+             "<b>Group 1 Summary Statistics:</b> ", apa_M(DTRMdscore, 1, input$DTRMalpha), "<p/>", #means
+             "<b>Group 2 Summary Statistics:</b> ", apa_M(DTRMdscore, 2, input$DTRMalpha), "<p/>", #means
              sep = ""))
   
 }) #close DTRM
 
 ####independent t from means####
 output$ITMsummary <- renderText({ 
-  
-  ##check for SE1
+
+ ##check for SE1
   if (input$ITMse1 != "") {
     sd1 = as.numeric(input$ITMse1) * sqrt(input$ITMn)
   } else { sd1 = as.numeric(input$ITMsd1) }
   
   ##check for SE2
-  if (input$se2 != "") {
-    sd2 = as.numeric(input$ITMse2) * sqrt(input$ITMn2)
+  if (input$ITMse2 != "") {
+    sd2 = as.numeric(input$ITMse2) * sqrt(as.numeric(input$ITMn2))
   } else { sd2 = as.numeric(input$ITMsd2) }
   
-  dscore = d.ind.t(as.numeric(input$ITMmean1), as.numeric(input$ITMmean2),
-                   sd1, sd2, as.numeric(input$ITMn), as.numeric(input$ITMn2), as.numeric(input$ITMalpha))
+  ITMdscore = d.ind.t(as.numeric(input$ITMmean1), 
+                      as.numeric(input$ITMmean2),
+                   sd1, 
+                   sd2, 
+                   as.numeric(input$ITMn), 
+                   as.numeric(input$ITMn2), 
+                   as.numeric(input$ITMalpha))
   
-  paste("d = ", apa(dscore$d, 3),
-        ", ", (1-as.numeric(input$ITMalpha))*100, "%[", apa(dscore$dlow, 3), 
-        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+             "<b>Effect Size:</b> ", apa_d(ITMdscore, input$ITMalpha), "<p/>", #effect size
+             "<b>Interpretation:</b> ", checkzero(ITMdscore$dlow, ITMdscore$dhigh), "<p/>", #effect size interpretation
+             "<b>Group 1 Summary Statistics:</b> ", apa_M(ITMdscore, 1, input$ITMalpha), "<p/>", #means
+             "<b>Group 2 Summary Statistics:</b> ", apa_M(ITMdscore, 2, input$ITMalpha), "<p/>", #means
+             "<b>Test Statistic:</b> ", apa_stat(ITMdscore, "t"), "<p/>", #test stats
+             "<b>Interpretation:</b> ", checkp(ITMdscore$p, input$ITMalpha), #test interpretation
+             sep = ""))
   
 }) #close ITM
 
