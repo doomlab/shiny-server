@@ -212,9 +212,12 @@ output$DTTsummary <- renderText({
   DTTdscore = d.dep.t.diff.t(as.numeric(input$DTTtscore),
                              n, as.numeric(input$DTTalpha))
   
-  paste("d = ", apa(DTTdscore$d, 3),
-        ", ", (1-as.numeric(input$DTTalpha))*100, "%[", apa(DTTdscore$dlow, 3), 
-        " - ", apa(DTTdscore$dhigh, 3), "]", sep = "")
+  HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+             "<b>Effect Size:</b> ", apa_d(DTTdscore, input$DTTalpha), "<p/>", #effect size
+             "<b>Interpretation:</b> ", checkzero(DTTdscore$dlow, DTTdscore$dhigh), "<p/>", #effect size interpretation
+             "<b>Test Statistic:</b> ", apa_stat(DTTdscore, "t"), "<p/>", #test stats
+             "<b>Interpretation:</b> ", checkp(DTTdscore$p, input$DTTalpha), #test interpretation
+             sep = ""))
   
 }) ##close dependent t from t  
 
@@ -231,12 +234,19 @@ output$DTRMsummary <- renderText({
     sd1 = as.numeric(input$DTRMse1) * sqrt(n)
   } else { sd1 = as.numeric(input$DTRMsd1) }
   
-  dscore = d.dep.t.rm(as.numeric(input$DTRMmean1), as.numeric(input$DTRMmean2),
-                      sd1, as.numeric(input$DTRMsd2), as.numeric(input$DTRMr), n, as.numeric(input$DTRMalpha))
+  DTRMdscore = d.dep.t.rm(as.numeric(input$DTRMmean1), 
+                          as.numeric(input$DTRMmean2),
+                      sd1, 
+                      as.numeric(input$DTRMsd2), 
+                      as.numeric(input$DTRMr), 
+                      n, 
+                      as.numeric(input$DTRMalpha))
   
-  paste("d = ", apa(dscore$d, 3),
-        ", ", (1-as.numeric(input$DTRMalpha))*100, "%[", apa(dscore$dlow, 3), 
-        " - ", apa(dscore$dhigh, 3), "]", sep = "")
+  HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+             "<b>Effect Size:</b> ", apa_d(DTRMdscore, input$DTRMalpha), "<p/>", #effect size
+             "<b>Interpretation:</b> ", checkzero(DTRMdscore$dlow, DTRMdscore$dhigh), "<p/>", #effect size interpretation
+             "<b>Summary Statistics:</b> ", apa_RM_M(DTRMdscore, input$DTRMalpha), "<p/>", #means
+             sep = ""))
   
 }) #close DTRM
 
