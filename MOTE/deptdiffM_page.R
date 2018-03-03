@@ -23,8 +23,6 @@ fluidRow(
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
              textInput("DTDMnstuff", "N:", width = 60)), 
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("DTDMdfstuff", "df:", width = 60)), 
          
          br(),
          textInput("DTDMalpha", "Alpha:", width = 60, placeholder = ".05"),
@@ -35,7 +33,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", textOutput("DTDMsummary")),
+           tabPanel("Summary", htmlOutput("DTDMsummary")),
            tabPanel("APA Style", verbatimTextOutput("dzAPA")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 

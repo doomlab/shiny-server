@@ -34,7 +34,17 @@ apa_M = function(saved.d, meanno = 1, alpha, digits = 2) {
           ", ", apa(saved.d$M2high, digits), "]", sep = "") #report high
     return(output)}
 }
-apa_stat = function(saved.d, stat = "t", digits = 2) {
+
+apa_diff = function(saved.d, alpha, digits = 2) { 
+    output = paste("Mdiff", apa(saved.d$mdiff, digits), #report mean
+                   ", SDdiff = ", apa(saved.d$sddiff, digits), #report sd
+                   ", SE = ", apa(saved.d$se, digits), #report se
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$Mlow, 2), #report low
+                   ", ", apa(saved.d$Mhigh, digits), "]", sep = "") #report high
+    return(output)}
+
+
+apa_stat = function(saved.d, stat, digits = 2) {
   
   if (saved.d$p < .001) { pvalue = "p < .001"} else { pvalue = paste("p = ", apa(saved.d$p, 3, F), sep = "") }
   

@@ -174,28 +174,30 @@ server <- function(input, output) {
           " - ", apa(dscore$dhigh, 3), "]", sep = "")
     
   }) #close DTDM
-  
-  ####dependent t with difference score standard deviation####
 
  ####dependent t with difference score standard deviation####
   output$DTDMsummary <- renderText({ 
     
     ##check for N
-    if (input$DTDMdfstuff != "") {
-      n = as.numeric(input$DTDMdfstuff) + 1
-    } else { n = as.numeric(input$DTDMnstuff) }
+    n = as.numeric(input$DTDMnstuff)
     
     ##check for sediff
     if (input$DTDMsediff != "" | !is.null(input$DTDMsediff)) {
       sddiff = as.numeric(input$DTDMsediff) * sqrt(n)
     } else { sddiff = as.numeric(input$DTDMsddiff) }
     
-    dscore = d.dep.t.diff(as.numeric(input$DTDMmeandiff),
-                          as.numeric(input$DTDMsddiff), n, as.numeric(input$DTDMalpha))
+    DTDMdscore = d.dep.t.diff(mdiff = as.numeric(input$DTDMmeandiff),
+                          sddiff = as.numeric(input$DTDMsddiff), 
+                          n = n,
+                          a = as.numeric(input$DTDMalpha))
     
-    paste("d = ", apa(dscore$d, 3),
-          ", ", (1-as.numeric(input$alpha))*100, "%[", apa(dscore$dlow, 3), 
-          " - ", apa(dscore$dhigh, 3), "]", sep = "")
+    HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+               "<b>Effect Size:</b> ", apa_d(DTDMdscore, input$DTDMalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(DTDMdscore$dlow, DTDMdscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Summary Statistics:</b> ", apa_diff(DTDMdscore, input$DTDMalpha), "<p/>", #means
+               "<b>Test Statistic:</b> ", apa_stat(DTDMdscore, "t"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(DTDMdscore$p, input$DTDMalpha), #test interpretation
+               sep = ""))
     
   }) #close d.dep.t.diffAPA
   
@@ -267,11 +269,11 @@ output$ITMsummary <- renderText({
                        as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
     
     HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
-               "<b>Effect Size:</b> ", apa_d(ITTdscore, input$ITTalpha), "<p/>", #effect size
-               "<b>Interpretation:</b> ", checkzero(ITTdscore$dlow, ITTdscore$dhigh), "<p/>", #effect size interpretation
-               "<b>Summary Statistics:</b> ", apa_M(ITTdscore, 1, input$ITTalpha), "<p/>", #means
-               "<b>Test Statistic:</b> ", apa_stat(ITTdscore, "t"), "<p/>", #test stats
-               "<b>Interpretation:</b> ", checkp(ITTdscore$p, input$ITTalpha), #test interpretation
+               "<b>Effect Size:</b> ", apa_d(dscore, input$ITTalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(dscore$dlow, dscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Summary Statistics:</b> ", apa_M(dscore, 1, input$ITTalpha), "<p/>", #means
+               "<b>Test Statistic:</b> ", apa_stat(dscore, "t"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(dscore$p, input$ITTalpha), #test interpretation
                sep = ""))
   }) #close ITT
   
