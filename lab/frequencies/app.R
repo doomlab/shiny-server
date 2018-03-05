@@ -10,6 +10,8 @@ type = subset(tablemain, select = c(ID, type1, type2))
 longtype = melt(type, 
                  id = c("ID"), 
                  measured = c("type1", "type2"))
+longtype = subset(longtype, value != "")
+longtype$value = droplevels(longtype$value)
 
 ##use the variable column for the table below because it has all the tag names
 
@@ -29,40 +31,51 @@ longstimuli = melt(stimuli,
 
 longstimuli = subset(longstimuli, value > 0) 
 
-Journal = tablemain$ref_journal
+longstimuli$variable = factor(longstimuli$variable,
+                              levels = levels(longstimuli$variable), 
+                              labels = c("Age of Acquisition", "Ambiguity", "Arousal",
+                                         "Association", "Category", "Cloze", "Complexity",
+                                         "Concreteness", "Confusion Matrices", "Distinctness",
+                                         "Dominance", "Ease of Learning", "Familiarity", 
+                                         "Frequency", "Grapheme-Phoneme Correspondence", 
+                                         "Indentification", "Lexical Desicion", "Naming", 
+                                         "Image Variability", "Imagineability", "Intensity",
+                                         "Meaning", "Modality", "Morphemes", "Name Agreement", 
+                                         "Orthographic Neighborhood", "Part of Speech", 
+                                         "Phonographic Neighborhood", "Priming", "Pronunciation", 
+                                         "Response Latency", "Recall", "Recognition", "Rime", 
+                                         "Semantic", "Sensory", "Sentence Completion", 
+                                         "Typicality", "Valence", "Visual Complexity", "Word Completion",
+                                         "Syllables", "Letters", "Phonemes", "Image Agreement", "Similarity"))
 
-Language = tablemain$language
 
 ui <- fluidPage( #open ui
-  
-fluidPage(sidebarLayout( #open fluid page and sidebar layout
+  sidebarLayout( #open fluid page and sidebar layout
   sidebarPanel( #open sidebarPanel
     
-    selectInput("Stimuli", choices = longstimuli$variable),
-    
-    selectInput("Tag", choices = longtype$value),
-    
-    selectInput("Journal", choices = Journal),
-    
-    selectInput("Language", choices = Language)
-    
+    selectInput("choice", "Choose a variable:", 
+                choices = c("Stimuli", "Tags", "Journal", "Language"),
+                selected = "Stimuli")
   ), #close sidebar Panel
   mainPanel( #open mainPanel
-    verbatimTextOutput('values')
+    dataTableOutput('freqtable')
   ) #close mainPanel
-), # close sidebar Layout
-
-basicPage( #open basicpage
-  plotOutput(longstimuli,longtype)
-)#close basicpage
+) # close sidebar Layout
 ) #close fluidpage
-) #close ui
-
 
 server <- function(input, output) {
   
-  output$longstimuli <- renderPlot({
-    plot(longstimuli$variable, longtype$value)
+  output$freqtable <- renderDataTable({
+    
+    if (input$choice == "Stimuli") {freqvalues = longstimuli$variable}
+    if (input$choice == "Tags") {freqvalues = longtype$value}
+    if (input$choice == "Journal") {freqvalues = tablemain$ref_journal}
+    if (input$choice == "Language") {freqvalues = tablemain$language}
+      
+    tablef = count(freqvalues)
+    tablef$percent = round(tablef$freq/sum(tablef$freq) * 100, 2)
+    colnames(tablef) = c("Variable", "Frequency", "Percent")
+    tablef
   })
 }
 
