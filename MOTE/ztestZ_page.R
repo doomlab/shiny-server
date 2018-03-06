@@ -28,7 +28,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("stuff")),
+           tabPanel("Summary", htmlOutput("ZZsummary")),
            tabPanel("Code", helpText("DO THE THING.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 

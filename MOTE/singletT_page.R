@@ -10,16 +10,16 @@ fluidRow(
              strong("Single Sample t - t")),
          
          ##put input boxes here
-         textInput("sttt", "T:", width = 60),
+         textInput("STTt", "T:", width = 60),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("sttn", "N:", width = 60)), 
+             textInput("STTn", "N:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("sttdf", "df:", width = 60)), 
+             textInput("STTdf", "df:", width = 60)), 
          
          br(),
-         textInput("sttalpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("STTalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -27,7 +27,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", textOutput("STTsummary")),
+           tabPanel("Summary", htmlOutput("STTsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

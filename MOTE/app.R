@@ -98,12 +98,15 @@ server <- function(input, output) {
   ####Z test from Z####
   output$ZZsummary <- renderText({ 
     
-    ZZdscore = d.z.z(as.numeric(input$ZZz), sig = NA, as.numeric(input$ZZn),
+    ZZdscore = d.z.z(as.numeric(input$ZZz), as.numeric(input$ZZn),
                      as.numeric(input$ZZalpha))
     
-    paste("d = ", apa(ZZdscore$d, 3),
-          ", ", (1-as.numeric(input$ZZalpha))*100, "%[", apa(ZZdscore$dlow, 3), 
-          " - ", apa(ZZdscore$dhigh, 3), "]", sep = "")
+    HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+               "<b>Effect Size:</b> ", apa_d(ZZdscore, input$ZZalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(ZZdscore$dlow, ZZdscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(ZZdscore, "Z"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(ZZdscore$p, input$ZZalpha), #test interpretation
+               sep = ""))
     
   }) ##close z from z
   
@@ -111,44 +114,47 @@ server <- function(input, output) {
   output$STMsummary <- renderText({ 
     
     ##check for N
-    if (input$STMdfstuff != "") {
-      n = as.numeric(input$STMdfstuff) + 1
-    } else { n = as.numeric(input$STMnstuff) }
+    if (input$STMdf != "") {
+      n = as.numeric(input$STMdf) + 1
+    } else { n = as.numeric(input$STMn) }
     
     ##check for SE
-    if (input$STMsediff != "" | !is.null(input$STMsediff)) {
-      sddiff = as.numeric(input$STMsediff) * sqrt(n)
-    } else { sddiff = as.numeric(input$STMsddiff) }
+    if (input$STMse != "") {
+      sd = as.numeric(input$STMse) * sqrt(input$STMn)
+    } else { sd = as.numeric(input$STMsd) }
     
-    stmdscore = d.single.t(as.numeric(input$stmmean1),
-                          as.numeric(input$stmmean2), as.numeric(input$stmsd1), as.numeric(input$stmn), 
-                        as.numeric(input$stmalpha))
+    STMdscore = d.single.t(as.numeric(input$STMmean1),
+                          as.numeric(input$STMmean2), as.numeric(input$STMsd),
+                          as.numeric(input$STMn), 
+                        as.numeric(input$STMalpha))
     
-    paste("d = ", apa(stmdscore$d, 3),
-          ", ", (1-as.numeric(input$stmalpha))*100, "%[", apa(stmdscore$dlow, 3), 
-          " - ", apa(stmdscore$dhigh, 3), "]", sep = "")
+    HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+               "<b>Effect Size:</b> ", apa_d(STMdscore, input$STMalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(STMdscore$dlow, STMdscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Sample Summary Statistics:</b> ", apa_Z(STMdscore, input$STMalpha), "<p/>", #means
+               "<b>Test Statistic:</b> ", apa_stat(STMdscore, "t"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(STMdscore$p, input$STMalpha), #test interpretation
+               sep = ""))
     
   }) #close STM
   
   ####Single Sample T From T####
-  output$STTMsummary <- renderText({ 
+  output$STTsummary <- renderText({ 
     
     ##check for N
-    if (input$STTdfstuff != "") {
-      n = as.numeric(input$STTdfstuff) + 1
-    } else { n = as.numeric(input$STTnstuff) }
+    if (input$STTdf != "") {
+      n = as.numeric(input$STTdf) + 1
+    } else { n = as.numeric(input$STTn) }
     
-    ##check for SE
-    if (input$STTsediff != "" | !is.null(input$STTsediff)) {
-      sddiff = as.numeric(input$STTsediff) * sqrt(n)
-    } else { sddiff = as.numeric(input$STTsddiff) }
+    STTdscore = d.single.t.t(as.numeric(input$STTt),
+                        n, as.numeric(input$STTalpha))
     
-    sttdscore = d.single.t.t(as.numeric(input$sttt),
-                        as.numeric(input$sttn), n, as.numeric(input$sttalpha))
-    
-    paste("d = ", apa(sttdscore$d, 3),
-          ", ", (1-as.numeric(input$sttalpha))*100, "%[", apa(sttdscore$dlow, 3), 
-          " - ", apa(sttdscore$dhigh, 3), "]", sep = "")
+    HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+               "<b>Effect Size:</b> ", apa_d(STTdscore, input$STTalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(STTdscore$dlow, STTdscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(STTdscore, "t"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(STTdscore$p, input$STTalpha), #test interpretation
+               sep = ""))
     
   }) #close STT
   
@@ -157,21 +163,29 @@ server <- function(input, output) {
     
     ##check for N
     if (input$DTAMdf != "") {
-      dtamn = as.numeric(input$DTAMdf) + 1
+      n = as.numeric(input$DTAMdf) + 1
     } else { n = as.numeric(input$DTAMn) }
+  
+    ##check for SE1
+    if (input$DTAMse1 != "") {
+      sd1 = as.numeric(input$DTAMse1) * sqrt(n)
+    } else { sd1 = as.numeric(input$DTAMsd1) }
     
-    ##check for sediff
-    if (input$DTAMsediff != "" | !is.null(input$DTAMsediff)) {
-      sddiff = as.numeric(input$DTAMsediff) * sqrt(n)
-    } else { sddiff = as.numeric(input$DTAMsddiff) }
+    ##check for SE2
+    if (input$DTAMse2 != "") {
+      sd2 = as.numeric(input$DTAMse2) * sqrt(n)
+    } else { sd2 = as.numeric(input$DTAMsd2) }  
     
-    dscore = d.dep.t.avg(as.numeric(input$DTAMm1), as.numeric(input$DTAMm2),
-                          as.numeric(input$DTAMsd1), as.numeric(input$DTAMsd2),
-                         dtamn, as.numeric(input$DTAMalpha))
+    DTAMdscore = d.dep.t.avg(as.numeric(input$DTAMm1), as.numeric(input$DTAMm2),
+                          sd1, sd2,
+                         n, as.numeric(input$DTAMalpha))
     
-    paste("d = ", apa(dscore$d, 3),
-          ", ", (1-as.numeric(input$alpha))*100, "%[", apa(dscore$dlow, 3), 
-          " - ", apa(dscore$dhigh, 3), "]", sep = "")
+    HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
+               "<b>Effect Size:</b> ", apa_d(DTAMdscore, input$DTAMalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(DTAMdscore$dlow, DTAMdscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Group 1 Summary Statistics:</b> ", apa_M(DTAMdscore, 1, input$DTAMalpha), "<p/>", #means
+               "<b>Group 2 Summary Statistics:</b> ", apa_M(DTAMdscore, 2, input$DTAMalpha), "<p/>", #means
+               sep = ""))
     
   }) #close DTDM
 
@@ -291,40 +305,40 @@ output$ITMsummary <- renderText({
  ####independent t from t
   output$ITTsummary <- renderText({ 
     
-    dscore = d.ind.t.t(as.numeric(input$ITTt1),
+    ITTdscore = d.ind.t.t(as.numeric(input$ITTt1),
                        as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
     
     HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
-               "<b>Effect Size:</b> ", apa_d(dscore, input$ITTalpha), "<p/>", #effect size
-               "<b>Interpretation:</b> ", checkzero(dscore$dlow, dscore$dhigh), "<p/>", #effect size interpretation
-               "<b>Summary Statistics:</b> ", apa_M(dscore, 1, input$ITTalpha), "<p/>", #means
-               "<b>Test Statistic:</b> ", apa_stat(dscore, "t"), "<p/>", #test stats
-               "<b>Interpretation:</b> ", checkp(dscore$p, input$ITTalpha), #test interpretation
+               "<b>Effect Size:</b> ", apa_d(ITTdscore, input$ITTalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(ITTdscore$dlow, ITTdscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(ITTdscore, "t"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(ITTdscore$p, input$ITTalpha), #test interpretation
                sep = ""))
+    
   }) #close ITT
   
  ####independent t delta####
 output$ITDsummary <- renderText({ 
-  
+
   ##check for SE1
   if (input$ITDse1 != "") {
     sd1 = as.numeric(input$ITDse1) * sqrt(input$ITDn)
   } else { sd1 = as.numeric(input$ITDsd1) }
   
   ##check for SE2
-  if (input$se2 != "") {
-    sd2 = as.numeric(input$ITDse2) * sqrt(input$ITDn2)
+  if (input$ITDse2 != "") {
+    sd2 = as.numeric(input$ITDse2) * sqrt(as.numeric(input$ITDn2))
   } else { sd2 = as.numeric(input$ITDsd2) }
   
-  dscore = delta.ind.t(as.numeric(input$ITDmean1), as.numeric(input$ITDmean2),
+  ITDdscore = delta.ind.t(as.numeric(input$ITDmean1), as.numeric(input$ITDmean2),
                    sd1, sd2, 
                    as.numeric(input$ITDn), as.numeric(input$ITDn2), as.numeric(input$ITDalpha))
   
   HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
              "<b>Effect Size:</b> ", apa_d(ITDdscore, input$ITDalpha), "<p/>", #effect size
              "<b>Interpretation:</b> ", checkzero(ITDdscore$dlow, ITDdscore$dhigh), "<p/>", #effect size interpretation
-             "<b>Summary Statistics:</b> ", apa_M(ITDdscore, 1, input$ITDalpha), "<p/>", #means
-             "<b>Summary Statistics:</b> ", apa_M(ITDdscore, 2, input$ITDalpha), "<p/>", 
+             "<b>Control Group Summary Statistics:</b> ", apa_M(ITDdscore, 1, input$ITDalpha), "<p/>", #means
+             "<b>Experimental Group Summary Statistics:</b> ", apa_M(ITDdscore, 2, input$ITDalpha), "<p/>", 
              "<b>Test Statistic:</b> ", apa_stat(ITDdscore, "t"), "<p/>", #test stats
              "<b>Interpretation:</b> ", checkp(ITDdscore$p, input$ITDalpha), #test interpretation
              sep = ""))
@@ -343,7 +357,7 @@ output$ITGsummary = renderText({
     sd2 = as.numeric(input$ITGse2) * sqrt(input$ITGn2)
   } else { sd2 = as.numeric(input$ITGsd2) }
   
-  dscore = g.ind.t(as.numeric(input$ITGmean1), as.numeric(input$ITGmean2),
+  ITGdscore = g.ind.t(as.numeric(input$ITGmean1), as.numeric(input$ITGmean2),
                    sd1, sd2, 
                    as.numeric(input$ITGn), as.numeric(input$ITGn2), 
                    as.numeric(input$ITGalpha))
@@ -362,16 +376,14 @@ output$ITGsummary = renderText({
  ####independent proportions####
 output$IPsummary = renderText({
   
-  dscore = d.prop(as.numeric(input$IPprop1), as.numeric(input$IPprop2),
+  IPdscore = d.prop(as.numeric(input$IPprop1), as.numeric(input$IPprop2),
                   as.numeric(input$IPn), as.numeric(input$IPn2),
                   as.numeric(input$IPalpha))
   
   HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
              "<b>Effect Size:</b> ", apa_d(IPdscore, input$IPalpha), "<p/>", #effect size
              "<b>Interpretation:</b> ", checkzero(IPdscore$dlow, IPdscore$dhigh), "<p/>", #effect size interpretation
-             "<b>Summary Statistics:</b> ", apa_M(IPdscore, 1, input$IPalpha), "<p/>", #means
-             "<b>Summary Statistics:</b> ", apa_M(IPdscore, 2, input$IPalpha), "<p/>", 
-             "<b>Test Statistic:</b> ", apa_stat(IPdscore, "t"), "<p/>", #test stats
+             "<b>Test Statistic:</b> ", apa_stat(IPdscore, "z"), "<p/>", #test stats
              "<b>Interpretation:</b> ", checkp(IPdscore$p, input$IPalpha), #test interpretation
              sep = ""))
   
