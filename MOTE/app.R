@@ -305,40 +305,40 @@ output$ITMsummary <- renderText({
  ####independent t from t
   output$ITTsummary <- renderText({ 
     
-    dscore = d.ind.t.t(as.numeric(input$ITTt1),
+    ITTdscore = d.ind.t.t(as.numeric(input$ITTt1),
                        as.numeric(input$ITTn1), as.numeric(input$ITTn2), as.numeric(input$ITTalpha))
     
     HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
-               "<b>Effect Size:</b> ", apa_d(dscore, input$ITTalpha), "<p/>", #effect size
-               "<b>Interpretation:</b> ", checkzero(dscore$dlow, dscore$dhigh), "<p/>", #effect size interpretation
-               "<b>Summary Statistics:</b> ", apa_M(dscore, 1, input$ITTalpha), "<p/>", #means
-               "<b>Test Statistic:</b> ", apa_stat(dscore, "t"), "<p/>", #test stats
-               "<b>Interpretation:</b> ", checkp(dscore$p, input$ITTalpha), #test interpretation
+               "<b>Effect Size:</b> ", apa_d(ITTdscore, input$ITTalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(ITTdscore$dlow, ITTdscore$dhigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(ITTdscore, "t"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(ITTdscore$p, input$ITTalpha), #test interpretation
                sep = ""))
+    
   }) #close ITT
   
  ####independent t delta####
 output$ITDsummary <- renderText({ 
-  
+
   ##check for SE1
   if (input$ITDse1 != "") {
     sd1 = as.numeric(input$ITDse1) * sqrt(input$ITDn)
   } else { sd1 = as.numeric(input$ITDsd1) }
   
   ##check for SE2
-  if (input$se2 != "") {
-    sd2 = as.numeric(input$ITDse2) * sqrt(input$ITDn2)
+  if (input$ITDse2 != "") {
+    sd2 = as.numeric(input$ITDse2) * sqrt(as.numeric(input$ITDn2))
   } else { sd2 = as.numeric(input$ITDsd2) }
   
-  dscore = delta.ind.t(as.numeric(input$ITDmean1), as.numeric(input$ITDmean2),
+  ITDdscore = delta.ind.t(as.numeric(input$ITDmean1), as.numeric(input$ITDmean2),
                    sd1, sd2, 
                    as.numeric(input$ITDn), as.numeric(input$ITDn2), as.numeric(input$ITDalpha))
   
   HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
              "<b>Effect Size:</b> ", apa_d(ITDdscore, input$ITDalpha), "<p/>", #effect size
              "<b>Interpretation:</b> ", checkzero(ITDdscore$dlow, ITDdscore$dhigh), "<p/>", #effect size interpretation
-             "<b>Summary Statistics:</b> ", apa_M(ITDdscore, 1, input$ITDalpha), "<p/>", #means
-             "<b>Summary Statistics:</b> ", apa_M(ITDdscore, 2, input$ITDalpha), "<p/>", 
+             "<b>Control Group Summary Statistics:</b> ", apa_M(ITDdscore, 1, input$ITDalpha), "<p/>", #means
+             "<b>Experimental Group Summary Statistics:</b> ", apa_M(ITDdscore, 2, input$ITDalpha), "<p/>", 
              "<b>Test Statistic:</b> ", apa_stat(ITDdscore, "t"), "<p/>", #test stats
              "<b>Interpretation:</b> ", checkp(ITDdscore$p, input$ITDalpha), #test interpretation
              sep = ""))
@@ -357,7 +357,7 @@ output$ITGsummary = renderText({
     sd2 = as.numeric(input$ITGse2) * sqrt(input$ITGn2)
   } else { sd2 = as.numeric(input$ITGsd2) }
   
-  dscore = g.ind.t(as.numeric(input$ITGmean1), as.numeric(input$ITGmean2),
+  ITGdscore = g.ind.t(as.numeric(input$ITGmean1), as.numeric(input$ITGmean2),
                    sd1, sd2, 
                    as.numeric(input$ITGn), as.numeric(input$ITGn2), 
                    as.numeric(input$ITGalpha))
@@ -383,8 +383,6 @@ output$IPsummary = renderText({
   HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
              "<b>Effect Size:</b> ", apa_d(IPdscore, input$IPalpha), "<p/>", #effect size
              "<b>Interpretation:</b> ", checkzero(IPdscore$dlow, IPdscore$dhigh), "<p/>", #effect size interpretation
-             "<b>Summary Statistics:</b> ", apa_M(IPdscore, 1, input$IPalpha), "<p/>", #means
-             "<b>Summary Statistics:</b> ", apa_M(IPdscore, 2, input$IPalpha), "<p/>", 
              "<b>Test Statistic:</b> ", apa_stat(IPdscore, "z"), "<p/>", #test stats
              "<b>Interpretation:</b> ", checkp(IPdscore$p, input$IPalpha), #test interpretation
              sep = ""))
