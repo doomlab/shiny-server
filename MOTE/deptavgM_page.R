@@ -10,28 +10,28 @@ fluidRow(
              strong("Dependent t Averages - Means")),
 
          ##put input boxes here
-         textInput("dtammean1", "Mean 1:", width = 60), 
-         textInput("dtammean2", "Mean 2:", width = 60), 
+         textInput("DTAMm1", "Mean 1:", width = 60), 
+         textInput("DTAMm2", "Mean 2:", width = 60), 
          
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("dtamsd1", "SD 1:", width = 60)), 
+             textInput("DTAMsd1", "SD 1:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("dtamse1", "SE 1:", width = 60)),
-         
-         br(),
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("dtamsd2", "SD 2:", width = 60)), 
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("dtamse2", "SE 1:", width = 60)), 
+             textInput("DTAMse1", "SE 1:", width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("dtamn", "N:", width = 60)), 
+             textInput("DTAMsd2", "SD 2:", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("dtamdf", "df:", width = 60)), 
+             textInput("DTAMse2", "SE 1:", width = 60)), 
          
          br(),
-         textInput("dtamalpha", "Alpha:", width = 60, placeholder = ".05"),
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             textInput("DTAMn", "N:", width = 60)), 
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             textInput("DTAMdf", "df:", width = 60)), 
+         
+         br(),
+         textInput("DTAMalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -39,7 +39,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", textOutput("DTAMsummary")),
+           tabPanel("Summary", htmlOutput("DTAMsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                                annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

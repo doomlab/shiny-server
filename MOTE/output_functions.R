@@ -18,6 +18,16 @@ apa_d = function(saved.d, alpha, digits = 2) {
         ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$dlow, digits), 
         ", ", apa(saved.d$dhigh, digits), "]", sep = "") 
   return(output)}
+
+
+apa_Z = function(saved.d, alpha, digits = 2) { 
+    output = paste("M = ", apa(saved.d$m, digits), #report mean
+                   ", SD = ", apa(saved.d$sd, digits), #report sd
+                   ", SE = ", apa(saved.d$se, digits), #report se
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$Mlow, 2), #report low
+                   ", ", apa(saved.d$Mhigh, digits), "]", sep = "") #report high
+    return(output)}
+
 apa_M = function(saved.d, meanno = 1, alpha, digits = 2) { 
   if (meanno == 1) {
     output = paste("M = ", apa(saved.d$M1, digits), #report mean
@@ -33,7 +43,6 @@ apa_M = function(saved.d, meanno = 1, alpha, digits = 2) {
           ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$M2low, 2), #report low
           ", ", apa(saved.d$M2high, digits), "]", sep = "") #report high
     return(output)}
-}
 
 apa_diff = function(saved.d, alpha, digits = 2) { 
     output = paste("Mdiff = ", apa(saved.d$mdiff, digits), #report mean
@@ -63,4 +72,6 @@ apa_stat = function(saved.d, stat, digits = 2) {
                    " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")
   }
   return(output)
+}
+
 }
