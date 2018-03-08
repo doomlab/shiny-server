@@ -6,6 +6,8 @@ cohend = "This effect size is traditionally interpreted as the standardized diff
 eta = "This effect size is traditionally interpreted as the percent of variance accounted for in the DV by the IV(s)."
 
 checkp = function(p, alpha) { 
+  p = as.numeric(p)
+  alpha = as.numeric(alpha)
   if (p <= alpha) { output = significant } else { output = not_sig }
   return(output)}
 checkzero = function(low, high){ 
@@ -43,6 +45,7 @@ apa_M = function(saved.d, meanno = 1, alpha, digits = 2) {
           ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$M2low, 2), #report low
           ", ", apa(saved.d$M2high, digits), "]", sep = "") #report high
     return(output)}
+}
 
 apa_diff = function(saved.d, alpha, digits = 2) { 
     output = paste("Mdiff = ", apa(saved.d$mdiff, digits), #report mean
@@ -53,25 +56,9 @@ apa_diff = function(saved.d, alpha, digits = 2) {
     return(output)}
   
 apa_stat = function(saved.d, stat, digits = 2) {
-  
   if (saved.d$p < .001) { pvalue = "p < .001"} else { pvalue = paste("p = ", apa(saved.d$p, 3, F), sep = "") }
-  
-  if (stat == "Z") {
-    output = paste(stat, " = ", apa(saved.d$z, digits), ", ", pvalue, sep = "")
-  }
-  if (stat == "t") {
-    output = paste(stat, "(", saved.d$df, ")", 
-                   " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")
-  }
-  if (stat == "F") {
-    output = paste(stat, "(", saved.d$dfm, ", ", saved.d$dfe, ")", 
-                   " = ", apa(saved.d$F, digits), ", ", pvalue, sep = "")
-  }
-  if (stat == "X2") {
-    output = paste(stat, "(", saved.d$df, ")", 
-                   " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")
-  }
-  return(output)
-}
-
-}
+  if (stat == "Z") { output = paste(stat, " = ", apa(saved.d$z, digits), ", ", pvalue, sep = "")}
+  if (stat == "t") { output = paste(stat, "(", saved.d$df, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
+  if (stat == "F") { output = paste(stat, "(", saved.d$dfm, ", ", saved.d$dfe, ")", " = ", apa(saved.d$F, digits), ", ", pvalue, sep = "")}
+  if (stat == "X2") { output = paste(stat, "(", saved.d$df, ")", " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")}
+  return(output)}

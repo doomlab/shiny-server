@@ -383,7 +383,7 @@ output$IPsummary = renderText({
   HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
              "<b>Effect Size:</b> ", apa_d(IPdscore, input$IPalpha), "<p/>", #effect size
              "<b>Interpretation:</b> ", checkzero(IPdscore$dlow, IPdscore$dhigh), "<p/>", #effect size interpretation
-             "<b>Test Statistic:</b> ", apa_stat(IPdscore, "z"), "<p/>", #test stats
+             "<b>Test Statistic:</b> ", apa_stat(IPdscore, "Z"), "<p/>", #test stats
              "<b>Interpretation:</b> ", checkp(IPdscore$p, input$IPalpha), #test interpretation
              sep = ""))
   
