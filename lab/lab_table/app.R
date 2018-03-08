@@ -24,6 +24,7 @@ labtable$Stimuli.List = gsub(",\\s\\s$", "", labtable$Stimuli.List, ignore.case 
 #  'e2', '2. Multi-select', choices = state.name, multiple = TRUE),
 
 ui = fluidPage(
+  sidebarLayout()
   titlePanel("LAB Table List"),
   DTOutput('tbl'))
 
