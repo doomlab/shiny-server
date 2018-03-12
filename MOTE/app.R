@@ -48,8 +48,10 @@ ui <- fluidPage(
                           tabPanel("Eta"),
                           tabPanel("Partial Eta"),
                           tabPanel("Generalized Eta"),
-                          tabPanel("Omega"),
-                          tabPanel("Partial Omega"),
+                          tabPanel("Omega",
+                                   source("omega_page.R")$value),
+                          tabPanel("Partial Omega",
+                                   source("partialomega_page.R")$value),
                           tabPanel("Epsilon"),
                           tabPanel("Chi-square V"),
                           tabPanel("Chi-square Odds")
