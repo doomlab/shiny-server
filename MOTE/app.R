@@ -5,6 +5,7 @@
 ####libraries####
 library(shiny)
 library(MOTE)
+library(knitr)
 source("output_functions.R")
 
 ####user interface####
@@ -48,8 +49,8 @@ ui <- fluidPage(
                           tabPanel("Eta",
                                    source("eta_page.R")$value),
                           tabPanel("Partial Eta"),
-                          tabPanel("Generalized Eta",
-                                   source("etaf_page.R")$value),
+                          tabPanel("Generalized Eta"),
+                                   #source("etaf_page.R")$value), #not working so turned off temp
                           tabPanel("Omega",
                                    source("omega_page.R")$value),
                           tabPanel("Partial Omega",

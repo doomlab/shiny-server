@@ -62,3 +62,22 @@ apa_stat = function(saved.d, stat, digits = 2) {
   if (stat == "F") { output = paste(stat, "(", saved.d$dfm, ", ", saved.d$dfe, ")", " = ", apa(saved.d$F, digits), ", ", pvalue, sep = "")}
   if (stat == "X2") { output = paste(stat, "(", saved.d$df, ")", " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")}
   return(output)}
+
+help_console <- function(topic, format=c("text", "html", "latex", "Rd"),
+                         lines=NULL, before=NULL, after=NULL) {  
+  format=match.arg(format)
+  if (!is.character(topic)) topic <- deparse(substitute(topic))
+  helpfile = utils:::.getHelpFile(help(topic))
+  
+  hs <- capture.output(switch(format, 
+                              text=tools:::Rd2txt(helpfile),
+                              html=tools:::Rd2HTML(helpfile),
+                              latex=tools:::Rd2latex(helpfile),
+                              Rd=tools:::prepare_Rd(helpfile)
+  )
+  )
+  if(!is.null(lines)) hs <- hs[lines]
+  hs <- c(before, hs, after)
+  cat(hs, sep="\n")
+  invisible(hs)
+}

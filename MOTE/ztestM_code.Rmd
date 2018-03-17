@@ -1,0 +1,25 @@
+---
+title: "ztestM_code"
+author: "Erin M. Buchanan"
+date: "3/17/2018"
+output: 
+  html_document:
+        self_contained: no
+---
+
+The formula for d is: $$d = \frac{M - \mu}{\sigma}$$
+
+The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
+
+The code to use MOTE in R is: 
+
+```{r help, echo=FALSE, include = FALSE}
+source("output_functions.R")
+library(knitr)
+library(MOTE)
+saved = help_console(d.z.mean, "html", before = "", after = "")[-c(1:8)]
+```
+
+```{r printout, echo=FALSE, results = 'asis'}
+paste(saved[-c(1:8)], collapse = " ")
+```
