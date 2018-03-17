@@ -21,5 +21,7 @@ saved = help_console(d.z.mean, "html", before = "", after = "")[-c(1:8)]
 ```
 
 ```{r printout, echo=FALSE, results = 'asis'}
-paste(saved[-c(1:8)], collapse = " ")
+temp = paste(saved[-c(1:8)], collapse = " ")
 ```
+
+`r temp`
