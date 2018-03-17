@@ -17,11 +17,7 @@ The code to use MOTE in R is:
 source("output_functions.R")
 library(knitr)
 library(MOTE)
-saved = help_console(d.z.mean, "html", before = "", after = "")[-c(1:8)]
+saved = help_console(d.z.mean, "html", before = "", after = "")
 ```
 
-```{r printout, echo=FALSE, results = 'asis'}
-temp = paste(saved[-c(1:8)], collapse = " ")
-```
-
-`r temp`
+`r paste(saved[-c(1:8)], collapse = " ")`
