@@ -7,9 +7,9 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = t*\sqrt(N)$$
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
  
-The formula for t is: $$t = \frac{M - \mu}{\SE_M}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
  
 The code to use MOTE in R is: 
  

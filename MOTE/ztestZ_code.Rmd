@@ -7,7 +7,7 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = Z*\sqrt(N)$$
+The formula for d is: $$d = \frac{Z}{\sqrt(N)}$$
  
 The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
  

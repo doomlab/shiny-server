@@ -10,7 +10,7 @@ fluidRow(
              strong("Single Sample t - t")),
          
          ##put input boxes here
-         textInput("STTt", "T:", width = 60),
+         textInput("STTt", "t:", width = 60),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
@@ -28,8 +28,8 @@ fluidRow(
   column(8, 
          tabsetPanel(
            tabPanel("Summary", htmlOutput("STTsummary")),
-           tabPanel("Code", helpText("Include the code, and 
-                                               annotation here about what is what.")),
+           tabPanel("Code", withMathJax(), 
+                    HTML(markdown::markdownToHTML(knit("singletT_code.Rmd", quiet = T)))),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))

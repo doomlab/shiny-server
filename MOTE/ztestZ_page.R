@@ -19,6 +19,14 @@ fluidRow(
              strong("N:"), 
              textInput("ZZn", NULL, width = 60)),
          
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             strong("Population SD:"),
+             textInput("ZZsd1", NULL, width = 60)), 
+         
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             strong("Population SE:"),
+             textInput("ZZse1", NULL, width = 60)),
+         
          br(),
          textInput("ZZalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
@@ -29,7 +37,8 @@ fluidRow(
   column(8, 
          tabsetPanel(
            tabPanel("Summary", htmlOutput("ZZsummary")),
-           tabPanel("Code", helpText("DO THE THING.")),
+           tabPanel("Code", withMathJax(), 
+                    HTML(markdown::markdownToHTML(knit("ztestZ_code.Rmd", quiet = T)))),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))

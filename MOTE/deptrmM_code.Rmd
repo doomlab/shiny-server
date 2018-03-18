@@ -7,9 +7,9 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = \frac{M - \mu}{SD}$$
+The formula for d is: $$d = \frac{M_1 - M_2}{\sqrt{(SD_1^2 + SD_2^2)  - (2*r*SD_1*SD_2)}} * \sqrt{2*(1-r)}$$
  
-The formula for t is: $$t = \frac{M - \mu}{SE}$$
+The t-test is not given in this example, as you do not have the information needed to calculate it. 
  
 The code to use MOTE in R is: 
  
@@ -17,7 +17,7 @@ The code to use MOTE in R is:
 source("output_functions.R")
 library(knitr)
 library(MOTE)
-saved = help_console(d.single.t, "html", before = "", after = "")
+saved = help_console(d.dep.t.rm, "html", before = "", after = "")
 ```
  
 `r paste(saved[-c(1:8)], collapse = " ")`

@@ -7,9 +7,9 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = \frac{M - \mu}{SD}$$
+The formula for d is: $$d = \frac{M_{control} - M_{exp}}{SD_{control}}$$
  
-The formula for t is: $$t = \frac{M - \mu}{SE}$$
+The formula for t is: $$t = \frac{M_{control} - M_{exp}}{SE_{pooled}}$$
  
 The code to use MOTE in R is: 
  
@@ -17,7 +17,7 @@ The code to use MOTE in R is:
 source("output_functions.R")
 library(knitr)
 library(MOTE)
-saved = help_console(d.single.t, "html", before = "", after = "")
+saved = help_console(delta.ind.t, "html", before = "", after = "")
 ```
  
 `r paste(saved[-c(1:8)], collapse = " ")`
