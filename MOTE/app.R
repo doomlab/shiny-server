@@ -54,6 +54,7 @@ ui <- fluidPage(
                                    #source("etaf_page.R")$value), #not working so turned off temp
                           tabPanel("Omega",
                                    source("omega_page.R")$value),
+                                  source("omegaf_page.R")$value),
                           tabPanel("Partial Omega",
                                    source("partialomega_page.R")$value),
                           tabPanel("Partial Omega - Repeated Measures",
