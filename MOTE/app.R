@@ -215,12 +215,11 @@ server <- function(input, output) {
     n = as.numeric(input$DTDMnstuff)
     
     ##check for sediff
-    if (input$DTDMsediff != "" | !is.null(input$DTDMsediff)) {
-      sddiff = as.numeric(input$DTDMsediff) * sqrt(n)
-    } else { sddiff = as.numeric(input$DTDMsddiff) }
+    if (input$DTDMsediff != "") { 
+      DTDMsddiff = as.numeric(input$DTDMsediff) * sqrt(n) } else { DTDMsddiff = as.numeric(input$DTDMsddiff) }
     
     DTDMdscore = d.dep.t.diff(mdiff = as.numeric(input$DTDMmeandiff),
-                          sddiff = as.numeric(input$DTDMsddiff), 
+                          sddiff = DTDMsddiff, 
                           n = n,
                           a = as.numeric(input$DTDMalpha))
     
@@ -294,7 +293,7 @@ output$ITMsummary <- renderText({
 
  ##check for SE1
   if (input$ITMse1 != "") {
-    sd1 = as.numeric(input$ITMse1) * sqrt(input$ITMn)
+    sd1 = as.numeric(input$ITMse1) * sqrt(as.numeric(input$ITMn))
   } else { sd1 = as.numeric(input$ITMsd1) }
   
   ##check for SE2
@@ -341,7 +340,7 @@ output$ITDsummary <- renderText({
 
   ##check for SE1
   if (input$ITDse1 != "") {
-    sd1 = as.numeric(input$ITDse1) * sqrt(input$ITDn)
+    sd1 = as.numeric(input$ITDse1) * sqrt(as.numeric(input$ITDn))
   } else { sd1 = as.numeric(input$ITDsd1) }
   
   ##check for SE2
@@ -368,7 +367,7 @@ output$ITGsummary = renderText({
   
   ##check for SE1
   if (input$ITGse1 != "") {
-    sd1 = as.numeric(input$ITGse1) * sqrt(input$ITGn)
+    sd1 = as.numeric(input$ITGse1) * sqrt(as.numeric(input$ITGn))
   } else { sd1 = as.numeric(input$ITGsd1) }
   
   ##check for SE2
