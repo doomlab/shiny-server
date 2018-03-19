@@ -1,6 +1,5 @@
 library(shiny)
 library(DT)
-library(MOTE)
 options(scipen = 999)
 
 doublewordtable = read.csv("../DoubleWordTab.csv")
