@@ -23,7 +23,7 @@ colnames(longtable)[3]="Type"
 #To change the years from being factors
 longtable$year = as.numeric(as.character(longtable$year))
 
-# Define UI for application that draws a histogram
+##define ui
 ui <- fluidPage(
   
   # Application title
@@ -57,13 +57,12 @@ ui <- fluidPage(
   ), #close sidebarpanel
 
 
-  # Show a plot of the generated distribution
   mainPanel(
     plotOutput("distPlot")
   ) #close main
 ) #close fluid
 
-# Define server logic required to draw a histogram
+# Define server logic 
 server <- function(input, output) {
   
   output$distPlot <- renderPlot({
