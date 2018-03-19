@@ -7,19 +7,29 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("Omega")),
+             strong("Omega Full - SS")),
          
          ##put input boxes here
-         textInput("OMdf", "df(Model):", width = 60),
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("df (model):"), 
+             textInput("omegaSSdfmod", NULL, width = 60)),
          
-         br(),
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("df (error):"), 
+             textInput("omegaSSdferr", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("MS (model):"), 
+             textInput("omegaSSmsmod", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("MS (error):"), 
+             textInput("omegaSSmserr", NULL, width = 60)),
+
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("OM_MSmod", "MS(model):", width = 60)), 
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("OM_MSerr", "MS(error):", width = 60)), 
-         br(),
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("OMn", "N:", width = 60)), 
+             textInput("omegaSSn", "N:", width = 60)), 
+         
+         textInput("omegaSSalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1

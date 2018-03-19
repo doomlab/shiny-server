@@ -7,14 +7,29 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("Eta")),
+             strong("Eta Full - SS")),
          
          ##put input boxes here
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("Eta_SSmod", "SS (Model):", width = 60)), 
-        br(),
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("Eta_SStot", "SS (Total):", width = 60)), 
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("df (model):"), 
+             textInput("etaSSdfmod", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("df (error):"), 
+             textInput("etaSSdferr", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (model):"), 
+             textInput("etaSSssmod", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (total):"), 
+             textInput("etaSSsstot", NULL, width = 60)),
+         
+         textInput("etaSSf", "F:", width = 60),
+         
+         textInput("etaSSalpah", "Alpha:", width = 60, placeholder = ".05"),
+         
          submitButton("Calculate")
          
   ), ## close column 1

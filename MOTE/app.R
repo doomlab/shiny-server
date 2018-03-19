@@ -46,19 +46,23 @@ ui <- fluidPage(
                navbarMenu("Variance Overlap",
                           tabPanel("d to r"),
                           tabPanel("r"),
-                          tabPanel("Eta",
-                                   source("eta_page.R")$value),
-                          tabPanel("Partial Eta"),
-                                  # source("eta.partial.SS.R")$value),
-                          tabPanel("Generalized Eta"),
-                                   #source("etaf_page.R")$value), #not working so turned off temp
-                          tabPanel("Omega",
-                                   source("omega_page.R")$value),
-                                  #source("omegaf_page.R")$value),
-                          tabPanel("Partial Omega",
-                                   source("partialomega_page.R")$value),
-                          tabPanel("Partial Omega - Repeated Measures",
-                                   source("bnpartialomega_page.R")$value),
+                          tabPanel("Eta Full - F",
+                                   source("etaF_page.R")$value),
+                          tabPanel("Eta Full - SS",
+                                   source("etaSS_page.R")$value),
+                          tabPanel("Eta Partial - SS",
+                                   source("etaSSpart_page.R")$value),
+                          tabPanel("GES Partial RM - SS",
+                                   source("gesSSrm_page.R")$value),
+                          tabPanel("GES Partial Mix - SS"),
+                          tabPanel("Omega Full - F",
+                                   source("omegaF_page.R")$value),
+                          tabPanel("Omega Full - SS",
+                                   source("omegaSS_page.R")$value),
+                          tabPanel("Omega Partial BN - SS",
+                                   source("omegaSSbn_page.R")$value),
+                          tabPanel("Omega Partial RM - SS",
+                                   source("omegaSSrm_page.R")$value),
                           tabPanel("Epsilon"),
                           tabPanel("Chi-square V"),
                           tabPanel("Chi-square Odds")
@@ -150,7 +154,7 @@ server <- function(input, output) {
     HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
                "<b>Effect Size:</b> ", apa_d(STMdscore, input$STMalpha), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(STMdscore$dlow, STMdscore$dhigh), "<p/>", #effect size interpretation
-               "<b>Sample Summary Statistics:</b> ", apa_Z(STMdscore, input$STMalpha), "<p/>", #means
+               "<b>Sample Summary Statistics:</b> ", apa_M(STMdscore, 0, input$STMalpha), "<p/>", #means
                "<b>Test Statistic:</b> ", apa_stat(STMdscore, "t"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(STMdscore$p, input$STMalpha), #test interpretation
                sep = ""))

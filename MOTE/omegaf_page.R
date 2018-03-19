@@ -1,5 +1,5 @@
 #fluid row
-fluidRox( #open fluid row
+fluidRow( #open fluid row
   
   #input
   column(4, 
@@ -7,25 +7,31 @@ fluidRox( #open fluid row
          
          #change title
          div(style="display: inline-black; vertical-align:top; text-align:center; width: 100%;",
-             strong("Omega from F")),
+             strong("Omega Full - F")),
          
          #input boxes here
-         textInput("Omegamod", "df (Model):", width = 60),
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("df (Model):"), 
+             textInput("omegaFdfmod", NULL, width = 60)),
          
-         br(),
-         div(style="display: inline-block;vertical-align:top; width: 100px",
-             textInput("OmegaF", "F (value):", width = 60)),
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("df (Error):"), 
+             textInput("omegaFdferr", NULL, width = 60)),
          
-         br(),
-         div(style="display: inline-block; vertical-align:top; width: 100px",
-             textInput("OmegaN", "N (value):", width = 60)),
-         submitButton("Calculate")) #close column
+         textInput("omegaFf", "F:", width = 60),
+         
+         textInput("omegaFn", "N:", width = 60),
+         
+         textInput("omegaFalpha", "Alpha:", width = 60, placeholder = ".05"),
+         
+         submitButton("Calculate")
+         ), #close column
   
   #output
   column(8,
          tabsetPanel(
            tabPanel("Summary", helpText("ETAsummary")),
-           tabPabel("Code", helpText("Include code and annotation here
+           tabPanel("Code", helpText("Include code and annotation here
                                      about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 

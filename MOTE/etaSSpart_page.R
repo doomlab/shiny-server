@@ -8,15 +8,29 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("Partial Eta")),
+             strong("Eta Partial - SS")),
          
          ##put input boxes here
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("df (model):"), 
+             textInput("etaSSpartdfmod", NULL, width = 60)),
          
-         br(),
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("PE_SSerr", "SS (Error):", width = 60)), 
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("PE_SSmod", "SS (Model):", width = 60)), 
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("df (error):"), 
+             textInput("etaSSpartdferr", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (model):"), 
+             textInput("etaSSpartssmod", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (error):"), 
+             textInput("etaSSpartsserr", NULL, width = 60)),
+         
+         textInput("etaSSpartf", "F:", width = 60),
+         
+         textInput("etaSSpartalpha", "Alpha:", width = 60, placeholder = ".05"),
+         
          submitButton("Calculate")
          
   ), ## close column 1
