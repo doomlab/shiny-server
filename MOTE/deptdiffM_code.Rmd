@@ -1,0 +1,23 @@
+---
+title: "singletM_code"
+author: "Erin M. Buchanan"
+date: "3/17/2018"
+output: 
+  html_document:
+        self_contained: no
+---
+ 
+The formula for d is: $$d = \frac{M_1 - M_2}{SD_{differences}}$$
+ 
+The formula for t is: $$t = \frac{M_1 - M_2}{SE_{differences}}$$
+ 
+The code to use MOTE in R is: 
+ 
+```{r help, echo=FALSE, include = FALSE}
+source("output_functions.R")
+library(knitr)
+library(MOTE)
+saved = help_console(d.dep.t.diff, "html", before = "", after = "")
+```
+ 
+`r paste(saved[-c(1:8)], collapse = " ")`

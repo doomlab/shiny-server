@@ -1,0 +1,23 @@
+---
+title: "singletM_code"
+author: "Erin M. Buchanan"
+date: "3/17/2018"
+output: 
+  html_document:
+        self_contained: no
+---
+ 
+The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
+ 
+The formula for t is: $$Z = \frac{P_1 - P_2}{SE}$$
+ 
+The code to use MOTE in R is: 
+ 
+```{r help, echo=FALSE, include = FALSE}
+source("output_functions.R")
+library(knitr)
+library(MOTE)
+saved = help_console(d.prop, "html", before = "", after = "")
+```
+ 
+`r paste(saved[-c(1:8)], collapse = " ")`

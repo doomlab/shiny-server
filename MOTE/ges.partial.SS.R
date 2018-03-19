@@ -1,31 +1,32 @@
+#Partial Eta
 ####create fluid row####
 fluidRow(
   
   #### put input area here ####
   column(4,
          style = "background-color: #E8E8E8",
-        
+         
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("Dependent t Differences - Means")),
+             strong("GES Partial")),
          
          ##put input boxes here
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("Mean Difference:"), 
-             textInput("DTDMmeandiff", NULL, width = 60)),
          
          br(),
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("DTDMsddiff", "SD Difference:", width = 60)), 
+             textInput("GESP_SSmod", "SS (Model):", width = 60)), 
          div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("DTDMsediff", "SE Difference:", width = 60)),
+             textInput("GESP_SSsub", "SS (Subject):", width = 60)), 
          
          br(),
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("DTDMnstuff", "N:", width = 60)), 
          
-         br(),
-         textInput("DTDMalpha", "Alpha:", width = 60, placeholder = ".05"),
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             textInput("GESP_SSmoderr", "SS (Model Error):", width = 60)), 
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             textInput("GESP_SSmod2err", "SS (Model 2 Error):", width = 60)), 
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             textInput("GESP_SSint", "SS (Interaction Error):", width = 60)), 
+         
          submitButton("Calculate")
          
   ), ## close column 1
@@ -33,14 +34,13 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", htmlOutput("DTDMsummary")),
-           tabPanel("Code", withMathJax(), 
-                    HTML(markdown::markdownToHTML(knit("deptdiffM_code.Rmd", quiet = T)))),
+           tabPanel("Summary", helpText("GESsummary")),
+           tabPanel("Code", helpText("Include the code, and 
+                                     annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))
-         ) ## close tabset panel
+           ) ## close tabset panel
          
-  ) ## close column
+         ) ## close column
   
-) ##close fluid row

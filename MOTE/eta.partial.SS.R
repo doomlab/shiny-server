@@ -1,3 +1,4 @@
+#Partial Eta
 ####create fluid row####
 fluidRow(
   
@@ -7,20 +8,15 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("Independent t - t")),
+             strong("Partial Eta")),
          
          ##put input boxes here
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("t:"), 
-             textInput("ITTt1", NULL, width = 60)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("ITTn1", "N 1:", width = 60)), 
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("ITTn2", "N 2:", width = 60)), 
          
          br(),
-         textInput("ITTalpha", "Alpha:", width = 60, placeholder = ".05"),
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             textInput("PE_SSerr", "SS (Error):", width = 60)), 
+         div(style="display: inline-block;vertical-align:top; width: 100px;",
+             textInput("PE_SSmod", "SS (Model):", width = 60)), 
          submitButton("Calculate")
          
   ), ## close column 1
@@ -28,14 +24,14 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", htmlOutput("ITTsummary")),
-           tabPanel("Code", withMathJax(), 
-                    HTML(markdown::markdownToHTML(knit("indtT_code.Rmd", quiet = T)))),
+           tabPanel("Summary", helpText("PEsummary")),
+           tabPanel("Code", helpText("Include the code, and 
+                                     annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))
-         ) ## close tabset panel
+           ) ## close tabset panel
          
-  ) ## close column
+         ) ## close column
   
 ) ##close fluid row

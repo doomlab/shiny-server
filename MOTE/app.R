@@ -5,6 +5,7 @@
 ####libraries####
 library(shiny)
 library(MOTE)
+library(knitr)
 source("output_functions.R")
 
 ####user interface####
@@ -48,8 +49,8 @@ ui <- fluidPage(
                           tabPanel("Eta",
                                    source("eta_page.R")$value),
                           tabPanel("Partial Eta"),
-                          tabPanel("Generalized Eta",
-                                   source("etaf_page.R")$value),
+                          tabPanel("Generalized Eta"),
+                                   #source("etaf_page.R")$value), #not working so turned off temp
                           tabPanel("Omega",
                                    source("omega_page.R")$value),
                                   source("omegaf_page.R")$value),
@@ -105,8 +106,18 @@ server <- function(input, output) {
   ####Z test from Z####
   output$ZZsummary <- renderText({ 
     
-    ZZdscore = d.z.z(as.numeric(input$ZZz), as.numeric(input$ZZn),
-                     as.numeric(input$ZZalpha))
+    ##check for N
+    n = as.numeric(input$ZZn)
+    
+    ##check for SE
+    if (input$ZZse1 != "") {
+      sd1 = as.numeric(input$ZZse1) * sqrt(n)
+    } else { sd1 = as.numeric(input$ZZsd1) }
+    
+    ZZdscore = d.z.z(z = as.numeric(input$ZZz), 
+                     sig = sd1, 
+                     n = n,
+                     a = as.numeric(input$ZZalpha))
     
     HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
                "<b>Effect Size:</b> ", apa_d(ZZdscore, input$ZZalpha), "<p/>", #effect size
@@ -196,7 +207,7 @@ server <- function(input, output) {
     
   }) #close DTDM
 
- ####dependent t with difference score standard deviation####
+  ####dependent t with difference score standard deviation####
   output$DTDMsummary <- renderText({ 
     
     ##check for N
@@ -222,7 +233,7 @@ server <- function(input, output) {
     
   }) #close d.dep.t.diffAPA
   
-####dependent t from t####
+  ####dependent t from t####
 output$DTTsummary <- renderText({ 
   
   ##check for N
@@ -242,7 +253,7 @@ output$DTTsummary <- renderText({
   
 }) ##close dependent t from t  
 
-####dept RM####
+  ####dept RM####
 output$DTRMsummary <- renderText({ 
   
   ##check for N
@@ -277,7 +288,7 @@ output$DTRMsummary <- renderText({
   
 }) #close DTRM
 
-####independent t from means####
+  ####independent t from means####
 output$ITMsummary <- renderText({ 
 
  ##check for SE1
@@ -324,7 +335,7 @@ output$ITMsummary <- renderText({
     
   }) #close ITT
   
- ####independent t delta####
+  ####independent t delta####
 output$ITDsummary <- renderText({ 
 
   ##check for SE1
@@ -351,7 +362,7 @@ output$ITDsummary <- renderText({
              sep = ""))
 }) #close ITD
 
- ####independent t g####
+  ####independent t g####
 output$ITGsummary = renderText({
   
   ##check for SE1
@@ -380,7 +391,7 @@ output$ITGsummary = renderText({
   
 }) #close ITG
 
- ####independent proportions####
+  ####independent proportions####
 output$IPsummary = renderText({
   
   IPdscore = d.prop(as.numeric(input$IPprop1), as.numeric(input$IPprop2),
