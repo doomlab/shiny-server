@@ -48,7 +48,8 @@ ui <- fluidPage(
                           tabPanel("r"),
                           tabPanel("Eta",
                                    source("eta_page.R")$value),
-                          tabPanel("Partial Eta"),
+                          tabPanel("Partial Eta",
+                                   source("eta.partial.SS.R")$value),
                           tabPanel("Generalized Eta"),
                                    #source("etaf_page.R")$value), #not working so turned off temp
                           tabPanel("Omega",
