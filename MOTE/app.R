@@ -46,17 +46,23 @@ ui <- fluidPage(
                navbarMenu("Variance Overlap",
                           tabPanel("d to r"),
                           tabPanel("r"),
-                          tabPanel("Eta",
-                                   source("eta_page.R")$value),
-                          tabPanel("Partial Eta"),
-                          tabPanel("Generalized Eta"),
-                                   #source("etaf_page.R")$value), #not working so turned off temp
-                          tabPanel("Omega",
-                                   source("omega_page.R")$value),
-                          tabPanel("Partial Omega",
-                                   source("partialomega_page.R")$value),
-                          tabPanel("Partial Omega - Repeated Measures",
-                                   source("bnpartialomega_page.R")$value),
+                          tabPanel("Eta Full - F",
+                                   source("etaF_page.R")$value),
+                          tabPanel("Eta Full - SS",
+                                   source("etaSS_page.R")$value),
+                          tabPanel("Eta Partial - SS",
+                                   source("etaSSpart_page.R")$value),
+                          tabPanel("GES Partial RM - SS",
+                                   source("gesSSrm_page.R")$value),
+                          tabPanel("GES Partial Mix - SS"),
+                          tabPanel("Omega Full - F",
+                                   source("omegaF_page.R")$value),
+                          tabPanel("Omega Full - SS",
+                                   source("omegaSS_page.R")$value),
+                          tabPanel("Omega Partial BN - SS",
+                                   source("omegaSSbn_page.R")$value),
+                          tabPanel("Omega Partial RM - SS",
+                                   source("omegaSSrm_page.R")$value),
                           tabPanel("Epsilon"),
                           tabPanel("Chi-square V"),
                           tabPanel("Chi-square Odds")
@@ -148,7 +154,7 @@ server <- function(input, output) {
     HTML(paste("<b>Definition:</b> ", cohend, "<p/>", 
                "<b>Effect Size:</b> ", apa_d(STMdscore, input$STMalpha), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(STMdscore$dlow, STMdscore$dhigh), "<p/>", #effect size interpretation
-               "<b>Sample Summary Statistics:</b> ", apa_Z(STMdscore, input$STMalpha), "<p/>", #means
+               "<b>Sample Summary Statistics:</b> ", apa_M(STMdscore, 0, input$STMalpha), "<p/>", #means
                "<b>Test Statistic:</b> ", apa_stat(STMdscore, "t"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(STMdscore$p, input$STMalpha), #test interpretation
                sep = ""))
@@ -213,12 +219,11 @@ server <- function(input, output) {
     n = as.numeric(input$DTDMnstuff)
     
     ##check for sediff
-    if (input$DTDMsediff != "" | !is.null(input$DTDMsediff)) {
-      sddiff = as.numeric(input$DTDMsediff) * sqrt(n)
-    } else { sddiff = as.numeric(input$DTDMsddiff) }
+    if (input$DTDMsediff != "") { 
+      DTDMsddiff = as.numeric(input$DTDMsediff) * sqrt(n) } else { DTDMsddiff = as.numeric(input$DTDMsddiff) }
     
     DTDMdscore = d.dep.t.diff(mdiff = as.numeric(input$DTDMmeandiff),
-                          sddiff = as.numeric(input$DTDMsddiff), 
+                          sddiff = DTDMsddiff, 
                           n = n,
                           a = as.numeric(input$DTDMalpha))
     
@@ -292,7 +297,7 @@ output$ITMsummary <- renderText({
 
  ##check for SE1
   if (input$ITMse1 != "") {
-    sd1 = as.numeric(input$ITMse1) * sqrt(input$ITMn)
+    sd1 = as.numeric(input$ITMse1) * sqrt(as.numeric(input$ITMn))
   } else { sd1 = as.numeric(input$ITMsd1) }
   
   ##check for SE2
@@ -339,7 +344,7 @@ output$ITDsummary <- renderText({
 
   ##check for SE1
   if (input$ITDse1 != "") {
-    sd1 = as.numeric(input$ITDse1) * sqrt(input$ITDn)
+    sd1 = as.numeric(input$ITDse1) * sqrt(as.numeric(input$ITDn))
   } else { sd1 = as.numeric(input$ITDsd1) }
   
   ##check for SE2
@@ -366,7 +371,7 @@ output$ITGsummary = renderText({
   
   ##check for SE1
   if (input$ITGse1 != "") {
-    sd1 = as.numeric(input$ITGse1) * sqrt(input$ITGn)
+    sd1 = as.numeric(input$ITGse1) * sqrt(as.numeric(input$ITGn))
   } else { sd1 = as.numeric(input$ITGsd1) }
   
   ##check for SE2

@@ -21,16 +21,37 @@ apa_d = function(saved.d, alpha, digits = 2) {
         ", ", apa(saved.d$dhigh, digits), "]", sep = "") 
   return(output)}
 
+apa_var = function(saved.d, alpha, digits = 2, type = "eta") { 
+  
+  if (type == "eta") {
+    output = paste("eta = ", apa(saved.d$eta, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$elow, digits, leading = F), 
+                   ", ", apa(saved.d$ehigh, digits, leading = F), "]", sep = "") 
+  }
+  
+  if (type == "ges") {
+    output = paste("eta_g = ", apa(saved.d$ges, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$geslow, digits, leading = F), 
+                   ", ", apa(saved.d$geshigh, digits, leading = F), "]", sep = "") 
+  }
+  
+  if (type == "omega") {
+    output = paste("omega = ", apa(saved.d$omega, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$olow, digits, leading = F), 
+                   ", ", apa(saved.d$ehigh, digits, leading = F), "]", sep = "") 
+  }
+  
+  return(output)}
 
-apa_Z = function(saved.d, alpha, digits = 2) { 
+apa_M = function(saved.d, meanno = 1, alpha, digits = 2) { 
+  if (meanno == 0) {
     output = paste("M = ", apa(saved.d$m, digits), #report mean
                    ", SD = ", apa(saved.d$sd, digits), #report sd
                    ", SE = ", apa(saved.d$se, digits), #report se
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$Mlow, 2), #report low
                    ", ", apa(saved.d$Mhigh, digits), "]", sep = "") #report high
-    return(output)}
-
-apa_M = function(saved.d, meanno = 1, alpha, digits = 2) { 
+  }
+  
   if (meanno == 1) {
     output = paste("M = ", apa(saved.d$M1, digits), #report mean
           ", SD = ", apa(saved.d$sd1, digits), #report sd

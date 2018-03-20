@@ -31,9 +31,9 @@ fluidRow(
            tabPanel("Summary", htmlOutput("ITTsummary")),
            tabPanel("Code", withMathJax(), 
                     HTML(markdown::markdownToHTML(knit("indtT_code.Rmd", quiet = T)))),
-           tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
-                                 src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
-                                 frameborder=\"0\" allowfullscreen></iframe>"))
+           tabPanel("Help", HTML("<iframe width=\"560\" height=\"315\" 
+                                 src=\"https://www.youtube.com/embed/kH3UOoFh9Ng\" 
+                                 frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>"))
          ) ## close tabset panel
          
   ) ## close column
