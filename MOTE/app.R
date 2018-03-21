@@ -410,7 +410,40 @@ output$IPsummary = renderText({
              sep = ""))
   
 }) #close IP
-
+  
+  ####eta full####
+  output$Etasummary = renderText({
+    
+    etassscore = eta.full.SS(as.numeric(input$etaSSdfmod), as.numeric(input$etaSSdferr),
+                      as.numeric(input$etaSSssmod), as.numeric(input$etaSSsstot),
+                      as.numeric(input$etaSSf), as.numeric(input$etaSSalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
+               "<b>Effect Size:</b> ", apa_var(etassscore, input$etaSSalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(etassscore$elow, etasscore$ehigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(etassscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(etassscore$p, input$etaSSalpha), #test interpretation
+               sep = ""))
+    
+  }) #close eta.full
+  
+  ####partial omega rm####
+  output$Etasummary = renderText({
+    
+    omegarmscore = omega.partial.SS.rm(as.numeric(input$omegaSSrmdfmod), as.numeric(input$omegaSSrmdferr),
+                             as.numeric(input$omegaSSrmmsmod), as.numeric(input$omegaSSrmmserr),
+                             as.numeric(input$omegaSSrmssmod), as.numeric(input$omegaSSrmsserr),
+                             as.numeric(input$omegaSSrmsssub), as.numeric(input$omegaSSrmalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
+               "<b>Effect Size:</b> ", apa_var(omegarmscore, input$omegaSSrmalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(omegarmscore$olow, omegarmscore$ohigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(omegarmscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(omegarmscore$p, input$omegaSSrmalpha), #test interpretation
+               sep = ""))
+    
+  }) #close partial omega rm
+  
 } ##close server
 
 # Run the application 

@@ -20,6 +20,10 @@ fluidRow(
              textInput("omegaSSrmdferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (model):"), 
+             textInput("omegaSSrmssmod", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("SS (error):"), 
              textInput("omegaSSrmsserr", NULL, width = 60)),
          

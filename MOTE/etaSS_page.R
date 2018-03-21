@@ -28,7 +28,7 @@ fluidRow(
          
          textInput("etaSSf", "F:", width = 60),
          
-         textInput("etaSSalpah", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("etaSSalpha", "Alpha:", width = 60, placeholder = ".05"),
          
          submitButton("Calculate")
          
