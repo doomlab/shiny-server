@@ -427,6 +427,25 @@ output$IPsummary = renderText({
     
   }) #close eta.full
   
+  ####partial omega bn####
+  output$POMsummary = renderText({
+    
+    omegabnscore = omega.partial.SS.bn(as.numeric(input$omegaSSbndfmod), 
+                                       as.numeric(input$omegaSSbndferr),
+                                       as.numeric(input$omegaSSbnmsmod), 
+                                       as.numeric(input$omegaSSbnmserr),
+                                       as.numeric(input$omegaSSbnssmod), 
+                                       as.numeric(input$omegaSSbnN),
+                                       as.numeric(input$omegaSSbnalpha))
+    
+    HTML(paste("<b>Effect Size:</b> ", apa_var(omegabnscore, input$omegaSSbnalpha, type = "omega"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(omegabnscore$omegalow, omegabnscore$omegahigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(omegabnscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(omegabnscore$p, input$omegaSSbnalpha), #test interpretation
+    sep = ""))
+    
+  }) #close partial omega bn
+  
   ####partial omega rm####
   output$Etasummary = renderText({
     

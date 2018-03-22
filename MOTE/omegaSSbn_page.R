@@ -19,14 +19,6 @@ fluidRow(
              textInput("omegaSSbndferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (error):"), 
-             textInput("omegaSSbnsserr", NULL, width = 60)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (total):"), 
-             textInput("omegaSSbnsstot", NULL, width = 60)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("MS (model):"), 
              textInput("omegaSSbnmsmod", NULL, width = 60)),
          
@@ -34,16 +26,26 @@ fluidRow(
              strong("MS (error):"), 
              textInput("omegaSSbnmserr", NULL, width = 60)),
          
-         textInput("omegaSSbnalpha", "Alpha:", width = 60, placeholder = ".05"),
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (model):"), 
+             textInput("omegaSSbnssmod", NULL, width = 60)),
          
-         submitButton("Calculate")
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("N:"), 
+             textInput("omegaSSbnN", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("Alpha:"), 
+           textInput("omegaSSbnalpha", NULL, width = 60, placeholder = ".05"),
+         
+         submitButton("Calculate"))
          
   ), ## close column 1
   
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("POMsummary")),
+           tabPanel("Summary", htmlOutput("POMsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                      annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

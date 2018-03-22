@@ -37,8 +37,8 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
   
   if (type == "omega") {
     output = paste("omega = ", apa(saved.d$omega, digits, leading = F),
-                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$olow, digits, leading = F), 
-                   ", ", apa(saved.d$ehigh, digits, leading = F), "]", sep = "") 
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$omegalow, digits, leading = F), 
+                   ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "") 
   }
   
   return(output)}
