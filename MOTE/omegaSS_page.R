@@ -26,8 +26,9 @@ fluidRow(
              strong("MS (error):"), 
              textInput("omegaSSmserr", NULL, width = 60)),
 
-         div(style="display: inline-block;vertical-align:top; width: 100px;",
-             textInput("omegaSSn", "N:", width = 60)), 
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (total):"), 
+             textInput("omegaSSsstot", NULL, width = 60)),
          
          textInput("omegaSSalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
@@ -37,7 +38,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("OMsummary")),
+           tabPanel("Summary", htmlOutput("omegaSSsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                      annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
