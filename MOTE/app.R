@@ -437,7 +437,8 @@ output$IPsummary = renderText({
                                        as.numeric(input$omegaSSsstot), 
                                        as.numeric(input$omegaSSalpha))
     
-    HTML(paste("<b>Effect Size:</b> ", apa_var(omegaSSscore, input$omegaSSalpha, type = "omega"), "<p/>", #effect size
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+               "<b>Effect Size:</b> ", apa_var(omegaSSscore, input$omegaSSalpha, type = "omega"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(omegaSSscore$omegalow, omegaSSscore$omegahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(omegaSSscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(omegaSSscore$p, input$omegaSSalpha), #test interpretation
@@ -456,7 +457,8 @@ output$IPsummary = renderText({
                                        as.numeric(input$omegaSSbnN),
                                        as.numeric(input$omegaSSbnalpha))
     
-    HTML(paste("<b>Effect Size:</b> ", apa_var(omegabnscore, input$omegaSSbnalpha, type = "omega"), "<p/>", #effect size
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+               "<b>Effect Size:</b> ", apa_var(omegabnscore, input$omegaSSbnalpha, type = "omega"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(omegabnscore$omegalow, omegabnscore$omegahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(omegabnscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(omegabnscore$p, input$omegaSSbnalpha), #test interpretation
