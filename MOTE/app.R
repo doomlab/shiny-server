@@ -54,7 +54,8 @@ ui <- fluidPage(
                                    source("etaSSpart_page.R")$value),
                           tabPanel("GES Partial RM - SS",
                                    source("gesSSrm_page.R")$value),
-                          tabPanel("GES Partial Mix - SS"),
+                          tabPanel("GES Partial Mix - SS",
+                                   source("ges_mix.R")$value),
                           tabPanel("Omega Full - F",
                                    source("omegaF_page.R")$value),
                           tabPanel("Omega Full - SS",
@@ -63,7 +64,8 @@ ui <- fluidPage(
                                    source("omegaSSbn_page.R")$value),
                           tabPanel("Omega Partial RM - SS",
                                    source("omegaSSrm_page.R")$value),
-                          tabPanel("Epsilon"),
+                          tabPanel("Epsilon",
+                                   source("epsilon.R")$value),
                           tabPanel("Chi-square V"),
                           tabPanel("Chi-square Odds")
                           ) ##close navbarMenu
@@ -427,6 +429,26 @@ output$IPsummary = renderText({
     
   }) #close eta.full
   
+  ####ges partial mix SS####
+  output$gemixsummary = renderText({
+    
+    gesmixscore = ges.partial.SS.mix(as.numeric(input$gesmixdfmod), 
+                                       as.numeric(input$gesmixdferr),
+                                       as.numeric(input$gesmixSSmod), 
+                                       as.numeric(input$gesmixSSsv),
+                                       as.numeric(input$gesmixSSerr), 
+                                       as.numeric(input$gesmixSSf), 
+                                       as.numeric(input$gesmixalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+               "<b>Effect Size:</b> ", apa_var(gesmixscore, input$gesmixalpha, type = "ges"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(gesmixscore$geslow, gesmixscore$geshigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(gesmixscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(gesmixscore$p, input$gesmixalpha), #test interpretation
+               sep = ""))
+    
+  }) #close ges partial mix ss
+  
   ####omega full SS####
   output$omegaSSsummary = renderText({
     
@@ -482,6 +504,25 @@ output$IPsummary = renderText({
                sep = ""))
     
   }) #close partial omega rm
+  
+  ####epsilon####
+  output$EPsummary = renderText({
+    
+    EPscore = epsilon.full.SS(as.numeric(input$EPdfmod), 
+                                       as.numeric(input$EPdferr),
+                                       as.numeric(input$EPmsmod), 
+                                       as.numeric(input$EPmserr),
+                                       as.numeric(input$EPsst),
+                                       as.numeric(input$EPalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+               "<b>Effect Size:</b> ", apa_var(EPscore, input$EPalpha, type = "epsilon"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(EPscore$epsilonlow, EPscore$epsilonhigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(EPscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(EPscore$p, input$EPalpha), #test interpretation
+               sep = ""))
+    
+  }) #close epsilon
   
 } ##close server
 

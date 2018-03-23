@@ -43,6 +43,12 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
                    ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "") 
   }
   
+  if (type == "epsilon") {
+    output = paste("epsilon = ", apa(saved.d$epsilon, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$epsilonlow, digits, leading = F), 
+                   ", ", apa(saved.d$epsilonhigh, digits, leading = F), "]", sep = "")
+  }
+  
   return(output)}
 
 apa_M = function(saved.d, meanno = 1, alpha, digits = 2) { 
