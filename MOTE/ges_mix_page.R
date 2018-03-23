@@ -7,30 +7,34 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("Epsilon")),
+             strong("GES Partial Mix - SS")),
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("df (model):"), 
-             textInput("EPdfmod", NULL, width = 60)),
+             textInput("gesmixdfmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("df (error):"), 
-             textInput("EPdferr", NULL, width = 60)),
+             textInput("gesmixdferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (model):"), 
-             textInput("EPmsmod", NULL, width = 60)),
+             strong("SS (model):"), 
+             textInput("gesmixSSmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (error):"), 
-             textInput("EPmserr", NULL, width = 60)),
+             strong("SS (subject variance):"), 
+             textInput("gesmixSSsv", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (total):"), 
-             textInput("EPsst", NULL, width = 60)),
+             strong("SS (error):"), 
+             textInput("gesmixSSerr", NULL, width = 60)),
          
-         textInput("EPalpha", "Alpha:", width = 60, placeholder = ".05"),
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("F:"), 
+             textInput("gesmixSSf", NULL, width = 60)),
+         
+         textInput("gesmixalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -38,9 +42,9 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", htmlOutput("EPsummary")),
+           tabPanel("Summary", htmlOutput("gemixsummary")),
            tabPanel("Code", withMathJax(), 
-                    HTML(markdown::markdownToHTML(knit("epsilon.Rmd", quiet = T)))),
+                    HTML(markdown::markdownToHTML(knit("ges_mix_code.Rmd", quiet = T)))),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))

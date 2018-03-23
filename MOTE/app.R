@@ -44,7 +44,8 @@ ui <- fluidPage(
                           ), ##close navbarMenu
                
                navbarMenu("Variance Overlap",
-                          tabPanel("d to r"),
+                          tabPanel("d to r",
+                                   source("DtoR_page.R")$value),
                           tabPanel("r"),
                           tabPanel("Eta Full - F",
                                    source("etaF_page.R")$value),
@@ -55,7 +56,7 @@ ui <- fluidPage(
                           tabPanel("GES Partial RM - SS",
                                    source("gesSSrm_page.R")$value),
                           tabPanel("GES Partial Mix - SS",
-                                   source("ges_mix.R")$value),
+                                   source("ges_mix_page.R")$value),
                           tabPanel("Omega Full - F",
                                    source("omegaF_page.R")$value),
                           tabPanel("Omega Full - SS",
@@ -65,7 +66,7 @@ ui <- fluidPage(
                           tabPanel("Omega Partial RM - SS",
                                    source("omegaSSrm_page.R")$value),
                           tabPanel("Epsilon",
-                                   source("epsilon.R")$value),
+                                   source("epsilon_page.R")$value),
                           tabPanel("Chi-square V"),
                           tabPanel("Chi-square Odds")
                           ) ##close navbarMenu
@@ -413,7 +414,27 @@ output$IPsummary = renderText({
   
 }) #close IP
   
-  ####eta full####
+  ####d to r####
+  output$DtoRsummary = renderText({
+    
+    DtoRscore = d.to.r(as.numeric(input$DtoRd), 
+                                     as.numeric(input$DtoRn1), 
+                                     as.numeric(input$DtoRn2),
+                                     as.numeric(input$DtoRalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+               "<b>Effect Size:</b> ", apa_var(DtoRscore, input$DtoRalpha, type = "r"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(DtoRscore$rlow, DtoRscore$rhigh), "<p/>", #effect size interpretation
+               "<b>Effect Size:</b> ", apa_var(DtoRscore, input$DtoRalpha, type = "R2"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(DtoRscore$R2low, DtoRscore$R2high), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(DtoRscore, "t"), "<p/>", #test stats
+               "<b>Test Statistic:</b> ", apa_stat(DtoRscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(DtoRscore$p, input$DtoRalpha), #test interpretation
+               sep = ""))
+    
+  }) #close d to r
+  
+    ####eta full####
   output$Etasummary = renderText({
     
     etassscore = eta.full.SS(as.numeric(input$etaSSdfmod), as.numeric(input$etaSSdferr),

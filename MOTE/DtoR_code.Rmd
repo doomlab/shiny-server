@@ -1,0 +1,24 @@
+---
+title: "DtoR"
+author: "Amber Gillenwaters"
+date: "March 23, 2018"
+output: 
+html_document:
+ self_contained: no
+---
+The formula for *r* is: $$r = \frac{d} {\sqrt{d^2 + (n1 + n2)^2/(n1 \times n2)}}$$
+
+The formula for *t* is: $$t = \frac{r}{\sqrt{1-(r^2)^2/(n -2)}}$$
+
+The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
+
+The code to use MOTE in R is: 
+ 
+```{r help, echo=FALSE, include = FALSE}
+source("output_functions.R")
+library(knitr)
+library(MOTE)
+saved = help_console(d.to.r, "html", before = "", after = "")
+```
+ 
+`r paste(saved[-c(1:8)], collapse = " ")`

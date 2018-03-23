@@ -49,6 +49,18 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
                    ", ", apa(saved.d$epsilonhigh, digits, leading = F), "]", sep = "")
   }
   
+  if (type == "r") {
+    output = paste("r = ", apa(saved.d$r, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$rlow, digits, leading = F), 
+                   ", ", apa(saved.d$rhigh, digits, leading = F), "]", sep = "")
+  }
+  
+  if (type == "R2") {
+    output = paste("R2 = ", apa(saved.d$R2, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$R2low, digits, leading = F), 
+                   ", ", apa(saved.d$R2high, digits, leading = F), "]", sep = "")
+  }
+  
   return(output)}
 
 apa_M = function(saved.d, meanno = 1, alpha, digits = 2) { 
