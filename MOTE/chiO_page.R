@@ -7,34 +7,26 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("GES Partial For Mix Designs")),
+             strong("Chi-square Odds")),
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (Model):"), 
-             textInput("gesmixdfmod", NULL, width = 60)),
+             strong("Row 1, Column 1 Sample Size:"), 
+             textInput("chiOn11", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (Error):"), 
-             textInput("gesmixdferr", NULL, width = 60)),
+             strong("Row 1, Column 2 Sample Size:"), 
+             textInput("chiOn12", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (Model):"), 
-             textInput("gesmixSSmod", NULL, width = 60)),
+             strong("Row 2, Column 1 Sample Size:"), 
+             textInput("chiOn21", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (Subject):"), 
-             textInput("gesmixSSsv", NULL, width = 60)),
+             strong("Row 2, Column 2 Sample Size:"), 
+             textInput("chiOn22", NULL, width = 60)),
          
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (Error):"), 
-             textInput("gesmixSSerr", NULL, width = 60)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("F:"), 
-             textInput("gesmixSSf", NULL, width = 60)),
-         
-         textInput("gesmixalpha", "Alpha:", width = 60, placeholder = ".05"),
+         textInput("chiOalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
          
   ), ## close column 1
@@ -42,9 +34,9 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", htmlOutput("gemixsummary")),
+           tabPanel("Summary", htmlOutput("chiOsummary")),
            tabPanel("Code", withMathJax(), 
-                    HTML(markdown::markdownToHTML(knit("ges_mix_code.Rmd", quiet = T)))),
+                    HTML(markdown::markdownToHTML(knit("chiO_code.Rmd", quiet = T)))),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))

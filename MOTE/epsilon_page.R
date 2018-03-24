@@ -7,27 +7,27 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("Epsilon")),
+             strong("Epsilon Full for All One-Way Designs")),
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (model):"), 
+             strong("df (Model):"), 
              textInput("EPdfmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (error):"), 
+             strong("df (Error):"), 
              textInput("EPdferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (model):"), 
+             strong("Mean Square (Model):"), 
              textInput("EPmsmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (error):"), 
+             strong("Mean Square (Error):"), 
              textInput("EPmserr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (total):"), 
+             strong("SS (Total):"), 
              textInput("EPsst", NULL, width = 60)),
          
          textInput("EPalpha", "Alpha:", width = 60, placeholder = ".05"),

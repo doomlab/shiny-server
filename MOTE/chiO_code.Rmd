@@ -1,0 +1,20 @@
+---
+title: "chiO_code"
+author: "Gillenwaters"
+date: "3/23/2018"
+output: 
+html_document:
+ self_contained: no
+---
+The formula for *odds* is: $$odds = \frac{(n11/n12)}{(n21/n22)}$$
+
+The code to use MOTE in R is: 
+ 
+```{r help, echo=FALSE, include = FALSE}
+source("output_functions.R")
+library(knitr)
+library(MOTE)
+saved = help_console(odds, "html", before = "", after = "")
+```
+ 
+`r paste(saved[-c(1:8)], collapse = " ")`

@@ -61,7 +61,20 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
                    ", ", apa(saved.d$R2high, digits, leading = F), "]", sep = "")
   }
   
-  return(output)}
+  if (type == "v") {
+    output = paste("v = ", apa(saved.d$v, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$vlow, digits, leading = F), 
+                   ", ", apa(saved.d$vhigh, digits, leading = F), "]", sep = "")
+  }
+  
+  if (type == "o") {
+    output = paste("Odds = ", apa(saved.d$odds, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$olow, digits, leading = F), 
+                   ", ", apa(saved.d$ohigh, digits, leading = F), "]", sep = "")
+  }
+    
+     return(output)}
+  
 
 apa_M = function(saved.d, meanno = 1, alpha, digits = 2) { 
   if (meanno == 0) {

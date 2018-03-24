@@ -46,7 +46,8 @@ ui <- fluidPage(
                navbarMenu("Variance Overlap",
                           tabPanel("d to r",
                                    source("DtoR_page.R")$value),
-                          tabPanel("r"),
+                          tabPanel("r",
+                                   source("R_page.R")$value),
                           tabPanel("Eta Full - F",
                                    source("etaF_page.R")$value),
                           tabPanel("Eta Full - SS",
@@ -67,8 +68,10 @@ ui <- fluidPage(
                                    source("omegaSSrm_page.R")$value),
                           tabPanel("Epsilon",
                                    source("epsilon_page.R")$value),
-                          tabPanel("Chi-square V"),
-                          tabPanel("Chi-square Odds")
+                          tabPanel("Chi-square V",
+                                   source("chiV_page.R")$value),
+                          tabPanel("Chi-square Odds",
+                                   source("chiO_page.R")$value)
                           ) ##close navbarMenu
                      ) ##close navbarpage
           ) ##close shinyUI
@@ -434,6 +437,24 @@ output$IPsummary = renderText({
     
   }) #close d to r
   
+  ####r####
+  output$Rsummary = renderText({
+    
+    Rscore = d.to.r(as.numeric(input$Rr), 
+                       as.numeric(input$Rn), 
+                       as.numeric(input$Ralpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+               "<b>Effect Size:</b> ", apa_var(Rscore, input$Ralpha, type = "r"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(Rscore$rlow, Rscore$rhigh), "<p/>", #effect size interpretation
+               "<b>Effect Size:</b> ", apa_var(Rscore, input$Ralpha, type = "R2"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(Rscore$R2low, Rscore$R2high), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(Rscore, "t"), "<p/>", #test stats
+               "<b>Test Statistic:</b> ", apa_stat(Rscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(Rscore$p, input$Ralpha), #test interpretation
+               sep = ""))
+    
+  }) #close d to r
     ####eta full####
   output$Etasummary = renderText({
     
@@ -544,6 +565,39 @@ output$IPsummary = renderText({
                sep = ""))
     
   }) #close epsilon
+  
+  ####chi square v####
+  output$chiVsummary = renderText({
+    
+    chiVscore = v.chi.sq(as.numeric(input$chiVx), 
+                              as.numeric(input$chiVn),
+                              as.numeric(input$chiVr), 
+                              as.numeric(input$chiVc),
+                              as.numeric(input$chiValpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+               "<b>Effect Size:</b> ", apa_var(chiVscore, input$chiValpha, type = "v"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(chiVscore$vlow, chiVscore$vhigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(chiVscore, "X2"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(chiVscore$p, input$chiValpha), #test interpretation
+               sep = ""))
+    
+  }) #close chi square v
+  
+  ####chi square odds####
+  output$chiOsummary = renderText({
+    
+    chiOscore = odds(as.numeric(input$chiOn11), 
+                         as.numeric(input$chiOn12),
+                         as.numeric(input$chiOn21), 
+                         as.numeric(input$chiOn22),
+                         as.numeric(input$chiOalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+               "<b>Effect Size:</b> ", apa_var(chiOscore, input$chiOalpha, type = "o"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(chiOscore$olow, chiOscore$ohigh), "<p/>", #effect size interpretation
+               sep = ""))
+  }) #close chi square odds
   
 } ##close server
 
