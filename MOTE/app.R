@@ -471,6 +471,40 @@ output$IPsummary = renderText({
     
   }) #close eta.full
   
+  ####eta partial####
+  output$PEsummary = renderText({
+    
+    partetascore = eta.partial.SS(as.numeric(input$etaSSpartdfmod), as.numeric(input$etaSSpartdferr),
+                             as.numeric(input$etaSSpartssmod), as.numeric(input$etaSSpartsserr),
+                             as.numeric(input$etaSSpartf), as.numeric(input$etaSSpartalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
+               "<b>Effect Size:</b> ", apa_var(partetascore, input$etaSSpartalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(partetascore$elow, partetascore$ehigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(partetascore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(partetascore$p, input$etaSSpartalpha), #test interpretation
+               sep = ""))
+    
+  }) #close eta.partial
+  
+  ####GES RM####
+  output$GESsummary = renderText({
+    
+    gesrmscore = ges.partial.SS.rm(as.numeric(input$gesSSrmdfmod), as.numeric(input$gesSSrmdferr),
+                                  as.numeric(input$gesSSrmssmod), as.numeric(input$gesSSrmsssub),
+                                  as.numeric(input$gesSSrmsserr1),as.numeric(input$gesSSrmsserr2),
+                                  as.numeric(input$gesSSrmsserr3),
+                                  as.numeric(input$gesSSrmf), as.numeric(input$gesSSrmalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
+               "<b>Effect Size:</b> ", apa_var(gesrmscore, input$gesSSrmalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(gesrmscore$geslow, gesrmscore$geshigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(gesrmscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(gesrmscore$p, input$gesSSrmalpha), #test interpretation
+               sep = ""))
+    
+  }) #close ges.ss.rm
+  
   ####ges partial mix SS####
   output$gemixsummary = renderText({
     
