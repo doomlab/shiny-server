@@ -457,13 +457,13 @@ output$IPsummary = renderText({
   }) #close d to r
   
   ####eta full F####
-  output$Etasummary = renderText({
+  output$ETAFsummary = renderText({
     
     etafscore = eta.F(as.numeric(input$etaFdfmod), as.numeric(input$etaFdferr),
                              as.numeric(input$etaFf), as.numeric(input$etaFalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
-               "<b>Effect Size:</b> ", apa_var(etafscore, input$etaFalpha), "<p/>", #effect size
+               "<b>Effect Size:</b> ", apa_var(etafscore, input$etaFalpha, type = "eta"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(etafscore$elow, etafscore$ehigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(etafscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(etafscore$p, input$etaFalpha), #test interpretation
@@ -542,9 +542,9 @@ output$IPsummary = renderText({
   }) #close ges partial mix ss
   
   ####omega full F####
-  output$omegaSSsummary = renderText({
+  output$OMEGAFsummary = renderText({
     
-    omegaFullF = omega.full.f(as.numeric(input$omegaFdfmod), 
+    omegaFullF = omega.F(as.numeric(input$omegaFdfmod), 
                                        as.numeric(input$omegaFdferr),
                                        as.numeric(input$omegaFf), 
                                        as.numeric(input$omegaFn),

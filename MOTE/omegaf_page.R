@@ -30,7 +30,7 @@ fluidRow( #open fluid row
   #output
   column(8,
          tabsetPanel(
-           tabPanel("Summary", htmlOutput("ETAsummary")),
+           tabPanel("Summary", htmlOutput("OMEGAFsummary")),
            tabPanel("Code", helpText("Include code and annotation here
                                      about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
