@@ -49,7 +49,7 @@ ui <- fluidPage(
                           tabPanel("r",
                                    source("R_page.R")$value),
                           tabPanel("Eta Full - F",
-                                   source("etaF_page.R")$value),
+                                   source("etaf_page.R")$value),
                           tabPanel("Eta Full - SS",
                                    source("etaSS_page.R")$value),
                           tabPanel("Eta Partial - SS",
@@ -59,7 +59,7 @@ ui <- fluidPage(
                           tabPanel("GES Partial Mix - SS",
                                    source("ges_mix_page.R")$value),
                           tabPanel("Omega Full - F",
-                                   source("omegaF_page.R")$value),
+                                   source("omegaf_page.R")$value),
                           tabPanel("Omega Full - SS",
                                    source("omegaSS_page.R")$value),
                           tabPanel("Omega Partial BN - SS",
@@ -455,7 +455,23 @@ output$IPsummary = renderText({
                sep = ""))
     
   }) #close d to r
-    ####eta full####
+  
+  ####eta full F####
+  output$Etasummary = renderText({
+    
+    etafscore = eta.F(as.numeric(input$etaFdfmod), as.numeric(input$etaFdferr),
+                             as.numeric(input$etaFf), as.numeric(input$etaFalpha))
+    
+    HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
+               "<b>Effect Size:</b> ", apa_var(etafscore, input$etaFalpha), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(etafscore$elow, etafscore$ehigh), "<p/>", #effect size interpretation
+               "<b>Test Statistic:</b> ", apa_stat(etafscore, "F"), "<p/>", #test stats
+               "<b>Interpretation:</b> ", checkp(etafscore$p, input$etaFalpha), #test interpretation
+               sep = ""))
+    
+  }) #close eta full F
+  
+    ####eta full SS####
   output$Etasummary = renderText({
     
     etassscore = eta.full.SS(as.numeric(input$etaSSdfmod), as.numeric(input$etaSSdferr),
@@ -469,7 +485,7 @@ output$IPsummary = renderText({
                "<b>Interpretation:</b> ", checkp(etassscore$p, input$etaSSalpha), #test interpretation
                sep = ""))
     
-  }) #close eta.full
+  }) #close eta.full SS
   
   ####eta partial####
   output$PEsummary = renderText({
