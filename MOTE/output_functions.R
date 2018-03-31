@@ -27,8 +27,8 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
   
   if (type == "eta") {
     output = paste("eta = ", apa(saved.d$eta, digits, leading = F),
-                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$elow, digits, leading = F), 
-                   ", ", apa(saved.d$ehigh, digits, leading = F), "]", sep = "") 
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$etalow, digits, leading = F), 
+                   ", ", apa(saved.d$etahigh, digits, leading = F), "]", sep = "") 
   }
   
   if (type == "ges") {

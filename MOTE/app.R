@@ -462,7 +462,7 @@ output$IPsummary = renderText({
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
                "<b>Effect Size:</b> ", apa_var(etafscore, input$etaFalpha, type = "eta"), "<p/>", #effect size
-               "<b>Interpretation:</b> ", checkzero(etafscore$elow, etafscore$ehigh), "<p/>", #effect size interpretation
+               "<b>Interpretation:</b> ", checkzero(etafscore$etalow, etafscore$etahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(etafscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(etafscore$p, input$etaFalpha), #test interpretation
                sep = ""))
