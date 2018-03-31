@@ -7,7 +7,7 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("d to r - Translations for Independent t")),
+             strong("d to r - Independent t")),
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",

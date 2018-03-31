@@ -430,8 +430,7 @@ output$IPsummary = renderText({
                "<b>Interpretation:</b> ", checkzero(DtoRscore$rlow, DtoRscore$rhigh), "<p/>", #effect size interpretation
                "<b>Effect Size:</b> ", apa_var(DtoRscore, input$DtoRalpha, type = "R2"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(DtoRscore$R2low, DtoRscore$R2high), "<p/>", #effect size interpretation
-               "<b>Test Statistic:</b> ", apa_stat(DtoRscore, "t"), "<p/>", #test stats
-               "<b>Test Statistic:</b> ", apa_stat(DtoRscore, "F"), "<p/>", #test stats
+               "<b>Test Statistic:</b> ", apa_stat(DtoRscore, "tr"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(DtoRscore$p, input$DtoRalpha), #test interpretation
                sep = ""))
     

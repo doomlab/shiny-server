@@ -113,6 +113,7 @@ apa_stat = function(saved.d, stat, digits = 2) {
   if (saved.d$p < .001) { pvalue = "p < .001"} else { pvalue = paste("p = ", apa(saved.d$p, 3, F), sep = "") }
   if (stat == "Z") { output = paste(stat, " = ", apa(saved.d$z, digits), ", ", pvalue, sep = "")}
   if (stat == "t") { output = paste(stat, "(", saved.d$df, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
+  if (stat == "tr") { output = paste("t", "(", saved.d$dfe, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
   if (stat == "F") { output = paste(stat, "(", saved.d$dfm, ", ", saved.d$dfe, ")", " = ", apa(saved.d$F, digits), ", ", pvalue, sep = "")}
   if (stat == "X2") { output = paste(stat, "(", saved.d$df, ")", " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")}
   return(output)}
