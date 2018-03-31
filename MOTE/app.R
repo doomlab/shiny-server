@@ -496,8 +496,8 @@ output$IPsummary = renderText({
                              as.numeric(input$etaSSpartf), as.numeric(input$etaSSpartalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
-               "<b>Effect Size:</b> ", apa_var(partetascore, input$etaSSpartalpha), "<p/>", #effect size
-               "<b>Interpretation:</b> ", checkzero(partetascore$elow, partetascore$ehigh), "<p/>", #effect size interpretation
+               "<b>Effect Size:</b> ", apa_var(partetascore, input$etaSSpartalpha, type = "eta"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(partetascore$etalow, partetascore$etahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(partetascore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(partetascore$p, input$etaSSpartalpha), #test interpretation
                sep = ""))
@@ -609,6 +609,7 @@ output$IPsummary = renderText({
                                        as.numeric(input$omegaSSrmmssub), 
                                        as.numeric(input$omegaSSrmssmod),
                                        as.numeric(input$omegaSSrmsserr), 
+                                       as.numeric(input$omegaSSrmsssub),
                                        as.numeric(input$omegaSSrmalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 

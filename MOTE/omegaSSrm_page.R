@@ -29,7 +29,7 @@ fluidRow(
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("MS (subject):"), 
-             textInput("omegaSSrmsssub", NULL, width = 60)),
+             textInput("omegaSSrmmssub", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("SS (model):"), 
