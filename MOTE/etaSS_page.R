@@ -26,9 +26,11 @@ fluidRow(
              strong("SS (total):"), 
              textInput("etaSSsstot", NULL, width = 60)),
          
-         textInput("etaSSf", "F:", width = 60),
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("F:"), 
+             textInput("etaSSf", NULL, width = 60)),
          
-         textInput("etaSSalpha", "Alpha:", width = 60, placeholder = ".05"),
+          textInput("etaSSalpha", "Alpha:", width = 60, placeholder = ".05"),
          
          submitButton("Calculate")
          
@@ -37,7 +39,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("Etasummary")),
+           tabPanel("Summary", htmlOutput("ETAsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                      annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

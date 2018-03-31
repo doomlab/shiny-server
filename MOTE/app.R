@@ -470,15 +470,18 @@ output$IPsummary = renderText({
   }) #close eta full F
   
     ####eta full SS####
-  output$Etasummary = renderText({
+  output$ETAsummary = renderText({
     
-    etassscore = eta.full.SS(as.numeric(input$etaSSdfmod), as.numeric(input$etaSSdferr),
-                      as.numeric(input$etaSSssmod), as.numeric(input$etaSSsstot),
-                      as.numeric(input$etaSSf), as.numeric(input$etaSSalpha))
+    etassscore = eta.full.SS(as.numeric(input$etaSSdfmod), 
+                             as.numeric(input$etaSSdferr),
+                      as.numeric(input$etaSSssmod), 
+                      as.numeric(input$etaSSsstot),
+                      as.numeric(input$etaSSf), 
+                      as.numeric(input$etaSSalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
-               "<b>Effect Size:</b> ", apa_var(etassscore, input$etaSSalpha), "<p/>", #effect size
-               "<b>Interpretation:</b> ", checkzero(etassscore$elow, etasscore$ehigh), "<p/>", #effect size interpretation
+               "<b>Effect Size:</b> ", apa_var(etassscore, input$etaSSalpha, type = "eta"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(etassscore$etalow, etassscore$etahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(etassscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(etassscore$p, input$etaSSalpha), #test interpretation
                sep = ""))
