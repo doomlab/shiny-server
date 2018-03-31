@@ -7,7 +7,7 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("r - Correlation Confidence Intervals")),
+             strong("r - Correlation")),
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
