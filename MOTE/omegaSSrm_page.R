@@ -20,28 +20,28 @@ fluidRow(
              textInput("omegaSSrmdferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (model):"), 
-             textInput("omegaSSrmssmod", NULL, width = 60)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (error):"), 
-             textInput("omegaSSrmsserr", NULL, width = 60)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (subject):"), 
-             textInput("omegaSSrmsssub", NULL, width = 60)),
-         
-         div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("MS (model):"), 
              textInput("omegaSSrmmsmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("MS (error):"), 
              textInput("omegaSSrmmserr", NULL, width = 60)),
-
+         
          div(style="display: inline-block;vertical-align:top; width: 200px;",
              strong("MS (subject):"), 
-             textInput("omegaSSrmmssub", NULL, width = 60)),
+             textInput("omegaSSrmsssub", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (model):"), 
+             textInput("omegaSSrmssmod", NULL, width = 60)),
+         
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (error):"), 
+             textInput("omegaSSrmsserr", NULL, width = 60)),
+
+         div(style="display: inline-block;vertical-align:top; width: 200px;",
+             strong("SS (subject):"), 
+             textInput("omegaSSrmsssub", NULL, width = 60)),
          
          textInput("omegaSSrmalpha", "Alpha:", width = 60, placeholder = ".05"),
          submitButton("Calculate")
@@ -51,7 +51,7 @@ fluidRow(
   #### put output here ####
   column(8, 
          tabsetPanel(
-           tabPanel("Summary", helpText("POBsummary")),
+           tabPanel("Summary", htmlOutput("PORMsummary")),
            tabPanel("Code", helpText("Include the code, and 
                                      annotation here about what is what.")),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 

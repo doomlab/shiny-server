@@ -600,16 +600,20 @@ output$IPsummary = renderText({
   }) #close partial omega bn
   
   ####partial omega rm####
-  output$Etasummary = renderText({
+  output$PORMsummary = renderText({
     
-    omegarmscore = omega.partial.SS.rm(as.numeric(input$omegaSSrmdfmod), as.numeric(input$omegaSSrmdferr),
-                             as.numeric(input$omegaSSrmmsmod), as.numeric(input$omegaSSrmmserr),
-                             as.numeric(input$omegaSSrmssmod), as.numeric(input$omegaSSrmsserr),
-                             as.numeric(input$omegaSSrmsssub), as.numeric(input$omegaSSrmalpha))
+    omegarmscore = omega.partial.SS.rm(as.numeric(input$omegaSSrmdfmod), 
+                                       as.numeric(input$omegaSSrmdferr),
+                                       as.numeric(input$omegaSSrmmsmod), 
+                                       as.numeric(input$omegaSSrmmserr),
+                                       as.numeric(input$omegaSSrmmssub), 
+                                       as.numeric(input$omegaSSrmssmod),
+                                       as.numeric(input$omegaSSrmsserr), 
+                                       as.numeric(input$omegaSSrmalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
-               "<b>Effect Size:</b> ", apa_var(omegarmscore, input$omegaSSrmalpha), "<p/>", #effect size
-               "<b>Interpretation:</b> ", checkzero(omegarmscore$olow, omegarmscore$ohigh), "<p/>", #effect size interpretation
+               "<b>Effect Size:</b> ", apa_var(omegarmscore, input$omegaSSrmalpha, type = "omega"), "<p/>", #effect size
+               "<b>Interpretation:</b> ", checkzero(omegarmscore$omegalow, omegarmscore$omegahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(omegarmscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(omegarmscore$p, input$omegaSSrmalpha), #test interpretation
                sep = ""))
