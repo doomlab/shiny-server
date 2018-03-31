@@ -6,11 +6,9 @@ output:
 html_document:
  self_contained: no
 ---
-The formula for *r* is: $$r = \frac{d} {\sqrt{d^2 + (n1 + n2)^2/(n1 \times n2)}}$$
+The formula for *r* is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 * n_2)}}}$$
 
-The formula for *t* is: $$t = \frac{r}{\sqrt{1-(r^2)^2/(n -2)}}$$
-
-The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
+The formula for *t* is: $$t = \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 
 The code to use MOTE in R is: 
  

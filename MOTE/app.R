@@ -439,17 +439,16 @@ output$IPsummary = renderText({
   ####r####
   output$Rsummary = renderText({
     
-    Rscore = d.to.r(as.numeric(input$Rr), 
-                       as.numeric(input$Rn), 
-                       as.numeric(input$Ralpha))
+    Rscore = r.correl(as.numeric(input$Rr),
+                      as.numeric(input$Rn),
+                      as.numeric(input$Ralpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>",
                "<b>Effect Size:</b> ", apa_var(Rscore, input$Ralpha, type = "r"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(Rscore$rlow, Rscore$rhigh), "<p/>", #effect size interpretation
                "<b>Effect Size:</b> ", apa_var(Rscore, input$Ralpha, type = "R2"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(Rscore$R2low, Rscore$R2high), "<p/>", #effect size interpretation
-               "<b>Test Statistic:</b> ", apa_stat(Rscore, "t"), "<p/>", #test stats
-               "<b>Test Statistic:</b> ", apa_stat(Rscore, "F"), "<p/>", #test stats
+               "<b>Test Statistic:</b> ", apa_stat(Rscore, "tr"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(Rscore$p, input$Ralpha), #test interpretation
                sep = ""))
     

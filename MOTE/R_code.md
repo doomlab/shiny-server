@@ -7,9 +7,7 @@ html_document:
  self_contained: no
 ---
 
-The formula for *t* is: $$t = \frac{r}{\sqrt{1-(r^2)^2/(n -2)}}$$
-
-The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
+The formula for *t* is: $$t = \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 
 The code to use MOTE in R is: 
  
