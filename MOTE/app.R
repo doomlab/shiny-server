@@ -455,7 +455,7 @@ output$IPsummary = renderText({
   }) #close d to rs
   
   ####eta full F####
-  output$ETAFsummary = renderText({
+  output$ETAFsummary = renderUI({
     
     etafscore = eta.F(as.numeric(input$etaFdfmod), as.numeric(input$etaFdferr),
                              as.numeric(input$etaFf), as.numeric(input$etaFalpha))

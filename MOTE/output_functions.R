@@ -1,5 +1,5 @@
-significant = "Your p-value is less than the alpha value, and therefore, this test would be considered statistically signifcant."
-not_sig = "Your p-value is greater than the alpha value, and therefore, this test would be considered not statistically significant."
+significant = "Your <i>p</i>-value is less than the alpha value, and therefore, this test would be considered statistically signifcant."
+not_sig = "Your <i>p</i>-value is greater than the alpha value, and therefore, this test would be considered not statistically significant."
 no_zero = "Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero."
 yes_zero = "Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero."
 na_zero = "Your confidence interval includes NA, which indicates that the limit cannot be found. When this occurs on the lower limit, that implies that the effect size is similar to zero."
@@ -26,43 +26,43 @@ apa_d = function(saved.d, alpha, digits = 2) {
 apa_var = function(saved.d, alpha, digits = 2, type = "eta") { 
   
   if (type == "eta") {
-    output = paste("eta = ", apa(saved.d$eta, digits, leading = F),
+    output = paste("<img src=\"test_img.jpg\"> = ", apa(saved.d$eta, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$etalow, digits, leading = F), 
-                   ", ", apa(saved.d$etahigh, digits, leading = F), "]", sep = "") 
+                   ", ", apa(saved.d$etahigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "ges") {
-    output = paste("eta_g = ", apa(saved.d$ges, digits, leading = F),
+    output = paste("$\\eta_G^2$ = ", apa(saved.d$ges, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$geslow, digits, leading = F), 
-                   ", ", apa(saved.d$geshigh, digits, leading = F), "]", sep = "") 
+                   ", ", apa(saved.d$geshigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "omega") {
-    output = paste("omega = ", apa(saved.d$omega, digits, leading = F),
+    output = paste("$\\omega^2$ = ", apa(saved.d$omega, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$omegalow, digits, leading = F), 
-                   ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "") 
+                   ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "epsilon") {
-    output = paste("epsilon = ", apa(saved.d$epsilon, digits, leading = F),
+    output = paste("$\\epsilon^2$ = ", apa(saved.d$epsilon, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$epsilonlow, digits, leading = F), 
                    ", ", apa(saved.d$epsilonhigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "r") {
-    output = paste("r = ", apa(saved.d$r, digits, leading = F),
+    output = paste("<i>r</i> = ", apa(saved.d$r, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$rlow, digits, leading = F), 
                    ", ", apa(saved.d$rhigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "R2") {
-    output = paste("R2 = ", apa(saved.d$R2, digits, leading = F),
+    output = paste("$R^2$ = ", apa(saved.d$R2, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$R2low, digits, leading = F), 
                    ", ", apa(saved.d$R2high, digits, leading = F), "]", sep = "")
   }
   
   if (type == "v") {
-    output = paste("v = ", apa(saved.d$v, digits, leading = F),
+    output = paste("<i>V</i> = ", apa(saved.d$v, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$vlow, digits, leading = F), 
                    ", ", apa(saved.d$vhigh, digits, leading = F), "]", sep = "")
   }
@@ -78,44 +78,44 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
 
 apa_M = function(saved.d, meanno = 1, alpha, digits = 2) { 
   if (meanno == 0) {
-    output = paste("M = ", apa(saved.d$m, digits), #report mean
-                   ", SD = ", apa(saved.d$sd, digits), #report sd
-                   ", SE = ", apa(saved.d$se, digits), #report se
+    output = paste("<i>M</i> = ", apa(saved.d$m, digits), #report mean
+                   ", <i>SD</i> = ", apa(saved.d$sd, digits), #report sd
+                   ", <i>SE</i> = ", apa(saved.d$se, digits), #report se
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$Mlow, 2), #report low
                    ", ", apa(saved.d$Mhigh, digits), "]", sep = "") #report high
   }
   
   if (meanno == 1) {
-    output = paste("M = ", apa(saved.d$M1, digits), #report mean
-          ", SD = ", apa(saved.d$sd1, digits), #report sd
-          ", SE = ", apa(saved.d$se1, digits), #report se
+    output = paste("<i>M</i> = ", apa(saved.d$M1, digits), #report mean
+          ", <i>SD</i> = ", apa(saved.d$sd1, digits), #report sd
+          ", <i>SE</i> = ", apa(saved.d$se1, digits), #report se
           ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$M1low, 2), #report low
           ", ", apa(saved.d$M1high, digits), "]", sep = "") #report high
     return(output)}
   if (meanno == 2) {
-    output = paste("M = ", apa(saved.d$M2, digits), #report mean
-          ", SD = ", apa(saved.d$sd2, digits), #report sd
-          ", SE = ", apa(saved.d$se2, digits), #report se
+    output = paste("<i>M</i> = ", apa(saved.d$M2, digits), #report mean
+          ", <i>SD</i> = ", apa(saved.d$sd2, digits), #report sd
+          ", <i>SE</i> = ", apa(saved.d$se2, digits), #report se
           ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$M2low, 2), #report low
           ", ", apa(saved.d$M2high, digits), "]", sep = "") #report high
     return(output)}
 }
 
 apa_diff = function(saved.d, alpha, digits = 2) { 
-    output = paste("Mdiff = ", apa(saved.d$mdiff, digits), #report mean
-                   ", SDdiff = ", apa(saved.d$sddiff, digits), #report sd
-                   ", SE = ", apa(saved.d$se, digits), #report se
+    output = paste("<i>Mdiff</i> = ", apa(saved.d$mdiff, digits), #report mean
+                   ", <i>SDdiff</i> = ", apa(saved.d$sddiff, digits), #report sd
+                   ", <i>SE</i> = ", apa(saved.d$se, digits), #report se
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$Mlow, 2), #report low
                    ", ", apa(saved.d$Mhigh, digits), "]", sep = "") #report high
     return(output)}
   
 apa_stat = function(saved.d, stat, digits = 2) {
   if (saved.d$p < .001) { pvalue = "p < .001"} else { pvalue = paste("p = ", apa(saved.d$p, 3, F), sep = "") }
-  if (stat == "Z") { output = paste(stat, " = ", apa(saved.d$z, digits), ", ", pvalue, sep = "")}
-  if (stat == "t") { output = paste(stat, "(", saved.d$df, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
-  if (stat == "tr") { output = paste("t", "(", saved.d$dfe, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
-  if (stat == "F") { output = paste(stat, "(", saved.d$dfm, ", ", saved.d$dfe, ")", " = ", apa(saved.d$F, digits), ", ", pvalue, sep = "")}
-  if (stat == "X2") { output = paste(stat, "(", saved.d$df, ")", " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")}
+  if (stat == "Z") { output = paste("<i>Z</i>", " = ", apa(saved.d$z, digits), ", ", pvalue, sep = "")}
+  if (stat == "t") { output = paste("<i>t</i>", "(", saved.d$df, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
+  if (stat == "tr") { output = paste("<i>t</i>", "(", saved.d$dfe, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
+  if (stat == "F") { output = paste("<i>F</i>", "(", saved.d$dfm, ", ", saved.d$dfe, ")", " = ", apa(saved.d$F, digits), ", ", pvalue, sep = "")}
+  if (stat == "X2") { output = paste("$\\chi^2$", "(", saved.d$df, ")", " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")}
   return(output)}
 
 help_console <- function(topic, format=c("text", "html", "latex", "Rd"),
