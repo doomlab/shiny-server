@@ -12,31 +12,31 @@ fluidRow(
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (model):"), 
+             strong("df (Model):"), 
              textInput("gesSSrmdfmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (error):"), 
+             strong("df (Error):"), 
              textInput("gesSSrmdferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (model):"), 
+             strong("SS (Model):"), 
              textInput("gesSSrmssmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (subject):"), 
+             strong("SS (Subject):"), 
              textInput("gesSSrmsssub", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS IV1 (error):"), 
+             strong("SS IV1 (Error):"), 
              textInput("gesSSrmsserr1", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS IV2 (error):"), 
+             strong("SS IV2 (Error):"), 
              textInput("gesSSrmsserr2", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS IV1 X IV2 (error):"), 
+             strong("SS IV1 X IV2 (Error):"), 
              textInput("gesSSrmsserr3", NULL, width = 60)),
          
          textInput("gesSSrmf", "F:", width = 60),

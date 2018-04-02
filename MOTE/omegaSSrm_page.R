@@ -12,35 +12,35 @@ fluidRow(
          ##put input boxes here
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (model):"), 
+             strong("df (Model):"), 
              textInput("omegaSSrmdfmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (error):"), 
+             strong("df (Error):"), 
              textInput("omegaSSrmdferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (model):"), 
+             strong("MS (Model):"), 
              textInput("omegaSSrmmsmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (error):"), 
+             strong("MS (Error):"), 
              textInput("omegaSSrmmserr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (subject):"), 
+             strong("MS (Subject):"), 
              textInput("omegaSSrmmssub", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (model):"), 
+             strong("SS (Model):"), 
              textInput("omegaSSrmssmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (error):"), 
+             strong("SS (Error):"), 
              textInput("omegaSSrmsserr", NULL, width = 60)),
 
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (subject):"), 
+             strong("SS (Subject):"), 
              textInput("omegaSSrmsssub", NULL, width = 60)),
          
          textInput("omegaSSrmalpha", "Alpha:", width = 60, placeholder = ".05"),

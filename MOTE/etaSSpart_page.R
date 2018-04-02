@@ -12,19 +12,19 @@ fluidRow(
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (model):"), 
+             strong("df (Model):"), 
              textInput("etaSSpartdfmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (error):"), 
+             strong("df (Error):"), 
              textInput("etaSSpartdferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (model):"), 
+             strong("SS (Model):"), 
              textInput("etaSSpartssmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (error):"), 
+             strong("SS (Error):"), 
              textInput("etaSSpartsserr", NULL, width = 60)),
          
          textInput("etaSSpartf", "F:", width = 60),

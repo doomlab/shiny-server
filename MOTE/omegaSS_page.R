@@ -11,23 +11,23 @@ fluidRow(
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (model):"), 
+             strong("df (Model):"), 
              textInput("omegaSSdfmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("df (error):"), 
+             strong("df (Error):"), 
              textInput("omegaSSdferr", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (model):"), 
+             strong("MS (Model):"), 
              textInput("omegaSSmsmod", NULL, width = 60)),
          
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("MS (error):"), 
+             strong("MS (Error):"), 
              textInput("omegaSSmserr", NULL, width = 60)),
 
          div(style="display: inline-block;vertical-align:top; width: 200px;",
-             strong("SS (total):"), 
+             strong("SS (Total):"), 
              textInput("omegaSSsstot", NULL, width = 60)),
          
          textInput("omegaSSalpha", "Alpha:", width = 60, placeholder = ".05"),
