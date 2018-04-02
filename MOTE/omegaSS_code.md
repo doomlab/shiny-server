@@ -7,7 +7,7 @@ html_document:
  self_contained: no
 ---
 
-The formula for $\hat\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{(SS_{total} + MS_{error})}$$
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{total} + MS_{error}}$$
 
 The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
 

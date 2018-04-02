@@ -1,0 +1,23 @@
+---
+title: "omegaf_page"
+author: "Erin Buchanan"
+date: "3/23/2018"
+output: 
+html_document:
+ self_contained: no
+---
+
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (F_{model} - 1)}{df_{model} \times (F_{model} - 1) + N}$$
+
+This value will be $\omega^2$ for one-way ANOVA designs and will be $\omega_p^2$ for multi-way ANOVA designs (i.e. with more than one IV). 
+
+The code to use MOTE in R is: 
+ 
+```{r help, echo=FALSE, include = FALSE}
+source("output_functions.R")
+library(knitr)
+library(MOTE)
+saved = help_console(omega.F, "html", before = "", after = "")
+```
+ 
+`r paste(saved[-c(1:8)], collapse = " ")`

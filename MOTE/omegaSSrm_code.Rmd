@@ -6,7 +6,7 @@ output:
 html_document:
  self_contained: no
 ---
-The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + (N - df_{model}) \times MS_{error}}$$
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$
 
 The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
 
@@ -16,7 +16,7 @@ The code to use MOTE in R is:
 source("output_functions.R")
 library(knitr)
 library(MOTE)
-saved = help_console(omega.partial.SS.bn, "html", before = "", after = "")
+saved = help_console(omega.partial.SS.rm, "html", before = "", after = "")
 ```
  
 `r paste(saved[-c(1:8)], collapse = " ")`

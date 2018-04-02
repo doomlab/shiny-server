@@ -6,7 +6,7 @@ output:
 html_document:
  self_contained: no
 ---
-The formula for $\hat\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{(SS_{model} + (n - df_{model}))}$$
+The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + (N - df_{model}) \times MS_{error}}$$
 
 The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
 
