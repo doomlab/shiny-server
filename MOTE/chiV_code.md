@@ -7,6 +7,10 @@ html_document:
  self_contained: no
 ---
 
+The formula for *V* is: $$\sqrt{ \frac{\chi^2} {N * df_{smaller}} } $$
+
+$df_{smaller}$ is defined by the minimum of (rows - 1) or (columns - 1). 
+
 The code to use MOTE in R is: 
  
 

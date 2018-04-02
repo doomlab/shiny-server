@@ -53,8 +53,8 @@ fluidRow(
   column(8, 
          tabsetPanel(
            tabPanel("Summary", htmlOutput("GESsummary")),
-           tabPanel("Code", helpText("Include the code, and 
-                                     annotation here about what is what.")),
+           tabPanel("Code", withMathJax(), 
+                    HTML(markdown::markdownToHTML(knit("gesSSrm_code.Rmd", quiet = T)))),
            tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                  frameborder=\"0\" allowfullscreen></iframe>"))

@@ -8,7 +8,7 @@ html_document:
 ---
 
 
-The formula for $\eta^2G$ is: $$\frac{SS_{model}}{(SS_{model} + SS_{subject} + SS_{error})}$$
+The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{error}}$$
 
 The code to use MOTE in R is: 
  

@@ -7,7 +7,7 @@ html_document:
  self_contained: no
 ---
 
-The formula for $\epsilon$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})} {SS_{total}}$$
+The formula for $\epsilon^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})} {SS_{total}}$$
 
 The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
 
@@ -17,7 +17,7 @@ The code to use MOTE in R is:
 source("output_functions.R")
 library(knitr)
 library(MOTE)
-saved = help_console(ges.partial.SS.mix, "html", before = "", after = "")
+saved = help_console(epsilon.full.SS, "html", before = "", after = "")
 ```
  
 `r paste(saved[-c(1:8)], collapse = " ")`

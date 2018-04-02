@@ -6,7 +6,7 @@ output:
 html_document:
  self_contained: no
 ---
-The formula for *odds* is: $$odds = \frac{(n11/n12)}{(n21/n22)}$$
+The formula for *odds* is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$
 
 The code to use MOTE in R is: 
  
