@@ -48,7 +48,7 @@ ui <- fluidPage(
                                    source("DtoR_page.R")$value),
                           tabPanel("r",
                                    source("R_page.R")$value),
-                          tabPanel("Eta Full - F",
+                          tabPanel("Eta - F",
                                    source("etaf_page.R")$value),
                           tabPanel("Eta Full - SS",
                                    source("etaSS_page.R")$value),
@@ -58,7 +58,7 @@ ui <- fluidPage(
                                    source("gesSSrm_page.R")$value),
                           tabPanel("GES Partial Mix - SS",
                                    source("ges_mix_page.R")$value),
-                          tabPanel("Omega Full - F",
+                          tabPanel("Omega - F",
                                    source("omegaf_page.R")$value),
                           tabPanel("Omega Full - SS",
                                    source("omegaSS_page.R")$value),
@@ -452,7 +452,7 @@ output$IPsummary = renderText({
                "<b>Interpretation:</b> ", checkp(Rscore$p, input$Ralpha), #test interpretation
                sep = ""))
     
-  }) #close d to r
+  }) #close d to rs
   
   ####eta full F####
   output$ETAFsummary = renderText({

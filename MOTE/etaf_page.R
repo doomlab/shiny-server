@@ -7,7 +7,7 @@ fluidRow( #open fluid row
          
          #change title
          div(style="display: inline-black; vertical-align:top; text-align:center; width: 100%;",
-            strong("Eta Full - F")),
+            strong("Eta - F")),
          
          #input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",
@@ -29,8 +29,8 @@ fluidRow( #open fluid row
   column(8,
           tabsetPanel(
             tabPanel("Summary", htmlOutput("ETAFsummary")),
-            tabPanel("Code", helpText("Include code and annotation here
-                                      about what is what.")),
+            tabPanel("Code", withMathJax(), 
+                     HTML(markdown::markdownToHTML(knit("etaf_code.Rmd", quiet = T)))),
             tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
                                  src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
                                   frameborder=\"0\" allowfullscreen></iframe>"))
