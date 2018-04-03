@@ -26,25 +26,25 @@ apa_d = function(saved.d, alpha, digits = 2) {
 apa_var = function(saved.d, alpha, digits = 2, type = "eta") { 
   
   if (type == "eta") {
-    output = paste("<img src=\"test_img.jpg\"> = ", apa(saved.d$eta, digits, leading = F),
+    output = paste("eta^2 = ", apa(saved.d$eta, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$etalow, digits, leading = F), 
                    ", ", apa(saved.d$etahigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "ges") {
-    output = paste("$\\eta_G^2$ = ", apa(saved.d$ges, digits, leading = F),
+    output = paste("eta_G^2 = ", apa(saved.d$ges, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$geslow, digits, leading = F), 
                    ", ", apa(saved.d$geshigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "omega") {
-    output = paste("$\\omega^2$ = ", apa(saved.d$omega, digits, leading = F),
+    output = paste("omega^2 = ", apa(saved.d$omega, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$omegalow, digits, leading = F), 
                    ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "epsilon") {
-    output = paste("$\\epsilon^2$ = ", apa(saved.d$epsilon, digits, leading = F),
+    output = paste("epsilon^2 = ", apa(saved.d$epsilon, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$epsilonlow, digits, leading = F), 
                    ", ", apa(saved.d$epsilonhigh, digits, leading = F), "]", sep = "")
   }
@@ -56,7 +56,7 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
   }
   
   if (type == "R2") {
-    output = paste("$R^2$ = ", apa(saved.d$R2, digits, leading = F),
+    output = paste("R^2 = ", apa(saved.d$R2, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$R2low, digits, leading = F), 
                    ", ", apa(saved.d$R2high, digits, leading = F), "]", sep = "")
   }
@@ -115,7 +115,7 @@ apa_stat = function(saved.d, stat, digits = 2) {
   if (stat == "t") { output = paste("<i>t</i>", "(", saved.d$df, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
   if (stat == "tr") { output = paste("<i>t</i>", "(", saved.d$dfe, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
   if (stat == "F") { output = paste("<i>F</i>", "(", saved.d$dfm, ", ", saved.d$dfe, ")", " = ", apa(saved.d$F, digits), ", ", pvalue, sep = "")}
-  if (stat == "X2") { output = paste("$\\chi^2$", "(", saved.d$df, ")", " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")}
+  if (stat == "X2") { output = paste("X^2", "(", saved.d$df, ")", " = ", apa(saved.d$x2, digits), ", ", pvalue, sep = "")}
   return(output)}
 
 help_console <- function(topic, format=c("text", "html", "latex", "Rd"),
