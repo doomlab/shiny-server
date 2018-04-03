@@ -6,7 +6,7 @@ output:
 html_document:
  self_contained: no
 ---
-The formula for *r* is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 * n_2)}}}$$
+The formula for *r* is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$
 
 The formula for *t* is: $$t = \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 

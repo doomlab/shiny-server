@@ -71,7 +71,10 @@ ui <- fluidPage(
                           tabPanel("Chi-square V",
                                    source("chiV_page.R")$value),
                           tabPanel("Chi-square Odds",
-                                   source("chiO_page.R")$value)
+                                   source("chiO_page.R")$value),
+                          tags$style(type="text/css",
+                                     ".shiny-output-error { visibility: hidden; }",
+                                     ".shiny-output-error:before { visibility: hidden; }")
                           ) ##close navbarMenu
                      ) ##close navbarpage
           ) ##close shinyUI
