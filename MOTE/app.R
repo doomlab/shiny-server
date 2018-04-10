@@ -517,7 +517,7 @@ output$IPsummary = renderText({
                                   as.numeric(input$gesSSrmf), as.numeric(input$gesSSrmalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
-               "<b>Effect Size:</b> ", apa_var(gesrmscore, input$gesSSrmalpha), "<p/>", #effect size
+               "<b>Effect Size:</b> ", apa_var(gesrmscore, input$gesSSrmalpha, type = "ges"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(gesrmscore$geslow, gesrmscore$geshigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(gesrmscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(gesrmscore$p, input$gesSSrmalpha), #test interpretation
@@ -566,7 +566,7 @@ output$IPsummary = renderText({
   ####omega full SS####
   output$omegaSSsummary = renderText({
     
-    omegaSSscore = omega.partial.SS.bn(as.numeric(input$omegaSSdfmod), 
+    omegaSSscore = omega.full.SS(as.numeric(input$omegaSSdfmod), 
                                        as.numeric(input$omegaSSdferr),
                                        as.numeric(input$omegaSSmsmod), 
                                        as.numeric(input$omegaSSmserr),
