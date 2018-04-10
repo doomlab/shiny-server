@@ -75,7 +75,9 @@ ui <- fluidPage(
                           tags$style(type="text/css",
                                      ".shiny-output-error { visibility: hidden; }",
                                      ".shiny-output-error:before { visibility: hidden; }")
-                          ) ##close navbarMenu
+                          ), #close nav bar menu
+                          tabPanel("About", 
+                                   source("about_page.R")$value)
                      ) ##close navbarpage
           ) ##close shinyUI
   
