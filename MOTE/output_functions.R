@@ -40,6 +40,12 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
                    ", ", apa(saved.d$etahigh, digits, leading = F), "]", sep = "")
   }
   
+  if (type == "etap") {
+    output = paste("eta_p^2 = ", apa(saved.d$eta, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$etalow, digits, leading = F), 
+                   ", ", apa(saved.d$etahigh, digits, leading = F), "]", sep = "")
+  }
+  
   if (type == "ges") {
     output = paste("eta_G^2 = ", apa(saved.d$ges, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$geslow, digits, leading = F), 
@@ -48,6 +54,12 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
   
   if (type == "omega") {
     output = paste("omega^2 = ", apa(saved.d$omega, digits, leading = F),
+                   ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$omegalow, digits, leading = F), 
+                   ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "")
+  }
+  
+  if (type == "omegap") {
+    output = paste("omegaPp^2 = ", apa(saved.d$omega, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$omegalow, digits, leading = F), 
                    ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "")
   }

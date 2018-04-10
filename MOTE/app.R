@@ -501,7 +501,7 @@ output$IPsummary = renderText({
                              as.numeric(input$etaSSpartf), as.numeric(input$etaSSpartalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
-               "<b>Effect Size:</b> ", apa_var(partetascore, input$etaSSpartalpha, type = "eta"), "<p/>", #effect size
+               "<b>Effect Size:</b> ", apa_var(partetascore, input$etaSSpartalpha, type = "etap"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(partetascore$etalow, partetascore$etahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(partetascore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(partetascore$p, input$etaSSpartalpha), #test interpretation
@@ -596,7 +596,7 @@ output$IPsummary = renderText({
                                        as.numeric(input$omegaSSbnalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>",
-               "<b>Effect Size:</b> ", apa_var(omegabnscore, input$omegaSSbnalpha, type = "omega"), "<p/>", #effect size
+               "<b>Effect Size:</b> ", apa_var(omegabnscore, input$omegaSSbnalpha, type = "omegap"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(omegabnscore$omegalow, omegabnscore$omegahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(omegabnscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(omegabnscore$p, input$omegaSSbnalpha), #test interpretation
@@ -618,7 +618,7 @@ output$IPsummary = renderText({
                                        as.numeric(input$omegaSSrmalpha))
     
     HTML(paste("<b>Definition:</b> ", eta, "<p/>", 
-               "<b>Effect Size:</b> ", apa_var(omegarmscore, input$omegaSSrmalpha, type = "omega"), "<p/>", #effect size
+               "<b>Effect Size:</b> ", apa_var(omegarmscore, input$omegaSSrmalpha, type = "omegap"), "<p/>", #effect size
                "<b>Interpretation:</b> ", checkzero(omegarmscore$omegalow, omegarmscore$omegahigh), "<p/>", #effect size interpretation
                "<b>Test Statistic:</b> ", apa_stat(omegarmscore, "F"), "<p/>", #test stats
                "<b>Interpretation:</b> ", checkp(omegarmscore$p, input$omegaSSrmalpha), #test interpretation
