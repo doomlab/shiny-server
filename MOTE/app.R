@@ -670,9 +670,9 @@ output$IPsummary = renderText({
                          as.numeric(input$chiOn22),
                          as.numeric(input$chiOalpha))
     
-    HTML(paste("<b>Definition:</b> ", eta, "<p/>",
+    HTML(paste("<b>Definition:</b> ", odds_describe, "<p/>",
                "<b>Effect Size:</b> ", apa_var(chiOscore, input$chiOalpha, type = "o"), "<p/>", #effect size
-               "<b>Interpretation:</b> ", checkzero(chiOscore$olow, chiOscore$ohigh), "<p/>", #effect size interpretation
+               "<b>Interpretation:</b> ", checkone(chiOscore$olow, chiOscore$ohigh), "<p/>", #effect size interpretation
                sep = ""))
   }) #close chi square odds
   

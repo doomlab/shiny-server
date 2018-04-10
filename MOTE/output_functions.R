@@ -5,6 +5,9 @@ yes_zero = "Your confidence interval does include zero, and therefore, you might
 na_zero = "Your confidence interval includes NA, which indicates that the limit cannot be found. When this occurs on the lower limit, that implies that the effect size is similar to zero."
 cohend = "This effect size is traditionally interpreted as the standardized difference between two mean scores."
 eta = "This effect size is traditionally interpreted as the percent of variance accounted for in the DV by the IV(s)."
+odds_describe = "This effect size is traditionally interpreted as like likelihood of group 1 to group 2. Therefore, an odds of 1 indicates they are equally likely. Odds less than 1 indicate that group 2 is more likely, and odds greater than 1 indicate that group 1 is more likely."
+odds_no = "Your confidence interval does not include one, and therefore, you might conclude that this effect size is different from one."
+odds_yes = "Your confidence interval does include one, and therefore, you might conclude that this effect size is similar to one."
 
 checkp = function(p, alpha) { 
   p = as.numeric(p)
@@ -16,6 +19,12 @@ checkzero = function(low, high){
   } else if (low <= 0 & high >= 0) { output = yes_zero 
   } else if (low >= 0 & high <= 0) { output = yes_zero 
   } else { output = no_zero }
+  return(output)}
+checkone = function(low, high){ 
+  if (is.na(low) | is.na(high)) { output = na_zero 
+  } else if (low <= 1 & high >= 1) { output = odds_yes 
+  } else if (low >= 1 & high <= 1) { output = odds_yes 
+  } else { output = odds_no }
   return(output)}
 apa_d = function(saved.d, alpha, digits = 2) { 
   output = paste("d = ", apa(saved.d$d, digits),
