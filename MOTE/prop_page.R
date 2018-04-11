@@ -38,7 +38,7 @@ fluidRow(
            tabPanel("Code", withMathJax(), 
                     HTML(markdown::markdownToHTML(knit("prop_code.Rmd", quiet = T)))),
            tabPanel("Help", HTML("<iframe width=\"560\" height=\"315\" 
-                                 src=\"https://www.youtube.com/embed/iOJbPseBapM\" 
+                                 src=\"https://www.youtube.com/embed/orrpP8Wd5tA\" 
                                  frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>"))
          ) ## close tabset panel
          

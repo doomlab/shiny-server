@@ -9,7 +9,7 @@ output:
  
 The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
  
-The formula for t is: $$Z = \frac{P_1 - P_2}{SE}$$
+The formula for *Z* is: $$Z = \frac{P_1 - P_2}{SE}$$
  
 The code to use MOTE in R is: 
  

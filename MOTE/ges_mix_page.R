@@ -7,7 +7,7 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("GES Partial For Mix Designs")),
+             strong("GES Partial Mix - SS")),
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",

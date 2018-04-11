@@ -6,7 +6,7 @@ output:
 html_document:
  self_contained: no
 ---
-The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$
+The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$
 
 The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
 

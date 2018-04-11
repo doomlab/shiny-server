@@ -7,7 +7,7 @@ fluidRow(
          
          ##change the title here
          div(style="display: inline-block; vertical-align:top; text-align:center; width: 100%;",
-             strong("Chi-Square for V Statistics")),
+             strong("Chi-Square - V")),
          
          ##put input boxes here
          div(style="display: inline-block;vertical-align:top; width: 200px;",

@@ -27,7 +27,7 @@ checkone = function(low, high){
   } else { output = odds_no }
   return(output)}
 apa_d = function(saved.d, alpha, digits = 2) { 
-  output = paste("d = ", apa(saved.d$d, digits),
+  output = paste("<i>d</i> = ", apa(saved.d$d, digits),
         ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$dlow, digits), 
         ", ", apa(saved.d$dhigh, digits), "]", sep = "") 
   return(output)}
@@ -35,37 +35,37 @@ apa_d = function(saved.d, alpha, digits = 2) {
 apa_var = function(saved.d, alpha, digits = 2, type = "eta") { 
   
   if (type == "eta") {
-    output = paste("eta^2 = ", apa(saved.d$eta, digits, leading = F),
+    output = paste("<i>eta^2</i> = ", apa(saved.d$eta, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$etalow, digits, leading = F), 
                    ", ", apa(saved.d$etahigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "etap") {
-    output = paste("eta_p^2 = ", apa(saved.d$eta, digits, leading = F),
+    output = paste("<i>eta_p^2</i> = ", apa(saved.d$eta, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$etalow, digits, leading = F), 
                    ", ", apa(saved.d$etahigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "ges") {
-    output = paste("eta_G^2 = ", apa(saved.d$ges, digits, leading = F),
+    output = paste("<i>eta_G^2</i> = ", apa(saved.d$ges, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$geslow, digits, leading = F), 
                    ", ", apa(saved.d$geshigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "omega") {
-    output = paste("omega^2 = ", apa(saved.d$omega, digits, leading = F),
+    output = paste("<i>omega^2</i> = ", apa(saved.d$omega, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$omegalow, digits, leading = F), 
                    ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "omegap") {
-    output = paste("omegaPp^2 = ", apa(saved.d$omega, digits, leading = F),
+    output = paste("<i>omega_p^2</i> = ", apa(saved.d$omega, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$omegalow, digits, leading = F), 
                    ", ", apa(saved.d$omegahigh, digits, leading = F), "]", sep = "")
   }
   
   if (type == "epsilon") {
-    output = paste("epsilon^2 = ", apa(saved.d$epsilon, digits, leading = F),
+    output = paste("<i>epsilon^2</i> = ", apa(saved.d$epsilon, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$epsilonlow, digits, leading = F), 
                    ", ", apa(saved.d$epsilonhigh, digits, leading = F), "]", sep = "")
   }
@@ -77,7 +77,7 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
   }
   
   if (type == "R2") {
-    output = paste("R^2 = ", apa(saved.d$R2, digits, leading = F),
+    output = paste("<i>R^2</i> = ", apa(saved.d$R2, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$R2low, digits, leading = F), 
                    ", ", apa(saved.d$R2high, digits, leading = F), "]", sep = "")
   }
@@ -89,7 +89,7 @@ apa_var = function(saved.d, alpha, digits = 2, type = "eta") {
   }
   
   if (type == "o") {
-    output = paste("Odds = ", apa(saved.d$odds, digits, leading = F),
+    output = paste("<i>Odds</i> = ", apa(saved.d$odds, digits, leading = F),
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$olow, digits, leading = F), 
                    ", ", apa(saved.d$ohigh, digits, leading = F), "]", sep = "")
   }
@@ -131,7 +131,7 @@ apa_diff = function(saved.d, alpha, digits = 2) {
     return(output)}
   
 apa_stat = function(saved.d, stat, digits = 2) {
-  if (saved.d$p < .001) { pvalue = "p < .001"} else { pvalue = paste("p = ", apa(saved.d$p, 3, F), sep = "") }
+  if (saved.d$p < .001) { pvalue = "<i>p</i> < .001"} else { pvalue = paste("<i>p</i> = ", apa(saved.d$p, 3, F), sep = "") }
   if (stat == "Z") { output = paste("<i>Z</i>", " = ", apa(saved.d$z, digits), ", ", pvalue, sep = "")}
   if (stat == "t") { output = paste("<i>t</i>", "(", saved.d$df, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
   if (stat == "tr") { output = paste("<i>t</i>", "(", saved.d$dfe, ")", " = ", apa(saved.d$t, digits), ", ", pvalue, sep = "")}
