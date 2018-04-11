@@ -41,9 +41,10 @@ fluidRow(
            tabPanel("Summary", htmlOutput("omegaSSsummary")),
            tabPanel("Code", withMathJax(), 
                     HTML(markdown::markdownToHTML(knit("omegaSS_code.Rmd", quiet = T)))),
-           tabPanel("Help", HTML("<iframe width=\"500\" height=\"300\" 
-                                 src=\"https://www.youtube.com/embed/T62maKYX9tU\" 
-                                 frameborder=\"0\" allowfullscreen></iframe>"))
+           tabPanel("Help", HTML("<iframe width=\"560\" height=\"315\" 
+                                 src=\"https://www.youtube.com/embed/5yfUgJB4mwY\" 
+                                 frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>"))
+         
            ) ## close tabset panel
          
          ) ## close column
