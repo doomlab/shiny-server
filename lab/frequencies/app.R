@@ -6,18 +6,18 @@ options(scipen = 999)
 tablemain = read.csv("../lab_table.csv")
 
 ##use the value column for the table below because it contains all the stimuli names
-type = subset(tablemain, select = c(ID, type1, type2))
+type = subset(tablemain, select = c(STUFFID, type1, type2))
 longtype = melt(type, 
-                 id = c("ID"), 
+                 id = c("STUFFID"), 
                  measured = c("type1", "type2"))
 longtype = subset(longtype, value != "")
 longtype$value = droplevels(longtype$value)
 
 ##use the variable column for the table below because it has all the tag names
 
-stimuli = subset(tablemain, select = c(1, 21:66))
+stimuli = subset(tablemain, select = c(1, 22:67))
 longstimuli = melt(stimuli,
-                id = c("ID"),
+                id = c("STUFFID"),
                 measured = c("aoa","ambiguity","arousal","assoc","category",
                              "cloze","complex","concrete","confusion","dist",
                              "dominate","easelearn","familiar","freq","gpc",
@@ -67,8 +67,8 @@ server <- function(input, output) {
   
   output$freqtable <- renderDataTable({
     
-    if (input$choice == "Stimuli") {freqvalues = longstimuli$variable}
-    if (input$choice == "Tags") {freqvalues = longtype$value}
+    if (input$choice == "Stimuli") {freqvalues = longtype$value}
+    if (input$choice == "Tags") {freqvalues = longstimuli$variable}
     if (input$choice == "Journal") {freqvalues = tablemain$ref_journal}
     if (input$choice == "Language") {freqvalues = tablemain$language}
       
