@@ -1,7 +1,7 @@
 library(shiny)
 library(ggplot2)
 doom = read.csv("../lab_table.csv")
-doom$year2 = as.numeric(doom$year)
+doom$year2 = as.numeric(as.character(doom$year))
 
 cleanup = theme(panel.grid.major = element_blank(), 
                 panel.grid.minor = element_blank(), 
