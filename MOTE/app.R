@@ -66,6 +66,8 @@ ui <- fluidPage(
                                    source("omegaSSbn_page.R")$value),
                           tabPanel("Omega Partial RM - SS",
                                    source("omegaSSrm_page.R")$value),
+                          tabPanel("Generalized Omega - RM",
+                                   source("GOSRM_page.R")$value),
                           tabPanel("Epsilon",
                                    source("epsilon_page.R")$value),
                           tabPanel("Chi-square V",
