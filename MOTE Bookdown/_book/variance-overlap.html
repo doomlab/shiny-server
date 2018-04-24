@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MOTE</title>
+  <meta name="description" content="MOTE: Magnitude of the Effect">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="MOTE" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="<a href="http://shiny.aggieerin.com:3838/MOTE/" class="uri">http://shiny.aggieerin.com:3838/MOTE/</a>" />
+  
+  <meta property="og:description" content="MOTE: Magnitude of the Effect" />
+  <meta name="github-repo" content="<a href="https://github.com/doomlab/shiny-server" class="uri">https://github.com/doomlab/shiny-server</a>" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="MOTE" />
+  
+  <meta name="twitter:description" content="MOTE: Magnitude of the Effect" />
+  
+
+<meta name="author" content="Dr. Erin Buchanan’s DOOM Lab">
+
+
+<meta name="date" content="2018-04-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="mean-differences.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MOTE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="general-overview.html"><a href="general-overview.html"><i class="fa fa-check"></i><b>1</b> General Overview</a></li>
+<li class="chapter" data-level="2" data-path="effect-size.html"><a href="effect-size.html"><i class="fa fa-check"></i><b>2</b> Effect Size</a></li>
+<li class="chapter" data-level="3" data-path="noncentral-confidence-intervals.html"><a href="noncentral-confidence-intervals.html"><i class="fa fa-check"></i><b>3</b> Noncentral Confidence Intervals</a></li>
+<li class="chapter" data-level="4" data-path="mean-differences.html"><a href="mean-differences.html"><i class="fa fa-check"></i><b>4</b> Mean Differences</a><ul>
+<li class="chapter" data-level="4.1" data-path="mean-differences.html"><a href="mean-differences.html#z-test---means"><i class="fa fa-check"></i><b>4.1</b> Z-Test - Means</a></li>
+<li class="chapter" data-level="4.2" data-path="mean-differences.html"><a href="mean-differences.html#z-test---z"><i class="fa fa-check"></i><b>4.2</b> Z Test - Z</a></li>
+<li class="chapter" data-level="4.3" data-path="mean-differences.html"><a href="mean-differences.html#single-sample-t---means"><i class="fa fa-check"></i><b>4.3</b> Single Sample t - Means</a></li>
+<li class="chapter" data-level="4.4" data-path="mean-differences.html"><a href="mean-differences.html#single-sample-t---t"><i class="fa fa-check"></i><b>4.4</b> Single Sample t - t</a></li>
+<li class="chapter" data-level="4.5" data-path="mean-differences.html"><a href="mean-differences.html#dependent-t-averages---means"><i class="fa fa-check"></i><b>4.5</b> Dependent t Averages - Means</a></li>
+<li class="chapter" data-level="4.6" data-path="mean-differences.html"><a href="mean-differences.html#dependent-t-differences---means"><i class="fa fa-check"></i><b>4.6</b> Dependent t Differences - Means</a></li>
+<li class="chapter" data-level="4.7" data-path="mean-differences.html"><a href="mean-differences.html#dependent-t-differences---t"><i class="fa fa-check"></i><b>4.7</b> Dependent t Differences - t</a></li>
+<li class="chapter" data-level="4.8" data-path="mean-differences.html"><a href="mean-differences.html#dependent-t-repeated-measures---means"><i class="fa fa-check"></i><b>4.8</b> Dependent t Repeated Measures - Means</a></li>
+<li class="chapter" data-level="4.9" data-path="mean-differences.html"><a href="mean-differences.html#independent-t---means"><i class="fa fa-check"></i><b>4.9</b> Independent t - Means</a></li>
+<li class="chapter" data-level="4.10" data-path="mean-differences.html"><a href="mean-differences.html#independent-t---t"><i class="fa fa-check"></i><b>4.10</b> Independent t - t</a></li>
+<li class="chapter" data-level="4.11" data-path="mean-differences.html"><a href="mean-differences.html#independent-t-delta---means"><i class="fa fa-check"></i><b>4.11</b> Independent t Delta - Means</a></li>
+<li class="chapter" data-level="4.12" data-path="mean-differences.html"><a href="mean-differences.html#independent-t-g---means"><i class="fa fa-check"></i><b>4.12</b> Independent t g - Means</a></li>
+<li class="chapter" data-level="4.13" data-path="mean-differences.html"><a href="mean-differences.html#independent-proportions"><i class="fa fa-check"></i><b>4.13</b> Independent Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="variance-overlap.html"><a href="variance-overlap.html"><i class="fa fa-check"></i><b>5</b> Variance Overlap</a><ul>
+<li class="chapter" data-level="5.1" data-path="variance-overlap.html"><a href="variance-overlap.html#eta---f"><i class="fa fa-check"></i><b>5.1</b> Eta - F</a></li>
+<li class="chapter" data-level="5.2" data-path="variance-overlap.html"><a href="variance-overlap.html#eta-full---ss"><i class="fa fa-check"></i><b>5.2</b> Eta Full - SS</a></li>
+<li class="chapter" data-level="5.3" data-path="variance-overlap.html"><a href="variance-overlap.html#eta-partial---ss"><i class="fa fa-check"></i><b>5.3</b> Eta Partial - SS</a></li>
+<li class="chapter" data-level="5.4" data-path="variance-overlap.html"><a href="variance-overlap.html#ges-partial-rm---ss"><i class="fa fa-check"></i><b>5.4</b> GES Partial RM - SS</a></li>
+<li class="chapter" data-level="5.5" data-path="variance-overlap.html"><a href="variance-overlap.html#ges-partial-rm---ss-1"><i class="fa fa-check"></i><b>5.5</b> GES Partial RM - SS</a></li>
+<li class="chapter" data-level="5.6" data-path="variance-overlap.html"><a href="variance-overlap.html#omega---f"><i class="fa fa-check"></i><b>5.6</b> Omega - F</a></li>
+<li class="chapter" data-level="5.7" data-path="variance-overlap.html"><a href="variance-overlap.html#omega-full---ss"><i class="fa fa-check"></i><b>5.7</b> Omega Full - SS</a></li>
+<li class="chapter" data-level="5.8" data-path="variance-overlap.html"><a href="variance-overlap.html#omega-partial-bn---ss"><i class="fa fa-check"></i><b>5.8</b> Omega Partial BN - SS</a></li>
+<li class="chapter" data-level="5.9" data-path="variance-overlap.html"><a href="variance-overlap.html#omega-partial-rm---ss"><i class="fa fa-check"></i><b>5.9</b> Omega Partial RM - SS</a></li>
+<li class="chapter" data-level="5.10" data-path="variance-overlap.html"><a href="variance-overlap.html#epsilon"><i class="fa fa-check"></i><b>5.10</b> Epsilon</a></li>
+<li class="chapter" data-level="5.11" data-path="variance-overlap.html"><a href="variance-overlap.html#generalized-omega---rm"><i class="fa fa-check"></i><b>5.11</b> Generalized Omega - RM</a></li>
+<li class="chapter" data-level="5.12" data-path="variance-overlap.html"><a href="variance-overlap.html#chi-square-v"><i class="fa fa-check"></i><b>5.12</b> Chi-square v</a></li>
+<li class="chapter" data-level="5.13" data-path="variance-overlap.html"><a href="variance-overlap.html#chi-square-odds"><i class="fa fa-check"></i><b>5.13</b> Chi-square Odds</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MOTE</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="variance-overlap" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Variance Overlap</h1>
+
+<div id="eta---f" class="section level2">
+<h2><span class="header-section-number">5.1</span> Eta - F</h2>
+
+</div>
+<div id="eta-full---ss" class="section level2">
+<h2><span class="header-section-number">5.2</span> Eta Full - SS</h2>
+
+</div>
+<div id="eta-partial---ss" class="section level2">
+<h2><span class="header-section-number">5.3</span> Eta Partial - SS</h2>
+
+</div>
+<div id="ges-partial-rm---ss" class="section level2">
+<h2><span class="header-section-number">5.4</span> GES Partial RM - SS</h2>
+
+</div>
+<div id="ges-partial-rm---ss-1" class="section level2">
+<h2><span class="header-section-number">5.5</span> GES Partial RM - SS</h2>
+
+</div>
+<div id="omega---f" class="section level2">
+<h2><span class="header-section-number">5.6</span> Omega - F</h2>
+
+</div>
+<div id="omega-full---ss" class="section level2">
+<h2><span class="header-section-number">5.7</span> Omega Full - SS</h2>
+
+</div>
+<div id="omega-partial-bn---ss" class="section level2">
+<h2><span class="header-section-number">5.8</span> Omega Partial BN - SS</h2>
+
+</div>
+<div id="omega-partial-rm---ss" class="section level2">
+<h2><span class="header-section-number">5.9</span> Omega Partial RM - SS</h2>
+
+</div>
+<div id="epsilon" class="section level2">
+<h2><span class="header-section-number">5.10</span> Epsilon</h2>
+
+</div>
+<div id="generalized-omega---rm" class="section level2">
+<h2><span class="header-section-number">5.11</span> Generalized Omega - RM</h2>
+
+</div>
+<div id="chi-square-v" class="section level2">
+<h2><span class="header-section-number">5.12</span> Chi-square v</h2>
+
+</div>
+<div id="chi-square-odds" class="section level2">
+<h2><span class="header-section-number">5.13</span> Chi-square Odds</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mean-differences.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
