@@ -1,0 +1,94 @@
+---
+title             : "The title"
+shorttitle        : "Title"
+
+author: 
+  - name          : "Erin M. Buchanan"
+    affiliation   : "1"
+    corresponding : yes 
+    address       : "901 S National, Springfield, MO, 65897"
+    email         : "erinbuchanan@missouristate.edu"
+  - name          : "Ernst-August Doelle"
+    affiliation   : "1"
+  - name          : "Ernst-August Doelle"
+    affiliation   : "1"
+  - name          : "Ernst-August Doelle"
+    affiliation   : "1"
+  - name          : "Ernst-August Doelle"
+    affiliation   : "1"
+
+affiliation:
+  - id            : "1"
+    institution   : "Missouri State University"
+
+author_note: |
+  Erin M. Buchanan is an Associate Professor of Quantitative Psychology in the Department of Psychology at Missouri State University.
+
+abstract: |
+  Enter abstract here. Each new line herein must be indented, like this line.
+  
+keywords          : "effect size, mean differences, variance overlap, app, tutorial"
+
+#bibliography      : ["r-references.bib"] turn this back on later
+
+figsintext        : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : yes
+mask              : no
+
+class             : "man"
+output            : papaja::apa6_pdf
+replace_ampersands: yes
+csl               : apa6.csl
+---
+
+```{r load_packages, include = FALSE}
+library("papaja")
+```
+
+What are effect sizes?
+- Lakens 13
+
+Why are they so damned important
+- 1999 task force says so
+- help you power, sample size planning
+- p values are useless
+- useful for meta-analyses
+
+Why is it so hard to do this shiz
+- Fritz (maybe Fiedler's) work on under reporting of effect sizes
+- Geoff Cummings papers on what is what non central blah is not easy (also Smithson, Kelley)
+- so we are trying to make it easy! look at us go!
+
+Now for the section below, let's think about what sections to include. The information below is just normal papaja stuff.
+
+We are targeting this journal: http://www.apa.org/pubs/journals/met/call-for-papers-tutorials.aspx
+
+So, let's see if we can find some of those and format it similarly. I think if you found the Maxwell shiny app for power that would be a great one to model after.  
+
+# Method
+
+## Participants
+
+## Material
+
+## Procedure
+
+## Data analysis
+
+# Results
+
+# Discussion
+
+\newpage
+
+# References
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id = "refs"></div>
+\endgroup
