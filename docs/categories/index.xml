@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on MOTE Effect Size Calculator</title>
-    <link>https://www.aggieerin.com/categories/</link>
+    <link>https://www.aggieerin.com/shiny-server/categories/</link>
     <description>Recent content in Categories on MOTE Effect Size Calculator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://www.aggieerin.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.aggieerin.com/shiny-server/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

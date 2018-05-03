@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on MOTE Effect Size Calculator</title>
-    <link>https://www.aggieerin.com/post/</link>
+    <link>https://www.aggieerin.com/shiny-server/post/</link>
     <description>Recent content in Posts on MOTE Effect Size Calculator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 03 May 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.aggieerin.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.aggieerin.com/shiny-server/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>General Overview</title>
-      <link>https://www.aggieerin.com/generaloverview/</link>
+      <link>https://www.aggieerin.com/shiny-server/generaloverview/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/generaloverview/</guid>
+      <guid>https://www.aggieerin.com/shiny-server/generaloverview/</guid>
       <description>The effect size is a measure of the magnitude of the effect. How much did grades improve after an intervention? To what degree were symptoms reduced after a treatment? Effect size supplements p-values by providing this critical information. The MOTE package provides researchers with a streamlined tool to calculate effect size and interpret test statistics.</description>
     </item>
     
     <item>
       <title>Why Report Effect Size?</title>
-      <link>https://www.aggieerin.com/effectsize/</link>
+      <link>https://www.aggieerin.com/shiny-server/effectsize/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/effectsize/</guid>
+      <guid>https://www.aggieerin.com/shiny-server/effectsize/</guid>
       <description>Effect size is the standardized mean differences between groups. It is a measure of the magnitude of the effect. Unlike p-values, it is not condounded by sample size.
 How much did grades improve after an intervention? To what degree were symptoms reduced after a treatment?
 Effect size supplements p-values by providing this critical information.</description>
@@ -33,19 +33,19 @@ Effect size supplements p-values by providing this critical information.</descri
     
     <item>
       <title>Why Report Confidence Intervals?</title>
-      <link>https://www.aggieerin.com/confidenceintervals/</link>
+      <link>https://www.aggieerin.com/shiny-server/confidenceintervals/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/confidenceintervals/</guid>
+      <guid>https://www.aggieerin.com/shiny-server/confidenceintervals/</guid>
       <description>A confidence interval contains a range of values that are likely to contain an approximation of the population parameter.</description>
     </item>
     
     <item>
       <title>Mean Differences</title>
-      <link>https://www.aggieerin.com/meandifferences/</link>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/meandifferences/</guid>
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/</guid>
       <description>Z-Test - Means
 Z Test - Z
 Single Sample t - Means
@@ -61,19 +61,19 @@ Independent Proportions</description>
     
     <item>
       <title>Variance Overlap</title>
-      <link>https://www.aggieerin.com/varianceoverlap/</link>
+      <link>https://www.aggieerin.com/shiny-server/varianceoverlap/</link>
       <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/varianceoverlap/</guid>
+      <guid>https://www.aggieerin.com/shiny-server/varianceoverlap/</guid>
       <description>Eta - F Eta Full - SS Eta Partial - SS GES Partial RM - SS Omega - F Omega Full - SS Omega Partial BN - SS Epsilon Generalized Omega - RM Chi-square v Chi-square Odds</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.aggieerin.com/1/01/</link>
+      <link>https://www.aggieerin.com/shiny-server/1/01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/1/01/</guid>
+      <guid>https://www.aggieerin.com/shiny-server/1/01/</guid>
       <description>Mean Differences       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
