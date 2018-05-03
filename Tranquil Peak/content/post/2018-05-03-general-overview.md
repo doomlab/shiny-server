@@ -4,6 +4,7 @@ author: Doom Lab
 date: '2018-05-03'
 slug: general-overview
 showDate: false
+url: /generaloverview/
 categories: []
 tags: []
 ---

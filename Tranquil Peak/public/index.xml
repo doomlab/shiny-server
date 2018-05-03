@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MOTE Calculator</title>
+    <title>MOTE Effect Size Calculator</title>
     <link>/</link>
-    <description>Recent content on MOTE Calculator</description>
+    <description>Recent content on MOTE Effect Size Calculator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 03 May 2018 00:00:00 +0000</lastBuildDate>
@@ -13,19 +13,19 @@
     
     <item>
       <title>General Overview</title>
-      <link>/2018/05/general-overview/</link>
+      <link>/generaloverview/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/05/general-overview/</guid>
+      <guid>/generaloverview/</guid>
       <description>The effect size is a measure of the magnitude of the effect. How much did grades improve after an intervention? To what degree were symptoms reduced after a treatment? Effect size supplements p-values by providing this critical information. The MOTE package provides researchers with a streamlined tool to calculate effect size and interpret test statistics.</description>
     </item>
     
     <item>
       <title>Why Report Effect Size?</title>
-      <link>/2018/05/why-report-effect-size/</link>
+      <link>/effectsize/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/05/why-report-effect-size/</guid>
+      <guid>/effectsize/</guid>
       <description>Effect size is the standardized mean differences between groups. It is a measure of the magnitude of the effect. Unlike p-values, it is not condounded by sample size.
 How much did grades improve after an intervention? To what degree were symptoms reduced after a treatment?
 Effect size supplements p-values by providing this critical information.</description>
@@ -33,28 +33,28 @@ Effect size supplements p-values by providing this critical information.</descri
     
     <item>
       <title>Why Report Confidence Intervals?</title>
-      <link>/2018/05/why-report-confidence-intervals/</link>
+      <link>/confidenceintervals/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/05/why-report-confidence-intervals/</guid>
-      <description></description>
+      <guid>/confidenceintervals/</guid>
+      <description>A confidence interval contains a range of values that are likely to contain an approximation of the population parameter.</description>
     </item>
     
     <item>
       <title>Mean Differences</title>
-      <link>/2018/05/mean-differences/</link>
+      <link>/meandifferences/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/05/mean-differences/</guid>
+      <guid>/meandifferences/</guid>
       <description>Z-Test - Means Z Test - Z Single Sample t - Means Single Sample t - t Dependent t Averages - Means Dependent t Differences - Means Dependent t Repeated Measures Independent t - Means Independent t - t Independent t Delta - Means Independent Proportions</description>
     </item>
     
     <item>
       <title>Variance Overlap</title>
-      <link>/2018/04/variance-overlap/</link>
+      <link>/varianceoverlap/</link>
       <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/04/variance-overlap/</guid>
+      <guid>/varianceoverlap/</guid>
       <description>Eta - F Eta Full - SS Eta Partial - SS GES Partial RM - SS Omega - F Omega Full - SS Omega Partial BN - SS Epsilon Generalized Omega - RM Chi-square v Chi-square Odds</description>
     </item>
     

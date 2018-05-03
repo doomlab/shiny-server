@@ -4,6 +4,7 @@ author: ~
 date: '2018-05-01'
 slug: mean-differences
 showDate: false
+url: /meandifferences/
 categories: []
 tags: []
 ---

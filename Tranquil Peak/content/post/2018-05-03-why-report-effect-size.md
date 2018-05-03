@@ -3,6 +3,7 @@ title: Why Report Effect Size?
 author: ~
 date: '2018-05-03'
 slug: why-report-effect-size
+url: /effectsize/
 showDate: false
 categories: []
 tags: []
