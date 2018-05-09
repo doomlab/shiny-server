@@ -78,7 +78,7 @@ publishDir = "../docs"
   url = "/varianceoverlap/"
 
 [[menu.links]]
-  weight = 1
+  weight = 6
   identifier = "github"
   name = "GitHub"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
