@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on MOTE Effect Size Calculator</title>
+    <link>https://www.aggieerin.com/shiny-server/page/</link>
+    <description>Recent content in Pages on MOTE Effect Size Calculator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.aggieerin.com/shiny-server/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Z Test - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans.html</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
