@@ -4,6 +4,7 @@ author: DOOM Lab
 date: '2018-05-09'
 slug: ztestmeans
 url: /meandifferences/ztestmeans.html
+showDate: false
 ---
 
 # Description   
