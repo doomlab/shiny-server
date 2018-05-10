@@ -6,7 +6,7 @@ slug: mean-differences
 showDate: false
 url: /meandifferences/
 ---
-[Z-Test - Means](/meandifferences/ztestmeans)
+[Z-Test - Means](ztestmeans.html)
 
 Z Test - Z
 
