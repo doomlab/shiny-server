@@ -13,10 +13,10 @@
     
     <item>
       <title>Z Test - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans.html</link>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans/</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans/</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
@@ -55,7 +55,7 @@ Effect size supplements p-values by providing this critical information.</descri
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/meandifferences/</guid>
-      <description>Z-Test - Means
+      <description>[Z-Test - Means](&amp;ldquo;/ztestmeans/&amp;rdquo;)
 Z Test - Z
 Single Sample t - Means
 Single Sample t - t
@@ -79,10 +79,10 @@ Independent Proportions</description>
     
     <item>
       <title>About</title>
-      <link>https://www.aggieerin.com/shiny-server/about/</link>
+      <link>https://www.aggieerin.com/shiny-server/page/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/about/</guid>
+      <guid>https://www.aggieerin.com/shiny-server/page/about/</guid>
       <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
     </item>
     
