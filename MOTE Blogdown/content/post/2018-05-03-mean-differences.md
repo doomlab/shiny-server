@@ -5,10 +5,8 @@ date: '2018-05-01'
 slug: mean-differences
 showDate: false
 url: /meandifferences/
-categories: []
-tags: []
 ---
-Z-Test - Means
+[Z-Test - Means](/meandifferences/ztestmeans)
 
 Z Test - Z
 
