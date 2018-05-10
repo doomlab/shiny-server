@@ -16,9 +16,9 @@ showTags: false
 
 This function displays *d* for *z*-scores with the population mean and standard deviation. The normal confidence interval is also provided. 
 
-The formula for d is: $$d = \frac{M - \mu}{\sigma}$$
+The formula for *d* is: $$d = \frac{M - \mu}{\sigma}$$
 
-The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
+The formula for *Z* is: $$Z = \frac{M - \mu}{\sigma_M}$$
 
 # R Function
 
