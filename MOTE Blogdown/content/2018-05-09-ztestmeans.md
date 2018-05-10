@@ -11,12 +11,11 @@ showTags: false
 ---
 
 <!--more-->
-<!-- toc -->
 
 # Description   
 This function displays d for z-scores with the population mean and standard deviation. The normal confidence interval is also provided. 
 
-The formula for d is: $$d = \frac{M - \mu}{\sigma}$$
+The formula for d is: `$$d = \frac{M - \mu}{\sigma}$$`
 
 The formula for Z is: \\Z = \frac{M - \mu}{\sigma_M}\\]
 
@@ -49,6 +48,7 @@ Your confidence interval does include zero, and therefore, you might conclude th
 Your p-value is greater than the alpha value, and therefore, this test would be considered not statistically significant.
 
 # Function in R: 
-d.z.mean(mu = 22.5, m1 = 19, sig = 4, sd1 = 5, n = 25, a = .05)
+d.z.mean(mu = 22.5, m1 = 19, sig = 4, sd1 = 5, n = 25, a = .05)  
 
-[Stats Tools Z-Test Means Tutorial](https://youtu.be/CyfOS7Ew-Hw)
+# Tutorial
+{{< youtube CyfOS7Ew-Hw >}}

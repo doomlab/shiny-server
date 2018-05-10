@@ -8,4 +8,5 @@ showDate: false
 categories: []
 tags: []
 ---
-A confidence interval contains a range of values that are likely to contain an approximation of the population parameter. 
+
+<iframe style="border: 0; width: 100%; height: 3000" src="http://shiny.aggieerin.com:3838/MOTE/"></iframe>
