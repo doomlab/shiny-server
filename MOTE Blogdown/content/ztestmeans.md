@@ -7,6 +7,11 @@ url: /meandifferences/ztestmeans.html
 showDate: false
 ---
 
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 # Description   
 
 This function displays *d* for *z*-scores with the population mean and standard deviation. The normal confidence interval is also provided. 
