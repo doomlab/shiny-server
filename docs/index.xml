@@ -12,6 +12,36 @@
     
     
     <item>
+      <title>Single Sample t - t</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/singlett.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/singlett.html</guid>
+      <description>Description This function displays d and non-central confidence interval for single t estimated from the t-statistic.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.</description>
+    </item>
+    
+    <item>
+      <title>TITLE OF THE PAGE HERE</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/shorttitle.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/shorttitle.html</guid>
+      <description>Description GET THIS INFORMATION FROM THE HELP PAGE OF THE MOTE APP
+R Function PUT THE R FUNCTION HERE
+Arguments PUT THE ARGUMENTS HERE
+Example INCLUDE AN EXAMPLE FROM 527
+INCLUDE THE NUMBERS FOR THE ARGUMENT LISTED OUT
+Function in R: INCLUDE THE FUNCTION HOW YOU WOULD WRITE IT IN R
+MOTE Screenshot Effect Size: INCLUDE THE OUTPUT FROM MOTE
+Interpretation: INCLUDE INTERPRETATION FROM MOTE
+Summary Statistics: INCLUDE SUMMARY STATISTICS FROM MOTE</description>
+    </item>
+    
+    <item>
       <title>Z Test - Means</title>
       <link>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -41,9 +71,8 @@ Arguments  mu = population mean
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/effectsize/</guid>
-      <description>Effect size is the standardized mean differences between groups. It is a measure of the magnitude of the effect. Unlike p-values, it is not condounded by sample size.
-How much did grades improve after an intervention? To what degree were symptoms reduced after a treatment?
-Effect size supplements p-values by providing this critical information.</description>
+      <description>Effect sizes broadly fall into two categories:
+1) Mean differences: normally represented by *Z* or *d*, usually the standardized difference between two means. 2) Variance overlap: normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s).  Overall, we can think about effect sizes as a measure of the magnitude of an phenomenon. Unlike p-values, effect size is not as confounded by sample size.</description>
     </item>
     
     <item>

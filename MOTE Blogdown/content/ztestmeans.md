@@ -45,6 +45,7 @@ The average quiz test taking time for a 10 item test is 22.5 minutes, with a sta
 + a = .05
 
 # Function in R: 
+
 d.z.mean(mu = 22.5, m1 = 19, sig = 10, sd1 = 5, n = 25, a = .05)
 
 # MOTE

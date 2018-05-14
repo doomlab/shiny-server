@@ -10,7 +10,7 @@ url: /meandifferences/
 
 *Z* Test - *Z*
 
-Single Sample *t* - Means
+[Single Sample *t* - Means](singlett.html)
 
 Single Sample *t* - *t*
 
