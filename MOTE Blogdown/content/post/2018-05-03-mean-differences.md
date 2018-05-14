@@ -10,9 +10,9 @@ url: /meandifferences/
 
 *Z* Test - *Z*
 
-[Single Sample *t* - Means](singlett.html)
+Single Sample *t* - Means
 
-Single Sample *t* - *t*
+[Single Sample *t* - *t*](singlett.html)
 
 Dependent *t* Averages - Means
 
