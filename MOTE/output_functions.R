@@ -1,4 +1,4 @@
-significant = "Your <i>p</i>-value is less than the alpha value, and therefore, this test would be considered statistically signifcant."
+significant = "Your <i>p</i>-value is less than the alpha value, and therefore, this test would be considered statistically significant."
 not_sig = "Your <i>p</i>-value is greater than the alpha value, and therefore, this test would be considered not statistically significant."
 no_zero = "Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero."
 yes_zero = "Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero."
