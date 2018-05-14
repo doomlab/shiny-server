@@ -34,12 +34,14 @@ d.single.t.t(t, n, a = 0.05)
 
 A school has a gifted/honors program that they claim is significantly better than others in the country.  The national average for gifted programs is a SAT score of 1250.  The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
+**JASP**
 ![Single t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20JASP.png)
 
+**SPSS**
 ![Single t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20SPSS.png)
-
+**SAS**
 ![Single t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20SAS.PNG)
-
+ 
 + t = 9.968
 + n = 15
 + a = .05

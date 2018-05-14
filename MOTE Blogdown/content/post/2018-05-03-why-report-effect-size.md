@@ -11,8 +11,9 @@ tags: []
 
 Effect sizes broadly fall into two categories:
   
-    1) Mean differences: normally represented by *Z* or *d*, usually the standardized difference between two means.
-    2) Variance overlap: normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s). 
+1) Mean differences: normally represented by *Z* or *d*, usually the standardized difference between two means.
+
+2) Variance overlap: normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s). 
   
 Overall, we can think about effect sizes as a measure of the *magnitude* of an phenomenon. Unlike *p*-values, effect size is not as confounded by sample size. Effect sizes supplement *p*-values by providing this critical information. For example, we might want to know how much did grades improve after an intervention? Or to what degree were symptoms reduced after a treatment? 
 
