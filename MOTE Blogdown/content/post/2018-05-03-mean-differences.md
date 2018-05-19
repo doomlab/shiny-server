@@ -16,7 +16,7 @@ Single Sample *t* - Means
 
 [Dependent *t* Averages - Means](deptavgM.html) 
 
-Dependent *t* Differences - Means
+[Dependent *t* Differences - Means](deptdiffM.html)
 
 Dependent *t* Repeated Measures 
 
