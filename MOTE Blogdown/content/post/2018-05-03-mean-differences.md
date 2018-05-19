@@ -14,7 +14,7 @@ Single Sample *t* - Means
 
 [Single Sample *t* - *t*](singlett.html)
 
-Dependent *t* Averages - Means
+[Dependent *t* Averages - Means](deptavgM.html) 
 
 Dependent *t* Differences - Means
 
