@@ -10,7 +10,7 @@ url: /meandifferences/
 
 [*Z* Test - *Z*](ztestz.html)
 
-Single Sample *t* - Means
+[Single Sample *t* - Means](singletmeans.html)
 
 [Single Sample *t* - *t*](singlett.html)
 
@@ -26,4 +26,4 @@ Independent *t* - *t*
 
 Independent *t* Delta - Means
 
-Independent Proportions
+[Independent Proportions](independentproportions.html)

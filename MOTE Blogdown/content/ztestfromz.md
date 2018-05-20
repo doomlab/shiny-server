@@ -1,5 +1,5 @@
 ---
-title: Z-Test - Z
+title: Z Test - Z
 author: DOOM Lab
 date: '2018-05-09'
 slug: ztestz
@@ -33,7 +33,7 @@ d.z.z(z, sig = NA, n, a = 0.05)
 
 # Example  
 
-A recent study suggested that students (N = 100) learning statistics improved their test scores with the use of visual aids (Z = 2.5, SD = 4). 
+A recent study suggested that students (N = 100) learning statistics improved their test scores with the use of visual aids (*Z* = 2.5, *SD* = 4). 
 
 + z = 2.5
 + sig	= 4
@@ -48,7 +48,6 @@ d.z.z(z = 2.5, sig = 4, n = 100, a = .05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
 
 ## Effect Size:
 
@@ -68,7 +67,7 @@ Not applicable.
 
 ## Interpretation: 
 
-Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.
+Your *p*-value is less than the alpha value, and therefore, this test would be considered statistically significant.
 
 # Tutorial
 
