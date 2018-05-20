@@ -8,7 +8,7 @@ url: /meandifferences/
 ---
 [*Z*-Test - Means](ztestmeans.html)
 
-*Z* Test - *Z*
+[*Z* Test - *Z*](ztestz.html)
 
 Single Sample *t* - Means
 
