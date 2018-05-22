@@ -12,6 +12,68 @@
     
     
     <item>
+      <title>Dependent *t* Averages - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/deptavgm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/deptavgm.html</guid>
+      <description>Description This function displays d for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
+      <title>Dependent *t* Differences - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/deptdiffm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/deptdiffm.html</guid>
+      <description>Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
+The formula for d is: $$d = \frac{M_1 - M2}{SD{differences}}$$
+The formula for t is: $$t = \frac{M_1 - M2}{SE{differences}}$$
+R Function d.dep.t.diff(mdiff, sddiff, n, a = 0.05)
+Arguments  mdiff = mean difference score sddiff = standard deviation of the difference scores n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
+      <title>Dependent t Repeated Measures</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html</guid>
+      <description>Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
+      <title>Independent Proportions</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/independentproportions.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/independentproportions.html</guid>
+      <description>Description This function displays d and central confidence interval calculated from differences in independent proportions.
+The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
+The formula for Z is: $$Z = \frac{P_1 - P_2}{SE}$$
+R Function d.prop(p1, p2, n1, n2, a = 0.05)
+Arguments  p1 = proportion of people group one p2 = proportion of people group two n1 = sample size group one n2 = sample size group two a = significance level  Example Several researchers were examining the data on the number of students who retake a course after they receive a D, F, or withdraw from the course.</description>
+    </item>
+    
+    <item>
+      <title>Single Sample *t* - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/singletmeans.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/singletmeans.html</guid>
+      <description>Description This function displays d and non-central confidence interval for single t from means.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t(m, u, sd, n, a = 0.05)
+Arguments  m = sample mean u = population mean sd = sample standard deviation n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.</description>
+    </item>
+    
+    <item>
       <title>Single Sample t - t</title>
       <link>https://www.aggieerin.com/shiny-server/meandifferences/singlett.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -54,6 +116,19 @@ R Function d.z.mean(mu, m1, sig, sd1, n, a = 0.05)
 Arguments  mu = population mean
  m1 = sample study mean
  sig = population standard deviation</description>
+    </item>
+    
+    <item>
+      <title>Z Test - Z</title>
+      <link>https://www.aggieerin.com/shiny-server/meandifferences/ztestz.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/meandifferences/ztestz.html</guid>
+      <description>Description This function displays d for z-scores when all you have is the z-statistics. The normoal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+The formula for d is: $$d = \frac{Z}{\sqrt(N)}$$
+The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
+R Function d.z.z(z, sig = NA, n, a = 0.05)
+Arguments  z = statistic sig = population standard deviation n = sample size a = significance level  Example A recent study suggested that students (N = 100) learning statistics improved their test scores with the use of visual aids (Z = 2.</description>
     </item>
     
     <item>

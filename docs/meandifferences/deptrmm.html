@@ -1,8 +1,6 @@
 
 
   
-    
-  
 
 
   
@@ -20,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.36.1 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Mean Differences</title>
+    <title>Dependent t Repeated Measures</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -28,45 +26,21 @@
     
 
     
-    <meta name="description" content="Z-Test - Means
-Z Test - Z
-Single Sample t - Means
-Single Sample t - t
-Dependent t Averages - Means
-Dependent t Differences - Means
-Dependent t Repeated Measures
-Independent t - Means
-Independent t - t
-Independent t Delta - Means
-Independent Proportions">
-    <meta property="og:description" content="Z-Test - Means
-Z Test - Z
-Single Sample t - Means
-Single Sample t - t
-Dependent t Averages - Means
-Dependent t Differences - Means
-Dependent t Repeated Measures
-Independent t - Means
-Independent t - t
-Independent t Delta - Means
-Independent Proportions">
+    <meta name="description" content="Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+    <meta property="og:description" content="Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Mean Differences">
-    <meta property="og:url" content="/meandifferences/">
+    <meta property="og:title" content="Dependent t Repeated Measures">
+    <meta property="og:url" content="/meandifferences/deptrmM.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Z-Test - Means
-Z Test - Z
-Single Sample t - Means
-Single Sample t - t
-Dependent t Averages - Means
-Dependent t Differences - Means
-Dependent t Repeated Measures
-Independent t - Means
-Independent t - t
-Independent t Delta - Means
-Independent Proportions">
+    <meta name="twitter:description" content="Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -213,7 +187,7 @@ Independent Proportions">
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Mean Differences
+      Dependent t Repeated Measures
     </h1>
   
   
@@ -226,27 +200,91 @@ Independent Proportions">
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p><a href="ztestmeans.html"><em>Z</em>-Test - Means</a></p>
+              
 
-<p><a href="ztestz.html"><em>Z</em> Test - <em>Z</em></a></p>
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
-<p><a href="singletmeans.html">Single Sample <em>t</em> - Means</a></p>
+<h1 id="description">Description</h1>
 
-<p><a href="singlett.html">Single Sample <em>t</em> - <em>t</em></a></p>
+<p>This function displays <em>d</em> for repeated measures data controlling for <em>r</em> and the non-central confidence interval using the average standard deviation of each level as the denominator.</p>
 
-<p><a href="deptavgM.html">Dependent <em>t</em> Averages - Means</a></p>
+<h1 id="r-function">R Function</h1>
 
-<p><a href="deptdiffM.html">Dependent <em>t</em> Differences - Means</a></p>
+<p>d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)</p>
 
-<p>Dependent <em>t</em> Repeated Measures</p>
+<h1 id="arguments">Arguments</h1>
 
-<p>Independent <em>t</em> - Means</p>
+<ul>
+<li>m1 = mean from first level</li>
+<li>m2 = mean from second level</li>
+<li>sd1    = standard deviation from first level</li>
+<li>sd2 = standard deviation from second level</li>
+<li>r = correlation between first and second level</li>
+<li>n = sample size</li>
+<li>a = significance level</li>
+</ul>
 
-<p>Independent <em>t</em> - <em>t</em></p>
+<h1 id="example">Example</h1>
 
-<p>Independent <em>t</em> Delta - Means</p>
+<p>In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Participants&rsquo; scores are shown with high scores indicating high levels of belief. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
-<p><a href="independentproportions.html">Independent Proportions</a></p>
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png" alt="Dependent t JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png" alt="Dependent t SPSS" /></p>
+
+<p><strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG" alt="Dependent t SAS" /></p>
+
+<ul>
+<li>m1 = 5.571</li>
+<li>m2 = 4.429</li>
+<li>sd1    = 1.988</li>
+<li>sd2 = 2.878</li>
+<li>r = .678</li>
+<li>n = 14</li>
+<li>a = .05</li>
+</ul>
+
+<h1 id="function-in-r">Function in R:</h1>
+
+<p>d.dep.t.rm(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, r = .678, n = 14, a = .05)</p>
+
+<h1 id="mote">MOTE</h1>
+
+<h2 id="screenshot">Screenshot</h2>
+
+<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+
+<h2 id="effect-size">Effect Size:</h2>
+
+<p><em>d</em> = 0.43, 95% CI [-0.49, 0.55]</p>
+
+<h2 id="interpretation">Interpretation:</h2>
+
+<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
+
+<h2 id="summary-statistics">Summary Statistics:</h2>
+
+<p>Group 1 Summary Statistics: <em>M</em> = 5.57, <em>SD</em> = 1.99, <em>SE</em> = 0.53, 95% CI [4.42, 6.72]</p>
+
+<p>Group 2 Summary Statistics: <em>M</em> = 4.43, <em>SD</em> = 2.88, <em>SE</em> = 0.77, 95% CI [2.77, 6.09]</p>
+
+<h2 id="test-statistic">Test Statistic:</h2>
+
+<p>Not applicable.</p>
+
+<h2 id="interpretation-1">Interpretation:</h2>
+
+<p>Not applicable.</p>
+
+<h1 id="tutorial">Tutorial</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eq9X4ynxq2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>
@@ -262,7 +300,7 @@ Independent Proportions">
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/confidenceintervals/" data-tooltip="Why Report Confidence Intervals?">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -270,7 +308,7 @@ Independent Proportions">
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/varianceoverlap/" data-tooltip="Variance Overlap">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -288,19 +326,19 @@ Independent Proportions">
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.aggieerin.com/shiny-server/meandifferences/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://www.aggieerin.com/shiny-server/meandifferences/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://www.aggieerin.com/shiny-server/meandifferences/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -348,7 +386,7 @@ Independent Proportions">
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/confidenceintervals/" data-tooltip="Why Report Confidence Intervals?">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -356,7 +394,7 @@ Independent Proportions">
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/varianceoverlap/" data-tooltip="Variance Overlap">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -374,19 +412,19 @@ Independent Proportions">
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.aggieerin.com/shiny-server/meandifferences/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://www.aggieerin.com/shiny-server/meandifferences/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://www.aggieerin.com/shiny-server/meandifferences/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -416,19 +454,19 @@ Independent Proportions">
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.aggieerin.com%2Fshiny-server%2Fmeandifferences%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.aggieerin.com%2Fshiny-server%2Fmeandifferences%2Fdeptrmm.html">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.aggieerin.com%2Fshiny-server%2Fmeandifferences%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.aggieerin.com%2Fshiny-server%2Fmeandifferences%2Fdeptrmm.html">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.aggieerin.com%2Fshiny-server%2Fmeandifferences%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.aggieerin.com%2Fshiny-server%2Fmeandifferences%2Fdeptrmm.html">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -626,9 +664,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/www.aggieerin.com\/shiny-server\/meandifferences\/';
+          this.page.url = 'https:\/\/www.aggieerin.com\/shiny-server\/meandifferences\/deptrmm.html';
           
-            this.page.identifier = '\/meandifferences\/'
+            this.page.identifier = '\/meandifferences\/deptrmM.html'
           
         };
         (function() {
