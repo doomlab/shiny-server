@@ -3,7 +3,7 @@ title: Z Test - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: ztestmeans
-url: /meandifferences/ztestmeans.html
+url: /tests/ztestmeans.html
 showDate: false
 ---
 

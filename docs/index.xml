@@ -13,10 +13,10 @@
     
     <item>
       <title>Dependent *t* Averages - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/deptavgm.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/deptavgm.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</guid>
       <description>Description This function displays d for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
 The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
 R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05)
@@ -105,10 +105,10 @@ Summary Statistics: INCLUDE SUMMARY STATISTICS FROM MOTE</description>
     
     <item>
       <title>Z Test - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/ztestmeans.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/ztestmeans.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/ztestmeans.html</guid>
       <description>Description This function displays d for z-scores with the population mean and standard deviation. The normal confidence interval is also provided.
 The formula for d is: $$d = \frac{M - \mu}{\sigma}$$
 The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
@@ -132,20 +132,11 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
     </item>
     
     <item>
-      <title>General Overview</title>
-      <link>https://www.aggieerin.com/shiny-server/generaloverview/</link>
+      <title>Introduction</title>
+      <link>https://www.aggieerin.com/shiny-server/introduction/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/generaloverview/</guid>
-      <description>The effect size is a measure of the magnitude of the effect. How much did grades improve after an intervention? To what degree were symptoms reduced after a treatment? Effect size supplements p-values by providing this critical information. The MOTE package provides researchers with a streamlined tool to calculate effect size and interpret test statistics.</description>
-    </item>
-    
-    <item>
-      <title>Why Report Effect Size?</title>
-      <link>https://www.aggieerin.com/shiny-server/effectsize/</link>
-      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/effectsize/</guid>
+      <guid>https://www.aggieerin.com/shiny-server/introduction/</guid>
       <description>Effect sizes broadly fall into two categories:
 1) Mean differences: normally represented by Z or d, usually the standardized difference between two means.
 2) Variance overlap: normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s).
@@ -153,40 +144,41 @@ Overall, we can think about effect sizes as a measure of the magnitude of an phe
     </item>
     
     <item>
-      <title>Why Report Confidence Intervals?</title>
-      <link>https://www.aggieerin.com/shiny-server/confidenceintervals/</link>
+      <title>Tests</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/</link>
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/confidenceintervals/</guid>
-      <description> </description>
-    </item>
-    
-    <item>
-      <title>Mean Differences</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/</guid>
-      <description>Z-Test - Means
-Z Test - Z
-Single Sample t - Means
-Single Sample t - t
+      <guid>https://www.aggieerin.com/shiny-server/tests/</guid>
+      <description>Mean Differences Z-Test - Means Z Test - Z Single Sample t - Means Single Sample t - t
 Dependent t Averages - Means
-Dependent t Differences - Means
-Dependent t Repeated Measures
+Dependent t Differences - Means Dependent t Repeated Measures
 Independent t - Means
 Independent t - t
 Independent t Delta - Means
-Independent Proportions</description>
+Independent Proportions
+Variance Overlap Eta - F
+Eta Full - SS
+Eta Partial - SS
+GES Partial RM - SS
+Omega - F</description>
     </item>
     
     <item>
-      <title>Variance Overlap</title>
-      <link>https://www.aggieerin.com/shiny-server/varianceoverlap/</link>
-      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      <title>References</title>
+      <link>https://www.aggieerin.com/shiny-server/references/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/varianceoverlap/</guid>
-      <description>Eta - F Eta Full - SS Eta Partial - SS GES Partial RM - SS Omega - F Omega Full - SS Omega Partial BN - SS Epsilon Generalized Omega - RM Chi-square v Chi-square Odds</description>
+      <guid>https://www.aggieerin.com/shiny-server/references/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact Us</title>
+      <link>https://www.aggieerin.com/shiny-server/contact/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/contact/</guid>
+      <description></description>
     </item>
     
     <item>

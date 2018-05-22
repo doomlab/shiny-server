@@ -48,34 +48,28 @@ publishDir = "../docs"
 # Menu Configuration
 [[menu.main]]
   weight = 1
-  identifier = "generaloverview"
-  name = "General Overview"
+  identifier = "introduction"
+  name = "Introduction"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/generaloverview/"
+  url = "/introduction/"
 [[menu.main]]
   weight = 2
-  identifier = "effectsize"
-  name = "Effect Size"
+  identifier = "tests"
+  name = "Tests"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/effectsize/"
+  url = "/tests/"
 [[menu.main]]
   weight = 3
-  identifier = "noncentralconfidenceintervals"
-  name = "Confidence Intervals"
+  identifier = "references"
+  name = "References"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/confidenceintervals/"
+  url = "/references/"
 [[menu.main]]
   weight = 4
-  identifier = "meandifferences"
-  name = "Mean Differences"
+  identifier = "contact"
+  name = "Contact Us"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/meandifferences/"
-[[menu.main]]
-  weight = 5
-  identifier = "varianceoverlap"
-  name = "Variance Overlap"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/varianceoverlap/"
+  url = "/contact/"
 
 [params]
   # Customize date format use to render blog post date, categories and other

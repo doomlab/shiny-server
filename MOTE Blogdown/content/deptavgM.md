@@ -3,7 +3,7 @@ title: Dependent *t* Averages - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: deptavgM
-url: /meandifferences/deptavgM.html
+url: /tests/deptavgM.html
 showDate: false
 ---
 

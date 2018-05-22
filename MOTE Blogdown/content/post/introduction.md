@@ -1,10 +1,10 @@
 ---
-title: Why Report Effect Size?
-author: ~
+title: Introduction
+author: Doom Lab
 date: '2018-05-03'
-slug: why-report-effect-size
-url: /effectsize/
+slug: introduction
 showDate: false
+url: /introduction/
 categories: []
 tags: []
 ---
@@ -19,4 +19,4 @@ Overall, we can think about effect sizes as a measure of the *magnitude* of an p
 
 Another benefit of providing effect sizes in research articles is the ability to estimate sample size for future studies. We can use the effect size(s) of previous research to plan the sample size for a new study. However, previous research shows that effect sizes are not perfect and can be slightly biased (too high). Therefore, MOTE also allows you to calculate the confidence interval of the effect size. With the confidence intervals, we can look at the range of the estimated effect size (i.e., is it small around the effect size, which might indicate we have a pretty good idea of what the effect might be? or it is large and the effect size might be pretty variable?) and use the range to get a better estimate of sample size for future studies. Also, the confidence intervals can give you an idea if an effect is different from zero - that is, if the confidence interval does not include zero, the effect size might not include no effect. The interpretation of the *size* of the effect (small, medium, large) should be based on your own field of study. 
 
-
+Confidence Intervals
