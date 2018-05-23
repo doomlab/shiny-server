@@ -137,9 +137,9 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/introduction/</guid>
-      <description>Effect sizes broadly fall into two categories:
-1) Mean differences: normally represented by Z or d, usually the standardized difference between two means.
-2) Variance overlap: normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s).
+      <description>Effect Sizes Effect sizes broadly fall into two categories:
+Mean Differences: normally represented by Z or d, usually the standardized difference between two means.
+Variance Overlap: normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s).
 Overall, we can think about effect sizes as a measure of the magnitude of an phenomenon. Unlike p-values, effect size is not as confounded by sample size.</description>
     </item>
     
@@ -149,9 +149,13 @@ Overall, we can think about effect sizes as a measure of the magnitude of an phe
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/</guid>
-      <description>Mean Differences Z-Test - Means Z Test - Z Single Sample t - Means Single Sample t - t
+      <description>Mean Differences Z-Test - Means
+Z Test - Z
+Single Sample t - Means
+Single Sample t - t
 Dependent t Averages - Means
-Dependent t Differences - Means Dependent t Repeated Measures
+Dependent t Differences - Means
+Dependent t Repeated Measures
 Independent t - Means
 Independent t - t
 Independent t Delta - Means
