@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on MOTE Effect Size Calculator</title>
+    <link>https://www.aggieerin.com/shiny-server/post/</link>
+    <description>Recent content in Posts on MOTE Effect Size Calculator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.aggieerin.com/shiny-server/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://www.aggieerin.com/shiny-server/introduction/</link>
+      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/introduction/</guid>
+      <description>Effect Sizes Effect sizes broadly fall into two categories:
+Mean Differences: normally represented by Z or d, usually the standardized difference between two means.
+Variance Overlap: normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s).
+Overall, we can think about effect sizes as a measure of the magnitude of an phenomenon. Unlike p-values, effect size is not as confounded by sample size.</description>
+    </item>
+    
+    <item>
+      <title>Tests</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/</guid>
+      <description>Mean Differences Z-Test - Means
+Z Test - Z
+Single Sample t - Means
+Single Sample t - t
+Dependent t Averages - Means
+Dependent t Differences - Means
+Dependent t Repeated Measures
+Independent t - Means
+Independent t - t
+Independent t Delta - Means
+Independent Proportions
+Variance Overlap Eta - F
+Eta Full - SS
+Eta Partial - SS
+GES Partial RM - SS
+Omega - F</description>
+    </item>
+    
+    <item>
+      <title>References</title>
+      <link>https://www.aggieerin.com/shiny-server/references/</link>
+      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/references/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact Us</title>
+      <link>https://www.aggieerin.com/shiny-server/contact/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/contact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
