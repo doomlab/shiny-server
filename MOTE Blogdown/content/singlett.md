@@ -3,7 +3,7 @@ title: Single Sample t - t
 author: DOOM Lab
 date: '2018-05-09'
 slug: singlett
-url: /meandifferences/singlett.html
+url: /tests/singlett.html
 showDate: false
 ---
 

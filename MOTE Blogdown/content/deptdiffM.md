@@ -2,8 +2,8 @@
 title: Dependent *t* Differences - Means
 author: DOOM Lab
 date: '2018-05-09'
-slug: deptdiffM
-url: /meandifferences/deptdiffM.html
+slug: deptdiffm
+url: /tests/deptdiffm.html
 showDate: false
 ---
 

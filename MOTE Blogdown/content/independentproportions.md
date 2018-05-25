@@ -3,7 +3,7 @@ title: Independent Proportions
 author: DOOM Lab
 date: '2018-05-09'
 slug: independentproportions
-url: /meandifferences/independentproportions.html
+url: /tests/independentproportions.html
 showDate: false
 ---
 
