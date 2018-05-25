@@ -3,7 +3,7 @@ title: TITLE OF THE PAGE HERE
 author: DOOM Lab
 date: '2018-05-09'
 slug: SHORTTITLE
-url: /meandifferences/SHORTTITLE.html
+url: /tests/SHORTTITLE.html
 showDate: false
 ---
 

@@ -25,10 +25,10 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     
     <item>
       <title>Dependent *t* Differences - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/deptdiffm.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/deptdiffm.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</guid>
       <description>Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
 The formula for d is: $$d = \frac{M_1 - M2}{SD{differences}}$$
 The formula for t is: $$t = \frac{M_1 - M2}{SE{differences}}$$
@@ -49,10 +49,10 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     
     <item>
       <title>Independent Proportions</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/independentproportions.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/independentproportions.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/independentproportions.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/independentproportions.html</guid>
       <description>Description This function displays d and central confidence interval calculated from differences in independent proportions.
 The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
 The formula for Z is: $$Z = \frac{P_1 - P_2}{SE}$$
@@ -62,10 +62,10 @@ Arguments  p1 = proportion of people group one p2 = proportion of people group t
     
     <item>
       <title>Single Sample *t* - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/singletmeans.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/singletmeans.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/singletmeans.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/singletmeans.html</guid>
       <description>Description This function displays d and non-central confidence interval for single t from means.
 The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
 The formula for t is: $$t = \frac{M - \mu}{SE}$$
@@ -75,10 +75,10 @@ Arguments  m = sample mean u = population mean sd = sample standard deviation n 
     
     <item>
       <title>Single Sample t - t</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/singlett.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/singlett.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/singlett.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/singlett.html</guid>
       <description>Description This function displays d and non-central confidence interval for single t estimated from the t-statistic.
 The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
 The formula for t is: $$t = \frac{M - \mu}{SE}$$
@@ -88,10 +88,10 @@ Arguments  t = t-test value n = sample size a = significance level  Example A sc
     
     <item>
       <title>TITLE OF THE PAGE HERE</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/shorttitle.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/shorttitle.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/shorttitle.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/shorttitle.html</guid>
       <description>Description GET THIS INFORMATION FROM THE HELP PAGE OF THE MOTE APP
 R Function PUT THE R FUNCTION HERE
 Arguments PUT THE ARGUMENTS HERE
@@ -120,10 +120,10 @@ Arguments  mu = population mean
     
     <item>
       <title>Z Test - Z</title>
-      <link>https://www.aggieerin.com/shiny-server/meandifferences/ztestz.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/ztestz.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/meandifferences/ztestz.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/ztestz.html</guid>
       <description>Description This function displays d for z-scores when all you have is the z-statistics. The normoal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
 The formula for d is: $$d = \frac{Z}{\sqrt(N)}$$
 The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$

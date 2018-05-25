@@ -1,8 +1,6 @@
 
 
   
-    
-  
 
 
   
@@ -20,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.36.1 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Tests</title>
+    <title>Single Sample t - t</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -28,60 +26,27 @@
     
 
     
-    <meta name="description" content="Mean Differences Z-Test - Means
-Z Test - Z
-Single Sample t - Means
-Single Sample t - t
-Dependent t Averages - Means
-Dependent t Differences - Means
-Dependent t Repeated Measures
-Independent t - Means
-Independent t - t
-Independent t Delta - Means
-Independent Proportions
-Variance Overlap Eta - F
-Eta Full - SS
-Eta Partial - SS
-GES Partial RM - SS
-Omega - F">
-    <meta property="og:description" content="Mean Differences Z-Test - Means
-Z Test - Z
-Single Sample t - Means
-Single Sample t - t
-Dependent t Averages - Means
-Dependent t Differences - Means
-Dependent t Repeated Measures
-Independent t - Means
-Independent t - t
-Independent t Delta - Means
-Independent Proportions
-Variance Overlap Eta - F
-Eta Full - SS
-Eta Partial - SS
-GES Partial RM - SS
-Omega - F">
+    <meta name="description" content="Description This function displays d and non-central confidence interval for single t estimated from the t-statistic.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.">
+    <meta property="og:description" content="Description This function displays d and non-central confidence interval for single t estimated from the t-statistic.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Tests">
-    <meta property="og:url" content="/tests/">
+    <meta property="og:title" content="Single Sample t - t">
+    <meta property="og:url" content="/tests/singlett.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Mean Differences Z-Test - Means
-Z Test - Z
-Single Sample t - Means
-Single Sample t - t
-Dependent t Averages - Means
-Dependent t Differences - Means
-Dependent t Repeated Measures
-Independent t - Means
-Independent t - t
-Independent t Delta - Means
-Independent Proportions
-Variance Overlap Eta - F
-Eta Full - SS
-Eta Partial - SS
-GES Partial RM - SS
-Omega - F">
+    <meta name="twitter:description" content="Description This function displays d and non-central confidence interval for single t estimated from the t-statistic.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.">
     
     
 
@@ -204,7 +169,7 @@ Omega - F">
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Tests
+      Single Sample t - t
     </h1>
   
   
@@ -219,33 +184,82 @@ Omega - F">
             <div class="main-content-wrap">
               
 
-<h1 id="mean-differences">Mean Differences</h1>
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
-<p><a href="ztestmeans.html"><em>Z</em>-Test - Means</a><br />
-  <a href="ztestz.html"><em>Z</em> Test - <em>Z</em></a><br />
-  <a href="singletmeans.html">Single Sample <em>t</em> - Means</a><br />
-  <a href="singlett.html">Single Sample <em>t</em> - <em>t</em></a><br />
-  <a href="deptavgm.html">Dependent <em>t</em> Averages - Means</a><br />
-  <a href="deptdiffm.html">Dependent <em>t</em> Differences - Means</a><br />
-  Dependent t Repeated Measures<br />
-  Independent t - Means<br />
-  Independent t - t<br />
-  Independent t Delta - Means<br />
-  <a href="independentproportions.html">Independent Proportions</a></p>
+<h1 id="description">Description</h1>
 
-<h1 id="variance-overlap">Variance Overlap</h1>
+<p>This function displays <em>d</em> and non-central confidence interval for single <em>t</em> estimated from the <em>t</em>-statistic.</p>
 
-<p>Eta - F<br />
-  Eta Full - SS<br />
-  Eta Partial - SS<br />
-  GES Partial RM - SS<br />
-  Omega - <em>F</em><br />
-  Omega Full - SS<br />
-  Omega Partial BN - SS<br />
-  Epsilon<br />
-  Generalized Omega - RM<br />
-  Chi-square <em>v</em><br />
-  Chi-square Odds</p>
+<p>The formula for d is: $$d = \frac{t}{\sqrt(N)}$$</p>
+
+<p>The formula for t is: $$t = \frac{M - \mu}{SE}$$</p>
+
+<h1 id="r-function">R Function</h1>
+
+<p>d.single.t.t(t, n, a = 0.05)</p>
+
+<h1 id="arguments">Arguments</h1>
+
+<ul>
+<li>t = t-test value</li>
+<li>n = sample size</li>
+<li>a = significance level</li>
+</ul>
+
+<h1 id="example">Example</h1>
+
+<p>A school has a gifted/honors program that they claim is significantly better than others in the country.  The national average for gifted programs is a SAT score of 1250.  The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
+
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20JASP.png" alt="Single t JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20SPSS.png" alt="Single t SPSS" />
+<strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20SAS.PNG" alt="Single t SAS" /></p>
+
+<ul>
+<li>t = 9.968</li>
+<li>n = 15</li>
+<li>a = .05</li>
+</ul>
+
+<h1 id="function-in-r">Function in R:</h1>
+
+<p>d.single.t.t(t = 9.968, n = 15, a = .05)</p>
+
+<h1 id="mote">MOTE</h1>
+
+<h2 id="screenshot">Screenshot</h2>
+
+<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+
+<h2 id="effect-size">Effect Size:</h2>
+
+<p><em>d</em> = 2.57, 95% CI [1.49, 3.63]</p>
+
+<h2 id="interpretation">Interpretation:</h2>
+
+<p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
+
+<h2 id="summary-statistics">Summary Statistics:</h2>
+
+<p>Not applicable.</p>
+
+<h2 id="test-statistic">Test Statistic:</h2>
+
+<p><em>t</em>(14) = 9.97, <em>p</em> &lt; .001</p>
+
+<h2 id="interpretation-1">Interpretation:</h2>
+
+<p>Your <em>p</em>-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
+
+<h1 id="tutorial">Tutorial</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z2OnOk4_w3E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>
@@ -261,7 +275,7 @@ Omega - F">
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/introduction/" data-tooltip="Introduction">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -269,7 +283,7 @@ Omega - F">
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/references/" data-tooltip="References">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -319,7 +333,7 @@ Omega - F">
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/introduction/" data-tooltip="Introduction">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -327,7 +341,7 @@ Omega - F">
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/references/" data-tooltip="References">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>

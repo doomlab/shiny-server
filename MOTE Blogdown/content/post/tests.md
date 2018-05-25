@@ -14,8 +14,8 @@ tags: []
   [*Z* Test - *Z*](ztestz.html)        
   [Single Sample *t* - Means](singletmeans.html)     
   [Single Sample *t* - *t*](singlett.html)       
-  [Dependent *t* Averages - Means](deptavgM.html)         
-  [Dependent *t* Differences - Means](deptdiffM.html)     
+  [Dependent *t* Averages - Means](deptavgm.html)         
+  [Dependent *t* Differences - Means](deptdiffm.html)     
   Dependent t Repeated Measures      
   Independent t - Means      
   Independent t - t      

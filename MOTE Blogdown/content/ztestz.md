@@ -3,7 +3,7 @@ title: Z Test - Z
 author: DOOM Lab
 date: '2018-05-09'
 slug: ztestz
-url: /meandifferences/ztestz.html
+url: /tests/ztestz.html
 showDate: false
 ---
 
