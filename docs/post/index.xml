@@ -17,10 +17,13 @@
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/introduction/</guid>
-      <description>Effect Sizes Effect sizes broadly fall into two categories:
-Mean Differences: normally represented by Z or d, usually the standardized difference between two means.
-Variance Overlap: normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s).
-Overall, we can think about effect sizes as a measure of the magnitude of an phenomenon. Unlike p-values, effect size is not as confounded by sample size.</description>
+      <description>&lt;p&gt;This page provides supplemental information for the use of MOTE Effect Size Calculator. Often, an overreliance on &lt;em&gt;p&lt;/em&gt;-values conceals the fact that a study is underpowered. A test may be statistically significant, yet practically inconsequential. Although the APA Task Force on Statistical Inference has long advocated for the inclusion of effect sizes, the vast majority of peer-reviewed, published academic studies stop short of reporting effect sizes and confidence intervals.&lt;/p&gt;
+
+&lt;p&gt;To simplify the use and interpretation of effect sizes and confidence intervals, our team designed MOTE with Shiny, a package in R. The application relies on mathematical operations provided by the MOTE package, developed by Buchanan, Scofield, and Valentine. To begin, the user simply selects the research design and corresponding effect size with intuitive drop-down menus. The output includes a helpful description, a video tutorial, and statistics in APA style, including the effect size and the confidence interval. This application is designed for future implementation in statistics classrooms at the undergraduate and graduate level.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;references.html&#34;&gt;References&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,31 +32,35 @@ Overall, we can think about effect sizes as a measure of the magnitude of an phe
       <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/</guid>
-      <description>Mean Differences Z-Test - Means
-Z Test - Z
-Single Sample t - Means
-Single Sample t - t
-Dependent t Averages - Means
-Dependent t Differences - Means
-Dependent t Repeated Measures
-Independent t - Means
-Independent t - t
-Independent t Delta - Means
-Independent Proportions
-Variance Overlap Eta - F
-Eta Full - SS
-Eta Partial - SS
-GES Partial RM - SS
-Omega - F</description>
-    </item>
-    
-    <item>
-      <title>References</title>
-      <link>https://www.aggieerin.com/shiny-server/references/</link>
-      <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/references/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;mean-differences&#34;&gt;Mean Differences&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;ztestmeans.html&#34;&gt;&lt;em&gt;Z&lt;/em&gt;-Test - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;ztestz.html&#34;&gt;&lt;em&gt;Z&lt;/em&gt; Test - &lt;em&gt;Z&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;singletmeans.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;singlett.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;deptavgm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Averages - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;deptdiffm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Differences - Means&lt;/a&gt;&lt;br /&gt;
+  Dependent t Repeated Measures&lt;br /&gt;
+  Independent t - Means&lt;br /&gt;
+  Independent t - t&lt;br /&gt;
+  Independent t Delta - Means&lt;br /&gt;
+  &lt;a href=&#34;independentproportions.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;
+
+&lt;p&gt;Eta - F&lt;br /&gt;
+  Eta Full - SS&lt;br /&gt;
+  Eta Partial - SS&lt;br /&gt;
+  GES Partial RM - SS&lt;br /&gt;
+  Omega - &lt;em&gt;F&lt;/em&gt;&lt;br /&gt;
+  Omega Full - SS&lt;br /&gt;
+  Omega Partial BN - SS&lt;br /&gt;
+  Epsilon&lt;br /&gt;
+  Generalized Omega - RM&lt;br /&gt;
+  Chi-square &lt;em&gt;v&lt;/em&gt;&lt;br /&gt;
+  Chi-square Odds&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

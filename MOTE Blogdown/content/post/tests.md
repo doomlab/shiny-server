@@ -34,3 +34,5 @@ tags: []
   Generalized Omega - RM  
   Chi-square *v*  
   Chi-square Odds  
+  
+<!--more-->
