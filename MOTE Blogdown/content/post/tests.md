@@ -17,9 +17,9 @@ tags: []
   [Dependent *t* Averages - Means](deptavgm.html)         
   [Dependent *t* Differences - Means](deptdiffm.html)     
   [Dependent *t* Repeated Measures](deptrm.html)        
-  Independent t - Means      
-  Independent t - t      
-  Independent t Delta - Means   
+  [Independent *t* - Means](indtm.html)      
+  [Independent *t* - *t*](indtt.html)      
+  [Independent *t* Delta - Means](indtd.html)   
   [Independent Proportions](independentproportions.html)   
   
 # Variance Overlap  

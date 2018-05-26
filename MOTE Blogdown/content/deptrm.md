@@ -40,7 +40,7 @@ In a study to test the effects of science fiction movies on people's belief in t
 + m2 = 4.429
 + sd1	= 1.988
 + sd2	= 2.878
-+ r	= correlation between first and second level
++ r	= .678
 + n	= 7
 + a	= .05
 
@@ -55,7 +55,7 @@ In a study to test the effects of science fiction movies on people's belief in t
 
 # Function in R: 
 
-d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+d.dep.t.rm(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, r = .678, n = 7, a = .05)
 
 # MOTE
 
