@@ -37,6 +37,18 @@ Arguments  mdiff = mean difference score sddiff = standard deviation of the diff
     </item>
     
     <item>
+      <title>Dependent *t* Repeated Measures</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/deptrm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/deptrm.html</guid>
+      <description>Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
       <title>Dependent t Repeated Measures</title>
       <link>https://www.aggieerin.com/shiny-server/meandifferences/deptrmm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -160,7 +172,7 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
   &lt;a href=&#34;singlett.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;deptavgm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Averages - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;deptdiffm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Differences - Means&lt;/a&gt;&lt;br /&gt;
-  Dependent t Repeated Measures&lt;br /&gt;
+  &lt;a href=&#34;deptrm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Repeated Measures&lt;/a&gt;&lt;br /&gt;
   Independent t - Means&lt;br /&gt;
   Independent t - t&lt;br /&gt;
   Independent t Delta - Means&lt;br /&gt;
