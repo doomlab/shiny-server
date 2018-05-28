@@ -1,9 +1,9 @@
 ---
-title: Eta - F
+title: Eta Full - SS
 author: DOOM Lab
 date: '2018-05-09'
-slug: etaf
-url: /tests/etaf.html
+slug: etafull
+url: /tests/etafull.html
 showDate: false
 ---
 
@@ -14,29 +14,31 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-The formula for $\eta^2$ is: $$\frac{df_{model} \times F_{model}} {df_{model} \times F_{model} + df_{error}}$$
-
-This value will be $\eta^2$ when you use a one-way ANOVA and will be $\eta_p^2$ when you use a multi-way ANOVA (more than one IV).
+The formula for $\eta^2$ is: $$\frac{SS_{model}} {SS_{total}}$$
 
 # R Function
 
-eta.F(dfm, dfe, Fvalue, a = 0.05)
+eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a = 0.05)
 
 # Arguments 
 
 + dfm = degrees of freedom for the model/IV/between   
-+ dfe = degrees of freedom for the error/residual/within   
-+ Fvalue	= F statistic   
++ dfe = degrees of freedom for the error/residual/within 
++ ssm = sum of squares for the model/IV/between
++ sst = sum of squares total
++ Fvalue = F statistic   
 + a	= significance level
 
 # Example  
 
 NEEDS EXAMPLE
 
-+ dfm = degrees of freedom for the model/IV/between   
-+ dfe = degrees of freedom for the error/residual/within   
-+ Fvalue	= F statistic   
-+ a	= significance level
++ dfm = 2  
++ dfe = 8 
++ ssm = 25.24
++ sst = 44.91
++ Fvalue = 5.13   
++ a	= .05
 
 **JASP**
 ![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
@@ -49,7 +51,7 @@ NEEDS EXAMPLE
 
 # Function in R: 
 
-eta.F(dfm = 2, dfe = 8, Fvalue = 5.134, a = 0.05)
+eta.full.SS(dfm = 2, dfe = 8, ssm = 25.24, sst = 44.91, Fvalue = 5.13, a = 0.05)
 
 # MOTE
 
@@ -75,7 +77,7 @@ Not applicable.
 
 ## Interpretation: 
 
-Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.
+Your *p*-value is less than the alpha value, and therefore, this test would be considered statistically significant.
 
 # Tutorial
 
