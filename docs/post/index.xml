@@ -21,8 +21,6 @@
 
 &lt;p&gt;To simplify the use and interpretation of effect sizes and confidence intervals, our team designed MOTE with Shiny, a package in R. The application relies on mathematical operations provided by the MOTE package, developed by Buchanan, Scofield, and Valentine. To begin, the user simply selects the research design and corresponding effect size with intuitive drop-down menus. The output includes a helpful description, a video tutorial, and statistics in APA style, including the effect size and the confidence interval. This application is designed for future implementation in statistics classrooms at the undergraduate and graduate level.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;references.html&#34;&gt;References&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
@@ -41,9 +39,9 @@
   &lt;a href=&#34;deptavgm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Averages - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;deptdiffm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Differences - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;deptrm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Repeated Measures&lt;/a&gt;&lt;br /&gt;
-  Independent t - Means&lt;br /&gt;
-  Independent t - t&lt;br /&gt;
-  Independent t Delta - Means&lt;br /&gt;
+  &lt;a href=&#34;indtm.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;indtt.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;indtd.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; Delta - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;independentproportions.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;

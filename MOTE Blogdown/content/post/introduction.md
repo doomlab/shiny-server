@@ -14,8 +14,6 @@ This page provides supplemental information for the use of MOTE Effect Size Calc
 
 To simplify the use and interpretation of effect sizes and confidence intervals, our team designed MOTE with Shiny, a package in R. The application relies on mathematical operations provided by the MOTE package, developed by Buchanan, Scofield, and Valentine. To begin, the user simply selects the research design and corresponding effect size with intuitive drop-down menus. The output includes a helpful description, a video tutorial, and statistics in APA style, including the effect size and the confidence interval. This application is designed for future implementation in statistics classrooms at the undergraduate and graduate level. 
 
-[References](references.html) 
-
 <!--more-->
 
 # Effect Sizes  
@@ -33,3 +31,5 @@ Another benefit of providing effect sizes in research articles is the ability to
 # Confidence Intervals 
 
 Research shows that effect sizes are not perfect and can be slightly biased, with a tendency to be too high. Therefore, MOTE also allows you to calculate the confidence interval of the effect size. With confidence intervals, we can examine the range of the estimated effect size (i.e., is it small around the effect size, which might indicate we have a pretty good idea of what the effect might be? Or it is large, and the effect size might be pretty variable?) and use the range to get a better estimate of sample size for future studies. Also, the confidence intervals can give you an idea if an effect is different from zero - that is, if the confidence interval does includes zero, the effect size might not include an effect.  
+
+[References](references.html)
