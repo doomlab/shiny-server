@@ -23,8 +23,8 @@ tags: []
   [Independent Proportions](independentproportions.html)   
   
 # Variance Overlap  
-  Eta - F  
-  Eta Full - SS  
+  [Eta - F](etaf.html)  
+  [Eta Full - SS](etafull.html)    
   Eta Partial - SS  
   GES Partial RM - SS  
   Omega - *F*  

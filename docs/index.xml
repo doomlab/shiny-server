@@ -60,6 +60,34 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     </item>
     
     <item>
+      <title>Eta - F</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/etaf.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/etaf.html</guid>
+      <description>Description The formula for $\eta^2$ is: $$\frac{df{model} \times F{model}} {df{model} \times F{model} + df_{error}}$$
+This value will be $\eta^2$ when you use a one-way ANOVA and will be $\eta_p^2$ when you use a multi-way ANOVA (more than one IV).
+R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within
+ Fvalue = F statistic</description>
+    </item>
+    
+    <item>
+      <title>Eta - F</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/etaf.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/etaf.html</guid>
+      <description>Description The formula for $\eta^2$ is: $$\frac{df{model} \times F{model}} {df{model} \times F{model} + df_{error}}$$
+This value will be $\eta^2$ when you use a one-way ANOVA and will be $\eta_p^2$ when you use a multi-way ANOVA (more than one IV).
+R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within
+ Fvalue = F statistic</description>
+    </item>
+    
+    <item>
       <title>Independent *t* - *t*</title>
       <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -86,19 +114,6 @@ R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean group one
  m2 = mean group two
  sd1 = standard deviation group one</description>
-    </item>
-    
-    <item>
-      <title>Independent *t* Delta - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtt.html</guid>
-      <description>Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d is: $$d = \frac{M{control} - M{exp}}{SD_{control}}$$
-The formula for t is: $$t = \frac{M{control} - M{exp}}{SE_{pooled}}$$
-R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
     </item>
     
     <item>
@@ -233,8 +248,8 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
 
 &lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;
 
-&lt;p&gt;Eta - F&lt;br /&gt;
-  Eta Full - SS&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
   Eta Partial - SS&lt;br /&gt;
   GES Partial RM - SS&lt;br /&gt;
   Omega - &lt;em&gt;F&lt;/em&gt;&lt;br /&gt;
