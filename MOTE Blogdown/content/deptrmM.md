@@ -3,7 +3,7 @@ title: Dependent t Repeated Measures
 author: DOOM Lab
 date: '2018-05-09'
 slug: deptrmM
-url: /meandifferences/deptrmM.html
+url: /tests/deptrmM.html
 showDate: false
 ---
 
