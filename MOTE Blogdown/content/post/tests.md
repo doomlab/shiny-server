@@ -10,7 +10,7 @@ tags: []
 ---
 
 # Mean Differences  
-  [*Z*-Test - Means](ztestmeans.html)       
+  [*Z*-Test - Means](../tests/ztestmeans.html)       
   [*Z* Test - *Z*](ztestz.html)        
   [Single Sample *t* - Means](singletmeans.html)     
   [Single Sample *t* - *t*](singlett.html)       
