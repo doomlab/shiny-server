@@ -234,22 +234,22 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
       <guid>https://www.aggieerin.com/shiny-server/tests/</guid>
       <description>&lt;h1 id=&#34;mean-differences&#34;&gt;Mean Differences&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;www.aggieerin.com/shiny-server/tests/ztestmeans.html&#34;&gt;&lt;em&gt;Z&lt;/em&gt;-Test - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/ztestz.html&#34;&gt;&lt;em&gt;Z&lt;/em&gt; Test - &lt;em&gt;Z&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/singletmeans.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Averages - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Differences - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/deptrm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Repeated Measures&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/indtd.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; Delta - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/independentproportions.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/ztestmeans.html&#34;&gt;&lt;em&gt;Z&lt;/em&gt;-Test - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/ztestz.html&#34;&gt;&lt;em&gt;Z&lt;/em&gt; Test - &lt;em&gt;Z&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletmeans.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Averages - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Differences - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptrm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Repeated Measures&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtd.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; Delta - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/independentproportions.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;www.aggieerin.com/shiny-server/tests/etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
   Eta Partial - SS&lt;br /&gt;
   GES Partial RM - SS&lt;br /&gt;
   Omega - &lt;em&gt;F&lt;/em&gt;&lt;br /&gt;

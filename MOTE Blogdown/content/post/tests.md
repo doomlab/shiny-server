@@ -10,21 +10,21 @@ tags: []
 ---
 
 # Mean Differences  
-  [*Z*-Test - Means](www.aggieerin.com/shiny-server/tests/ztestmeans.html)       
-  [*Z* Test - *Z*](www.aggieerin.com/shiny-server/tests/ztestz.html)        
-  [Single Sample *t* - Means](www.aggieerin.com/shiny-server/tests/singletmeans.html)     
-  [Single Sample *t* - *t*](www.aggieerin.com/shiny-server/tests/singlett.html)       
-  [Dependent *t* Averages - Means](www.aggieerin.com/shiny-server/tests/deptavgm.html)         
-  [Dependent *t* Differences - Means](www.aggieerin.com/shiny-server/tests/deptdiffm.html)     
-  [Dependent *t* Repeated Measures](www.aggieerin.com/shiny-server/tests/deptrm.html)        
-  [Independent *t* - Means](www.aggieerin.com/shiny-server/tests/indtm.html)      
-  [Independent *t* - *t*](www.aggieerin.com/shiny-server/tests/indtt.html)      
-  [Independent *t* Delta - Means](www.aggieerin.com/shiny-server/tests/indtd.html)   
-  [Independent Proportions](www.aggieerin.com/shiny-server/tests/independentproportions.html)   
+  [*Z*-Test - Means](https://www.aggieerin.com/shiny-server/tests/ztestmeans.html)       
+  [*Z* Test - *Z*](https://www.aggieerin.com/shiny-server/tests/ztestz.html)        
+  [Single Sample *t* - Means](https://www.aggieerin.com/shiny-server/tests/singletmeans.html)     
+  [Single Sample *t* - *t*](https://www.aggieerin.com/shiny-server/tests/singlett.html)       
+  [Dependent *t* Averages - Means](https://www.aggieerin.com/shiny-server/tests/deptavgm.html)         
+  [Dependent *t* Differences - Means](https://www.aggieerin.com/shiny-server/tests/deptdiffm.html)     
+  [Dependent *t* Repeated Measures](https://www.aggieerin.com/shiny-server/tests/deptrm.html)        
+  [Independent *t* - Means](https://www.aggieerin.com/shiny-server/tests/indtm.html)      
+  [Independent *t* - *t*](https://www.aggieerin.com/shiny-server/tests/indtt.html)      
+  [Independent *t* Delta - Means](https://www.aggieerin.com/shiny-server/tests/indtd.html)   
+  [Independent Proportions](https://www.aggieerin.com/shiny-server/tests/independentproportions.html)   
   
 # Variance Overlap  
-  [Eta - F](www.aggieerin.com/shiny-server/tests/etaf.html)  
-  [Eta Full - SS](www.aggieerin.com/shiny-server/tests/etafull.html)    
+  [Eta - F](https://www.aggieerin.com/shiny-server/tests/etaf.html)  
+  [Eta Full - SS](https://www.aggieerin.com/shiny-server/tests/etafull.html)    
   Eta Partial - SS  
   GES Partial RM - SS  
   Omega - *F*  
