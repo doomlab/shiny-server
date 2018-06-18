@@ -63,6 +63,12 @@ colnames(agreelong)[3:4] = c("comparison", "percent")
 
 ####load the data for comparison graphs####
 overalleffects = read.csv("overall_sims_shiny.csv")
+##agreement charts
+overalleffects$decBF = overalleffects$overallBF >= 20
+overalleffects$decp.05 = overalleffects$omniP <= .05
+overalleffects$decp.005 = overalleffects$omniP <= .005
+overalleffects$decoom = overalleffects$oompcc >=.50 & overalleffects$oomchance <=.05
+
 overalleffects$stdev = factor(overalleffects$stdev,
                               labels = c("Large", "Medium", "Small", "None"))
 #make all infinite values the next largest
@@ -136,7 +142,16 @@ ui <- fluidPage (
         tabPanel("Omnibus Agreement", plotOutput("omniagree"),
                  br(),
                  helpText("Complete dataset avaliable at: https://osf.io/u9hf4/")),
-        tabPanel("Posthoc Agreement", plotOutput("postagree"),
+        tabPanel("NHST-BF Agreement", plotOutput("nhstbfagree"),
+                 br(),
+                 helpText("Complete dataset avaliable at: https://osf.io/u9hf4/")),
+        tabPanel("NHST-OOM Agreement", plotOutput("nhstoomagree"),
+                 br(),
+                 helpText("Complete dataset avaliable at: https://osf.io/u9hf4/")),
+        tabPanel("OOM-BF Agreement", plotOutput("oombfagree"),
+                 br(),
+                 helpText("Complete dataset avaliable at: https://osf.io/u9hf4/")),
+         tabPanel("Posthoc Agreement", plotOutput("postagree"),
                  br(),
                  helpText("Complete dataset avaliable at: https://osf.io/u9hf4/")),
         tabPanel("Criterion Comparison", plotOutput("compare"), 
@@ -282,6 +297,145 @@ server <- function(input, output) {
                           values = c(3, 4))
      
      
+   })
+   
+   ####NHST BF AGREEMENT####
+   output$nhstbfagree <- renderPlot({
+     
+     graph_data = overalleffects[ , c("N", "stdev", "decBF", "decp.05", "decp.005")]
+     graph_data$agree.05 = graph_data$decBF == graph_data$decp.05
+     graph_data$agree.005 = graph_data$decBF == graph_data$decp.005
+     long_data = melt(graph_data[ , -c(3:5)],
+                      id = c("N", "stdev"),
+                      measured = c("agree.05", "agree.005"))
+     
+     long_data = subset(long_data, value == TRUE)
+     
+     graph_percent = as.data.frame(table(long_data$N, long_data$stdev, long_data$variable)/1000*100)
+     colnames(graph_percent) = c("N", "stdev", "comparison", "Percent")
+     graph_percent$N = as.numeric(as.character(graph_percent$N))
+     
+     ##log n to get a better graph
+     if (input$Nselect == "log") { graph_percent$N = log(graph_percent$N)
+     xlabel = "Log N" } else { xlabel = "N"}
+     
+     agree_graph = subset(graph_percent, stdev == input$sizeselect)
+     
+     ggplot(agree_graph) + 
+       geom_line(aes(x=N, 
+                     y=Percent, 
+                     group = comparison,
+                     linetype = comparison, 
+                     colour = comparison),
+                 size=0.75) + 
+       labs(title= paste(input$sizeselect, "Effects")) +
+       coord_cartesian(ylim = c(0,101), xlim = c(input$xaxisrange[1], input$xaxisrange[2])) + 
+       ylab("Percent NHST - BF Agreement") + 
+       xlab(xlabel) + 
+       cleanup +
+       geom_point(data=agree_graph,
+                  aes(x = N,
+                      y = Percent,
+                      shape = comparison, 
+                      color = comparison), 
+                  size = 4) +
+       scale_linetype_manual(name = "Comparison", 
+                             labels = c(".05", ".005"),
+                             values=c("solid","solid")) +
+       scale_color_manual(name = "Comparison", 
+                          labels = c(".05", ".005"),
+                          values = c("red","blue")) + 
+       scale_shape_manual(name = "Comparison", 
+                          labels = c(".05", ".005"),
+                          values = c(3, 4))
+     
+     
+   })
+   
+   ####NHST OOM AGREEMENT####
+   output$nhstoomagree <- renderPlot({
+     
+     graph_data2 = overalleffects[ , c("N", "stdev", "decoom", "decp.05", "decp.005")]
+     graph_data2$agree.05 = graph_data2$decoom == graph_data2$decp.05
+     graph_data2$agree.005 = graph_data2$decoom == graph_data2$decp.005
+     long_data2 = melt(graph_data2[ , -c(3:5)],
+                      id = c("N", "stdev"),
+                      measured = c("agree.05", "agree.005"))
+     
+     long_data2 = subset(long_data2, value == TRUE)
+     
+     graph_percent2 = as.data.frame(table(long_data2$N, long_data2$stdev, long_data2$variable)/1000*100)
+     colnames(graph_percent2) = c("N", "stdev", "comparison", "Percent")
+     graph_percent2$N = as.numeric(as.character(graph_percent2$N))
+     
+     ##log n to get a better graph
+     if (input$Nselect == "log") { graph_percent2$N = log(graph_percent2$N)
+     xlabel = "Log N" } else { xlabel = "N"}
+     
+     agree_graph2 = subset(graph_percent2, stdev == input$sizeselect)
+     
+     ggplot(agree_graph2) + 
+       geom_line(aes(x=N, 
+                     y=Percent, 
+                     group = comparison,
+                     linetype = comparison, 
+                     colour = comparison),
+                 size=0.75) + 
+       labs(title= paste(input$sizeselect, "Effects")) +
+       coord_cartesian(ylim = c(0,101), xlim = c(input$xaxisrange[1], input$xaxisrange[2])) + 
+       ylab("Percent NHST - OOM Agreement") + 
+       xlab(xlabel) + 
+       cleanup +
+       geom_point(data=agree_graph2,
+                  aes(x = N,
+                      y = Percent,
+                      shape = comparison, 
+                      color = comparison), 
+                  size = 4) +
+       scale_linetype_manual(name = "Comparison", 
+                             labels = c(".05", ".005"),
+                             values=c("solid","solid")) +
+       scale_color_manual(name = "Comparison", 
+                          labels = c(".05", ".005"),
+                          values = c("red","blue")) + 
+       scale_shape_manual(name = "Comparison", 
+                          labels = c(".05", ".005"),
+                          values = c(3, 4))
+     
+     
+   })
+  
+   ####BF OOM AGREEMENT####
+   output$oombfagree <- renderPlot({
+     
+     graph_data3 = overalleffects[ , c("N", "stdev", "decoom", "decBF")]
+     graph_data3$agree = graph_data3$decoom == graph_data3$decBF
+     
+     long_data3 = subset(graph_data3, agree == TRUE)
+     
+     graph_percent3 = as.data.frame(table(long_data3$N, long_data3$stdev)/1000*100)
+     colnames(graph_percent3) = c("N", "stdev", "Percent")
+     graph_percent3$N = as.numeric(as.character(graph_percent3$N))
+     
+     ##log n to get a better graph
+     if (input$Nselect == "log") { graph_percent3$N = log(graph_percent3$N)
+     xlabel = "Log N" } else { xlabel = "N"}
+     
+     agree_graph3 = subset(graph_percent3, stdev == input$sizeselect)
+     
+     ggplot(agree_graph3) + 
+       geom_line(aes(x=N, 
+                     y=Percent),
+                 size=0.75) + 
+       labs(title= paste(input$sizeselect, "Effects")) +
+       coord_cartesian(ylim = c(0,101), xlim = c(input$xaxisrange[1], input$xaxisrange[2])) + 
+       ylab("Percent BF - OOM Agreement") + 
+       xlab(xlabel) + 
+       cleanup +
+       geom_point(data=agree_graph3,
+                  aes(x = N,
+                      y = Percent), 
+                  size = 4) 
    })
    
    ####POST HOC AGREEMENT####
