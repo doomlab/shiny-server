@@ -54,7 +54,7 @@ publishDir = "../docs"
   identifier = "references"
   name = "References"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/references/"
+  url = "/introduction/references/"
 [[menu.main]]
   weight = 4
   identifier = "contact"
