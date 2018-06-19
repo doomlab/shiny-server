@@ -88,6 +88,31 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
+      <title>Eta Partial - SS</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/etapart.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/etapart.html</guid>
+      <description>Description The formula for $\etap^2$ is: $$\frac{SS{model}} {SS{model} + SS{error}}$$
+R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic
+ a = significance level  Example NEEDS EXAMPLE</description>
+    </item>
+    
+    <item>
+      <title>Eta Partial - SS</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</guid>
+      <description>Description The formula for $\etaG^2$ is: $$\frac{SS{model}}{SS{model} + SS{subject} + SS{errorA} + SS{errorB} + SS_{errorAxB}}$$
+The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
+R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between</description>
+    </item>
+    
+    <item>
       <title>Independent *t* - *t*</title>
       <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -250,8 +275,8 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
 
 &lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
-  Eta Partial - SS&lt;br /&gt;
-  GES Partial RM - SS&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapart.html&#34;&gt;Eta Partial - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gespartialrm.html&#34;&gt;GES Partial RM - SS&lt;/a&gt;&lt;br /&gt;
   Omega - &lt;em&gt;F&lt;/em&gt;&lt;br /&gt;
   Omega Full - SS&lt;br /&gt;
   Omega Partial BN - SS&lt;br /&gt;
@@ -281,7 +306,9 @@ Lakens, D. (2013). Calculating and reporting effect sizes to facilitate cumulati
       <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/contact/</guid>
-      <description></description>
+      <description>
+
+ </description>
     </item>
     
     <item>

@@ -35,6 +35,7 @@ publishDir = "../docs"
   # Overwritten by your gravatar image if `author.gravatarEmail` is filled
   picture = "https://cdn0.iconfinder.com/data/icons/simply-orange-1/128/calculatorsvg-128.png"
   # Your Twitter username without the @. E.g : thibaudlepretre
+  twitter = "statstools"
 
 # Menu Configuration
 [[menu.main]]
@@ -54,13 +55,20 @@ publishDir = "../docs"
   identifier = "references"
   name = "References"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/references/"
-[[menu.main]]
-  weight = 4
-  identifier = "contact"
-  name = "Contact Us"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/contact/"
+  url = "/introduction/references/"
+  
+[[menu.links]]
+  weight = 1
+  identifier = "twitter"
+  name = "Twitter"
+  pre = "<i class="fab fa-twitter"></i>" 
+  url = "https://twitter.com/statstools"
+[[menu.links]]
+  weight = 2
+  identifier = "github"
+  name = "GitHub"
+  pre = "<i class="fab fa-github"></i>" 
+  url = "https://github.com/doomlab"
 
 [params]
   # Customize date format use to render blog post date, categories and other

@@ -1,8 +1,6 @@
 
 
   
-    
-  
 
 
   
@@ -20,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.36.1 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Introduction</title>
+    <title>Eta Partial - SS</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -28,27 +26,27 @@
     
 
     
-    <meta name="description" content="This page provides supplemental information for the use of MOTE Effect Size Calculator. Often, an overreliance on p-values conceals the fact that a study is underpowered. A test may be statistically significant, yet practically inconsequential. Although the APA Task Force on Statistical Inference has long advocated for the inclusion of effect sizes, the vast majority of peer-reviewed, published academic studies stop short of reporting effect sizes and confidence intervals.
-
-To simplify the use and interpretation of effect sizes and confidence intervals, our team designed MOTE with Shiny, a package in R. The application relies on mathematical operations provided by the MOTE package, developed by Buchanan, Scofield, and Valentine. To begin, the user simply selects the research design and corresponding effect size with intuitive drop-down menus. The output includes a helpful description, a video tutorial, and statistics in APA style, including the effect size and the confidence interval. This application is designed for future implementation in statistics classrooms at the undergraduate and graduate level.
-
-">
-    <meta property="og:description" content="This page provides supplemental information for the use of MOTE Effect Size Calculator. Often, an overreliance on p-values conceals the fact that a study is underpowered. A test may be statistically significant, yet practically inconsequential. Although the APA Task Force on Statistical Inference has long advocated for the inclusion of effect sizes, the vast majority of peer-reviewed, published academic studies stop short of reporting effect sizes and confidence intervals.
-
-To simplify the use and interpretation of effect sizes and confidence intervals, our team designed MOTE with Shiny, a package in R. The application relies on mathematical operations provided by the MOTE package, developed by Buchanan, Scofield, and Valentine. To begin, the user simply selects the research design and corresponding effect size with intuitive drop-down menus. The output includes a helpful description, a video tutorial, and statistics in APA style, including the effect size and the confidence interval. This application is designed for future implementation in statistics classrooms at the undergraduate and graduate level.
-
-">
+    <meta name="description" content="Description The formula for $\etap^2$ is: $$\frac{SS{model}} {SS{model} &#43; SS{error}}$$
+R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic
+ a = significance level  Example NEEDS EXAMPLE">
+    <meta property="og:description" content="Description The formula for $\etap^2$ is: $$\frac{SS{model}} {SS{model} &#43; SS{error}}$$
+R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic
+ a = significance level  Example NEEDS EXAMPLE">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Introduction">
-    <meta property="og:url" content="/introduction/">
+    <meta property="og:title" content="Eta Partial - SS">
+    <meta property="og:url" content="/tests/etapart.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="This page provides supplemental information for the use of MOTE Effect Size Calculator. Often, an overreliance on p-values conceals the fact that a study is underpowered. A test may be statistically significant, yet practically inconsequential. Although the APA Task Force on Statistical Inference has long advocated for the inclusion of effect sizes, the vast majority of peer-reviewed, published academic studies stop short of reporting effect sizes and confidence intervals.
-
-To simplify the use and interpretation of effect sizes and confidence intervals, our team designed MOTE with Shiny, a package in R. The application relies on mathematical operations provided by the MOTE package, developed by Buchanan, Scofield, and Valentine. To begin, the user simply selects the research design and corresponding effect size with intuitive drop-down menus. The output includes a helpful description, a video tutorial, and statistics in APA style, including the effect size and the confidence interval. This application is designed for future implementation in statistics classrooms at the undergraduate and graduate level.
-
-">
+    <meta name="twitter:description" content="Description The formula for $\etap^2$ is: $$\frac{SS{model}} {SS{model} &#43; SS{error}}$$
+R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic
+ a = significance level  Example NEEDS EXAMPLE">
     
     
 
@@ -171,7 +169,7 @@ To simplify the use and interpretation of effect sizes and confidence intervals,
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Introduction
+      Eta Partial - SS
     </h1>
   
   
@@ -184,29 +182,88 @@ To simplify the use and interpretation of effect sizes and confidence intervals,
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>This page provides supplemental information for the use of MOTE Effect Size Calculator. Often, an overreliance on <em>p</em>-values conceals the fact that a study is underpowered. A test may be statistically significant, yet practically inconsequential. Although the APA Task Force on Statistical Inference has long advocated for the inclusion of effect sizes, the vast majority of peer-reviewed, published academic studies stop short of reporting effect sizes and confidence intervals.</p>
+              
 
-<p>To simplify the use and interpretation of effect sizes and confidence intervals, our team designed MOTE with Shiny, a package in R. The application relies on mathematical operations provided by the MOTE package, developed by Buchanan, Scofield, and Valentine. To begin, the user simply selects the research design and corresponding effect size with intuitive drop-down menus. The output includes a helpful description, a video tutorial, and statistics in APA style, including the effect size and the confidence interval. This application is designed for future implementation in statistics classrooms at the undergraduate and graduate level.</p>
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
-<p></p>
+<h1 id="description">Description</h1>
 
-<h1 id="effect-sizes">Effect Sizes</h1>
+<p>The formula for $\eta<em>p^2$ is: $$\frac{SS</em>{model}} {SS<em>{model} + SS</em>{error}}$$</p>
 
-<p>Effect sizes broadly fall into two categories:</p>
+<h1 id="r-function">R Function</h1>
 
-<p><strong>Mean Differences:</strong> normally represented by <em>Z</em> or <em>d</em>, usually the standardized difference between two means.</p>
+<p>eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)</p>
 
-<p><strong>Variance Overlap:</strong> normally representated by eta/omega, r-squared, or V, usually the amount of variance in the DV accounted for by the IV(s).</p>
+<h1 id="arguments">Arguments</h1>
 
-<p>Overall, we can think about effect sizes as a measure of the <em>magnitude</em> of an phenomenon. Unlike <em>p</em>-values, effect size is not as confounded by sample size. Effect sizes supplement <em>p</em>-values by providing this critical information. For example, we might want to know how much did grades improve after an intervention? Or to what degree were symptoms reduced after a treatment? The interpretation of the <em>size</em> of the effect (small, medium, large) should be based on your own field of study.</p>
+<ul>
+<li>dfm = degrees of freedom for the model/IV/between<br /></li>
+<li>dfe = degrees of freedom for the error/residual/within</li>
+<li>ssm = sum of squares for the model/IV/between</li>
+<li>sse = sum of squares for the error/residual/within</li>
+<li>Fvalue = F statistic<br /></li>
+<li>a = significance level</li>
+</ul>
 
-<p>Another benefit of providing effect sizes in research articles is the ability to estimate sample size for future studies. We can use the effect size(s) of previous research to plan the sample size for a new study.</p>
+<h1 id="example">Example</h1>
 
-<h1 id="confidence-intervals">Confidence Intervals</h1>
+<p>NEEDS EXAMPLE</p>
 
-<p>Research shows that effect sizes are not perfect and can be slightly biased, with a tendency to be too high. Therefore, MOTE also allows you to calculate the confidence interval of the effect size. With confidence intervals, we can examine the range of the estimated effect size (i.e., is it small around the effect size, which might indicate we have a pretty good idea of what the effect might be? Or it is large, and the effect size might be pretty variable?) and use the range to get a better estimate of sample size for future studies. Also, the confidence intervals can give you an idea if an effect is different from zero - that is, if the confidence interval does includes zero, the effect size might not include an effect.</p>
+<ul>
+<li>dfm = 2<br /></li>
+<li>dfe = 8</li>
+<li>ssm = 25.24</li>
+<li>sse = 44.91</li>
+<li>Fvalue = 5.13<br /></li>
+<li>a = .05</li>
+</ul>
 
-<p><a href="https://www.aggieerin.com/shiny-server/introduction/references.html">References</a></p>
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
+
+<p><strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
+
+<h1 id="function-in-r">Function in R:</h1>
+
+<p>eta.partial.SS(dfm = 2, dfe = 100, ssm = 435, sse = 659, Fvalue = 5.46, a = .05)</p>
+
+<h1 id="mote">MOTE</h1>
+
+<h2 id="screenshot">Screenshot</h2>
+
+<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+
+<h2 id="effect-size">Effect Size:</h2>
+
+<p>$$\eta^2$$ = .56, 95% CI [.00, .83]</p>
+
+<h2 id="interpretation">Interpretation:</h2>
+
+<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
+
+<h2 id="summary-statistics">Summary Statistics:</h2>
+
+<p>Not applicable.</p>
+
+<h2 id="test-statistic">Test Statistic:</h2>
+
+<p><em>F</em>(2, 8) = 5.13, <em>p</em> = .037</p>
+
+<h2 id="interpretation-1">Interpretation:</h2>
+
+<p>Your <em>p</em>-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
+
+<h1 id="tutorial">Tutorial</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
               
             </div>
           </div>
@@ -229,7 +286,7 @@ To simplify the use and interpretation of effect sizes and confidence intervals,
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/tests/" data-tooltip="Tests">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -287,7 +344,7 @@ To simplify the use and interpretation of effect sizes and confidence intervals,
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://www.aggieerin.com/shiny-server/tests/" data-tooltip="Tests">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
