@@ -56,18 +56,19 @@ publishDir = "../docs"
   name = "References"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
   url = "/introduction/references/"
-[[menu.main]]
-  weight = 4
+  
+[[menu.links]]
+  weight = 1
   identifier = "twitter"
   name = "Twitter"
   pre = "<i class="fab fa-twitter"></i>" 
-  url = https://twitter.com/statstools
-[[menu.main]]
-  weight = 5
+  url = "https://twitter.com/statstools"
+[[menu.links]]
+  weight = 2
   identifier = "github"
   name = "GitHub"
   pre = "<i class="fab fa-github"></i>" 
-  url = https://github.com/doomlab/
+  url = "https://github.com/doomlab"
 
 [params]
   # Customize date format use to render blog post date, categories and other
