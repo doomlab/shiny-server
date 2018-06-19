@@ -8,5 +8,7 @@ url: /contact/
 categories: []
 tags: []
 ---
-[<i class="fab fa-twitter"></i>](https://twitter.com/statstools)  
-[<i class="fab fa-github"></i>](https://github.com/doomlab/)
+[<ion-icon name="logo-twitter"></ion-icon>](https://twitter.com/statstools)  
+[<ion-icon name="logo-github"></ion-icon>](https://github.com/doomlab/)
+
+<script src="https://unpkg.com/ionicons@4.2.0/dist/ionicons.js"></script>
