@@ -31,7 +31,7 @@ tags: []
   Omega Full - SS  
   Omega Partial BN - SS  
   Epsilon  
-  Generalized Omega - RM  
+  [Generalized Omega - RM](GOSRM.html)  
   Chi-square *v*  
   Chi-square Odds  
   
