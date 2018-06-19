@@ -25,8 +25,8 @@ tags: []
 # Variance Overlap  
   [Eta - F](https://www.aggieerin.com/shiny-server/tests/etaf.html)  
   [Eta Full - SS](https://www.aggieerin.com/shiny-server/tests/etafull.html)    
-  Eta Partial - SS  
-  GES Partial RM - SS  
+  [Eta Partial - SS](https://www.aggieerin.com/shiny-server/tests/etapart.html)   
+  [GES Partial RM - SS](https://www.aggieerin.com/shiny-server/tests/gespartialrm.html)  
   Omega - *F*  
   Omega Full - SS  
   Omega Partial BN - SS  
