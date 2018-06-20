@@ -32,7 +32,7 @@ tags: []
   Omega Partial BN - SS  
   Epsilon  
   [Generalized Omega - RM](GOSRM.html)  
-  Chi-square *v*  
+  [Chi-square *v*](chiV.html)  
   Chi-square Odds  
   
 <!--more-->
