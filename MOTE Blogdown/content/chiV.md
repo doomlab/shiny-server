@@ -83,6 +83,4 @@ Your *p*-value is greater than the alpha value, and therefore, this test would b
 
 # Tutorial
 
-ONLY CHANGE THE NUMBERS/LETTERS AFTER EMBED HERE. 
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fxNflokgSTs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

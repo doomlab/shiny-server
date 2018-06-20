@@ -33,6 +33,6 @@ tags: []
   Epsilon  
   [Generalized Omega - RM](GOSRM.html)  
   [Chi-square *v*](chiV.html)  
-  Chi-square Odds  
+  [Chi-square Odds](chiO.html)  
   
 <!--more-->
