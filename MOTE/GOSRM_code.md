@@ -8,7 +8,9 @@ html_document:
 ---
 
 The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} 
-{SS_{total} + SS_{IV1} + J \times MS_{subject}}$$
+{SS_{total} + SS_{model.IV} + J \times MS_{subject}}$$
+
+Note: J = the number of levels in the other IV, and the model.IV is the sum of squares for the other IV. All other values are for the primary IV. 
 
 The code to use MOTE in R is: 
  
@@ -16,7 +18,7 @@ The code to use MOTE in R is:
 source("output_functions.R")
 library(knitr)
 library(MOTE)
-saved = help_console(omega.F, "html", before = "", after = "")
+saved = help_console(omega.gen.SS.rm, "html", before = "", after = "")
 ```
  
 `r paste(saved[-c(1:8)], collapse = " ")`
