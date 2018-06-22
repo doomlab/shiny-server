@@ -27,8 +27,8 @@ tags: []
   [Eta Full - SS](https://www.aggieerin.com/shiny-server/tests/etafull.html)    
   [Eta Partial - SS](https://www.aggieerin.com/shiny-server/tests/etapart.html)   
   [GES Partial RM - SS](https://www.aggieerin.com/shiny-server/tests/gespartialrm.html)  
-  Omega - *F*  
-  Omega Full - SS  
+  [Omega - *F*](https://www.aggieerin.com/shiny-server/tests/OmegaF.html)  
+  [Omega Full - SS]((https://www.aggieerin.com/shiny-server/tests/OmegaSS.html)  
   Omega Partial BN - SS  
   Epsilon  
   [Generalized Omega - RM](GOSRM.html)  
