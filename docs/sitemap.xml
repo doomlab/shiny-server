@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/chiv.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/chio.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -19,6 +29,11 @@
   
   <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/deptrmm.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/epsilon.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,6 +58,11 @@
   </url>
   
   <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/gosrm.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/indtt.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -59,6 +79,21 @@
   
   <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/independentproportions.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/omegaf.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/omegass.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/omegapartbn.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   

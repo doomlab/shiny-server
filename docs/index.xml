@@ -12,6 +12,31 @@
     
     
     <item>
+      <title>Chi-square *V*</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/chiv.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/chiv.html</guid>
+      <description>Description This function displays V and non-central confidence interval for the specified chi-square statistic.
+The formula for V is: $$\sqrt{ \frac{\chi^2} {N \times df_{smaller}} } $$
+$df_{smaller}$ is defined by the minimum of (rows - 1) or (columns - 1).
+R Function v.chi.sq(x2, n, r, c, a = 0.05)
+Arguments  x2 = chi-square statistic n = sample size r = number of rows in the contingency table c = number of columns in the contingency table a = significance level  Example JASP SPSS SAS  x2 = 2.</description>
+    </item>
+    
+    <item>
+      <title>Chi-square - Odds</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/chio.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/chio.html</guid>
+      <description>Description This function displays odds ratios and their normal confidence intervals. This statistic is calculated as (level 1.1/level 1.2) / (level 2.1/level 2.2), which can be considered the odds of level 1.1 given level1 overall versus level2.1 given level2 overall.
+The formula for odds is: $$\frac{(N{11}/N{12})}{(N{21}/N{22})}$$
+R Function odds(n11, n12, n21, n22, a = 0.05)
+Arguments n11 = sample size for level 1.1 n12 = sample size for level 1.</description>
+    </item>
+    
+    <item>
       <title>Dependent *t* Averages - Means</title>
       <link>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -57,6 +82,19 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       <description>Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
 R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
+      <title>Epsilon</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/epsilon.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/epsilon.html</guid>
+      <description>Description This function displays epsilon squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on the sum of squares total calculation.
+The formula for $\epsilon^2$ is: $$\frac{df{model} \times (MS{model} - MS{error})} {SS{total}}$$
+The formula for F is: $$\frac{MS{model}}{MS{error}}$$
+R Function epsilon.full.SS(dfm, dfe, msm, mse, sst, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within sst = sum of squares total a = significance level  Example INCLUDE AN EXAMPLE FROM 527</description>
     </item>
     
     <item>
@@ -113,6 +151,16 @@ Arguments  dfm = degrees of freedom for the model/IV/between</description>
     </item>
     
     <item>
+      <title>Generalized Omega - RM</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/gosrm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/gosrm.html</guid>
+      <description>Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
+The formula for $\omega^2$ is: $$\frac{SS{model} - (df{model} \times MS{subject})} {SS{total} + SS{IV1} + J \times MS{subject}}$$</description>
+    </item>
+    
+    <item>
       <title>Independent *t* - *t*</title>
       <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -165,6 +213,41 @@ The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
 The formula for Z is: $$Z = \frac{P_1 - P_2}{SE}$$
 R Function d.prop(p1, p2, n1, n2, a = 0.05)
 Arguments  p1 = proportion of people group one p2 = proportion of people group two n1 = sample size group one n2 = sample size group two a = significance level  Example Several researchers were examining the data on the number of students who retake a course after they receive a D, F, or withdraw from the course.</description>
+    </item>
+    
+    <item>
+      <title>Omega - *F*</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/omegaf.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/omegaf.html</guid>
+      <description>Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
+The formula for $\omega^2$ is: $$\frac{df{model} \times (F{model} - 1)}{df{model} \times (F{model} - 1) + N}$$</description>
+    </item>
+    
+    <item>
+      <title>Omega - SS</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/omegass.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/omegass.html</guid>
+      <description>Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.
+The formula for $\omegap^2$ is: $$\frac{df{model} \times (MS{model} - MS{error})}{SS{model} + SS{error} + SS{subject} + MS{subject} }$$
+The formula for F is: $$\frac{MS{model}}{MS{error}}$$
+R Function omega.</description>
+    </item>
+    
+    <item>
+      <title>Omega Partial BN - SS</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/omegapartbn.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/omegapartbn.html</guid>
+      <description>Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula is appropriate for multi-way between subjects designs.
+The formula for $\omegap^2$ is: $$\frac{df{model} \times (MS{model} - MS{error})}{SS{model} + (N - df{model}) \times MS_{error}}$$
+The formula for F is: $$\frac{MS{model}}{MS{error}}$$
+R Function omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within ssm = sum of squares for the model/IV/between n = total sample size a = significance level  Example INCLUDE AN EXAMPLE FROM 527</description>
     </item>
     
     <item>
@@ -277,13 +360,13 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapart.html&#34;&gt;Eta Partial - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gespartialrm.html&#34;&gt;GES Partial RM - SS&lt;/a&gt;&lt;br /&gt;
-  Omega - &lt;em&gt;F&lt;/em&gt;&lt;br /&gt;
-  Omega Full - SS&lt;br /&gt;
-  Omega Partial BN - SS&lt;br /&gt;
-  Epsilon&lt;br /&gt;
-  Generalized Omega - RM&lt;br /&gt;
-  Chi-square &lt;em&gt;v&lt;/em&gt;&lt;br /&gt;
-  Chi-square Odds&lt;/p&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega - &lt;em&gt;F&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Full - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegapartbn.html&#34;&gt;Omega Partial BN - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/epsilon.html&#34;&gt;Epsilon&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrm.html&#34;&gt;Generalized Omega - RM&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;Chi-square &lt;em&gt;v&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chio.html&#34;&gt;Chi-square Odds&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

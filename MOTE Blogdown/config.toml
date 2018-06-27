@@ -57,17 +57,17 @@ publishDir = "../docs"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
   url = "/introduction/references/"
   
-[[menu.main]]
-  weight = 4
+[[menu.links]]
+  weight = 0
   identifier = "twitter"
   name = "Twitter"
-  pre = "<i class="fab fa-twitter"></i>" 
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-twitter\"></i>" 
   url = "https://twitter.com/statstools"
-[[menu.main]]
-  weight = 5
+[[menu.links]]
+  weight = 1
   identifier = "github"
   name = "GitHub"
-  pre = "<i class="fab fa-github"></i>" 
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>" 
   url = "https://github.com/doomlab"
 
 [params]

@@ -2,8 +2,8 @@
 title: Chi-square - Odds
 author: DOOM Lab
 date: '2018-05-09'
-slug: chiO
-url: /tests/chiO.html
+slug: chio
+url: /tests/chio.html
 showDate: false
 ---
 

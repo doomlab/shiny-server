@@ -2,8 +2,8 @@
 title: Generalized Omega - RM
 author: DOOM Lab
 date: '2018-05-09'
-slug: GOSRM
-url: /tests/GOSRM.html
+slug: gosrm
+url: /tests/gosrm.html
 showDate: false
 ---
 

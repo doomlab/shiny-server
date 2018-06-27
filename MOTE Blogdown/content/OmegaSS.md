@@ -2,8 +2,8 @@
 title: Omega - SS
 author: DOOM Lab
 date: '2018-05-09'
-slug: OmegaSS
-url: /tests/OmegaSS.html
+slug: omegass
+url: /tests/omegass.html
 showDate: false
 ---
 

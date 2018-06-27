@@ -2,8 +2,8 @@
 title: Chi-square *V*
 author: DOOM Lab
 date: '2018-05-09'
-slug: chiV
-url: /tests/chiV.html
+slug: chiv
+url: /tests/chiv.html
 showDate: false
 ---
 

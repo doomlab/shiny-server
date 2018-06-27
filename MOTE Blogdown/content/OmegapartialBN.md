@@ -2,8 +2,8 @@
 title: Omega Partial BN - SS
 author: DOOM Lab
 date: '2018-05-09'
-slug: OmegaPartBN
-url: /tests/OmegaPartBN.html
+slug: omegapartbn
+url: /tests/omegapartbn.html
 showDate: false
 ---
 
