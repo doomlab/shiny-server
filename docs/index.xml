@@ -103,7 +103,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between dfe = degrees of fr
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/etaf.html</guid>
-      <description>Description The formula for $\eta^2$ is: $$\frac{df{model} \times F{model}} {df{model} \times F{model} + df_{error}}$$
+      <description>Description The formula for $$\eta^2$ is: $$\frac{df{model} \times F{model}} {df{model} \times F{model} + df_{error}}$$
 This value will be $\eta^2$ when you use a one-way ANOVA and will be $\eta_p^2$ when you use a multi-way ANOVA (more than one IV).
 R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
@@ -381,17 +381,6 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
 Chang, W., Cheng, J., Allaire, J. J., Xie, Y. &amp;amp; McPherson, J. (2017). shiny: Web application framework for R. R package version 1.0.5. https://CRAN.R-project.org/package=shiny
 Kelley, K. (2018). MBESS: The MBESS R package. R package version 4.4.3. https://CRAN.R-project.org/package=MBESS
 Lakens, D. (2013). Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs.</description>
-    </item>
-    
-    <item>
-      <title>Contact Us</title>
-      <link>https://www.aggieerin.com/shiny-server/contact/</link>
-      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/contact/</guid>
-      <description>
-
- </description>
     </item>
     
     <item>
