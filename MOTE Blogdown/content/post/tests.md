@@ -29,10 +29,10 @@ tags: []
   [GES Partial RM - SS](https://www.aggieerin.com/shiny-server/tests/gespartialrm.html)  
   [Omega - *F*](https://www.aggieerin.com/shiny-server/tests/OmegaF.html)  
   [Omega Full - SS]((https://www.aggieerin.com/shiny-server/tests/OmegaSS.html)  
-  Omega Partial BN - SS  
-  Epsilon  
-  [Generalized Omega - RM](GOSRM.html)  
-  [Chi-square *v*](chiV.html)  
-  [Chi-square Odds](chiO.html)  
+  [Omega Partial BN - SS]((https://www.aggieerin.com/shiny-server/tests/OmegaPartBN.html)   
+  [Epsilon]((https://www.aggieerin.com/shiny-server/tests/epsilon.html)   
+  [Generalized Omega - RM]((https://www.aggieerin.com/shiny-server/tests/GOSRM.html)  
+  [Chi-square *v*]((https://www.aggieerin.com/shiny-server/tests/chiV.html)  
+  [Chi-square Odds]((https://www.aggieerin.com/shiny-server/tests/chiO.html)  
   
 <!--more-->
