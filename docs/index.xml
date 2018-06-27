@@ -104,7 +104,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between dfe = degrees of fr
       
       <guid>https://www.aggieerin.com/shiny-server/tests/etaf.html</guid>
       <description>Description The formula for $\eta^{2}$ is: $$\frac{df{model} \times F{model}} {df{model} \times F{model} + df_{error}}$$
-This value will be $\eta^{2}$ when you use a one-way ANOVA and will be $\eta_p^2$ when you use a multi-way ANOVA (more than one IV).
+This value will be $\eta^{2}$ when you use a one-way ANOVA and will be $\eta_{p}^{2}$ when you use a multi-way ANOVA (more than one IV).
 R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within
