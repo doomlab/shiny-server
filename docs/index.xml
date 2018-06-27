@@ -191,10 +191,10 @@ Arguments  m1 = mean group one
     
     <item>
       <title>Independent *t* Delta - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtd.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtt.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtd.html</guid>
       <description>Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
 The formula for d is: $$d = \frac{M{control} - M{exp}}{SD_{control}}$$
 The formula for t is: $$t = \frac{M{control} - M{exp}}{SE_{pooled}}$$

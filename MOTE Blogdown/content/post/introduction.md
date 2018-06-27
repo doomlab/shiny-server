@@ -31,5 +31,3 @@ Another benefit of providing effect sizes in research articles is the ability to
 # Confidence Intervals 
 
 Research shows that effect sizes are not perfect and can be slightly biased, with a tendency to be too high. Therefore, MOTE also allows you to calculate the confidence interval of the effect size. With confidence intervals, we can examine the range of the estimated effect size (i.e., is it small around the effect size, which might indicate we have a pretty good idea of what the effect might be? Or it is large, and the effect size might be pretty variable?) and use the range to get a better estimate of sample size for future studies. Also, the confidence intervals can give you an idea if an effect is different from zero - that is, if the confidence interval does includes zero, the effect size might not include an effect.  
-
-[References](https://www.aggieerin.com/shiny-server/introduction/references.html)

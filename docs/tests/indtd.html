@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.36.1 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Independent *t* - *t*</title>
+    <title>Independent *t* Delta - Means</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,30 +26,27 @@
     
 
     
-    <meta name="description" content="Description This function displays d for between subjects data and the non-central confidence interval estimating from the t-statistic.
-The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 &#43; N_2 - 2}}$$
-The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
-R Function d.ind.t.t(t, n1, n2, a = 0.05)
-Arguments  t = t-test value
- n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
-    <meta property="og:description" content="Description This function displays d for between subjects data and the non-central confidence interval estimating from the t-statistic.
-The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 &#43; N_2 - 2}}$$
-The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
-R Function d.ind.t.t(t, n1, n2, a = 0.05)
-Arguments  t = t-test value
- n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
+    <meta name="description" content="Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for d is: $$d = \frac{M{control} - M{exp}}{SD_{control}}$$
+The formula for t is: $$t = \frac{M{control} - M{exp}}{SE_{pooled}}$$
+R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
+Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
+    <meta property="og:description" content="Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for d is: $$d = \frac{M{control} - M{exp}}{SD_{control}}$$
+The formula for t is: $$t = \frac{M{control} - M{exp}}{SE_{pooled}}$$
+R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
+Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Independent *t* - *t*">
-    <meta property="og:url" content="/tests/indtt.html">
+    <meta property="og:title" content="Independent *t* Delta - Means">
+    <meta property="og:url" content="/tests/indtd.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description This function displays d for between subjects data and the non-central confidence interval estimating from the t-statistic.
-The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 &#43; N_2 - 2}}$$
-The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
-R Function d.ind.t.t(t, n1, n2, a = 0.05)
-Arguments  t = t-test value
- n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
+    <meta name="twitter:description" content="Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for d is: $$d = \frac{M{control} - M{exp}}{SD_{control}}$$
+The formula for t is: $$t = \frac{M{control} - M{exp}}{SE_{pooled}}$$
+R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
+Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -184,7 +181,7 @@ Arguments  t = t-test value
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Independent *t* - *t*
+      Independent *t* Delta - Means
     </h1>
   
   
@@ -206,22 +203,25 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="description">Description</h1>
 
-<p>This function displays d for between subjects data and the non-central confidence interval estimating from the t-statistic.</p>
+<p>This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.</p>
 
-<p>The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$</p>
+<p>The formula for d is: $$d = \frac{M<em>{control} - M</em>{exp}}{SD_{control}}$$</p>
 
-<p>The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$</p>
+<p>The formula for t is: $$t = \frac{M<em>{control} - M</em>{exp}}{SE_{pooled}}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>d.ind.t.t(t, n1, n2, a = 0.05)</p>
+<p>delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
 <ul>
-<li>t = t-test value<br /></li>
-<li>n1    = sample size group one</li>
-<li>n2 = sample size group two</li>
+<li>m1 = mean from control group</li>
+<li>m2 = mean from experimental group</li>
+<li>sd1   = standard deviation from control group</li>
+<li>sd2   = standard deviation from experimental group</li>
+<li>n1    = sample size from control group</li>
+<li>n2 = sample size from experimental group</li>
 <li>a = significance level</li>
 </ul>
 
@@ -229,17 +229,11 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event. Eight participants watched a short film of a mock robbery, after which each participant was questioned about what he or she had seen. The four participants in the experimental group were questioned while they were hypnotized and gave 14, 22, 18, and 17 accurate responses. The four participants in the control group gave 20, 25, 24, and 23 accurate responses. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
-<p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
-
-<p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
-
-<p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
-
 <ul>
-<li>t = -2.66</li>
+<li>m1 = 17.75</li>
+<li>m2 = 23.00</li>
+<li>sd1   = 3.304</li>
+<li>sd2   = 2.160</li>
 <li>n1    = 4</li>
 <li>n2 = 4</li>
 <li>a = .05</li>
@@ -256,7 +250,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>d.ind.t.t(t = -2.66, n1 = 4, n2 = 4, a = .05)</p>
+<p>delta.ind.t(m1 = 17.75, m2 = 23.00, sd1 = 3.304, sd2 = 2.160, n1 = 4, n2 = 4, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
@@ -266,7 +260,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d</em> = -2.17, 95% CI [-3.57, -0.10]</p>
+<p><em>d</em> = -1.59, 95% CI [-3.57, -0.10]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
@@ -274,7 +268,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>Not applicable.</p>
+<p>Control Group Summary Statistics: M = 17.75, SD = 3.30, SE = 1.65, 95% CI [12.49, 23.01]</p>
+
+<p>Experimental Group Summary Statistics: M = 23.00, SD = 2.16, SE = 1.08, 95% CI [19.56, 26.44]</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 

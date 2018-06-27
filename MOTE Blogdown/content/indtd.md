@@ -3,7 +3,7 @@ title: Independent *t* Delta - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtd
-url: /tests/indtt.html
+url: /tests/indtd.html
 showDate: false
 ---
 
