@@ -181,8 +181,8 @@ Arguments  t = t-test value
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
       <description>Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M{1} - M{2}\over SD_{\text{pooled}}}$$
-The formula for t is: $$t = {M{1} - M{2}\over SE_{\text{pooled}}}$$
+The formula for d is: $$d = {M_1 - M2\over SD{pooled}}$$
+The formula for t is: $$t = {M_1 - M2\over SE{pooled}}$$
 R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean group one
  m2 = mean group two</description>
@@ -195,8 +195,8 @@ Arguments  m1 = mean group one
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtd.html</guid>
       <description>Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d is: $$d = {M{control} - M{exp}\over SD_{control}}$$
-The formula for t is: $$t = {M{control} - M{exp}\over SE_{pooled}}$$
+The formula for d is $$d = {M_control - M_exp\over SD_control}$$
+The formula for t is $$t = {M_control - M_exp\over SE_pooled}$$
 R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
     </item>
