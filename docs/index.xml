@@ -139,12 +139,12 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
-      <title>Eta Partial - SS</title>
+      <title>GES Partial - Repeated Measures</title>
       <link>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</guid>
-      <description>Description The formula for $\etaG^2$ is: $$\frac{SS{model}}{SS{model} + SS{subject} + SS{errorA} + SS{errorB} + SS_{errorAxB}}$$
+      <description>Description The formula for $\eta_G\^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{errorA} + SS_{errorB} + SS_{errorAxB}}$$
 The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
 R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between</description>
