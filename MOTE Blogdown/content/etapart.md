@@ -14,7 +14,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-The formula for $\eta_p^2$ is: $$\frac{SS_{model}} {SS_{model} + SS_{error}}$$
+The formula for $\eta\_p^2$ is: $$\frac{SS\_{model}} {SS\_{model} + SS\_{error}}$$
 
 # R Function
 

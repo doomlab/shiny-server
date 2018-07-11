@@ -16,7 +16,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays odds ratios and their normal confidence intervals. This statistic is calculated as (level 1.1/level 1.2) / (level 2.1/level 2.2), which can be considered the odds of level 1.1 given level1 overall versus level2.1 given level2 overall. 
 
-The formula for *odds* is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$
+The formula for *odds* is: $$\frac{(N\_{11}/N\_{12})}{(N\_{21}/N\_{22})}$$
 
 # R Function
 

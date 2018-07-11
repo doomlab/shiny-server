@@ -16,9 +16,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays *V* and non-central confidence interval for the specified chi-square statistic.
 
-The formula for *V* is: $$\sqrt{ \frac{\chi^2} {N \times df_{smaller}} } $$
+The formula for *V* is: $$\sqrt{ \frac{\chi^2} {N \times df\_{smaller}} } $$
 
-$df_{smaller}$ is defined by the minimum of (rows - 1) or (columns - 1). 
+$df\_{smaller}$ is defined by the minimum of (rows - 1) or (columns - 1). 
 
 # R Function
 

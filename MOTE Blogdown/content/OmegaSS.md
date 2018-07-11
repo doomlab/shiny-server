@@ -16,9 +16,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.
 
-The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$
+The formula for $\omega_p^2$ is: $$\frac{df\_{model} \times (MS\_{model} - MS\_{error})}{SS\_{model} + SS\_{error} + SS\_{subject} + MS\_{subject} }$$
 
-The formula for *F* is: $$\frac{MS_{model}}{MS_{error}}$$
+The formula for *F* is: $$\frac{MS\_{model}}{MS\_{error}}$$
 
 # R Function
 
