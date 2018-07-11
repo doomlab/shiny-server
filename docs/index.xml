@@ -55,8 +55,8 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</guid>
       <description>Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for d is: $$d = {M_1 - M2\over SD{differences}}$$
-The formula for t is: $$t = {M_1 - M2\over SE{differences}}$$
+The formula for d is: $$d = {M_1 - M_2\over SD_differences}$$
+The formula for t is: $$t = {M_1 - M_2\over SE_differences}$$
 R Function d.dep.t.diff(mdiff, sddiff, n, a = 0.05)
 Arguments  mdiff = mean difference score sddiff = standard deviation of the difference scores n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
