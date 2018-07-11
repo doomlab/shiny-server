@@ -56,19 +56,31 @@ publishDir = "../docs"
   name = "References"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
   url = "/introduction/references/"
+[[menu.main]]
+  weight = 4
+  identifier = "aboutus"
+  name = "About Us"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
+  url = "/introduction/aboutus/"
   
 [[menu.links]]
-  weight = 0
+  weight = 1
   identifier = "twitter"
   name = "Twitter"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-twitter\"></i>" 
   url = "https://twitter.com/statstools"
 [[menu.links]]
-  weight = 1
+  weight = 2
   identifier = "github"
   name = "GitHub"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>" 
   url = "https://github.com/doomlab"
+[[menu.links]]
+  weight = 3
+  identifier = "contactus"
+  name = "Contact Us"
+  pre = "<i class=\"sidebar-button-icon fa fa-envelope-o\"></i>" 
+  url = "mailto:erinbuchanan@missouristate.edu"
 
 [params]
   # Customize date format use to render blog post date, categories and other
