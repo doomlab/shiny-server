@@ -14,9 +14,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-The formula for $\eta^2$ is: $${df_model \times F_model\over df_model \times F_model + df_error}$$
+The formula for $\eta\^{2}$ is: $${df\_{model} \times F\_{model}\over df\_{model} \times F\_{model} + df\_{error}}$$
 
-This value will be $\eta^2}$ when you use a one-way ANOVA and will be $\eta_p^2$ when you use a multi-way ANOVA (more than one IV).
+This value will be $\eta\^{2}$ when you use a one-way ANOVA and will be $\eta\_{p}\^{2}$ when you use a multi-way ANOVA (more than one IV).
 
 # R Function
 
