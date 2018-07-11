@@ -16,8 +16,8 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared. 
 
-The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} 
-{SS_{total} + SS_{IV1} + J \times MS_{subject}}$$
+The formula for $\omega\^2$ is: $$\frac{SS\_{model} - (df\_{model} \times MS\_{subject})} 
+{SS\_{total} + SS\_{IV1} + J \times MS\_{subject}}$$
 
 # R Function
 

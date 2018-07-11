@@ -91,8 +91,8 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       
       <guid>https://www.aggieerin.com/shiny-server/tests/epsilon.html</guid>
       <description>Description This function displays epsilon squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on the sum of squares total calculation.
-The formula for $\epsilon^2$ is: $$\frac{df{model} \times (MS{model} - MS{error})} {SS{total}}$$
-The formula for F is: $$\frac{MS{model}}{MS{error}}$$
+The formula for $\epsilon\^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})} {SS_{total}}$$
+The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
 R Function epsilon.full.SS(dfm, dfe, msm, mse, sst, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within sst = sum of squares total a = significance level  Example INCLUDE AN EXAMPLE FROM 527</description>
     </item>
@@ -157,7 +157,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between</description>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/gosrm.html</guid>
       <description>Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omega^2$ is: $$\frac{SS{model} - (df{model} \times MS{subject})} {SS{total} + SS{IV1} + J \times MS{subject}}$$</description>
+The formula for $\omega\^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</description>
     </item>
     
     <item>
