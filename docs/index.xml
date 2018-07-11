@@ -103,8 +103,8 @@ Arguments  dfm = degrees of freedom for the model/IV/between dfe = degrees of fr
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/etaf.html</guid>
-      <description>Description The formula for $\eta^{2}$ is: $${df{model} \times F{model}\over df{model} \times F{model} + df_{error}}$$
-This value will be $\eta^{2}$ when you use a one-way ANOVA and will be $\eta_{p}^{2}$ when you use a multi-way ANOVA (more than one IV).
+      <description>Description The formula for $\eta^2$ is: $${df_model \times F_model\over df_model \times F_model + df_error}$$
+This value will be $\eta^2}$ when you use a one-way ANOVA and will be $\eta_p^2$ when you use a multi-way ANOVA (more than one IV).
 R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within
@@ -181,8 +181,8 @@ Arguments  t = t-test value
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
       <description>Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_1 - M2\over SD{pooled}}$$
-The formula for t is: $$t = {M_1 - M2\over SE{pooled}}$$
+The formula for d is: $$d = {M_1 - M_2\over SD_pooled}$$
+The formula for t is: $$t = {M_1 - M_2\over SE_pooled}$$
 R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean group one
  m2 = mean group two</description>
