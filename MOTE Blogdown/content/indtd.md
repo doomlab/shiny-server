@@ -16,9 +16,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
 
-The formula for d is: $$d = \frac{M_{control} - M_{exp}}{SD_{control}}$$
+The formula for d is: $$d = {M_{control} - M_{exp}\over SD_{control}}$$
  
-The formula for t is: $$t = \frac{M_{control} - M_{exp}}{SE_{pooled}}$$
+The formula for t is: $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
 
 # R Function
 

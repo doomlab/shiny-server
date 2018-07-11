@@ -55,8 +55,8 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</guid>
       <description>Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for d is: $$d = {M_1 - M_2\over SD_differences}$$
-The formula for t is: $$t = {M_1 - M_2\over SE_differences}$$
+The formula for d is: $$d = {M_1 - M2\over SD{differences}}$$
+The formula for t is: $$t = {M_1 - M2\over SE{differences}}$$
 R Function d.dep.t.diff(mdiff, sddiff, n, a = 0.05)
 Arguments  mdiff = mean difference score sddiff = standard deviation of the difference scores n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
@@ -103,7 +103,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between dfe = degrees of fr
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/etaf.html</guid>
-      <description>Description The formula for $\eta^{2}$ is: $$\frac{df{model} \times F{model}} {df{model} \times F{model} + df_{error}}$$
+      <description>Description The formula for $\eta^{2}$ is: $${df{model} \times F{model}\over df{model} \times F{model} + df_{error}}$$
 This value will be $\eta^{2}$ when you use a one-way ANOVA and will be $\eta_{p}^{2}$ when you use a multi-way ANOVA (more than one IV).
 R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
@@ -181,12 +181,11 @@ Arguments  t = t-test value
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
       <description>Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = \frac{M_1 - M2}{SD{pooled}}$$
-The formula for t is: $$t = \frac{M_1 - M2}{SE{pooled}}$$
+The formula for d is: $$d = {M_1 - M2\over SD{pooled}}$$
+The formula for t is: $$t = {M_1 - M2\over SE{pooled}}$$
 R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean group one
- m2 = mean group two
- sd1 = standard deviation group one</description>
+ m2 = mean group two</description>
     </item>
     
     <item>
@@ -196,8 +195,8 @@ Arguments  m1 = mean group one
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtd.html</guid>
       <description>Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d is: $$d = \frac{M{control} - M{exp}}{SD_{control}}$$
-The formula for t is: $$t = \frac{M{control} - M{exp}}{SE_{pooled}}$$
+The formula for d is: $$d = {M{control} - M{exp}\over SD_{control}}$$
+The formula for t is: $$t = {M{control} - M{exp}\over SE_{pooled}}$$
 R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
     </item>

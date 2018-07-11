@@ -16,9 +16,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays *d* for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
 
-The formula for d is: $$d = {M_1 - M_2\over SD_differences}$$
+The formula for d is: $$d = {M_1 - M_2\over SD_{differences}}$$
  
-The formula for t is: $$t = {M_1 - M_2\over SE_differences}$$
+The formula for t is: $$t = {M_1 - M_2\over SE_{differences}}$$
 
 # R Function
 
