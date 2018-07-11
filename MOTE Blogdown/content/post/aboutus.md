@@ -15,7 +15,5 @@ Student researchers on the MOTE Shiny Application project include Amber Gillenwa
 
 [StatsTools.com](http://statstools.com/) offers Dr. Buchanan's course materials and YouTube tutorials. 
 
-[Contact DOOM lab](<a href="mailto:erinbuchanan@missouristate.edu"</a>)
-
 <!--more-->
 
