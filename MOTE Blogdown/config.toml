@@ -61,7 +61,7 @@ publishDir = "../docs"
   identifier = "aboutus"
   name = "About Us"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-plus\"></i>"
-  url = "/introduction/aboutus/"
+  url = "/aboutus/"
   
 [[menu.links]]
   weight = 1
