@@ -181,8 +181,8 @@ Arguments  t = t-test value
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
       <description>Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_1 - M_2\over SD_pooled}$$
-The formula for t is: $$t = {M_1 - M_2\over SE_pooled}$$
+The formula for d is: $$d = {M_1 - M2\over SD\text{pooled}}$$
+The formula for t is: $$t = {M_1 - M2\over SE\text{pooled}}$$
 R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean group one
  m2 = mean group two</description>
