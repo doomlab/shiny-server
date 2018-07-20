@@ -29,11 +29,11 @@ cleanup = theme(panel.grid.major = element_blank(),
 
 Purpose Statement: In the era of big data, psycholinguistic research is flourishing with numerous publications advancing our knowledge of word characteristics and ways to study them. This article presents the Linguistic Annotated Bibliography (LAB) as a searchable web portal to quickly and easily access reliable database norms, related programs, and variable calculations. These publications were coded by language, number of stimuli, stimuli type (i.e., words, pictures, symbols), keywords (i.e., frequency, semantics, valence), and other useful information. This tool not only allows researchers to search for the specific type of stimuli needed for experiments, but also permits the exploration of publication trends across 100 years of research. Details about the portal creation and use are outlined, as well as various analyses of change in publication rates and keywords. In general, advances in computation power have allowed for the increase in dataset size in the recent decades, in addition to an increase in the number of linguistic variables provided in each publication. If you would like to download the app to run locally, please download the entire folder at [GitHub](https://github.com/doomlab/shiny-server/tree/master/wn_lab). You can view the pre-print of this paper at [OSF](https://osf.io/h3bwx/), the main [OSF project page](https://osf.io/9bcws/), and the associated [GitHub repository](https://github.com/doomlab/Table-of-Doom).
 
-We have created a [Mendeley Group](https://www.mendeley.com/community/the-lab-linguistic-annotated-bibliography/) for users to add resources or create bibliographies from the works provided in the LAB. Anyone can join the group with a Mendeley account and add documents. In order to notify us of new citations we should add to our database, please tag Erin Buchanan by leaving a note on the overview page of the group. To tag someone, simply type the at symbol @ followed by their name. If you do not want to use Mendeley, you can download a BibTex file of the citations in the LAB table to import into your own citation management software. [Email](mailto:buchananlab@gmail.com) suggestions of articles are also accepted. 
+We have created a [Mendeley Group](https://www.mendeley.com/community/the-lab-linguistic-annotated-bibliography/) for users to add resources or create bibliographies from the works provided in the LAB. Anyone can join the group with a Mendeley account and add documents. In order to notify us of new citations we should add to our database, please tag Erin Buchanan by leaving a note on the overview page of the group. To tag someone, simply type the at symbol @ followed by their name. If you do not want to use Mendeley, you can download a [BibTex file](https://github.com/doomlab/shiny-server/blob/master/wn_lab/LAB%20Bib.bib) of the citations in the LAB table to import into your own citation management software. [Email](mailto:buchananlab@gmail.com) suggestions of articles are also accepted. 
 
-### Variable Table
+### Stimuli Table
 
-You can view the complete variable table that lists the variables, their descriptions, and relevant statistics calculated from the most recent dataset. Please contact us if the link or any others below are not loading.
+Stimuli were coded based on the dominant description from the article (i.e., although heteronyms are words and word pairs, they were coded specifically as heteronyms). The number of stimuli presented in the appendix or database was coded with the stimuli, unless the article covered specific programs, search or experimental creation tools, which is the majority of the "other" stimuli category. Because many articles included two types of stimuli, or references to different articles where stimuli were selected from, two options for stimuli were included. Therefore, the total values for number of stimuli do not add up to the number of articles in the database because of multiple instances in articles or no stimuli for program descriptions. The table provided below indicates a description of the types of stimuli and descriptive statistics calculated from the most updated dataset. Please contact us if the link or any others below are not loading.
 
 ```{r stim_var_table, echo=FALSE}
 #set up for stim var table
@@ -78,7 +78,7 @@ shinyApp(ui, server, options = list(height = 900))
 
 ### Tag Table
 
-You can view the complete tag explanation table that lists the tags, their descriptions, and relevant statistics calculated from the most recent dataset.
+Keyword tags are the majority of the database, as they allow for the best understanding of trends and availability of stimuli. The table below portrays a list of tags, description of the tag, frequencies, and correlations between year and tag frequency. Each article was coded with tags based on the description of the accessible data, and one article may have multiple tags. However, due to the cumulative nature of database research, this tagging system does not mean that each article collected that particular type of data. The most common example of this distinction occurs when data was combined across sources, but presented in a new article. 
 
 ```{r tag_var_table, echo=FALSE}
 #set up for tag var table
@@ -130,7 +130,7 @@ server = function(input, output) {
   )
 }
 
-shinyApp(ui, server, options = list(height = 600))
+shinyApp(ui, server, options = list(height = 550))
 ```
 
 ### View and Search The Database
@@ -159,7 +159,7 @@ labtable$Stimuli.List = gsub(",\\s\\s$", "", labtable$Stimuli.List, ignore.case 
 labtable$Lang.List = paste(labtable$language, " ", labtable$notes_lang, sep = "")
 
 ui = fluidPage(
-  titlePanel("LAB Table List"),
+  #titlePanel("LAB Table List"),
   sidebarLayout(
     
     sidebarPanel(
@@ -263,14 +263,16 @@ server = function(input, output) {
     
     
     datatable(temptable, 
-    extensions = 'Responsive',
-    options = list(dom = 'tp'),
+    extensions = 'Buttons',
+    options = list(dom = 'BRtp',
+                   buttons = c('copy', 'csv', 'excel')),
     rownames = FALSE) #close datatable
   
   })
   } #close server
 
-shinyApp(ui, server, options = list(height = 600))
+shinyApp(ui, server, options = list(height = 1000))
+
 ```
 
 ### View the Frequency Statistics
@@ -355,7 +357,7 @@ server <- function(input, output) {
   })
 }
 
-shinyApp(ui, server, options = list(height = 700))
+shinyApp(ui, server, options = list(height = 500))
 ```
 
 ### View the Yearly Statistics
@@ -371,7 +373,7 @@ doom$year2 = as.numeric(as.character(doom$year))
 ui <- fluidPage(
    
    # Application title
-   titlePanel("Tag Frequency"),
+   #titlePanel("Tag Frequency"),
    
    # Sidebar with a slider input for number of bins 
 
@@ -459,7 +461,7 @@ server <- function(input, output) {
 }
 
 # Run the application 
-shinyApp(ui, server, options = list(height = 700))
+shinyApp(ui, server, options = list(height = 400))
 ```
 
 #### Papers Per Year
@@ -473,7 +475,7 @@ labtable2$year = as.numeric(as.character(labtable2$year))
 ui <- fluidPage(#open
   
   # Application title
-  titlePanel("Publication Frequency"),
+  #titlePanel("Publication Frequency"),
    
   #Select Box
   sidebarPanel(
@@ -515,7 +517,7 @@ server <- function(input, output) {
 }
 
 # Run the application 
-shinyApp(ui, server, options = list(height = 700))
+shinyApp(ui, server, options = list(height = 400))
 ```
 
 #### Stimuli Per Year
@@ -536,7 +538,7 @@ longtable$year = as.numeric(as.character(longtable$year))
 ui <- fluidPage(
   
   # Application title
-  titlePanel("Stimuli Frequency"),
+  #titlePanel("Stimuli Frequency"),
   
   #Select Box
   sidebarPanel(
@@ -592,7 +594,7 @@ server <- function(input, output) {
 }
 
 # Run the application 
-shinyApp(ui, server, options = list(height = 700))
+shinyApp(ui, server, options = list(height = 400))
 ```
 
 ### Download the Data
