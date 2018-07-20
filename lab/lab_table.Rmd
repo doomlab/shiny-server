@@ -1,0 +1,602 @@
+---
+output: html_document
+runtime: shiny
+---
+<p>
+
+```{r setup, echo = FALSE, warning=FALSE, include=FALSE}
+#libraries
+library(shiny)
+library(DT)
+library(MOTE)
+library(reshape)
+library(plyr)
+library(ggplot2)
+options(scipen = 999)
+
+overall_lab = read.csv("lab_table.csv")
+
+cleanup = theme(panel.grid.major = element_blank(), 
+                panel.grid.minor = element_blank(), 
+                panel.background = element_blank(), 
+                axis.line.x = element_line(color = "black"),
+                axis.line.y = element_line(color = "black"),
+                legend.key = element_rect(fill = "white"),
+                text = element_text(size = 15))
+```
+
+### LAB: Linguistic Annotated Bibiolography
+
+Purpose Statement: In the era of big data, psycholinguistic research is flourishing with numerous publications advancing our knowledge of word characteristics and ways to study them. This article presents the Linguistic Annotated Bibliography (LAB) as a searchable web portal to quickly and easily access reliable database norms, related programs, and variable calculations. These publications were coded by language, number of stimuli, stimuli type (i.e., words, pictures, symbols), keywords (i.e., frequency, semantics, valence), and other useful information. This tool not only allows researchers to search for the specific type of stimuli needed for experiments, but also permits the exploration of publication trends across 100 years of research. Details about the portal creation and use are outlined, as well as various analyses of change in publication rates and keywords. In general, advances in computation power have allowed for the increase in dataset size in the recent decades, in addition to an increase in the number of linguistic variables provided in each publication.
+
+### Variable Table
+
+You can view the complete variable table that lists the variables, their descriptions, and relevant statistics. Please contact us if the link or any others below are not loading.
+
+Stimuli - View the [Shiny App](http://shiny.aggieerin.com:3838/lab/stim_var_table) that calculates the statistics based on the current dataset. [Download](https://github.com/doomlab/shiny-server/tree/master/lab/stim_var_table) this app to run locally.
+
+```{r stim_var_table, echo=FALSE}
+#set up for stim var table
+stimwordtable = read.csv("StimWordTab.csv")
+stimworddata = overall_lab
+
+type1 = stimworddata[ , c("no1", "type1")]
+type2 = stimworddata[ , c("no2", "type2")]
+colnames(type2) = c("no1", "type1")
+stimworddata = rbind(type1, type2)
+stimworddata = subset(stimworddata, type1 != "")
+stimworddata$type1 = droplevels(stimworddata$type1)
+stimworddata$type1 = factor(stimworddata$type1, 
+                            levels = stimwordtable$Stimuli)
+
+stimwordtable$N = table(stimworddata$type1)
+
+stimwordtable$Minimum = apa(tapply(stimworddata$no1, stimworddata$type1, min, na.rm = T),2)
+stimwordtable$Maximum = apa(tapply(stimworddata$no1, stimworddata$type1, max, na.rm = T),2)
+stimwordtable$M = apa(tapply(stimworddata$no1, stimworddata$type1, mean, na.rm = T),2)
+stimwordtable$SD = apa(tapply(stimworddata$no1, stimworddata$type1, sd, na.rm = T),2)
+
+#app part
+ui = fluidPage(
+  titlePanel("Stimuli Variable List"),
+  DTOutput('tbl'))
+
+server = function(input, output) {
+  output$tbl = renderDT(
+    stimwordtable, 
+    extensions = 'Responsive',
+    options = list(
+      dom = 'tp'
+    ),
+    rownames = FALSE
+    
+  )
+}
+
+shinyApp(ui, server, options = list(height = 1000))
+```
+
+Tags - View the [Shiny App](http://shiny.aggieerin.com:3838/lab/tag_var_table) that calculates the statistics based on the current dataset. [Download](https://github.com/doomlab/shiny-server/tree/master/lab/tag_var_table) this app to run locally.
+
+```{r tag_var_table, echo=FALSE}
+#set up for tag var table
+tagwordtable = read.csv("TagWordTab.csv")
+tagworddata = overall_lab
+
+tagworddata = tagworddata[ , c("aoa","ambiguity","arousal","assoc","category",
+                               "cloze","complex","concrete","confusion","dist",
+                               "dominate","easelearn","familiar","freq","gpc",
+                               "identify","identifyld","identifyn","imageagree",
+                               "imagevar", "imagine","intense","letters", "meaning",
+                               "modality","morph","nameagree","orthon","pos",
+                               "phonemes","phonon","prime","pronounce",
+                               "rt","recall","recognition","rime","semantic",
+                               "sensory","sentcomp","similar","syllables",
+                               "typical","valence","visualcomp","wordcomp","year")]
+
+longtag = melt(tagworddata,
+                   id = c("year"),
+                   measured = c("aoa","ambiguity","arousal","assoc","category",
+                                "cloze","complex","concrete","confusion","dist",
+                                "dominate","easelearn","familiar","freq","gpc",
+                                "identify","identifyld","identifyn","imagevar",
+                                "imagine","intense","meaning","modality","morph",
+                                "nameagree","orthon","pos","phonon","prime","pronounce",
+                                "rt","recall","recognition","rime","semantic",
+                                "sensory","sentcomp","typical","valence","visualcomp",
+                                "wordcomp","syllables","letters","phonemes","imageagree",
+                                "similar"))
+longtag$year = as.numeric(as.character(longtag$year))
+longtag$year[is.na(longtag$year)] = 1999
+tagwordtable$r = apa(as.matrix(by(longtag, longtag$variable, function(x) {cor(x$year, x$value)}))[ , 1],3, F)
+tagwordtable$N = table(longtag$variable[longtag$value == 1])
+
+#app part
+ui = fluidPage(
+  titlePanel("Tag Variable List"),
+  DTOutput('tbl'))
+
+server = function(input, output) {
+  output$tbl = renderDT(
+    tagwordtable, 
+    extensions = 'Responsive',
+    options = list(
+      dom = 'tp'
+    ),
+    rownames = FALSE
+    
+  )
+}
+
+shinyApp(ui, server, options = list(height = 600))
+```
+
+###View and Search The Database
+
+You can use the [Shiny app](http://shiny.aggieerin.com:3838/lab/lab_table) provided to view all the publication entries and their information. Use the side bar to filter the dataset. [Download](https://github.com/doomlab/shiny-server/tree/master/lab/lab_table) this app to run locally.
+
+Are we missing something? Please [email](mailto:buchananlab@gmail.com) us any information you find that is incorrect or missing. We do not assume this list is complete and would love to add more data to the LAB. 
+
+```{r lab_table, echo=FALSE}
+#set up for lab table
+labtable = overall_lab
+
+#clean up journal information
+labtable$Full.Reference = with(labtable, paste(author, year, ref_title,
+                                            ref_journal, ref_volume, 
+                                            ref_page, ref_doi, sep = ". "))
+#clean up the tags
+labtable$Tag.List = apply(labtable[ , 21:66] == 1, 1, function(x) { toString(names(which(x))) } )
+
+#clean up the stimuli
+labtable$Stimuli.List = paste(labtable$no1, " ", labtable$type1, ", ",
+                              labtable$no2, " ", labtable$type2, sep = "")
+
+labtable$Stimuli.List = gsub("NA", "", labtable$Stimuli.List, ignore.case = F)
+labtable$Stimuli.List = gsub(",\\s\\s$", "", labtable$Stimuli.List, ignore.case = F)
+
+#language
+labtable$Lang.List = paste(labtable$language, " ", labtable$notes_lang, sep = "")
+
+ui = fluidPage(
+  titlePanel("LAB Table List"),
+  sidebarLayout(
+    
+    sidebarPanel(
+      selectizeInput("stimuli", "Select Stimuli:", 
+                     choices = c("Anagrams", "Categories", "Characters", 
+                                 "Cloze/Sentences", "Color drawings", "Homo/Heterophones",
+                                 "Letters", "Line drawings", "Names", "Other", "Phonemes",
+                                 "Pictures", "Proverbs", "Sounds", "Syllables", "Symbols/Icons", 
+                                 "Word Pairs", "Words"), 
+                     multiple = TRUE),
+      
+      selectizeInput("tags", "Select Tags:", 
+                     choices = c(
+                       "Age of Acquisition" = "aoa",
+                       "Ambiguity" = "ambiguity",
+                       "Arousal" = "arousal",
+                       "Association" = "assoc",
+                       "Categories" = "category",
+                       "Cloze Probabilities" = "cloze",
+                       "Complexity" = "complex",
+                       "Concreteness" = "concrete",
+                       "Confusion Matrices" = "confusion",
+                       "Distinctivenes" = "sdist",
+                       "Dominance" = "dominate",
+                       "Ease of Learning" = "easelearn",
+                       "Familiarity" = "familiar",
+                       "Frequency" = "freq",
+                       "Grapheme-Phoneme Correspondence" = "gpc",
+                       "Indentification" = "identify",
+                       "Image Agreement" = "imageagree",
+                       "Image Variability" = "imagevar",
+                       "Imaginability" = "imagine",
+                       "Intensity" = "intense",
+                       "Letters" = "letters",
+                       "Lexical Decision" = "identifyld",
+                       "Meaning" = "meaning",
+                       "Modality" = "modality",
+                       "Morphemes" = "morph",
+                       "Name Agreement" = "nameagree",
+                       "Naming" = "identifyn",
+                       "Orthographic Neighborhood" = "orthon",
+                       "Part of Speech" = "pos",
+                       "Phonemes" = "phonemes",
+                       "Phonographic Neighborhood" = "phonon",
+                       "Priming" = "prime",
+                       "Pronunciation" = "pronounce",
+                       "Response Latency" = "rt",
+                       "Recall" = "recall",
+                       "Recognition" = "recognition",
+                       "Rime" = "rime",
+                       "Semantic" = "semantic",
+                       "Sensory" = "sensory",
+                       "Sentence Completion" = "sentcomp",
+                       "Similarity" = "similar",
+                       "Syllables" = "syllables",
+                       "Typicality" = "typical",
+                       "Valence" = "valence",
+                       "Visual Complexity" = "visualcomp",
+                       "Word Completion" = "wordcomp"), 
+                     multiple = TRUE),
+      
+      selectizeInput("language", "Select Language:", 
+                     choices = c("British English","Chinese","Dutch",
+                                 "English","French","German","Greek",
+                                 "Italian","Japanese","Multiple","Other",
+                                 "Portuguese","Spanish"), 
+                     multiple = TRUE)
+      
+    ), #sidebar panel
+    
+    mainPanel(
+      DTOutput('tbl')
+    ) #close main panel
+  
+  )##sidebar layout
+  
+  )##fluidpage
+
+server = function(input, output) {
+  output$tbl = renderDT({
+    
+    temptable = labtable[ , (ncol(labtable)-3):(ncol(labtable))]
+    
+    if (!is.null(input$stimuli)) {
+    for (i in 1:length(input$stimuli)) {
+      temptable = temptable[grep(input$stimuli[i], temptable$Stimuli.List), ]
+    }
+    }
+    
+    if (!is.null(input$tags)) {
+      for (i in 1:length(input$tags)) {
+        temptable = temptable[grep(input$tags[i], temptable$Tag.List), ]
+      }
+    }
+    
+    if (!is.null(input$language)) {
+      for (i in 1:length(input$language)) {
+        temptable = temptable[grep(input$language[i], temptable$Lang.List), ]
+      }
+    }
+    
+    
+    datatable(temptable, 
+    extensions = 'Responsive',
+    options = list(dom = 'tp'),
+    rownames = FALSE) #close datatable
+  
+  })
+  } #close server
+
+shinyApp(ui, server, options = list(height = 600))
+```
+
+###View the Frequency Statistics
+
+You can use the [Shiny app](http://shiny.aggieerin.com:3838/lab/frequencies) to view the frequencies of tags, stimuli, languages, and journals. [Download](https://github.com/doomlab/shiny-server/tree/master/lab/frequencies) this app to run locally.
+
+```{r frequencies, echo=FALSE}
+#set up for frequencies
+tablemain = overall_lab
+
+##use the value column for the table below because it contains all the stimuli names
+type = subset(tablemain, select = c(STUFFID, type1, type2))
+longtype = melt(type, 
+                 id = c("STUFFID"), 
+                 measured = c("type1", "type2"))
+longtype = subset(longtype, value != "")
+longtype$value = droplevels(longtype$value)
+
+##use the variable column for the table below because it has all the tag names
+
+stimuli = subset(tablemain, select = c(1, 22:67))
+longstimuli = melt(stimuli,
+                id = c("STUFFID"),
+                measured = c("aoa","ambiguity","arousal","assoc","category",
+                             "cloze","complex","concrete","confusion","dist",
+                             "dominate","easelearn","familiar","freq","gpc",
+                             "identify","identifyld","identifyn","imagevar",
+                             "imagine","intense","meaning","modality","morph",
+                             "nameagree","orthon","pos","phonon","prime","pronounce",
+                             "rt","recall","recognition","rime","semantic",
+                             "sensory","sentcomp","typical","valence","visualcomp",
+                             "wordcomp","syllables","letters","phonemes","imageagree",
+                             "similar"))
+
+longstimuli = subset(longstimuli, value > 0) 
+
+longstimuli$variable = factor(longstimuli$variable,
+                              levels = levels(longstimuli$variable), 
+                              labels = c("Age of Acquisition", "Ambiguity", "Arousal",
+                                         "Association", "Category", "Cloze", "Complexity",
+                                         "Concreteness", "Confusion Matrices", "Distinctness",
+                                         "Dominance", "Ease of Learning", "Familiarity", 
+                                         "Frequency", "Grapheme-Phoneme Correspondence", 
+                                         "Indentification", "Lexical Desicion", "Naming", 
+                                         "Image Variability", "Imagineability", "Intensity",
+                                         "Meaning", "Modality", "Morphemes", "Name Agreement", 
+                                         "Orthographic Neighborhood", "Part of Speech", 
+                                         "Phonographic Neighborhood", "Priming", "Pronunciation", 
+                                         "Response Latency", "Recall", "Recognition", "Rime", 
+                                         "Semantic", "Sensory", "Sentence Completion", 
+                                         "Typicality", "Valence", "Visual Complexity", "Word Completion",
+                                         "Syllables", "Letters", "Phonemes", "Image Agreement", "Similarity"))
+
+
+ui <- fluidPage( #open ui
+  sidebarLayout( #open fluid page and sidebar layout
+  sidebarPanel( #open sidebarPanel
+    
+    selectInput("choice", "Choose a variable:", 
+                choices = c("Stimuli", "Tags", "Journal", "Language"),
+                selected = "Stimuli")
+  ), #close sidebar Panel
+  mainPanel( #open mainPanel
+    dataTableOutput('freqtable')
+  ) #close mainPanel
+) # close sidebar Layout
+) #close fluidpage
+
+server <- function(input, output) {
+  
+  output$freqtable <- renderDataTable({
+    
+    if (input$choice == "Stimuli") {freqvalues = longtype$value}
+    if (input$choice == "Tags") {freqvalues = longstimuli$variable}
+    if (input$choice == "Journal") {freqvalues = tablemain$ref_journal}
+    if (input$choice == "Language") {freqvalues = tablemain$language}
+      
+    tablef = count(freqvalues)
+    tablef$percent = round(tablef$freq/sum(tablef$freq) * 100, 2)
+    colnames(tablef) = c("Variable", "Frequency", "Percent")
+    tablef
+  })
+}
+
+shinyApp(ui, server, options = list(height = 700))
+```
+
+###View the Yearly Statistics
+
+Tags Per Year - View the [Shiny app](http://shiny.aggieerin.com:3838/lab/tag_per_year) or [download](https://github.com/doomlab/shiny-server/tree/master/lab/tag_per_year) to run locally.
+
+```{r tag_per_year, echo=FALSE}
+#set up tag per year
+doom = overall_lab
+doom$year2 = as.numeric(as.character(doom$year))
+
+# Define UI for application that draws a histogram
+ui <- fluidPage(
+   
+   # Application title
+   titlePanel("Tag Frequency"),
+   
+   # Sidebar with a slider input for number of bins 
+
+      sidebarPanel(
+         selectInput("choose",
+                     "Select a Stimulus",
+                     choices = list("Age of Acquisition" = "aoa",
+                                    "Ambiguity/Word Meaning" = "ambiguity",
+                                    "Arousal" = "arousal",
+                                    "Association" = "assoc",
+                                    "Category" = "category",
+                                    "Cloze Probabilities" = "cloze",
+                                    "Complexity" = "complex",
+                                    "Concreteness" = "concrete",
+                                    "Confusion Matrices" = "confusion",
+                                    "Distinctiveness" = "dist",
+                                    "Dominance" = "dominate",
+                                    "Ease of Learning" = "easelearn",
+                                    "Familiarity" = "familiar",
+                                    "Frequency" = "freq",
+                                    "Grapheme-Phoneme Correspondence" = "gpc",
+                                    "Identification" = "identify",
+                                    "Identification - Lexical" = "identifyld",
+                                    "Identification - Naming" = "identifyn",
+                                    "Image Variability" = "imagevar",
+                                    "Imageability" = "imagine",
+                                    "Intensity" = "intense",
+                                    "Meaningfulness" = "meaning",
+                                    "Modality" = "modality",
+                                    "Morphology" = "morph",
+                                    "Name Agreement" = "nameagree",
+                                    "Orthographic Neighborhood" = "orthon",
+                                    "Part of Speech" = "pos",
+                                    "Phonological Neighborhood" = "phonon", 
+                                    "Priming" = "prime",
+                                    "Pronunciation" = "pronounce",
+                                    "Response Times" = "rt",
+                                    "Recall" = "recall",
+                                    "Recognition" = "recognition",
+                                    "Rime" = "rime",
+                                    "Semantics" = "semantic",
+                                    "Sensory/Motor" = "sensory",
+                                    "Sentence Completion" = "sentcomp",
+                                    "Typicality" = "typical",
+                                    "Valence/Emotion" = "valence",
+                                    "Visual Complexity" = "visualcomp",
+                                    "Word Completion" = "wordcomp",
+                                    "Syllables" = "syllables",
+                                    "Letters" = "letters",
+                                    "Phonemes" = "phonemes",
+                                    "Image Agreement" = "imageagree",
+                                    "Similar" = "similar")),
+         sliderInput("binsno",
+                     "Number of bins",
+                     min = 1,
+                     max = 30,
+                     value = 15)
+      ),
+      
+      # Show a plot of the generated distribution
+      mainPanel(
+         plotOutput("yearhist")
+      )
+   )
+
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+  
+   output$yearhist <- renderPlot({
+     binsno <- (length.out = input$binsno + 1)
+     
+     graphdata = doom[ , c(input$choose, "year2")]
+     colnames(graphdata) = c("picked", "year")
+     graphdata = subset(graphdata, picked > 0)
+     masterhist1 = ggplot(graphdata, aes(year))
+     masterhist1 +
+       geom_histogram(binwidth = binsno, 
+                      color = "black", 
+                      fill = "white") +
+       xlab("Year") + 
+       ylab("Frequency") +
+       cleanup
+   })
+}
+
+# Run the application 
+shinyApp(ui, server, options = list(height = 700))
+```
+
+Papers Per Year - View the [Shiny app](http://shiny.aggieerin.com:3838/lab/papers_per_year) or [download](https://github.com/doomlab/shiny-server/tree/master/lab/papers_per_year) to run locally.
+
+```{r papers_per_year, echo=FALSE}
+labtable2 = overall_lab
+
+labtable2$year = as.numeric(as.character(labtable2$year))
+
+# Define UI for application that draws a histogram
+ui <- fluidPage(#open
+  
+  # Application title
+  titlePanel("Publication Frequency"),
+   
+  #Select Box
+  sidebarPanel(
+     
+     sliderInput("year", 
+                 label = "Year:",
+                 min = 1910, max = 2014, value = c(1910, 2014),
+                 sep = ""),
+     helpText("This graphic indicates the publication frequency of 
+              normed information across years. Please use the slider 
+              bar to zoom into a specified year range.",
+              p(), "You can right click on the graphic to save it.") #close help 
+  ), #close sidebar panel
+  
+   # Show a plot of the generated distribution
+   mainPanel(#open
+     plotOutput("distPlot")
+     )#close main Panel
+  )#close fluid page
+   
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+  
+  output$distPlot <- renderPlot({
+    
+    graphdata = subset(labtable2, year >= input$year[1] & year <= input$year[2])
+    
+    # draw the histogram with the specified number of bins
+    yearhist = ggplot(graphdata, aes(year))
+    yearhist +
+    geom_histogram(binwidth = 2, 
+                   color = "black", 
+                   fill = "grey") +
+    xlab("Year") + 
+    ylab("Frequency") +
+    cleanup
+  })
+}
+
+# Run the application 
+shinyApp(ui, server, options = list(height = 700))
+```
+
+Stimuli Per Year - View the [Shiny app](http://shiny.aggieerin.com:3838/lab/stimuli_per_year) or [download](https://github.com/doomlab/shiny-server/tree/master/lab/stimuli_per_year) to run locally.
+
+```{r stimuli_per_year, echo=FALSE}
+#set up stimuli per year
+table = subset(overall_lab, select = c(STUFFID, type1, type2, year))
+longtable = melt(table, 
+                 id = c("STUFFID", "year"), 
+                 measured = c("type1", "type2"))
+
+colnames(longtable)[3]="Type"
+
+#To change the years from being factors
+longtable$year = as.numeric(as.character(longtable$year))
+
+##define ui
+ui <- fluidPage(
+  
+  # Application title
+  titlePanel("Stimuli Frequency"),
+  
+  #Select Box
+  sidebarPanel(
+    
+    selectInput(inputId = "select", 
+                label ="Stimuli:", 
+                choices = c("Anagrams" , "Categories" ,
+                            "Cloze/Sentences" , "Color drawings", 
+                            "Homo/Heterographs", "Letters" ,
+                            "Line drawings", "Names", 
+                            "Other", "Phonemes", 
+                            "Pictures", "Proverbs",
+                            "Sounds", "Syllables",
+                            "Symbols/Icons", "Word Pairs", 
+                            "Words")), #close select
+    
+    sliderInput("bins",
+                "Number of bins:",
+                min = 1,
+                max = 30,
+                value = 15), #close slider
+    
+    helpText("This graphic indicates the publication frequency of 
+              of each type of stimuli across years. Please use the slider 
+              bar to control the bin width (bar size).",
+             p(), "You can right click on the graphic to save it.") #close help
+  ), #close sidebarpanel
+
+
+  mainPanel(
+    plotOutput("distPlot")
+  ) #close main
+) #close fluid
+
+# Define server logic 
+server <- function(input, output) {
+  
+  output$distPlot <- renderPlot({
+    
+    graphdata = subset(longtable, value == input$select)
+    
+    bins <- (length.out = input$bins + 1)
+    
+    # draw the histogram with the specified number of bins
+    ggplot(graphdata, aes(year)) + 
+      geom_histogram(binwidth = bins, 
+                     color = "black", 
+                     fill = "white") +
+      xlab("Year") +
+      ylab("Frequency") +
+      cleanup 
+  })
+}
+
+# Run the application 
+shinyApp(ui, server, options = list(height = 700))
+```
+
+### Download the Data
+
+You can download the csv file of the LAB table information [here](https://github.com/doomlab/shiny-server/blob/master/lab/lab_table.csv).
+
+
