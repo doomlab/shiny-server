@@ -1,5 +1,8 @@
 ---
 output: html_document
+resource_files:
+- _site.yml
+- double_words.Rproj
 runtime: shiny
 ---
 <p>

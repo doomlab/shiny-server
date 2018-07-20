@@ -1,0 +1,25 @@
+name: "WordNorms.com"
+output_dir: "."
+navbar:
+  title: "WordNorms.com"
+  left:
+    - text: "Single Words"
+      href: single.html
+    - text: "Word Pairs"
+      href: pairs.html
+    - text: "Data"
+      href: data.html
+    - text: "The LAB"
+      href: lab.html
+    - text: "About"
+      href: about.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: mailto:buchananlab@gmail.com
+    - icon: fa-github fa-lg
+      href: http://github.com/doomlab
+
+output:
+  html_document:
+    theme: paper
+    #css: 'styles.css'
