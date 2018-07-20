@@ -1,0 +1,10 @@
+name: mote
+title:
+username:
+account: doomlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 384167
+bundleId: 1490185
+url: https://doomlab.shinyapps.io/mote/
+when: 1532036279.91843
