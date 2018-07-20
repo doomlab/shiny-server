@@ -1,0 +1,93 @@
+---
+output: html_document
+runtime: shiny
+---
+<p>
+
+```{r setup, echo = FALSE, warning=FALSE, include=FALSE}
+#load libraries
+library(shiny)
+library(DT)
+library(MOTE)
+options(scipen = 999)
+
+doublewordtable = read.csv("DoubleWordTab.csv")
+doubleworddata = read.csv("double_words.csv")
+
+##fix this part here when the new values are avaliable 
+doublewordtable$Minimum[3:10] = c(apa(apply(doubleworddata[ , 3:10], 2, min, na.rm = T), 2))
+doublewordtable$Maximum[3:10] = c(apa(apply(doubleworddata[ , 3:10], 2, max, na.rm = T), 2))
+doublewordtable$M[3:10] = c(apa(apply(doubleworddata[ , 3:10], 2, mean, na.rm = T), 2))
+doublewordtable$SD[3:10] = c(apa(apply(doubleworddata[ , 3:10], 2, sd, na.rm = T), 2))
+```
+
+### Word Pair Norms
+
+On this page, you will find information about our paired word norms used in our projects. We have split our single and paired word norms into two separate databases to speed database processing time for the user. Word pair norms are cue-target groupings that require both concepts to be included to understand the relation between these concepts. For example, cat-dog can be understood in context of association (i.e., it's raining cats and dogs) or though semantics (i.e., cats and dogs have many similar features). This dataset includes all cues-target pairings from the Buchanan et al. (2012) semantic word-pair norms, our extension project ([OSF](https://osf.io/cjyzw/),  [GitHub](https://github.com/doomlab/Word-Norms-2)), and their overlap with the McRae, Cree, Seidenberg, and McNorgan (2005) and Vinson and Vigliocco (2008) norms. If two concepts are included in the dataset, but do not appear together as a row on this site, you can assume their feature overlap is very close to or zero. We calculated these cosine values for pairs that included at least two features in common. With over 4000 pairs, the possible combinations are 16+ million, and therefore, we used this restriction to give word pair combinations that were effectively non-zero while still being able to view and manipulate the database. When downloading the applications to run locally on RStudio, please be sure to download the dataset in the main [GitHub repository](https://github.com/doomlab/shiny-server/tree/master/lab).
+
+### Variable Table
+
+You can view the complete variable table that lists the variables, their descriptions, min, max, mean, and standard deviation. Norms are taken from the University of South Florida Free Association Norms (Nelson, McEvoy, & Schreiber, 2004), JCN semantic dictionary distance (Maki, McKinley, & Thompson, 2004; Maki, 2008), and LSA values (Landauer & Dumais, 1997).
+
+This [link](http://shiny.aggieerin.com:3838/lab/double_var_table) will take you to the Shiny app that calculates the statistics based on the current dataset. Please contact us if the link or any others below are not loading. [Download](https://github.com/doomlab/shiny-server/tree/master/lab/double_var_table) this app to run locally.
+
+```{r double_var_table, echo=FALSE}
+ui = fluidPage(
+  titlePanel("Double Words Variable List"),
+  DTOutput('tbl'))
+
+server = function(input, output) {
+  output$tbl = renderDT(
+    doublewordtable, 
+    extensions = 'Responsive',
+    options = list(
+      dom = 'tp'
+    ),
+    rownames = FALSE
+    
+  )
+}
+
+shinyApp(ui, server, options = list(height = 700))
+```
+
+### View and Search the Words
+
+You can use the [Shiny app](http://shiny.aggieerin.com:3838/lab/double_words/) provided to view all the words and their information. The top boxes in this datatable allow you to filter the columns for specific ranges you might be interested in. This app does load slowly because it is 200,000+ lines, so please be patient. [Download](https://github.com/doomlab/shiny-server/tree/master/lab/double_words) this app to run locally.
+
+```{r double_words, echo = FALSE}
+ui <- fluidPage(
+   titlePanel("Double Word Norms"),
+   helpText("Please note the table loads slowly. 
+            Use the search filters at the top of the table to 
+            pick specific ranges of variables or categories. 
+            A complete variable list can be found on the single 
+            word norms page."),
+   div(style = 'overflow-x: scroll', DTOutput("doubletable"))
+   ) #fluidpage
+
+server <- function(input, output) {
+   
+   output$doubletable <- renderDT(server = TRUE, {
+     
+     datatable(doubleworddata,
+               filter = 'top',
+               rownames = FALSE,
+               extensions = 'Buttons',
+               options = list(
+                 dom = 'rtpB',
+                 buttons = c('copy', 'csv', 'excel')
+               ) #close options
+               ) #close data table 
+     
+   }) #close render DT
+      
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server, options = list(height = 1000))
+```
+
+### Download the Data
+
+You can download the csv file of the single word information [here](https://github.com/doomlab/shiny-server/blob/master/lab/double_words.csv).
