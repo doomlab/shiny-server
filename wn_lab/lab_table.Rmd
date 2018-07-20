@@ -1,5 +1,8 @@
 ---
 output: html_document
+resource_files:
+- _site.yml
+- lab_table.Rproj
 runtime: shiny
 ---
 <p>
@@ -260,7 +263,6 @@ server = function(input, output) {
         temptable = temptable[grep(input$language[i], temptable$Lang.List), ]
       }
     }
-    
     
     datatable(temptable, 
     extensions = 'Buttons',

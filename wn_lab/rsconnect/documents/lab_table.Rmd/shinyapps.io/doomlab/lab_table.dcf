@@ -1,0 +1,13 @@
+name: lab_table
+title: lab_table
+username:
+account: doomlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 385067
+bundleId: 1492199
+url: https://doomlab.shinyapps.io/lab_table/
+when: 1532120407.67255
+asMultiple: FALSE
+asStatic: FALSE
+additionalFiles: _site.yml|lab_table.Rproj
