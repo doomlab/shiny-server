@@ -1,9 +1,13 @@
 ---
-output: html_document
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
 resource_files:
 - _site.yml
 - lab_table.Rproj
 runtime: shiny
+        
 ---
 <p>
 
@@ -76,7 +80,7 @@ server = function(input, output) {
   )
 }
 
-shinyApp(ui, server, options = list(height = 900))
+shinyApp(ui, server, options = list(height = 950))
 ```
 
 ### Tag Table
@@ -133,7 +137,7 @@ server = function(input, output) {
   )
 }
 
-shinyApp(ui, server, options = list(height = 550))
+shinyApp(ui, server, options = list(height = 600))
 ```
 
 ### View and Search The Database
@@ -273,7 +277,7 @@ server = function(input, output) {
   })
   } #close server
 
-shinyApp(ui, server, options = list(height = 1000))
+shinyApp(ui, server, options = list(height = 1050))
 
 ```
 
@@ -359,12 +363,14 @@ server <- function(input, output) {
   })
 }
 
-shinyApp(ui, server, options = list(height = 500))
+shinyApp(ui, server, options = list(height = 550))
 ```
 
 ### View the Yearly Statistics
 
 #### Tags Per Year
+
+This app allows you to view the tag frequencies across years. 
 
 ```{r tag_per_year, echo=FALSE}
 #set up tag per year
@@ -463,10 +469,12 @@ server <- function(input, output) {
 }
 
 # Run the application 
-shinyApp(ui, server, options = list(height = 400))
+shinyApp(ui, server, options = list(height = 450))
 ```
 
 #### Papers Per Year
+
+This app allows you to view the number of papers published in each year. Please note that databases with no associated publication are given the year that we added them to the database unless otherwise noted on their site the date of publication.
 
 ```{r papers_per_year, echo=FALSE}
 labtable2 = overall_lab
@@ -519,10 +527,12 @@ server <- function(input, output) {
 }
 
 # Run the application 
-shinyApp(ui, server, options = list(height = 400))
+shinyApp(ui, server, options = list(height = 450))
 ```
 
 #### Stimuli Per Year
+
+This app allows you to view the stimuli frequencies across years.
 
 ```{r stimuli_per_year, echo=FALSE}
 #set up stimuli per year
@@ -596,7 +606,7 @@ server <- function(input, output) {
 }
 
 # Run the application 
-shinyApp(ui, server, options = list(height = 400))
+shinyApp(ui, server, options = list(height = 450))
 ```
 
 ### Download the Data

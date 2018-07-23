@@ -1,0 +1,12 @@
+name: altnhst
+title: altnhst
+username:
+account: doomlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 386028
+bundleId: 1494447
+url: https://doomlab.shinyapps.io/altnhst/
+when: 1532314235.86004
+asMultiple: FALSE
+asStatic: FALSE

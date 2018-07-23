@@ -1,5 +1,0 @@
-book_filename: "MOTE"
-chapter_name: "Chapter "
-repo: https://github.com/doomlab/shiny-server
-clean: [packages.bib, bookdown.bbl]
-new_session: yes

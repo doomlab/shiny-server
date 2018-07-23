@@ -1,2 +1,0 @@
-## Independent t - t
-

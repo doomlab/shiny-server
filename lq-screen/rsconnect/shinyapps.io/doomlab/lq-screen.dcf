@@ -1,0 +1,12 @@
+name: lq-screen
+title: lq-screen
+username:
+account: doomlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 386033
+bundleId: 1494456
+url: https://doomlab.shinyapps.io/lq-screen/
+when: 1532314779.61368
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,4 +1,0 @@
-## Omega Partial RM - SS
- 
-
-

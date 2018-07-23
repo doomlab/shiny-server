@@ -1,4 +1,0 @@
-## Generalized Omega - RM
- 
-
-

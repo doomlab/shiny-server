@@ -1,4 +1,0 @@
-## GES Partial RM - SS
- 
-
-

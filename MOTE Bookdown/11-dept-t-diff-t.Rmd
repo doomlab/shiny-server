@@ -1,2 +1,0 @@
-## Dependent t Differences - t
-

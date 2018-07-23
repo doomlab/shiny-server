@@ -1,0 +1,12 @@
+name: bias1
+title: bias1
+username:
+account: doomlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 386031
+bundleId: 1494454
+url: https://doomlab.shinyapps.io/bias1/
+when: 1532314603.02754
+asMultiple: FALSE
+asStatic: FALSE
