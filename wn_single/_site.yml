@@ -4,15 +4,15 @@ navbar:
   title: "WordNorms.com"
   left:
     - text: "Single Words"
-      href: single.html
+      href: http://wordnorms.com/single_words.html
     - text: "Word Pairs"
-      href: pairs.html
+      href: http://wordnorms.com/double_words.html
     - text: "Data"
-      href: data.html
+      href: http://wordnorms.com/data.html
     - text: "The LAB"
-      href: lab.html
+      href: http://wordnorms.com/lab_table.html
     - text: "About"
-      href: about.html
+      href: http://wordnorms.com/about.html
   right:
     - icon: fa-envelope fa-lg
       href: mailto:buchananlab@gmail.com
