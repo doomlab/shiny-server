@@ -5,9 +5,8 @@ account: doomlab
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 385069
-bundleId: 1492204
+bundleId: 1495699
 url: https://doomlab.shinyapps.io/single_words/
-when: 1532120667.33431
+when: 1532370506.45291
 asMultiple: FALSE
 asStatic: FALSE
-additionalFiles: _site.yml|single_words.Rproj

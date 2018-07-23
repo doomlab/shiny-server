@@ -5,9 +5,8 @@ account: doomlab
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 385067
-bundleId: 1492199
+bundleId: 1495695
 url: https://doomlab.shinyapps.io/lab_table/
-when: 1532120407.67255
+when: 1532370330.30702
 asMultiple: FALSE
 asStatic: FALSE
-additionalFiles: _site.yml|lab_table.Rproj
