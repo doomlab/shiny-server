@@ -16,7 +16,7 @@ wn-lab: Buchanan, E. M., Valentine, K. D., & Maxwell, N. P. (2018). LAB: Linguis
 
 wn-single: Buchanan, E. M. (2018). Word Norms Single Word Information. Retrieved from http://aggieerin.com/shiny/single_words. [![DOI](https://zenodo.org/badge/116844736.svg)](https://zenodo.org/badge/latestdoi/116844736)
 
-Want to cite a different version? You can view our [Releases page](https://github.com/doomlab/shiny-server/releases) to see the changes we've made across time and view the associated doi with that release at [Zenodo](https://zenodo.org/badge/latestdoi/116844736).
+wn-double: Buchanan, E. M. (2018). Word Norms Paired Word Information. Retrieved from http://aggieerin.com/shiny/double_words. [![DOI](https://zenodo.org/badge/116844736.svg)](https://zenodo.org/badge/latestdoi/116844736)
 
-wn-double: Buchanan, E. M. (2018). Word Norms Paired Word Information. Retrieved from http://aggieerin.com/shiny/double_words. 
+Want to cite a different version? You can view our [Releases page](https://github.com/doomlab/shiny-server/releases) to see the changes we've made across time and view the associated doi with that release at [Zenodo](https://zenodo.org/badge/latestdoi/116844736).
 
