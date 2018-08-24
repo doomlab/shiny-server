@@ -36,7 +36,20 @@ cleanup = theme(panel.grid.major = element_blank(),
 
 Purpose Statement: In the era of big data, psycholinguistic research is flourishing with numerous publications advancing our knowledge of word characteristics and ways to study them. This article presents the Linguistic Annotated Bibliography (LAB) as a searchable web portal to quickly and easily access reliable database norms, related programs, and variable calculations. These publications were coded by language, number of stimuli, stimuli type (i.e., words, pictures, symbols), keywords (i.e., frequency, semantics, valence), and other useful information. This tool not only allows researchers to search for the specific type of stimuli needed for experiments, but also permits the exploration of publication trends across 100 years of research. Details about the portal creation and use are outlined, as well as various analyses of change in publication rates and keywords. In general, advances in computation power have allowed for the increase in dataset size in the recent decades, in addition to an increase in the number of linguistic variables provided in each publication. If you would like to download the app to run locally, please download the entire folder at [GitHub](https://github.com/doomlab/shiny-server/tree/master/wn_lab). You can view the pre-print of this paper at [OSF](https://osf.io/h3bwx/), the main [OSF project page](https://osf.io/9bcws/), and the associated [GitHub repository](https://github.com/doomlab/Table-of-Doom).
 
+### Help Update
 We have created a [Mendeley Group](https://www.mendeley.com/community/the-lab-linguistic-annotated-bibliography/) for users to add resources or create bibliographies from the works provided in the LAB. Anyone can join the group with a Mendeley account and add documents. In order to notify us of new citations we should add to our database, please tag Erin Buchanan by leaving a note on the overview page of the group. To tag someone, simply type the at symbol @ followed by their name. If you do not want to use Mendeley, you can download a [BibTex file](https://github.com/doomlab/shiny-server/blob/master/wn_lab/LAB%20Bib.bib) of the citations in the LAB table to import into your own citation management software. [Email](mailto:buchananlab@gmail.com) suggestions of articles are also accepted. 
+
+### Versioning and Citing
+
+Preprint citation: Buchanan, E. M., Valentine, K. D., & Maxwell, N. (2018). The LAB: Linguistic Annotated Bibliography. https://doi.org/10.31219/osf.io/h3bwx
+
+Current version LAB Database/Shiny Application: Buchanan, E. M., Valentine, K. D., & Maxwell, N. P. (2018). LAB: Linguistic Annotated Bibliography - Shiny Application. Retrieved from http://aggieerin.com/shiny/lab_table. [![DOI](https://zenodo.org/badge/116844736.svg)](https://zenodo.org/badge/latestdoi/116844736)
+
+Want to cite a different version? You can view our [Releases page](https://github.com/doomlab/shiny-server/releases) to see the changes we've made across time and view the associated doi with that release at [Zenodo](https://zenodo.org/badge/latestdoi/116844736). We use GitHub Releases, which automatically sync to Zenodo, to indicate updates to the project to help track versioning for this work. 
+
+### Download the Data
+
+You can download the csv file of the LAB table information [here](https://github.com/doomlab/shiny-server/blob/master/wn_lab/lab_table.csv). This file is structured such that each citation receives a line in the database, with citation information, stimuli type, language information, and tags are separated into columns. For example, each of the major tags are separated into columns and dummy coded (i.e., 0 = not included, 1 = included). This format allows for manipulation and assessment of information by variable. In the searchable option below, the data is condensed to the most common searchable information (stimuli, tag, and langauge). The full dataset expands this information with other notes, reference links, language Glottocode, and BibTex citation key from our BibTex file. The Stimuli Table descriptions can be found [here](https://github.com/doomlab/shiny-server/blob/master/wn_lab/StimWordTab.csv) and Tag table descriptions can be found [here](https://github.com/doomlab/shiny-server/blob/master/wn_lab/TagWordTab.csv).
 
 ### Stimuli Table
 
@@ -387,7 +400,7 @@ ui <- fluidPage(
 
       sidebarPanel(
          selectInput("choose",
-                     "Select a Stimulus",
+                     "Tags:",
                      choices = list("Age of Acquisition" = "aoa",
                                     "Ambiguity/Word Meaning" = "ambiguity",
                                     "Arousal" = "arousal",
@@ -438,7 +451,10 @@ ui <- fluidPage(
                      "Number of bins",
                      min = 1,
                      max = 30,
-                     value = 15)
+                     value = 15), 
+          helpText("This graphic indicates the publication frequency of 
+              normed information across years for tags. Please use the slider to control bin width (bar size).",
+              p(), "You can right click on the graphic to save it.") #close help 
       ),
       
       # Show a plot of the generated distribution
@@ -492,7 +508,7 @@ ui <- fluidPage(#open
      
      sliderInput("year", 
                  label = "Year:",
-                 min = 1910, max = 2014, value = c(1910, 2014),
+                 min = 1910, max = 2018, value = c(1910, 2018),
                  sep = ""),
      helpText("This graphic indicates the publication frequency of 
               normed information across years. Please use the slider 
@@ -608,9 +624,5 @@ server <- function(input, output) {
 # Run the application 
 shinyApp(ui, server, options = list(height = 450))
 ```
-
-### Download the Data
-
-You can download the csv file of the LAB table information [here](https://github.com/doomlab/shiny-server/blob/master/wn_lab/lab_table.csv).
 
 
