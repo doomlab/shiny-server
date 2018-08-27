@@ -50,6 +50,7 @@ d.prop(p1 = .25, p2 = .35, n1 = 100, n2 = 100, a = .05)
 
 ## Screenshot
 
+![Independent Proportions Screenshot](../images/indprop.jpg)
 
 ## Effect Size:
 

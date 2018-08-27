@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.36.1 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Independent *t* - Means</title>
+    <title>Dependent t Repeated Measures</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,30 +26,21 @@
     
 
     
-    <meta name="description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
-R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
-    <meta property="og:description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
-R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
+    <meta name="description" content="Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+    <meta property="og:description" content="Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Independent *t* - Means">
-    <meta property="og:url" content="/tests/indtm.html">
+    <meta property="og:title" content="Dependent t Repeated Measures">
+    <meta property="og:url" content="/tests/deptrmM.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
-R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
+    <meta name="twitter:description" content="Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -204,7 +195,7 @@ Arguments  m1 = mean group one
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Independent *t* - Means
+      Dependent t Repeated Measures
     </h1>
   
   
@@ -226,86 +217,82 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="description">Description</h1>
 
-<p>This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.</p>
-
-<p>The formula for <em>d</em> is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$</p>
-
-<p>The formula for <em>t</em> is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$</p>
+<p>This function displays <em>d</em> for repeated measures data controlling for <em>r</em> and the non-central confidence interval using the average standard deviation of each level as the denominator.</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)</p>
+<p>d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
 <ul>
-<li>m1 = mean group one<br /></li>
-<li>m2 = mean group two<br /></li>
-<li>sd1   = standard deviation group one<br /></li>
-<li>sd2   = standard deviation group two<br /></li>
-<li>n1    = sample size group one</li>
-<li>n2 = sample size group two</li>
+<li>m1 = mean from first level</li>
+<li>m2 = mean from second level</li>
+<li>sd1    = standard deviation from first level</li>
+<li>sd2 = standard deviation from second level</li>
+<li>r = correlation between first and second level</li>
+<li>n = sample size</li>
 <li>a = significance level</li>
 </ul>
 
 <h1 id="example">Example</h1>
 
-<p>A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event. Eight participants watched a short film of a mock robbery, after which each participant was questioned about what he or she had seen. The four participants in the experimental group were questioned while they were hypnotized and gave 14, 22, 18, and 17 accurate responses. The four participants in the control group gave 20, 25, 24, and 23 accurate responses. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
+<p>In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Participants&rsquo; scores are shown with high scores indicating high levels of belief. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
+
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png" alt="Dependent t JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png" alt="Dependent t SPSS" /></p>
+
+<p><strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG" alt="Dependent t SAS" /></p>
 
 <ul>
-<li>m1 = 17.75<br /></li>
-<li>m2 = 23.00<br /></li>
-<li>sd1   = 3.304<br /></li>
-<li>sd2   = 2.160<br /></li>
-<li>n1    = 4</li>
-<li>n2 = 4</li>
+<li>m1 = 5.571</li>
+<li>m2 = 4.429</li>
+<li>sd1    = 1.988</li>
+<li>sd2 = 2.878</li>
+<li>r = .678</li>
+<li>n = 14</li>
 <li>a = .05</li>
 </ul>
 
-<p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
-
-<p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
-
-<p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
-
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>d.ind.t(m1 = 17.75, m2 = 23, sd1 = 3.304, sd2 = 2.160, n1 = 4, n2 = 4, a = .05)</p>
+<p>d.dep.t.rm(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, r = .678, n = 14, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/indtmeans.jpg" alt="Independent t - Means Screenshot" /></p>
+<p><img src="../images/depttrmmeans.jpg" alt="Dependent t Repeated Measures Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d</em> = -1.88, 95% CI [-3.57, -0.10]</p>
+<p><em>d</em> = 0.43, 95% CI [-0.49, 0.55]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
+<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>Group 1 Summary Statistics: <em>M</em> = 17.75, <em>SD</em> = 3.30, <em>SE</em> = 1.65, 95% CI [12.49, 23.01]</p>
+<p>Group 1 Summary Statistics: <em>M</em> = 5.57, <em>SD</em> = 1.99, <em>SE</em> = 0.53, 95% CI [4.42, 6.72]</p>
 
-<p>Group 2 Summary Statistics: <em>M</em> = 23.00, <em>SD</em> = 2.16, <em>SE</em> = 1.08, 95% CI [19.56, 26.44]</p>
+<p>Group 2 Summary Statistics: <em>M</em> = 4.43, <em>SD</em> = 2.88, <em>SE</em> = 0.77, 95% CI [2.77, 6.09]</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p><em>t</em>(6) = -2.66, <em>p</em> = .038</p>
+<p>Not applicable.</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
-<p>Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
+<p>Not applicable.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kH3UOoFh9Ng" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eq9X4ynxq2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

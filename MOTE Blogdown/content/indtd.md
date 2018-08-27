@@ -63,7 +63,7 @@ delta.ind.t(m1 = 17.75, m2 = 23.00, sd1 = 3.304, sd2 = 2.160, n1 = 4, n2 = 4, a 
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Independent t Delta - Means Screenshot](../images/indtdeltameans.jpg)
 
 ## Effect Size:
 

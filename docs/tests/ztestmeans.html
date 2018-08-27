@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.36.1 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Independent *t* - Means</title>
+    <title>Z Test - Means</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,30 +26,33 @@
     
 
     
-    <meta name="description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
-R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
-    <meta property="og:description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
-R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
+    <meta name="description" content="Description This function displays d for z-scores with the population mean and standard deviation. The normal confidence interval is also provided.
+The formula for d is: $$d = \frac{M - \mu}{\sigma}$$
+The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
+R Function d.z.mean(mu, m1, sig, sd1, n, a = 0.05)
+Arguments  mu = population mean
+ m1 = sample study mean
+ sig = population standard deviation">
+    <meta property="og:description" content="Description This function displays d for z-scores with the population mean and standard deviation. The normal confidence interval is also provided.
+The formula for d is: $$d = \frac{M - \mu}{\sigma}$$
+The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
+R Function d.z.mean(mu, m1, sig, sd1, n, a = 0.05)
+Arguments  mu = population mean
+ m1 = sample study mean
+ sig = population standard deviation">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Independent *t* - Means">
-    <meta property="og:url" content="/tests/indtm.html">
+    <meta property="og:title" content="Z Test - Means">
+    <meta property="og:url" content="/tests/ztestmeans.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
-R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
+    <meta name="twitter:description" content="Description This function displays d for z-scores with the population mean and standard deviation. The normal confidence interval is also provided.
+The formula for d is: $$d = \frac{M - \mu}{\sigma}$$
+The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
+R Function d.z.mean(mu, m1, sig, sd1, n, a = 0.05)
+Arguments  mu = population mean
+ m1 = sample study mean
+ sig = population standard deviation">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -204,7 +207,7 @@ Arguments  m1 = mean group one
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Independent *t* - Means
+      Z Test - Means
     </h1>
   
   
@@ -226,86 +229,73 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="description">Description</h1>
 
-<p>This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.</p>
+<p>This function displays <em>d</em> for <em>z</em>-scores with the population mean and standard deviation. The normal confidence interval is also provided.</p>
 
-<p>The formula for <em>d</em> is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$</p>
+<p>The formula for <em>d</em> is: $$d = \frac{M - \mu}{\sigma}$$</p>
 
-<p>The formula for <em>t</em> is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$</p>
+<p>The formula for <em>Z</em> is: $$Z = \frac{M - \mu}{\sigma_M}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)</p>
+<p>d.z.mean(mu, m1, sig, sd1, n, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
 <ul>
-<li>m1 = mean group one<br /></li>
-<li>m2 = mean group two<br /></li>
-<li>sd1   = standard deviation group one<br /></li>
-<li>sd2   = standard deviation group two<br /></li>
-<li>n1    = sample size group one</li>
-<li>n2 = sample size group two</li>
-<li>a = significance level</li>
+<li>mu = population mean<br /></li>
+<li>m1 = sample study mean<br /></li>
+<li>sig = population standard deviation<br /></li>
+<li>sd1 = standard deviation from the study<br /></li>
+<li>n = sample size<br /></li>
+<li>a = significance level<br /></li>
 </ul>
 
 <h1 id="example">Example</h1>
 
-<p>A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event. Eight participants watched a short film of a mock robbery, after which each participant was questioned about what he or she had seen. The four participants in the experimental group were questioned while they were hypnotized and gave 14, 22, 18, and 17 accurate responses. The four participants in the control group gave 20, 25, 24, and 23 accurate responses. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
+<p>The average quiz test taking time for a 10 item test is 22.5 minutes, with a standard deviation of 10 minutes. My class of 25 students took 19 minutes on the test with a standard deviation of 5.</p>
 
 <ul>
-<li>m1 = 17.75<br /></li>
-<li>m2 = 23.00<br /></li>
-<li>sd1   = 3.304<br /></li>
-<li>sd2   = 2.160<br /></li>
-<li>n1    = 4</li>
-<li>n2 = 4</li>
+<li>mu = 22.5<br /></li>
+<li>m1 = 19</li>
+<li>sig = 10<br /></li>
+<li>sd1 = 5</li>
+<li>n = 25</li>
 <li>a = .05</li>
 </ul>
 
-<p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
-
-<p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
-
-<p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
-
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>d.ind.t(m1 = 17.75, m2 = 23, sd1 = 3.304, sd2 = 2.160, n1 = 4, n2 = 4, a = .05)</p>
+<p>d.z.mean(mu = 22.5, m1 = 19, sig = 10, sd1 = 5, n = 25, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/indtmeans.jpg" alt="Independent t - Means Screenshot" /></p>
+<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d</em> = -1.88, 95% CI [-3.57, -0.10]</p>
+<p><em>d</em> = -0.35, 95% CI [-19.95, 19.25]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
+<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>Group 1 Summary Statistics: <em>M</em> = 17.75, <em>SD</em> = 3.30, <em>SE</em> = 1.65, 95% CI [12.49, 23.01]</p>
-
-<p>Group 2 Summary Statistics: <em>M</em> = 23.00, <em>SD</em> = 2.16, <em>SE</em> = 1.08, 95% CI [19.56, 26.44]</p>
+<p><em>M</em> = 19.00, <em>SD</em> = 5.00, <em>SE</em> = 1.00, 95% CI [17.04, 20.96]</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p><em>t</em>(6) = -2.66, <em>p</em> = .038</p>
+<p><em>Z</em> = -1.75, <em>p</em> = .080</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
-<p>Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
+<p>Your <em>p</em>-value is greater than the alpha value, and therefore, this test would be considered not statistically significant.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kH3UOoFh9Ng" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CyfOS7Ew-Hw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

@@ -63,7 +63,7 @@ d.ind.t(m1 = 17.75, m2 = 23, sd1 = 3.304, sd2 = 2.160, n1 = 4, n2 = 4, a = .05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Independent t - Means Screenshot](../images/indtmeans.jpg)
 
 ## Effect Size:
 

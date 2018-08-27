@@ -66,7 +66,7 @@ d.ind.t.t(t = -2.66, n1 = 4, n2 = 4, a = .05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Independent t - Means Screenshot](../images/indtt.jpg)
 
 ## Effect Size:
 
