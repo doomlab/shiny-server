@@ -23,7 +23,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays epsilon squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on the sum of squares total calculation.
 
-The formula for $\epsilon\^2$ is: $$\frac{df\_{model} \times (MS\_{model} - MS\_{error})} {SS\_{total}}$$
+The formula for $\epsilon^2$ is: $$\frac{df\_{model} \times (MS\_{model} - MS\_{error})} {SS\_{total}}$$
 
 The formula for *F* is: $$\frac{MS\_{model}}{MS\_{error}}$$
 
