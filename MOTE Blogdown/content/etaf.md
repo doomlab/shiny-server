@@ -21,7 +21,7 @@ processEscapes: true
 
 # Description   
 
-The formula for \($\eta\^{2}$\) is: $${df\_{model} \times F\_{model}\over df\_{model} \times F\_{model} + df\_{error}}$$
+The formula for $\_eta\^{2}$ is: $${df\_{model} \times F\_{model}\over df\_{model} \times F\_{model} + df\_{error}}$$
 
 This value will be $\eta\^{2}$ when you use a one-way ANOVA and will be $\eta\_{p}\^{2}$ when you use a multi-way ANOVA (more than one IV).
 

@@ -14,11 +14,11 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays d for z-scores when all you have is the z-statistics. The normoal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+This function displays *d* for z-scores when all you have is the z-statistics. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
 
-The formula for d is: $$d = \frac{Z}{\sqrt(N)}$$
+The formula for *d* is: $$d = \frac{Z}{\sqrt(N)}$$
  
-The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
+The formula for *Z* is: $$Z = \frac{M - \mu}{\sigma_M}$$
 
 # R Function
 

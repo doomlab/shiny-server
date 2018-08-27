@@ -104,7 +104,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between dfe = degrees of fr
       
       <guid>https://www.aggieerin.com/shiny-server/tests/etaf.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [ [&amp;lsquo;$&amp;rsquo;, &amp;lsquo;$&amp;rsquo;], [&amp;rdquo;\(&amp;ldquo;,&amp;rdquo;\)&amp;ldquo;] ], processEscapes: true } });
-Description The formula for ($\eta\^{2}$) is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} + df_{error}}$$
+Description The formula for $_eta\^{2}$ is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} + df_{error}}$$
 This value will be $\eta\^{2}$ when you use a one-way ANOVA and will be $\eta_{p}\^{2}$ when you use a multi-way ANOVA (more than one IV).
 R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between</description>
@@ -312,7 +312,7 @@ Arguments  mu = population mean
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/ztestz.html</guid>
-      <description>Description This function displays d for z-scores when all you have is the z-statistics. The normoal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+      <description>Description This function displays d for z-scores when all you have is the z-statistics. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
 The formula for d is: $$d = \frac{Z}{\sqrt(N)}$$
 The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
 R Function d.z.z(z, sig = NA, n, a = 0.05)
