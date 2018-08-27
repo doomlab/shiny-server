@@ -48,6 +48,7 @@ d.z.z(z = 2.5, sig = 4, n = 100, a = .05)
 
 ## Screenshot
 
+![Z-Test - Z Screenshot](../images/ztestz.jpg)
 
 ## Effect Size:
 
