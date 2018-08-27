@@ -91,7 +91,7 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       
       <guid>https://www.aggieerin.com/shiny-server/tests/epsilon.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays epsilon squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on the sum of squares total calculation.
-The formula for $\epsilon\^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})} {SS_{total}}$$
+The formula for $\epsilon^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})} {SS_{total}}$$
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
 R Function epsilon.</description>
     </item>
@@ -152,7 +152,7 @@ R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0
       
       <guid>https://www.aggieerin.com/shiny-server/tests/gosrm.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omega\^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</description>
+The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</description>
     </item>
     
     <item>
