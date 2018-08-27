@@ -14,11 +14,11 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays d for between subjects data and the non-central confidence interval estimating from the t-statistic.
+This function displays *d* for between subjects data and the non-central confidence interval estimating from the t-statistic.
 
-The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
+The formula for *d* is: $$d = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
  
-The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
+The formula for *t* is: $$t = \frac{M_1 - M_2}{SE}$$
 
 # R Function
 

@@ -14,9 +14,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays d and central confidence interval calculated from differences in independent proportions.
+This function displays *d* and central confidence interval calculated from differences in independent proportions.
 
-The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
+The formula for *d* is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
  
 The formula for *Z* is: $$Z = \frac{P_1 - P_2}{SE}$$
 
