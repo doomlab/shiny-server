@@ -60,7 +60,7 @@ d.dep.t.avg(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, n = 14, a = .05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Single-Sample t - Means Screenshot](../images/deptavgmeans.jpg)
 
 ## Effect Size:
 

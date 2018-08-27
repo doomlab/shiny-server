@@ -54,7 +54,7 @@ d.single.t.t(t = 9.968, n = 15, a = .05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Single Sample t - t Screenshot](../images/singlesamplet.jpg)
 
 ## Effect Size:
 

@@ -57,7 +57,7 @@ d.dep.t.diff(mdiff = 1.143, sddiff = 2.116, n = 14, a = .05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Dependent t Differences - Means Screenshot](../images/depttdiffmeans.jpg)
 
 ## Effect Size:
 

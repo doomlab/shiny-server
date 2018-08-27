@@ -61,7 +61,7 @@ d.single.t(m = 1370, u = 1080, sd = 112.7, n = 15, a = .05)
 
 ## Screenshot
 
-
+![Single-Sample t - Means Screenshot](../images/singlesampletmeans.jpg)
 
 ## Effect Size:
 

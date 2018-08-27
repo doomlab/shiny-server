@@ -60,7 +60,7 @@ d.dep.t.rm(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, r = .678, n = 14, a
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Dependent t Repeated Measures Screenshot](../images/depttrmmeans.jpg)
 
 ## Effect Size:
 
