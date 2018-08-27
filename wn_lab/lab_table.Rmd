@@ -468,19 +468,20 @@ ui <- fluidPage(
 server <- function(input, output) {
   
    output$yearhist <- renderPlot({
-     binsno <- (length.out = input$binsno + 1)
+     #binsno <- (length.out = input$binsno + 1)
      
      graphdata = doom[ , c(input$choose, "year2")]
      colnames(graphdata) = c("picked", "year")
      graphdata = subset(graphdata, picked > 0)
      masterhist1 = ggplot(graphdata, aes(year))
      masterhist1 +
-       geom_histogram(binwidth = binsno, 
+       geom_histogram(#binwidth = binsno, 
                       color = "black", 
                       fill = "white") +
        xlab("Year") + 
        ylab("Frequency") +
-       cleanup
+       cleanup +
+       NULL
    })
 }
 
