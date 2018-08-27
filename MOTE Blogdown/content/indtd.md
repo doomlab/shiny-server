@@ -1,5 +1,5 @@
 ---
-title: Independent *t* Delta - Means
+title: Independent t Delta - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtd

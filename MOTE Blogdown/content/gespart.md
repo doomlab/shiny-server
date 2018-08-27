@@ -21,7 +21,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-The formula for $\eta\_G\^2$ is: $$\frac{SS\_{model}}{SS\_{model} + SS\_{subject} + SS\_{errorA} + SS\_{errorB} + SS\_{errorAxB}}$$
+The formula for $\eta\_G^2$ is: $$\frac{SS\_{model}}{SS\_{model} + SS\_{subject} + SS\_{errorA} + SS\_{errorB} + SS\_{errorAxB}}$$
 
 The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
 

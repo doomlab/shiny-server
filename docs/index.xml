@@ -12,19 +12,6 @@
     
     
     <item>
-      <title>Chi-square *V*</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/chiv.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/chiv.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays V and non-central confidence interval for the specified chi-square statistic.
-The formula for V is: $$\sqrt{ \frac{\chi^2} {N \times df_{smaller}} } $$
-$df_{smaller}$ is defined by the minimum of (rows - 1) or (columns - 1).
-R Function v.chi.sq(x2, n, r, c, a = 0.05)
-Arguments  x2 = chi-square statistic n = sample size r = number of rows in the contingency table c = number of columns in the contingency table a = significance level  Example JASP SPSS SAS  x2 = 2.</description>
-    </item>
-    
-    <item>
       <title>Chi-square - Odds</title>
       <link>https://www.aggieerin.com/shiny-server/tests/chio.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -37,7 +24,20 @@ Arguments n11 = sample size for level 1.</description>
     </item>
     
     <item>
-      <title>Dependent *t* Averages - Means</title>
+      <title>Chi-square V</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/chiv.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/chiv.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays V and non-central confidence interval for the specified chi-square statistic.
+The formula for V is: $$\sqrt{ \frac{\chi^2} {N \times df_{smaller}} } $$
+$df_{smaller}$ is defined by the minimum of (rows - 1) or (columns - 1).
+R Function v.chi.sq(x2, n, r, c, a = 0.05)
+Arguments  x2 = chi-square statistic n = sample size r = number of rows in the contingency table c = number of columns in the contingency table a = significance level  Example JASP SPSS SAS  x2 = 2.</description>
+    </item>
+    
+    <item>
+      <title>Dependent t Averages - Means</title>
       <link>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -49,7 +49,7 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     </item>
     
     <item>
-      <title>Dependent *t* Differences - Means</title>
+      <title>Dependent t Differences - Means</title>
       <link>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -62,18 +62,6 @@ Arguments  mdiff = mean difference score sddiff = standard deviation of the diff
     </item>
     
     <item>
-      <title>Dependent *t* Repeated Measures</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/deptrm.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/deptrm.html</guid>
-      <description>Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
-R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
-Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
-    </item>
-    
-    <item>
       <title>Dependent t Differences - t</title>
       <link>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -83,6 +71,18 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
 The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
 R Function d.dep.t.diff.t(t, n, a = 0.05)
 Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
+      <title>Dependent t Repeated Measures</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/deptrm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/deptrm.html</guid>
+      <description>Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
     
     <item>
@@ -152,7 +152,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G\^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{errorA} + SS_{errorB} + SS_{errorAxB}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{errorA} + SS_{errorB} + SS_{errorAxB}}$$
 The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
 R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.</description>
     </item>
@@ -165,47 +165,6 @@ R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0
       <guid>https://www.aggieerin.com/shiny-server/tests/gosrm.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
 The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</description>
-    </item>
-    
-    <item>
-      <title>Independent *t* - *t*</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtt.html</guid>
-      <description>Description This function displays d for between subjects data and the non-central confidence interval estimating from the t-statistic.
-The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
-The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
-R Function d.ind.t.t(t, n1, n2, a = 0.05)
-Arguments  t = t-test value
- n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
-    </item>
-    
-    <item>
-      <title>Independent *t* - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtm.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
-      <description>Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
-R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two</description>
-    </item>
-    
-    <item>
-      <title>Independent *t* Delta - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtd.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtd.html</guid>
-      <description>Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d is $$d = {M_{control} - M_{exp}\over SD_{control}}$$
-The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
-R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
     </item>
     
     <item>
@@ -222,7 +181,48 @@ Arguments  p1 = proportion of people group one p2 = proportion of people group t
     </item>
     
     <item>
-      <title>Omega - *F*</title>
+      <title>Independent t - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
+      <description>Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
+The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
+The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
+R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
+Arguments  m1 = mean group one
+ m2 = mean group two</description>
+    </item>
+    
+    <item>
+      <title>Independent t - t</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtt.html</guid>
+      <description>Description This function displays d for between subjects data and the non-central confidence interval estimating from the t-statistic.
+The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
+The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
+R Function d.ind.t.t(t, n1, n2, a = 0.05)
+Arguments  t = t-test value
+ n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
+    </item>
+    
+    <item>
+      <title>Independent t Delta - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtd.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtd.html</guid>
+      <description>Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for d is $$d = {M_{control} - M_{exp}\over SD_{control}}$$
+The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
+R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
+Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
+    </item>
+    
+    <item>
+      <title>Omega - F</title>
       <link>https://www.aggieerin.com/shiny-server/tests/omegaf.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -232,7 +232,7 @@ The formula for $\omega^2$ is: $$\frac{df_{model} \times (F_{model} - 1)}{df_{mo
     </item>
     
     <item>
-      <title>Omega - SS</title>
+      <title>Omega Full - SS</title>
       <link>https://www.aggieerin.com/shiny-server/tests/omegass.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -254,7 +254,7 @@ R Function omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a = 0.</description>
     </item>
     
     <item>
-      <title>Single Sample *t* - Means</title>
+      <title>Single Sample t - Means</title>
       <link>https://www.aggieerin.com/shiny-server/tests/singletmeans.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       

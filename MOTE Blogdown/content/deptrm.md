@@ -1,5 +1,5 @@
 ---
-title: Dependent *t* Repeated Measures
+title: Dependent t Repeated Measures
 author: DOOM Lab
 date: '2018-05-09'
 slug: deptrm

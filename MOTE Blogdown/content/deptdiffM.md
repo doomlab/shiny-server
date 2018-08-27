@@ -1,5 +1,5 @@
 ---
-title: Dependent *t* Differences - Means
+title: Dependent t Differences - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: deptdiffm

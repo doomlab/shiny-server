@@ -1,5 +1,5 @@
 ---
-title: Independent *t* - Means
+title: Independent t - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtm

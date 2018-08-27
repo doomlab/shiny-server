@@ -1,5 +1,5 @@
 ---
-title: Single Sample *t* - Means
+title: Single Sample t - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: singletmeans

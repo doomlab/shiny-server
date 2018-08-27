@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/chiv.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/chio.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/chio.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/chiv.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,12 +23,12 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/deptrm.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/deptrm.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -68,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/indtt.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/independentproportions.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -78,12 +78,12 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/indtd.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indtt.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/independentproportions.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indtd.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   

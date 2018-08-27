@@ -1,5 +1,5 @@
 ---
-title: Omega - SS
+title: Omega Full - SS
 author: DOOM Lab
 date: '2018-05-09'
 slug: omegass

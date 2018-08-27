@@ -1,5 +1,5 @@
 ---
-title: Dependent *t* Averages - Means
+title: Dependent t Averages - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: deptavgm
