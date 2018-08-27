@@ -7,13 +7,13 @@ url: /tests/etaf.html
 showDate: false
 ---
 
-<script src="//yihui.name/js/math-code.js">
+<script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
 MathJax.Hub.Config({
 tex2jax: {
-inlineMath: [ ['$', '$'], ["\\(","\\)"] ],
-processEscapes: true
+inlineMath: [['$', '$']],
 }
-});
+})
 </script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">

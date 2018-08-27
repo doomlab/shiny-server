@@ -56,7 +56,7 @@ d.z.mean(mu = 22.5, m1 = 19, sig = 10, sd1 = 5, n = 25, a = .05)
 
 ## Effect Size:
 
-*d* = -0.35, 95% CI [-19.95, 19.25]
+*d* = 2.50, 95% CI [-7.30, 12.30]
 
 ## Interpretation: 
 
@@ -64,15 +64,15 @@ Your confidence interval does include zero, and therefore, you might conclude th
 
 ## Summary Statistics: 
 
-*M* = 19.00, *SD* = 5.00, *SE* = 1.00, 95% CI [17.04, 20.96]
+*M* = 22.50, *SD* = 19.00, *SE* = 3.80, 95% CI [15.05, 29.95]
 
 ## Test Statistic: 
 
-*Z* = -1.75, *p* = .080
+*Z* = 12.50, *p* < .001
 
 ## Interpretation: 
 
-Your *p*-value is greater than the alpha value, and therefore, this test would be considered not statistically significant.
+Your *p*-value is less than the alpha value, and therefore, this test would be considered statistically significant.
 
 # Tutorial
 

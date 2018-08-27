@@ -26,24 +26,27 @@
     
 
     
-    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ], processEscapes: true } });   Description The formula for $_eta\^{2}$ is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} &#43; df_{error}}$$
+    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $_eta\^{2}$ is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} &#43; df_{error}}$$
 This value will be $\eta\^{2}$ when you use a one-way ANOVA and will be $\eta_{p}\^{2}$ when you use a multi-way ANOVA (more than one IV).
 R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
-Arguments  dfm = degrees of freedom for the model/IV/between">
-    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ], processEscapes: true } });   Description The formula for $_eta\^{2}$ is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} &#43; df_{error}}$$
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within">
+    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $_eta\^{2}$ is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} &#43; df_{error}}$$
 This value will be $\eta\^{2}$ when you use a one-way ANOVA and will be $\eta_{p}\^{2}$ when you use a multi-way ANOVA (more than one IV).
 R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
-Arguments  dfm = degrees of freedom for the model/IV/between">
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Eta - F">
     <meta property="og:url" content="/tests/etaf.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ], processEscapes: true } });   Description The formula for $_eta\^{2}$ is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} &#43; df_{error}}$$
+    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $_eta\^{2}$ is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} &#43; df_{error}}$$
 This value will be $\eta\^{2}$ when you use a one-way ANOVA and will be $\eta_{p}\^{2}$ when you use a multi-way ANOVA (more than one IV).
 R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
-Arguments  dfm = degrees of freedom for the model/IV/between">
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -213,13 +216,13 @@ Arguments  dfm = degrees of freedom for the model/IV/between">
             <div class="main-content-wrap">
               
 
-<script src="//yihui.name/js/math-code.js">
+<script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
 MathJax.Hub.Config({
 tex2jax: {
-inlineMath: [ ['$', '$'], ["\\(","\\)"] ],
-processEscapes: true
+inlineMath: [['$', '$']],
 }
-});
+})
 </script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
