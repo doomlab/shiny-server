@@ -350,7 +350,8 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletmeans.html&#34;&gt;Single Sample t - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;Single Sample t - t&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;Dependent t Averages - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;Dependent t Differences - Means&lt;/a&gt;   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdifft.html&#34;&gt;Dependent t Differences - t&lt;/a&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;Dependent t Differences - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdifft.html&#34;&gt;Dependent t Differences - t&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptrm.html&#34;&gt;Dependent t Repeated Measures&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent t - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent t - t&lt;/a&gt;&lt;br /&gt;
