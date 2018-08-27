@@ -32,16 +32,16 @@
       <guid>https://www.aggieerin.com/shiny-server/tests/</guid>
       <description>&lt;h1 id=&#34;mean-differences&#34;&gt;Mean Differences&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/ztestmeans.html&#34;&gt;&lt;em&gt;Z&lt;/em&gt;-Test - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/ztestz.html&#34;&gt;&lt;em&gt;Z&lt;/em&gt; Test - &lt;em&gt;Z&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletmeans.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;Single Sample &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Averages - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Differences - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptrm.html&#34;&gt;Dependent &lt;em&gt;t&lt;/em&gt; Repeated Measures&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; - &lt;em&gt;t&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtd.html&#34;&gt;Independent &lt;em&gt;t&lt;/em&gt; Delta - Means&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/ztestmeans.html&#34;&gt;Z-Test - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/ztestz.html&#34;&gt;Z-Test - Z&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletmeans.html&#34;&gt;Single Sample t - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;Single Sample t - t&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;Dependent t Averages - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;Dependent t Differences - Means&lt;/a&gt;   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdifft.html&#34;&gt;Dependent t Differences - t&lt;/a&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptrm.html&#34;&gt;Dependent t Repeated Measures&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent t - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent t - t&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtd.html&#34;&gt;Independent t Delta - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/independentproportions.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;
@@ -50,12 +50,12 @@
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapart.html&#34;&gt;Eta Partial - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gespartialrm.html&#34;&gt;GES Partial RM - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega - &lt;em&gt;F&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega - F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Full - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegapartbn.html&#34;&gt;Omega Partial BN - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/epsilon.html&#34;&gt;Epsilon&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrm.html&#34;&gt;Generalized Omega - RM&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;Chi-square &lt;em&gt;v&lt;/em&gt;&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;Chi-square v&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chio.html&#34;&gt;Chi-square Odds&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.36.1 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Generalized Omega - RM</title>
+    <title>Dependent t Differences - t</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,18 +26,24 @@
     
 
     
-    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} &#43; SS_{IV1} &#43; J \times MS_{subject}}$$">
-    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} &#43; SS_{IV1} &#43; J \times MS_{subject}}$$">
+    <meta name="description" content="Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
+The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
+R Function d.dep.t.diff.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+    <meta property="og:description" content="Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
+The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
+R Function d.dep.t.diff.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Generalized Omega - RM">
-    <meta property="og:url" content="/tests/gosrm.html">
+    <meta property="og:title" content="Dependent t Differences - t">
+    <meta property="og:url" content="/tests/deptdifft.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} &#43; SS_{IV1} &#43; J \times MS_{subject}}$$">
+    <meta name="twitter:description" content="Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
+The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
+R Function d.dep.t.diff.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -192,7 +198,7 @@ The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subje
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Generalized Omega - RM
+      Dependent t Differences - t
     </h1>
   
   
@@ -208,92 +214,80 @@ The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subje
               
 
 <script src="//yihui.name/js/math-code.js"></script>
-<script type = "text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [['$', '$']],
-}
-})
-</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 <h1 id="description">Description</h1>
 
-<p>This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.</p>
+<p>This function displays <em>d</em> for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the <em>t</em>-statistic.</p>
 
-<p>The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})}
-{SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</p>
+<p>The formula for <em>t</em> is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>omega.F(dfm, dfe, Fvalue, n, a = 0.05)</p>
+<p>d.dep.t.diff.t(t, n, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
 <ul>
-<li>dfm   = degrees of freedom for the model/IV/between</li>
-<li>dfe   = degrees of freedom for the error/residual/within</li>
-<li>Fvalue = F statistic</li>
-<li>n = full sample size</li>
+<li>t = t-test value</li>
+<li>n = sample size</li>
 <li>a = significance level</li>
 </ul>
 
 <h1 id="example">Example</h1>
 
-<p>A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
+<p>In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Participants&rsquo; scores are shown with high scores indicating high levels of belief. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
 <p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20JASP.png" alt="BN ANOVA 1 JASP" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png" alt="Dependent t JASP" /></p>
 
 <p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20SPSS.png" alt="BN ANOVA 1 SPSS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png" alt="Dependent t SPSS" /></p>
 
 <p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20SAS.PNG" alt="BN ANOVA 1 SAS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG" alt="Dependent t SAS" /></p>
 
 <ul>
-<li>dfm   = 2</li>
-<li>dfe   = 8</li>
-<li>Fvalue = 5.13</li>
-<li>n = 11</li>
+<li>t = 1.429</li>
+<li>n = 7</li>
 <li>a = .05</li>
 </ul>
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>omega.F(dfm = 2, dfe = 8, Fvalue = 5.13, n = 11, a = 0.05)</p>
+<p>d.dep.t.diff.t(t = 1.429, n = 7, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+<p><img src="../images/deptdifft.jpg" alt="Dependent t Differences - t Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p>INCLUDE THE OUTPUT FROM MOTE</p>
+<p><em>d</em> = 0.54, 95% CI [-0.28, 1.32]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>INCLUDE INTERPRETATION FROM MOTE</p>
+<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>INCLUDE SUMMARY STATISTICS FROM MOTE</p>
+<p>Not applicable.</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p>INCLUDE TEST STATISTICS FROM MOTE</p>
+<p><em>t</em>(6) = 1.43, <em>p</em> = .203</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
-<p>INCLUDE INTERPRETATION FROM MOTE</p>
+<p>Your p-value is greater than the alpha value, and therefore, this test would be considered not statistically significant.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eq9X4ynxq2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>
