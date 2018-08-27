@@ -52,7 +52,7 @@ d.z.mean(mu = 22.5, m1 = 19, sig = 10, sd1 = 5, n = 25, a = .05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Z-Test Means Screenshot](../images/ztestmeans.jpg)
 
 ## Effect Size:
 

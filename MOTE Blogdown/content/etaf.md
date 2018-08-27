@@ -12,9 +12,16 @@ showDate: false
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [ ['$', '$'], ["\\(","\\)"] ],
+processEscapes: true
+}
+});
+
 # Description   
 
-The formula for $\eta\^{2}$ is: $${df\_{model} \times F\_{model}\over df\_{model} \times F\_{model} + df\_{error}}$$
+The formula for \($\eta\^{2}$\) is: $${df\_{model} \times F\_{model}\over df\_{model} \times F\_{model} + df\_{error}}$$
 
 This value will be $\eta\^{2}$ when you use a one-way ANOVA and will be $\eta\_{p}\^{2}$ when you use a multi-way ANOVA (more than one IV).
 
