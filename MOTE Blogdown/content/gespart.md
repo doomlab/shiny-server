@@ -17,7 +17,7 @@ inlineMath: [['$', '$']],
 </script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>ipt>
+</script>
 
 # Description   
 
