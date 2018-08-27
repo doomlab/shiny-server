@@ -35,7 +35,7 @@ d.single.t(m, u, sd, n, a = 0.05)
 
 # Example  
 
-A school has a gifted/honors program that they claim is significantly better than others in the country.  The national average for gifted programs is a SAT score of 1250.  The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
+A school has a gifted/honors program that they claim is significantly better than others in the country. The gifted/honors students in this school scored an average of 1370 on the SAT, while the national average for gifted programs is a SAT score of 1080. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
 ![Single t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20JASP.png)
