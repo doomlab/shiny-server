@@ -73,8 +73,8 @@ colnames(type2) = c("no1", "type1")
 stimworddata = rbind(type1, type2)
 stimworddata = subset(stimworddata, type1 != "")
 stimworddata$type1 = droplevels(stimworddata$type1)
-stimworddata$type1 = factor(stimworddata$type1, 
-                            levels = stimwordtable$Stimuli)
+#stimworddata$type1 = factor(stimworddata$type1, 
+#                            levels = stimwordtable$Stimuli)
 
 stimwordtable$N = table(stimworddata$type1)
 
