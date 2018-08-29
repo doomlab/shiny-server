@@ -5,8 +5,8 @@ account: doomlab
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 385067
-bundleId: 1559186
+bundleId: 1560342
 url: https://doomlab.shinyapps.io/lab_table/
-when: 1535511208.06439
+when: 1535562794.9108
 asMultiple: FALSE
 asStatic: FALSE
