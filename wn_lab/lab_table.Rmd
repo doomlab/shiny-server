@@ -60,7 +60,7 @@ You can download the csv file of the LAB table information [here](https://github
 
 ### Stimuli Table
 
-Stimuli were coded based on the dominant description from the article (i.e., although heteronyms are words and word pairs, they were coded specifically as heteronyms). The number of stimuli presented in the appendix or database was coded with the stimuli, unless the article covered specific programs, search or experimental creation tools, which is the majority of the "other" stimuli category. Because many articles included two types of stimuli, or references to different articles where stimuli were selected from, two options for stimuli were included. Therefore, the total values for number of stimuli do not add up to the number of articles in the database because of multiple instances in articles or no stimuli for program descriptions. The table provided below indicates a description of the types of stimuli and descriptive statistics calculated from the most updated dataset. Please contact us if the link or any others below are not loading.
+Stimuli were coded based on the dominant description from the article (i.e., although heteronyms are words and word pairs, they were coded specifically as heteronyms). The number of stimuli presented in the appendix or database was coded with the stimuli, unless the article covered specific programs, search or experimental creation tools, which is the majority of the "other" stimuli category. Because many articles included two types of stimuli, or references to different articles where stimuli were selected from, two options for stimuli were included. Therefore, the total values for number of stimuli do not add up to the number of articles in the database because of multiple instances in articles or no stimuli for program descriptions. The table provided below indicates a description of the types of stimuli and descriptive statistics calculated from the most updated dataset. 
 
 ```{r stim_var_table, echo=FALSE}
 #set up for stim var table
@@ -112,32 +112,31 @@ Keyword tags are the majority of the database, as they allow for the best unders
 tagwordtable = read.csv("TagWordTab.csv")
 tagworddata = overall_lab
 
-tagworddata = tagworddata[ , c("aoa","ambiguity","arousal","assoc","category",
-                               "cloze","complex","concrete","confusion","dist",
+tagworddata = tagworddata[ , c("accuracy","aoa","ambiguity","arousal","assoc","category",
+                               "cloze","complex","concrete","confusion","context", "dist",
                                "dominate","easelearn","familiar","freq","gpc",
                                "identify","identifyld","identifyn","imageagree",
                                "imagevar", "imagine","intense","letters", "meaning",
                                "modality","morph","nameagree","orthon","pos",
                                "phonemes","phonon","prime","pronounce",
                                "rt","recall","recognition","rime","semantic",
-                               "sensory","sentcomp","similar","syllables",
+                               "sensory","sentcomp","similar","syllables", "syntax",
                                "typical","valence","visualcomp","wordcomp","year")]
 
 longtag = melt(tagworddata,
                    id = c("year"),
-                   measured = c("aoa","ambiguity","arousal","assoc","category",
-                                "cloze","complex","concrete","confusion","dist",
-                                "dominate","easelearn","familiar","freq","gpc",
-                                "identify","identifyld","identifyn","imagevar",
-                                "imagine","intense","meaning","modality","morph",
-                                "nameagree","orthon","pos","phonon","prime","pronounce",
-                                "rt","recall","recognition","rime","semantic",
-                                "sensory","sentcomp","typical","valence","visualcomp",
-                                "wordcomp","syllables","letters","phonemes","imageagree",
-                                "similar"))
+                   measured = c("accuracy","aoa","ambiguity","arousal","assoc","category",
+                               "cloze","complex","concrete","confusion","context", "dist",
+                               "dominate","easelearn","familiar","freq","gpc",
+                               "identify","identifyld","identifyn","imageagree",
+                               "imagevar", "imagine","intense","letters", "meaning",
+                               "modality","morph","nameagree","orthon","pos",
+                               "phonemes","phonon","prime","pronounce",
+                               "rt","recall","recognition","rime","semantic",
+                               "sensory","sentcomp","similar","syllables", "syntax",
+                               "typical","valence","visualcomp","wordcomp"))
 longtag$year = as.numeric(as.character(longtag$year))
-longtag$year[is.na(longtag$year)] = 1999
-tagwordtable$r = apa(as.matrix(by(longtag, longtag$variable, function(x) {cor(x$year, x$value)}))[ , 1],3, F)
+tagwordtable$r = apa(as.matrix(by(longtag, longtag$variable, function(x) {cor(x$year, x$value, use = "pairwise.complete.obs")}))[ , 1],3, F)
 tagwordtable$N = table(longtag$variable[longtag$value == 1])
 
 #app part
@@ -162,7 +161,7 @@ shinyApp(ui, server, options = list(height = 600))
 
 ### View and Search The Database
 
-You can use the Shiny app below to view all the publication entries and their information. Use the side bar to filter the dataset. Are we missing something? Please [email](mailto:buchananlab@gmail.com) us any information you find that is incorrect or missing. We do not assume this list is complete and would love to add more data to the LAB. 
+You can use the Shiny app below to view all the publication entries and their information. Use the side bar to filter the dataset. As you add additional search criteria, the filter will include only items with all of the selected options. Are we missing something? Please [email](mailto:buchananlab@gmail.com) us any information you find that is incorrect or missing. We do not assume this list is complete and would love to add more data to the LAB. Please note we distilled this search to the main components (tags, language, stimuli) but the entire dataset has many columns to filter by more precise information.
 
 ```{r lab_table, echo=FALSE}
 #set up for lab table
@@ -191,15 +190,12 @@ ui = fluidPage(
     
     sidebarPanel(
       selectizeInput("stimuli", "Select Stimuli:", 
-                     choices = c("Anagrams", "Categories", "Characters", 
-                                 "Cloze/Sentences", "Color drawings", "Homo/Heterophones",
-                                 "Letters", "Line drawings", "Names", "Other", "Phonemes",
-                                 "Pictures", "Proverbs", "Sounds", "Syllables", "Symbols/Icons", 
-                                 "Word Pairs", "Words"), 
+                     choices = c(names(table(labtable$type1))), 
                      multiple = TRUE),
       
       selectizeInput("tags", "Select Tags:", 
                      choices = c(
+                       "Accuracy" = "accuracy",
                        "Age of Acquisition" = "aoa",
                        "Ambiguity" = "ambiguity",
                        "Arousal" = "arousal",
@@ -209,6 +205,7 @@ ui = fluidPage(
                        "Complexity" = "complex",
                        "Concreteness" = "concrete",
                        "Confusion Matrices" = "confusion",
+                       "Context" = "context", 
                        "Distinctivenes" = "sdist",
                        "Dominance" = "dominate",
                        "Ease of Learning" = "easelearn",
@@ -242,6 +239,7 @@ ui = fluidPage(
                        "Sentence Completion" = "sentcomp",
                        "Similarity" = "similar",
                        "Syllables" = "syllables",
+                       "Syntax" = "syntax", 
                        "Typicality" = "typical",
                        "Valence" = "valence",
                        "Visual Complexity" = "visualcomp",
@@ -249,10 +247,7 @@ ui = fluidPage(
                      multiple = TRUE),
       
       selectizeInput("language", "Select Language:", 
-                     choices = c("British English","Chinese","Dutch",
-                                 "English","French","German","Greek",
-                                 "Italian","Japanese","Multiple","Other",
-                                 "Portuguese","Spanish"), 
+                     choices = c(names(table(labtable$language))), 
                      multiple = TRUE)
       
     ), #sidebar panel
@@ -266,7 +261,7 @@ ui = fluidPage(
   )##fluidpage
 
 server = function(input, output) {
-  output$tbl = renderDT({
+  output$tbl = renderDT(server = FALSE, {
     
     temptable = labtable[ , (ncol(labtable)-3):(ncol(labtable))]
     
@@ -291,13 +286,14 @@ server = function(input, output) {
     datatable(temptable, 
     extensions = 'Buttons',
     options = list(dom = 'BRtp',
+                   filename = 'searchresults',
                    buttons = c('copy', 'csv', 'excel')),
     rownames = FALSE) #close datatable
   
   })
   } #close server
 
-shinyApp(ui, server, options = list(height = 1050))
+shinyApp(ui, server, options = list(height = 900))
 
 ```
 
@@ -315,42 +311,55 @@ longtype = melt(type,
                  id = c("STUFFID"), 
                  measured = c("type1", "type2"))
 longtype = subset(longtype, value != "")
-longtype$value = droplevels(longtype$value)
 
 ##use the variable column for the table below because it has all the tag names
 
-stimuli = subset(tablemain, select = c(1, 22:67))
+stimuli = subset(tablemain, select = c("STUFFID",
+                                "accuracy","aoa","ambiguity","arousal","assoc","category",
+                               "cloze","complex","concrete","confusion","context", "dist",
+                               "dominate","easelearn","familiar","freq","gpc",
+                               "identify","identifyld","identifyn","imageagree",
+                               "imagevar", "imagine","intense","letters", "meaning",
+                               "modality","morph","nameagree","orthon","pos",
+                               "phonemes","phonon","prime","pronounce",
+                               "rt","recall","recognition","rime","semantic",
+                               "sensory","sentcomp","similar","syllables", "syntax",
+                               "typical","valence","visualcomp","wordcomp"))
 longstimuli = melt(stimuli,
                 id = c("STUFFID"),
-                measured = c("aoa","ambiguity","arousal","assoc","category",
-                             "cloze","complex","concrete","confusion","dist",
-                             "dominate","easelearn","familiar","freq","gpc",
-                             "identify","identifyld","identifyn","imagevar",
-                             "imagine","intense","meaning","modality","morph",
-                             "nameagree","orthon","pos","phonon","prime","pronounce",
-                             "rt","recall","recognition","rime","semantic",
-                             "sensory","sentcomp","typical","valence","visualcomp",
-                             "wordcomp","syllables","letters","phonemes","imageagree",
-                             "similar"))
+                measured = c("accuracy","aoa","ambiguity","arousal","assoc","category",
+                               "cloze","complex","concrete","confusion","context", "dist",
+                               "dominate","easelearn","familiar","freq","gpc",
+                               "identify","identifyld","identifyn","imageagree",
+                               "imagevar", "imagine","intense","letters", "meaning",
+                               "modality","morph","nameagree","orthon","pos",
+                               "phonemes","phonon","prime","pronounce",
+                               "rt","recall","recognition","rime","semantic",
+                               "sensory","sentcomp","similar","syllables", "syntax",
+                               "typical","valence","visualcomp","wordcomp"))
 
 longstimuli = subset(longstimuli, value > 0) 
 
 longstimuli$variable = factor(longstimuli$variable,
                               levels = levels(longstimuli$variable), 
-                              labels = c("Age of Acquisition", "Ambiguity", "Arousal",
+                              labels = c("Accuracy", "Age of Acquisition", 
+                                         "Ambiguity", "Arousal",
                                          "Association", "Category", "Cloze", "Complexity",
-                                         "Concreteness", "Confusion Matrices", "Distinctness",
+                                         "Concreteness", "Confusion Matrices", 
+                                         "Context", "Distinctness",
                                          "Dominance", "Ease of Learning", "Familiarity", 
                                          "Frequency", "Grapheme-Phoneme Correspondence", 
-                                         "Indentification", "Lexical Desicion", "Naming", 
-                                         "Image Variability", "Imagineability", "Intensity",
+                                         "Indentification", "Lexical Desicion", "Naming",
+                                         "Image Agreement", "Image Variability", 
+                                         "Imagineability", "Intensity", "Letters", 
                                          "Meaning", "Modality", "Morphemes", "Name Agreement", 
                                          "Orthographic Neighborhood", "Part of Speech", 
+                                         "Phonemes",
                                          "Phonographic Neighborhood", "Priming", "Pronunciation", 
                                          "Response Latency", "Recall", "Recognition", "Rime", 
-                                         "Semantic", "Sensory", "Sentence Completion", 
-                                         "Typicality", "Valence", "Visual Complexity", "Word Completion",
-                                         "Syllables", "Letters", "Phonemes", "Image Agreement", "Similarity"))
+                                         "Semantic", "Sensory", "Sentence Completion", "Similarity",
+                                         "Syllables", "Syntax", "Typicality", 
+                                         "Valence", "Visual Complexity", "Word Completion"))
 
 
 ui <- fluidPage( #open ui
@@ -388,6 +397,69 @@ shinyApp(ui, server, options = list(height = 550))
 
 ### View the Yearly Statistics
 
+#### Stimuli Per Year
+
+This app allows you to view the stimuli frequencies across years.
+
+```{r stimuli_per_year, echo=FALSE}
+#set up stimuli per year
+table_stim = subset(overall_lab, select = c(STUFFID, type1, type2, year))
+longtable = melt(table_stim, 
+                 id = c("STUFFID", "year"), 
+                 measured = c("type1", "type2"))
+
+colnames(longtable)[3]="Type"
+
+#To change the years from being factors
+longtable$year = as.numeric(as.character(longtable$year))
+
+##define ui
+ui <- fluidPage(
+  
+  # Application title
+  #titlePanel("Stimuli Frequency"),
+  
+  #Select Box
+  sidebarPanel(
+    
+    selectInput(inputId = "select", 
+                label ="Stimuli:", 
+                choices = c(names(table(longtable$value)))), #close select
+    helpText("This graphic indicates the publication frequency of 
+              of each type of stimuli across years.",
+             p(), "You can right click on the graphic to save it.") #close help
+  ), #close sidebarpanel
+
+
+  mainPanel(
+    plotOutput("distPlot")
+  ) #close main
+) #close fluid
+
+# Define server logic 
+server <- function(input, output) {
+  
+  output$distPlot <- renderPlot({
+    
+    graphdata = subset(longtable, value == input$select)
+    
+    #bins <- (length.out = input$bins + 1)
+    
+    # draw the histogram with the specified number of bins
+    ggplot(graphdata, aes(year)) + 
+      geom_histogram(#binwidth = bins, 
+                     color = "black", 
+                     fill = "white") +
+      xlab("Year") +
+      ylab("Frequency") +
+      cleanup 
+  })
+}
+
+# Run the application 
+shinyApp(ui, server, options = list(height = 450))
+```
+
 #### Tags Per Year
 
 This app allows you to view the tag frequencies across years. 
@@ -408,52 +480,55 @@ ui <- fluidPage(
       sidebarPanel(
          selectInput("choose",
                      "Tags:",
-                     choices = list("Age of Acquisition" = "aoa",
-                                    "Ambiguity/Word Meaning" = "ambiguity",
-                                    "Arousal" = "arousal",
-                                    "Association" = "assoc",
-                                    "Category" = "category",
-                                    "Cloze Probabilities" = "cloze",
-                                    "Complexity" = "complex",
-                                    "Concreteness" = "concrete",
-                                    "Confusion Matrices" = "confusion",
-                                    "Distinctiveness" = "dist",
-                                    "Dominance" = "dominate",
-                                    "Ease of Learning" = "easelearn",
-                                    "Familiarity" = "familiar",
-                                    "Frequency" = "freq",
-                                    "Grapheme-Phoneme Correspondence" = "gpc",
-                                    "Identification" = "identify",
-                                    "Identification - Lexical" = "identifyld",
-                                    "Identification - Naming" = "identifyn",
-                                    "Image Variability" = "imagevar",
-                                    "Imageability" = "imagine",
-                                    "Intensity" = "intense",
-                                    "Meaningfulness" = "meaning",
-                                    "Modality" = "modality",
-                                    "Morphology" = "morph",
-                                    "Name Agreement" = "nameagree",
-                                    "Orthographic Neighborhood" = "orthon",
-                                    "Part of Speech" = "pos",
-                                    "Phonological Neighborhood" = "phonon", 
-                                    "Priming" = "prime",
-                                    "Pronunciation" = "pronounce",
-                                    "Response Times" = "rt",
-                                    "Recall" = "recall",
-                                    "Recognition" = "recognition",
-                                    "Rime" = "rime",
-                                    "Semantics" = "semantic",
-                                    "Sensory/Motor" = "sensory",
-                                    "Sentence Completion" = "sentcomp",
-                                    "Typicality" = "typical",
-                                    "Valence/Emotion" = "valence",
-                                    "Visual Complexity" = "visualcomp",
-                                    "Word Completion" = "wordcomp",
-                                    "Syllables" = "syllables",
-                                    "Letters" = "letters",
-                                    "Phonemes" = "phonemes",
-                                    "Image Agreement" = "imageagree",
-                                    "Similar" = "similar")),
+                     choices = list("Accuracy" = "accuracy",
+                       "Age of Acquisition" = "aoa",
+                       "Ambiguity" = "ambiguity",
+                       "Arousal" = "arousal",
+                       "Association" = "assoc",
+                       "Categories" = "category",
+                       "Cloze Probabilities" = "cloze",
+                       "Complexity" = "complex",
+                       "Concreteness" = "concrete",
+                       "Confusion Matrices" = "confusion",
+                       "Context" = "context", 
+                       "Distinctivenes" = "sdist",
+                       "Dominance" = "dominate",
+                       "Ease of Learning" = "easelearn",
+                       "Familiarity" = "familiar",
+                       "Frequency" = "freq",
+                       "Grapheme-Phoneme Correspondence" = "gpc",
+                       "Indentification" = "identify",
+                       "Image Agreement" = "imageagree",
+                       "Image Variability" = "imagevar",
+                       "Imaginability" = "imagine",
+                       "Intensity" = "intense",
+                       "Letters" = "letters",
+                       "Lexical Decision" = "identifyld",
+                       "Meaning" = "meaning",
+                       "Modality" = "modality",
+                       "Morphemes" = "morph",
+                       "Name Agreement" = "nameagree",
+                       "Naming" = "identifyn",
+                       "Orthographic Neighborhood" = "orthon",
+                       "Part of Speech" = "pos",
+                       "Phonemes" = "phonemes",
+                       "Phonographic Neighborhood" = "phonon",
+                       "Priming" = "prime",
+                       "Pronunciation" = "pronounce",
+                       "Response Latency" = "rt",
+                       "Recall" = "recall",
+                       "Recognition" = "recognition",
+                       "Rime" = "rime",
+                       "Semantic" = "semantic",
+                       "Sensory" = "sensory",
+                       "Sentence Completion" = "sentcomp",
+                       "Similarity" = "similar",
+                       "Syllables" = "syllables",
+                       "Syntax" = "syntax", 
+                       "Typicality" = "typical",
+                       "Valence" = "valence",
+                       "Visual Complexity" = "visualcomp",
+                       "Word Completion" = "wordcomp")),
           helpText("This graphic indicates the publication frequency of 
               normed information across years for tags.",
               p(), "You can right click on the graphic to save it.") #close help 
@@ -493,7 +568,7 @@ shinyApp(ui, server, options = list(height = 450))
 
 #### Papers Per Year
 
-This app allows you to view the number of papers published in each year. Please note that databases with no associated publication are given the year that we added them to the database unless otherwise noted on their site the date of publication.
+This app allows you to view the number of papers published in each year. Please note that databases with no associated publication excluded from this chart.
 
 ```{r papers_per_year, echo=FALSE}
 labtable2 = overall_lab
@@ -538,7 +613,7 @@ server <- function(input, output) {
     yearhist +
     geom_histogram(binwidth = 2, 
                    color = "black", 
-                   fill = "grey") +
+                   fill = "white") +
     xlab("Year") + 
     ylab("Frequency") +
     cleanup
@@ -548,76 +623,4 @@ server <- function(input, output) {
 # Run the application 
 shinyApp(ui, server, options = list(height = 450))
 ```
-
-#### Stimuli Per Year
-
-This app allows you to view the stimuli frequencies across years.
-
-```{r stimuli_per_year, echo=FALSE}
-#set up stimuli per year
-table = subset(overall_lab, select = c(STUFFID, type1, type2, year))
-longtable = melt(table, 
-                 id = c("STUFFID", "year"), 
-                 measured = c("type1", "type2"))
-
-colnames(longtable)[3]="Type"
-
-#To change the years from being factors
-longtable$year = as.numeric(as.character(longtable$year))
-
-##define ui
-ui <- fluidPage(
-  
-  # Application title
-  #titlePanel("Stimuli Frequency"),
-  
-  #Select Box
-  sidebarPanel(
-    
-    selectInput(inputId = "select", 
-                label ="Stimuli:", 
-                choices = c("Anagrams" , "Categories" ,
-                            "Cloze/Sentences" , "Color drawings", 
-                            "Homo/Heterographs", "Letters" ,
-                            "Line drawings", "Names", 
-                            "Other", "Phonemes", 
-                            "Pictures", "Proverbs",
-                            "Sounds", "Syllables",
-                            "Symbols/Icons", "Word Pairs", 
-                            "Words")), #close select
-    helpText("This graphic indicates the publication frequency of 
-              of each type of stimuli across years.",
-             p(), "You can right click on the graphic to save it.") #close help
-  ), #close sidebarpanel
-
-
-  mainPanel(
-    plotOutput("distPlot")
-  ) #close main
-) #close fluid
-
-# Define server logic 
-server <- function(input, output) {
-  
-  output$distPlot <- renderPlot({
-    
-    graphdata = subset(longtable, value == input$select)
-    
-    #bins <- (length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    ggplot(graphdata, aes(year)) + 
-      geom_histogram(#binwidth = bins, 
-                     color = "black", 
-                     fill = "white") +
-      xlab("Year") +
-      ylab("Frequency") +
-      cleanup 
-  })
-}
-
-# Run the application 
-shinyApp(ui, server, options = list(height = 450))
-```
-
 
