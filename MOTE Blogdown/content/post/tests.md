@@ -10,8 +10,8 @@ tags: []
 ---
 
 # Mean Differences  
-  [Z-Test - Means](https://www.aggieerin.com/shiny-server/tests/ztestmeans.html)       
-  [Z-Test - Z](https://www.aggieerin.com/shiny-server/tests/ztestz.html)        
+  [Z-Test - Means](https://www.aggieerin.com/shiny-server/tests/zm.html)     
+  [Z-Test - Z](https://www.aggieerin.com/shiny-server/tests/zz.html)        
   [Single Sample t - Means](https://www.aggieerin.com/shiny-server/tests/singletmeans.html)     
   [Single Sample t - t](https://www.aggieerin.com/shiny-server/tests/singlett.html)       
   [Dependent t Averages - Means](https://www.aggieerin.com/shiny-server/tests/deptavgm.html)         
@@ -23,17 +23,18 @@ tags: []
   [Independent t Delta - Means](https://www.aggieerin.com/shiny-server/tests/indtd.html)   
   [Independent Proportions](https://www.aggieerin.com/shiny-server/tests/independentproportions.html)   
   
-# Variance Overlap  
+# Variance Overlap
+  [d ]
   [Eta - F](https://www.aggieerin.com/shiny-server/tests/etaf.html)  
   [Eta Full - SS](https://www.aggieerin.com/shiny-server/tests/etafull.html)    
   [Eta Partial - SS](https://www.aggieerin.com/shiny-server/tests/etapart.html)   
-  [GES Partial RM - SS](https://www.aggieerin.com/shiny-server/tests/gespartialrm.html)  
+  [Generalized Eta Partial RM - SS](https://www.aggieerin.com/shiny-server/tests/gespartialrm.html)  
   [Omega - F](https://www.aggieerin.com/shiny-server/tests/omegaf.html)  
   [Omega Full - SS](https://www.aggieerin.com/shiny-server/tests/omegass.html)  
   [Omega Partial BN - SS](https://www.aggieerin.com/shiny-server/tests/omegapartbn.html)   
+  [Generalized Omega RM - SS](https://www.aggieerin.com/shiny-server/tests/gosrm.html)  
   [Epsilon](https://www.aggieerin.com/shiny-server/tests/epsilon.html)   
-  [Generalized Omega - RM](https://www.aggieerin.com/shiny-server/tests/gosrm.html)  
-  [Chi-square v](https://www.aggieerin.com/shiny-server/tests/chiv.html)  
+  [Chi-square V](https://www.aggieerin.com/shiny-server/tests/chiv.html)  
   [Chi-square Odds](https://www.aggieerin.com/shiny-server/tests/chio.html)  
   
 <!--more-->
