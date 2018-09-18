@@ -1,0 +1,7 @@
+^README\.Rmd$
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.travis\.yml$
+^notebook$
+^LICENSE\.md$
+dataspice.png

@@ -1,0 +1,353 @@
+{
+  "@context": "http://schema.org",
+  "type": "Dataset",
+  "name": "Compiled annual statewide Alaskan salmon escapement counts, 1921-2017",
+  "creator": [
+    {
+      "type": "Person",
+      "id": null,
+      "givenName": "Jeanette",
+      "familyName": "Clark",
+      "email": "jclark@nceas.ucsb.edu",
+      "affiliation": "National Center for Ecological Analysis and Synthesis"
+    },
+    {
+      "type": "Person",
+      "id": null,
+      "givenName": "Rich",
+      "familyName": "Brenner",
+      "email": "richard.brenner.alaska.gov",
+      "affiliation": "Alaska Department of Fish and Game"
+    }
+  ],
+  "description": "The number of mature salmon migrating from the marine environment to freshwater streams is defined as escapement. Escapement data are the enumeration of these migrating fish as they pass upstream, and are a widely used index of spawning salmon abundance. These data are important for fisheries management, since most salmon harvest occurs near the mouths of rivers where salmon spawn during this migration. Escapement data are collected in a variety of ways. Stationary projects utilize observers stationed along freshwater corridors who count salmon as they pass upriver through weirs or past elevated towers. Sonar equipment placed in the river can also give a stationary escapement count. These counts usually represent a sample, and are expanded to represent a 24h period. Escapement data can also be collected using aerial surveys, where observers in an aircraft provide an index to estimate escapement. In general, escapement counts do not represent total abundance, but instead an index of abundance. Surveys are usually timed to coincide with peak spawning activity, generally in the summer, but in the case of Coho salmon in the fall as well. Some data about non-salmon species are also included. This dataset contains compiled annual data from multiple sources. The .Rmd merges all datasets, identifies and flags duplicate records, and performs quality assurance checks by filtering and graphing results.",
+  "datePublished": "2018-02-12 08:00:00",
+  "keywords": ["salmon", "alaska", "escapement"],
+  "funder": null,
+  "temporalCoverage": "1921-01-01 08:00:00/2017-01-01 08:00:00",
+  "license": null,
+  "spatialCoverage": {
+    "type": "Place",
+    "name": null,
+    "geo": {
+      "type": "GeoShape",
+      "box": "78 -131 47 -171"
+    }
+  },
+  "variableMeasured": [
+    {
+      "type": "PropertyValue",
+      "value": "Stock.ID",
+      "unitText": null,
+      "description": "Unique stock identifier"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Species",
+      "unitText": null,
+      "description": "species of stock"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Stock",
+      "unitText": null,
+      "description": "Stock name, generally river where stock is found"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Ocean.Region",
+      "unitText": null,
+      "description": "Ocean region"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Region",
+      "unitText": null,
+      "description": "Region of stock"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Sub.Region",
+      "unitText": null,
+      "description": "Sub.Region of stock"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Jurisdiction",
+      "unitText": null,
+      "description": "Management jurisdiction"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Lat",
+      "unitText": "degree",
+      "description": "Latitude"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Lon",
+      "unitText": "degree",
+      "description": "Longitude"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "UseFlag",
+      "unitText": null,
+      "description": "Indicates if data should be used in analysis"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "BroodYear",
+      "unitText": null,
+      "description": "Brood Year"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "TotalEscapement",
+      "unitText": "number",
+      "description": "Total escapement value"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R0.1",
+      "unitText": "number",
+      "description": "number of recruits in 0.1 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R0.2",
+      "unitText": "number",
+      "description": "number of recruits in 0.2 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R0.3",
+      "unitText": "number",
+      "description": "number of recruits in 0.3 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R0.4",
+      "unitText": "number",
+      "description": "number of recruits in 0.4 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R0.5",
+      "unitText": "number",
+      "description": "number of recruits in 0.5 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R1.1",
+      "unitText": "number",
+      "description": "number of recruits in 1.1 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R1.2",
+      "unitText": "number",
+      "description": "number of recruits in 1.2 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R1.3",
+      "unitText": "number",
+      "description": "number of recruits in 1.3 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R1.4",
+      "unitText": "number",
+      "description": "number of recruits in 1.4 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R1.5",
+      "unitText": "number",
+      "description": "number of recruits in 1.5 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R2.1",
+      "unitText": "number",
+      "description": "number of recruits in 2.1 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R2.2",
+      "unitText": "number",
+      "description": "number of recruits in 2.2 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R2.3",
+      "unitText": "number",
+      "description": "number of recruits in 2.3 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R2.4",
+      "unitText": "number",
+      "description": "number of recruits in 2.4 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R3.1",
+      "unitText": "number",
+      "description": "number of recruits in 3.1 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R3.2",
+      "unitText": "number",
+      "description": "number of recruits in 3.2 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R3.3",
+      "unitText": "number",
+      "description": "number of recruits in 3.3 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R3.4",
+      "unitText": "number",
+      "description": "number of recruits in 3.4 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R4.1",
+      "unitText": "number",
+      "description": "number of recruits in 4.1 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R4.2",
+      "unitText": "number",
+      "description": "number of recruits in 4.2 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "R4.3",
+      "unitText": "number",
+      "description": "number of recruits in 4.3 age class"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "TotalRecruits",
+      "unitText": "number",
+      "description": "number of total recruits"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Source.ID",
+      "unitText": null,
+      "description": "Source.ID as seen in stock info table"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Source",
+      "unitText": null,
+      "description": "Source description"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Stock.ID",
+      "unitText": null,
+      "description": "Unique stock identifier"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Species",
+      "unitText": null,
+      "description": "species of stock"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Stock",
+      "unitText": null,
+      "description": "Stock name, generally river where stock is found"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Date.data.obtained",
+      "unitText": null,
+      "description": "Date data was obtained; if original data did not specify the day, the day is recorded as 01"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Date.data.incorporated",
+      "unitText": null,
+      "description": "Date data was incorporated into database; if original data did not specify the day, the day is recorded as 01"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Ocean.Region",
+      "unitText": null,
+      "description": "Ocean region"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Region",
+      "unitText": null,
+      "description": "Region of stock"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Sub.Region",
+      "unitText": null,
+      "description": "Sub.Region of stock"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Jurisdiction",
+      "unitText": null,
+      "description": "Management jurisdiction"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Lat",
+      "unitText": "degree",
+      "description": "Latitude"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Lon",
+      "unitText": "degree",
+      "description": "Longitude"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Source.ID",
+      "unitText": null,
+      "description": "Source.ID, matches source.ID in source info file"
+    },
+    {
+      "type": "PropertyValue",
+      "value": "Comment..we.will.update.this.later.",
+      "unitText": null,
+      "description": "stock comments"
+    }
+  ],
+  "distribution": [
+    {
+      "type": "DataDownload",
+      "name": "StockInfo.csv",
+      "contentUrl": null,
+      "fileFormat": "CSV"
+    },
+    {
+      "type": "DataDownload",
+      "name": "BroodTables.csv",
+      "contentUrl": null,
+      "fileFormat": "CSV"
+    },
+    {
+      "type": "DataDownload",
+      "name": "SourceInfo.csv",
+      "contentUrl": null,
+      "fileFormat": "CSV"
+    }
+  ]
+}
