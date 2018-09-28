@@ -11,6 +11,9 @@ json_tab <- tabItem(tabName = "json_tab",
                    h3("Save table"),
                    actionButton("save_json", "Save Changes"))
           ) #close fluid row
-        )
+        ), #close well panel
+        mainPanel(
+          textOutput("print_json")
+        )#close main panel
       ) #close fluid page
     ) #close json tab

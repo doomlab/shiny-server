@@ -39,19 +39,10 @@ write_spice <- function(creators_df_final, access_df_final,
     variableMeasured = variableMeasured,
     distribution = distribution)
 
-  write_jsonld(Dataset, file.path(dirname(file_name_write), "dataspice_complete.json"))
-
+  out <- c(setNames("http://schema.org", "@context"), Dataset)
+  toJSON(out, pretty = T, auto_unbox = T)
 
 }
 
-write_jsonld <-  function(x, path, context = "http://schema.org",
-                          pretty = TRUE, auto_unbox = TRUE, ...){
-  
-  out <- c(setNames(context, "@context"), x)
-  jsonlite::write_json(out,
-                       path = path,
-                       pretty = pretty,
-                       auto_unbox = auto_unbox,
-                       ...)
-}
+
 

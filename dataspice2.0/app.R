@@ -5,6 +5,8 @@ library(shinydashboard)
 library(DT)
 library(rhandsontable)
 library(jsonlite)
+library(knitr)
+library(kableExtra)
 
 # Interface files ---------------------------------------------------------
 source("data_tab.R")
@@ -211,54 +213,82 @@ server <- function(input, output, session) {
 
   # Create json format ------------------------------------------------------
 
-  ## Save
-  observeEvent(input$save_json, {
+  # output for creators table
+  output$print_json <- renderText({
     write_spice(creators_df_final, access_df_final,
                 attributes_df_final, bib_df_final, inFile$datapath)
+  })
+  
+  ## Save
+  observeEvent(input$save_json, {
+    
+    write(
+    write_spice(creators_df_final, access_df_final,
+                attributes_df_final, bib_df_final, inFile$datapath),
+    file = "dataspice_complete.json") #write out json file
   })
   
 
   # Create Text output ------------------------------------------------------
 
-  if (!is.null(bib_df_final)){
-    title_report <- paste("Report for", bib_df_final$title, sep = " ")
-  }else {title_report <- "Waiting for information."}
+  title_report <- reactive({
+    
+    if (!is.null(bib_df_final)){
+      paste("Report for", bib_df_final$title, sep = " ")
+    }else {"Waiting for information."}
+    
+  })
+
+  report_report <- reactive({
   
   if(!is.null(bib_df_final) & 
      !is.null(access_df_final) &
      !is.null(attributes_df_final) &
      !is.null(creators_df_final))
   {
-    report_report <- paste(
+    HTML(paste(
     #section printing bib information
     "<h4>Dataset information: </h4><p>",  
     #bib table
     kable(bib_df_final, format = "html", 
           col.names = c("Title", "Description", "Date Published", "Citation",
                          "Keywords", "License", "Funder", "Geographic Information",
-                         "Start Date", "End Date")), "<p>",
+                         "Start Date", "End Date")) %>% kable_styling(),
+    "<p>",
     #section printing access information
     "<h4>Accessing the Data: </h4><p>",
     #access table
     kable(access_df_final, format = "html",
-          col.names = c("File Name", "Name of Data", "URL", "File Format")), "<p>",
+          col.names = c("File Name", "Name of Data", "URL", "File Format")) %>% kable_styling(), 
+    "<p>",
     #section printing authors
     "<h4>Authors: </h4><p>",
     #creators table
     kable(creators_df_final, format = "html",
           col.names = c("ORC-Id", "First Name", "Last Name", 
-                        "Affliation", "Email")), "<p>",
+                        "Affliation", "Email")) %>% kable_styling(),
+    "<p>",
     #section printing attributes
     "<h4>Data Attributes: </h4><p>",
     #attributes table
     kable(attributes_df_final[,-1], format = "html",
-          col.names = c("Variable Name", "Description", "Units of Measure")),
+          col.names = c("Variable Name", "Description", "Units of Measure")) %>% kable_styling(),
     sep = ""
-    ) #end paste
-  }else{ report_report <- "Waiting for information."}
+    )) #end paste
+  }else{ "Waiting for information."}
+
+  })
+      
+  output$title <- renderText(title_report())
+  output$report <- renderUI(report_report())
   
-  output$title <- renderText(title_report)
-  output$report <- renderUI(report_report)
+  ## Save
+  observeEvent(input$save_report, {
+    
+    write(report_report(),
+      file = "report.html") #write out json file
+  })
+
 
 } # end server()
 
