@@ -8,13 +8,13 @@
       "id": "your ORC ID",
       "givenName": "First Name",
       "familyName": "Last Name",
-      "email": null,
-      "affliation": null
+      "email": "fdjsflks",
+      "affliation": "fjkdlsjfkl"
     }
   ],
-  "description": null,
-  "datePublished": null,
-  "keywords": null,
+  "description": "fdksjf",
+  "datePublished": "jsdkfjdskl",
+  "keywords": "stuff,things",
   "funder": null,
   "temporalCoverage": "NA/NA",
   "license": null,
@@ -33,17 +33,17 @@
       "type": "PropertyValue",
       "unitText": null,
       "name": "cyl",
-      "description": null
+      "description": "djkfds"
     },
     {
       "type": "PropertyValue",
-      "unitText": null,
+      "unitText": "dfs",
       "name": "disp",
-      "description": null
+      "description": "jfdks"
     },
     {
       "type": "PropertyValue",
-      "unitText": null,
+      "unitText": "ffds",
       "name": "hp",
       "description": null
     },
@@ -69,11 +69,11 @@
       "type": "PropertyValue",
       "unitText": null,
       "name": "vs",
-      "description": null
+      "description": "fds"
     },
     {
       "type": "PropertyValue",
-      "unitText": null,
+      "unitText": "fsd",
       "name": "am",
       "description": null
     },
@@ -93,7 +93,7 @@
   "distribution": [
     {
       "type": "DataDownload",
-      "name": "mtcars",
+      "name": "Data from blahblah",
       "contentUrl": null,
       "fileFormat": "csv"
     }

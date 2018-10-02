@@ -7,6 +7,7 @@ library(rhandsontable)
 library(jsonlite)
 library(knitr)
 library(kableExtra)
+library(dplyr)
 
 # Interface files ---------------------------------------------------------
 source("data_tab.R")
