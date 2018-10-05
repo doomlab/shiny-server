@@ -31,7 +31,6 @@ odds(n11, n12, n21, n22, a = 0.05)
 
 # Arguments 
 
-
 n11	= sample size for level 1.1
 n12	= sample size for level 1.2
 n21	= sample size for level 2.1
