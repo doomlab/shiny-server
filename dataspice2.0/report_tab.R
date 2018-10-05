@@ -6,7 +6,7 @@ report_tab <- tabItem(tabName = "report_tab",
         # Header panel
         wellPanel(
           fluidRow(
-            column(8, helpText("We could put something here?")),
+            column(8, uiOutput("message_report", inline=TRUE)),
             column(4, align="right",
                    h3("Save Report"),
                    actionButton("save_report", "Save Changes"))

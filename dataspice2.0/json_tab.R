@@ -6,7 +6,7 @@ json_tab <- tabItem(tabName = "json_tab",
         # Header panel
         wellPanel(
           fluidRow(
-            column(8, helpText("We could put something here?")),
+            column(8, uiOutput("message_json", inline=TRUE)),
             column(4, align="right",
                    h3("Save table"),
                    actionButton("save_json", "Save Changes"))

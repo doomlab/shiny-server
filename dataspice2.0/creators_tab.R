@@ -6,7 +6,7 @@ creators_tab <- tabItem(tabName = "creators_tab",
         # Header panel
         wellPanel(
           fluidRow(
-            column(8, helpText("We could put something here?")),
+            column(8, uiOutput("message_creators", inline=TRUE)),
             column(4, align="right",
                    h3("Save table"),
                    actionButton("save_creators", "Save Changes"))
