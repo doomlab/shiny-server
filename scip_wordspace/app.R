@@ -4,10 +4,6 @@ library(LSAfun)
 library(haven)
 library(readr)
 
-load("TASA.rda")
-load("EN_100k.rda")
-load("EN_100k_lsa.rda")
-
 # Define UI
 ui <- fluidPage(
   
