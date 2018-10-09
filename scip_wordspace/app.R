@@ -33,9 +33,9 @@ ui <- dashboardPage(
 # Define server logic -----------------------------------------------------
 
 server <- function(input, output) {
-  # TASA <- load("TASA.rda")
-  # EN = load("EN_100k.rda")
-  # ENLSA = load("EN_100k_lsa.rda")  
+  # load("TASA.rda")
+  # load("EN_100k.rda")
+  # load("EN_100k_lsa.rda")  
 
   }
 
