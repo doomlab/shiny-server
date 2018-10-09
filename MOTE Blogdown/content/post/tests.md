@@ -21,10 +21,12 @@ tags: []
   [Independent t - Means](https://www.aggieerin.com/shiny-server/tests/indtm.html)      
   [Independent t - t](https://www.aggieerin.com/shiny-server/tests/indtt.html)      
   [Independent t Delta - Means](https://www.aggieerin.com/shiny-server/tests/indtd.html)   
+  [Independent t g - Means](https://www.aggieerin.com/shiny-server/tests/gindt.html)
   [Independent Proportions](https://www.aggieerin.com/shiny-server/tests/independentproportions.html)   
   
 # Variance Overlap
-  [d ]
+  [d to r](https://www.aggieerin.com/shiny-server/tests/dtor.html)     
+  [r](https://www.aggieerin.com/shiny-server/tests/rcorrel.html)     
   [Eta - F](https://www.aggieerin.com/shiny-server/tests/etaf.html)  
   [Eta Full - SS](https://www.aggieerin.com/shiny-server/tests/etafull.html)    
   [Eta Partial - SS](https://www.aggieerin.com/shiny-server/tests/etapart.html)   
