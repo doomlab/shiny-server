@@ -16,7 +16,8 @@ data_tab <- tabItem(tabName = "data_tab",
                 buttonLabel = "Browse...", 
                 placeholder = "No file selected"
       ),
-      checkboxInput("header", "Data file has a header", TRUE)
+      checkboxInput("header", "Data file has a header", TRUE),
+      DTOutput("rawdata_table")
     )
   )
 )
