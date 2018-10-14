@@ -67,10 +67,15 @@ server <- function(input, output) {
     datatable(rawdata, rownames = F)
   }) #close renderDT
   
-  # load("TASA.rda")
-  # load("EN_100k.rda")
-  # load("EN_100k_lsa.rda")  
-
+  output$ourdata_table = renderDataTable({
+    dat()
+    datatable(dataset, rownames = F)
+  
+   load("TASA.rda")
+   load("EN_100k.rda")
+   load("EN_100k_lsa.rda")
+   
+  })
   }
 
 # Run the application 

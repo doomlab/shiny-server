@@ -4,7 +4,8 @@ ourdata_tab <- tabItem(tabName = "ourdata_tab",
     selectInput("dataset", "Data Set:",
                 c("English LSA Space: TASA" = "TASA",
                   "English HAL Space: BNC/ukWaC/Wikipedia" = "EN",
-                  "English LSA Space: BNC/ukWaC/Wikipedia" = "ENLSA")
+                  "English LSA Space: BNC/ukWaC/Wikipedia" = "ENLSA"),
+                DTOutput("ourdata_table")
     )
   )
 )
