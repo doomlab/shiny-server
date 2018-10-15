@@ -3,7 +3,7 @@ title: Single Sample t - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: singletmeans
-url: /tests/singletmeans.html
+url: /tests/singletm.html
 showDate: false
 ---
 

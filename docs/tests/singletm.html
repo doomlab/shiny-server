@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
-    <title>d to r</title>
+    <title>Single Sample t - Means</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,27 +26,27 @@
     
 
     
-    <meta name="description" content="Description Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.
-The formula for r is: $$r = \frac{d} {\sqrt{d^2 &#43; \frac{(n_1 &#43; n_2)^2}{(n_1 \times n_2)}}}$$
-The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
-R Function d.to.r(d, n1, n2, sd2, a = 0.05)
-Arguments  d = mean from first level n1 = mean from second level n2 = standard deviation from first level a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
-    <meta property="og:description" content="Description Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.
-The formula for r is: $$r = \frac{d} {\sqrt{d^2 &#43; \frac{(n_1 &#43; n_2)^2}{(n_1 \times n_2)}}}$$
-The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
-R Function d.to.r(d, n1, n2, sd2, a = 0.05)
-Arguments  d = mean from first level n1 = mean from second level n2 = standard deviation from first level a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+    <meta name="description" content="Description This function displays d and non-central confidence interval for single t from means.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t(m, u, sd, n, a = 0.05)
+Arguments  m = sample mean u = population mean sd = sample standard deviation n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.">
+    <meta property="og:description" content="Description This function displays d and non-central confidence interval for single t from means.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t(m, u, sd, n, a = 0.05)
+Arguments  m = sample mean u = population mean sd = sample standard deviation n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="d to r">
-    <meta property="og:url" content="/tests/dtor.html">
+    <meta property="og:title" content="Single Sample t - Means">
+    <meta property="og:url" content="/tests/singletm.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.
-The formula for r is: $$r = \frac{d} {\sqrt{d^2 &#43; \frac{(n_1 &#43; n_2)^2}{(n_1 \times n_2)}}}$$
-The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
-R Function d.to.r(d, n1, n2, sd2, a = 0.05)
-Arguments  d = mean from first level n1 = mean from second level n2 = standard deviation from first level a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+    <meta name="twitter:description" content="Description This function displays d and non-central confidence interval for single t from means.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t(m, u, sd, n, a = 0.05)
+Arguments  m = sample mean u = population mean sd = sample standard deviation n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -201,7 +201,7 @@ Arguments  d = mean from first level n1 = mean from second level n2 = standard d
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      d to r
+      Single Sample t - Means
     </h1>
   
   
@@ -223,82 +223,80 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="description">Description</h1>
 
-<p>Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.</p>
+<p>This function displays <em>d</em> and non-central confidence interval for single <em>t</em> from means.</p>
 
-<p>The formula for <em>r</em> is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$</p>
+<p>The formula for <em>d</em> is: $$d = \frac{t}{\sqrt(N)}$$</p>
 
-<p>The formula for <em>t</em> is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$</p>
+<p>The formula for <em>t</em> is: $$t = \frac{M - \mu}{SE}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>d.to.r(d, n1, n2, sd2, a = 0.05)</p>
+<p>d.single.t(m, u, sd, n, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
 <ul>
-<li>d = mean from first level</li>
-<li>n1 = mean from second level</li>
-<li>n2 = standard deviation from first level</li>
+<li>m = sample mean</li>
+<li>u = population mean</li>
+<li>sd = sample standard deviation</li>
+<li>n = sample size</li>
 <li>a = significance level</li>
 </ul>
 
 <h1 id="example">Example</h1>
 
-<p>In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The mean measure of belief on the pretest was 5.571, while the posttest average score was lower, 4.429. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
+<p>A school has a gifted/honors program that they claim is significantly better than others in the country. The gifted/honors students in this school scored an average of 1370 on the SAT, while the national average for gifted programs is a SAT score of 1080. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
 <p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png" alt="Dependent t JASP" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20JASP.png" alt="Single t JASP" /></p>
 
 <p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png" alt="Dependent t SPSS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20SPSS.png" alt="Single t SPSS" /></p>
 
 <p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG" alt="Dependent t SAS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20SAS.PNG" alt="Single t SAS" /></p>
 
 <ul>
-<li>m1 = 5.571</li>
-<li>m2 = 4.429</li>
-<li>sd1 = 1.988</li>
-<li>sd2   = 2.878</li>
-<li>n = 14</li>
+<li>m = 1370</li>
+<li>u = 1080</li>
+<li>sd = 112.7</li>
+<li>n = 15</li>
 <li>a = .05</li>
 </ul>
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>r.correl(r, n, a = 0.05)</p>
+<p>d.single.t(m = 1370, u = 1080, sd = 112.7, n = 15, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/deptavgmeans.jpg" alt="Single-Sample t - Means Screenshot" /></p>
+<p><img src="../images/singlesampletmeans.jpg" alt="Single-Sample t - Means Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d</em> = 0.47, 95% CI [-0.09, 1.01]</p>
+<p>Effect Size: <em>d</em> = 2.57, 95% CI [1.49, 3.63]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
+<p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>Group 1 Summary Statistics: <em>M</em> = 5.57, <em>SD</em> = 1.99, <em>SE</em> = 0.53, 95% CI [4.42, 6.72]</p>
-
-<p>Group 2 Summary Statistics: <em>M</em> = 4.43, <em>SD</em> = 2.88, <em>SE</em> = 0.77, 95% CI [2.77, 6.09]</p>
+<p>Not applicable.</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p>Not applicable.</p>
+<p><em>t</em>(14) = 9.97, <em>p</em> &lt; .001</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
-<p>Not applicable.</p>
+<p>Your <em>p</em>-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eq9X4ynxq2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z2OnOk4_w3E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

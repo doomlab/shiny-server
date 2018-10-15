@@ -43,12 +43,12 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/etafull.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/etass.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/etapart.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/etapss.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -58,17 +58,17 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/gesrmss.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/gosrm.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/independentproportions.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indetprop.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/indtd.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,7 +98,7 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/omegapartbn.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/omegapbnss.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -108,7 +108,7 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/singletmeans.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/singletm.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -138,7 +138,7 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/gindt.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indtg.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   

@@ -1,9 +1,9 @@
 ---
-title: GES Partial - Repeated Measures
+title: Eta Partial - SS
 author: DOOM Lab
 date: '2018-05-09'
-slug: gespartialrm
-url: /tests/gespartialrm.html
+slug: etapss
+url: /tests/etapss.html
 showDate: false
 ---
 
@@ -21,22 +21,18 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-The formula for $\eta\_G^2$ is: $$\frac{SS\_{model}}{SS\_{model} + SS\_{subject} + SS\_{errorA} + SS\_{errorB} + SS\_{errorAxB}}$$
-
-The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
+The formula for $\eta\_p^2$ is: $$\frac{SS\_{model}} {SS\_{model} + SS\_{error}}$$
 
 # R Function
 
-ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.05)
+eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
 
 # Arguments 
 
 + dfm = degrees of freedom for the model/IV/between   
 + dfe = degrees of freedom for the error/residual/within 
-+ ssm = sum of squares subject variance
-+ sse1 = sum of squares for the error/residual/within for the first IV
-+ sse2 = sum of squares for the error/residual/within for the second IV
-+ sse3 = sum of squares for the error/residual/within for the interaction
++ ssm = sum of squares for the model/IV/between
++ sse = sum of squares for the error/residual/within
 + Fvalue = F statistic   
 + a	= significance level
 
@@ -45,13 +41,10 @@ ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.05)
 NEEDS EXAMPLE
 
 + dfm = 2  
-+ dfe = 100
-+ ssm = 435
-+ sss = 659
-+ sse1 = 435
-+ sse2 = 446
-+ sse3 = 546
-+ Fvalue = 5.46   
++ dfe = 8 
++ ssm = 25.24
++ sse = 44.91
++ Fvalue = 5.13   
 + a	= .05
 
 **JASP**
@@ -65,7 +58,7 @@ NEEDS EXAMPLE
 
 # Function in R: 
 
-ges.partial.SS.rm(dfm = 2, dfe = 100, ssm = 435, sss = 659, sse1 = 435, sse2 = 446, sse3 = 546, Fvalue = 5.46, a = .05)
+eta.partial.SS(dfm = 2, dfe = 100, ssm = 435, sse = 659, Fvalue = 5.46, a = .05)
 
 # MOTE
 

@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
-    <title>d to r</title>
+    <title>Generalized Eta Squared Partial Repeated Measures SS</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,27 +26,21 @@
     
 
     
-    <meta name="description" content="Description Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.
-The formula for r is: $$r = \frac{d} {\sqrt{d^2 &#43; \frac{(n_1 &#43; n_2)^2}{(n_1 \times n_2)}}}$$
-The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
-R Function d.to.r(d, n1, n2, sd2, a = 0.05)
-Arguments  d = mean from first level n1 = mean from second level n2 = standard deviation from first level a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
-    <meta property="og:description" content="Description Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.
-The formula for r is: $$r = \frac{d} {\sqrt{d^2 &#43; \frac{(n_1 &#43; n_2)^2}{(n_1 \times n_2)}}}$$
-The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
-R Function d.to.r(d, n1, n2, sd2, a = 0.05)
-Arguments  d = mean from first level n1 = mean from second level n2 = standard deviation from first level a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} &#43; SS_{subject} &#43; SS_{errorA} &#43; SS_{errorB} &#43; SS_{errorAxB}}$$
+The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
+R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.">
+    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} &#43; SS_{subject} &#43; SS_{errorA} &#43; SS_{errorB} &#43; SS_{errorAxB}}$$
+The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
+R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="d to r">
-    <meta property="og:url" content="/tests/dtor.html">
+    <meta property="og:title" content="Generalized Eta Squared Partial Repeated Measures SS">
+    <meta property="og:url" content="/tests/gesrmss.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.
-The formula for r is: $$r = \frac{d} {\sqrt{d^2 &#43; \frac{(n_1 &#43; n_2)^2}{(n_1 \times n_2)}}}$$
-The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
-R Function d.to.r(d, n1, n2, sd2, a = 0.05)
-Arguments  d = mean from first level n1 = mean from second level n2 = standard deviation from first level a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} &#43; SS_{subject} &#43; SS_{errorA} &#43; SS_{errorB} &#43; SS_{errorAxB}}$$
+The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
+R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -201,7 +195,7 @@ Arguments  d = mean from first level n1 = mean from second level n2 = standard d
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      d to r
+      Generalized Eta Squared Partial Repeated Measures SS
     </h1>
   
   
@@ -217,66 +211,78 @@ Arguments  d = mean from first level n1 = mean from second level n2 = standard d
               
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 <h1 id="description">Description</h1>
 
-<p>Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.</p>
+<p>The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{errorA} + SS_{errorB} + SS_{errorAxB}}$$</p>
 
-<p>The formula for <em>r</em> is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$</p>
-
-<p>The formula for <em>t</em> is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$</p>
+<p>The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>d.to.r(d, n1, n2, sd2, a = 0.05)</p>
+<p>ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
 <ul>
-<li>d = mean from first level</li>
-<li>n1 = mean from second level</li>
-<li>n2 = standard deviation from first level</li>
+<li>dfm = degrees of freedom for the model/IV/between<br /></li>
+<li>dfe = degrees of freedom for the error/residual/within</li>
+<li>ssm = sum of squares subject variance</li>
+<li>sse1 = sum of squares for the error/residual/within for the first IV</li>
+<li>sse2 = sum of squares for the error/residual/within for the second IV</li>
+<li>sse3 = sum of squares for the error/residual/within for the interaction</li>
+<li>Fvalue = F statistic<br /></li>
 <li>a = significance level</li>
 </ul>
 
 <h1 id="example">Example</h1>
 
-<p>In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The mean measure of belief on the pretest was 5.571, while the posttest average score was lower, 4.429. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
-
-<p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png" alt="Dependent t JASP" /></p>
-
-<p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png" alt="Dependent t SPSS" /></p>
-
-<p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG" alt="Dependent t SAS" /></p>
+<p>NEEDS EXAMPLE</p>
 
 <ul>
-<li>m1 = 5.571</li>
-<li>m2 = 4.429</li>
-<li>sd1 = 1.988</li>
-<li>sd2   = 2.878</li>
-<li>n = 14</li>
+<li>dfm = 2<br /></li>
+<li>dfe = 100</li>
+<li>ssm = 435</li>
+<li>sss = 659</li>
+<li>sse1 = 435</li>
+<li>sse2 = 446</li>
+<li>sse3 = 546</li>
+<li>Fvalue = 5.46<br /></li>
 <li>a = .05</li>
 </ul>
 
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
+
+<p><strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
+
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>r.correl(r, n, a = 0.05)</p>
+<p>ges.partial.SS.rm(dfm = 2, dfe = 100, ssm = 435, sss = 659, sse1 = 435, sse2 = 446, sse3 = 546, Fvalue = 5.46, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/deptavgmeans.jpg" alt="Single-Sample t - Means Screenshot" /></p>
+<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d</em> = 0.47, 95% CI [-0.09, 1.01]</p>
+<p>$$\eta^2$$ = .56, 95% CI [.00, .83]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
@@ -284,21 +290,19 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>Group 1 Summary Statistics: <em>M</em> = 5.57, <em>SD</em> = 1.99, <em>SE</em> = 0.53, 95% CI [4.42, 6.72]</p>
-
-<p>Group 2 Summary Statistics: <em>M</em> = 4.43, <em>SD</em> = 2.88, <em>SE</em> = 0.77, 95% CI [2.77, 6.09]</p>
+<p>Not applicable.</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p>Not applicable.</p>
+<p><em>F</em>(2, 8) = 5.13, <em>p</em> = .037</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
-<p>Not applicable.</p>
+<p>Your <em>p</em>-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eq9X4ynxq2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

@@ -2,8 +2,8 @@
 title: Independent Proportions
 author: DOOM Lab
 date: '2018-05-09'
-slug: independentproportions
-url: /tests/independentproportions.html
+slug: indtprop
+url: /tests/indetprop.html
 showDate: false
 ---
 

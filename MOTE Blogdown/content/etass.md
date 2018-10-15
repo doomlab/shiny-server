@@ -1,9 +1,9 @@
 ---
-title: Eta Partial - SS
+title: Eta Full - SS
 author: DOOM Lab
 date: '2018-05-09'
-slug: etapart
-url: /tests/etapart.html
+slug: etass
+url: /tests/etass.html
 showDate: false
 ---
 
@@ -21,18 +21,18 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-The formula for $\eta\_p^2$ is: $$\frac{SS\_{model}} {SS\_{model} + SS\_{error}}$$
+The formula for $\eta^2$ is: $$\frac{SS\_{model}} {SS\_{total}}$$
 
 # R Function
 
-eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a = 0.05)
 
 # Arguments 
 
 + dfm = degrees of freedom for the model/IV/between   
 + dfe = degrees of freedom for the error/residual/within 
 + ssm = sum of squares for the model/IV/between
-+ sse = sum of squares for the error/residual/within
++ sst = sum of squares total
 + Fvalue = F statistic   
 + a	= significance level
 
@@ -43,7 +43,7 @@ NEEDS EXAMPLE
 + dfm = 2  
 + dfe = 8 
 + ssm = 25.24
-+ sse = 44.91
++ sst = 44.91
 + Fvalue = 5.13   
 + a	= .05
 
@@ -58,7 +58,7 @@ NEEDS EXAMPLE
 
 # Function in R: 
 
-eta.partial.SS(dfm = 2, dfe = 100, ssm = 435, sse = 659, Fvalue = 5.46, a = .05)
+eta.full.SS(dfm = 2, dfe = 8, ssm = 25.24, sst = 44.91, Fvalue = 5.13, a = 0.05)
 
 # MOTE
 
@@ -68,7 +68,7 @@ eta.partial.SS(dfm = 2, dfe = 100, ssm = 435, sse = 659, Fvalue = 5.46, a = .05)
 
 ## Effect Size:
 
-$$\eta^2$$ = .56, 95% CI [.00, .83]
+$$\eta\^2$$ = .56, 95% CI [.00, .83]
 
 ## Interpretation: 
 

@@ -112,10 +112,10 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     
     <item>
       <title>Eta Full - SS</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/etafull.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/etass.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/etafull.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/etass.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta^2$ is: $$\frac{SS_{model}} {SS_{total}}$$
 R Function eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
@@ -125,10 +125,10 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     
     <item>
       <title>Eta Partial - SS</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/etapart.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/etapss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/etapart.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/etapss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_p^2$ is: $$\frac{SS_{model}} {SS_{model} + SS_{error}}$$
 R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
@@ -148,11 +148,11 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
-      <title>GES Partial - Repeated Measures</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</link>
+      <title>Generalized Eta Squared Partial Repeated Measures SS</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/gesrmss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/gesrmss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{errorA} + SS_{errorB} + SS_{errorAxB}}$$
 The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
 R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.</description>
@@ -160,20 +160,20 @@ R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0
     
     <item>
       <title>Generalized Omega - RM</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/gosrm.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/gosrm.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
 The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</description>
     </item>
     
     <item>
       <title>Independent Proportions</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/independentproportions.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/indetprop.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/independentproportions.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/indetprop.html</guid>
       <description>Description This function displays d and central confidence interval calculated from differences in independent proportions.
 The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
 The formula for Z is: $$Z = \frac{P_1 - P_2}{SE}$$
@@ -211,10 +211,10 @@ Arguments  t = t-test value
     
     <item>
       <title>Independent t Delta - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtd.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtd.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</guid>
       <description>Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
 The formula for d is $$d = {M_{control} - M_{exp}\over SD_{control}}$$
 The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
@@ -244,10 +244,10 @@ The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{err
     
     <item>
       <title>Omega Partial BN - SS</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/omegapartbn.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/omegapbnss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/omegapartbn.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/omegapbnss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula is appropriate for multi-way between subjects designs.
 The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + (N - df_{model}) \times MS_{error}}$$
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
@@ -269,10 +269,10 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     
     <item>
       <title>Single Sample t - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/singletmeans.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/singletm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/singletmeans.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/singletm.html</guid>
       <description>Description This function displays d and non-central confidence interval for single t from means.
 The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
 The formula for t is: $$t = \frac{M - \mu}{SE}$$
@@ -353,10 +353,10 @@ Arguments  d = mean from first level n1 = mean from second level n2 = standard d
     
     <item>
       <title>d-g corrected for Independent t</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/gindt.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtg.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/gindt.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtg.html</guid>
       <description>Description This function displays d-g corrected and the non-central confidence interval for independent t.
 The formula for d is: $$d = \frac{M_1 - M2}{SD{pooled}}(1-\frac{3}{4(N_1+N_2)-9})$$
 The formula for t is: $$t = \frac{M_1 - M2}{SE{pooled}}$$
@@ -400,7 +400,7 @@ Arguments  r = correlation coefficient n = sample size a = significance level  E
 
 &lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/zm.html&#34;&gt;Z-Test - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/zz.html&#34;&gt;Z-Test - Z&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletmeans.html&#34;&gt;Single Sample t - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletm.html&#34;&gt;Single Sample t - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;Single Sample t - t&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;Dependent t Averages - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;Dependent t Differences - Means&lt;/a&gt;&lt;br /&gt;
@@ -408,24 +408,24 @@ Arguments  r = correlation coefficient n = sample size a = significance level  E
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptrm.html&#34;&gt;Dependent t Repeated Measures&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent t - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent t - t&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtd.html&#34;&gt;Independent t Delta - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gindt.html&#34;&gt;Independent t g - Means&lt;/a&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/independentproportions.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtdelta.html&#34;&gt;Independent t Delta - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtg.html&#34;&gt;Independent t g - Means&lt;/a&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtprop.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/dtor.html&#34;&gt;d to r&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/rcorrel.html&#34;&gt;r&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapart.html&#34;&gt;Eta Partial - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gespartialrm.html&#34;&gt;Generalized Eta Squared Partial RM - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etass.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapss.html&#34;&gt;Eta Partial - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesrmss.html&#34;&gt;Generalized Eta Squared Partial RM - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesmixss.html&#34;&gt;Generalized Eta Squared Partial Mixed - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega - F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Full - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegapartbn.html&#34;&gt;Omega Partial BN - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegapbnss.html&#34;&gt;Omega Partial BN - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaprmss.html&#34;&gt;Omega Partial RM - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrm.html&#34;&gt;Generalized Omega RM - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrmss.html&#34;&gt;Generalized Omega RM - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/epsilon.html&#34;&gt;Epsilon&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;Chi-square V&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chio.html&#34;&gt;Chi-square Odds&lt;/a&gt;&lt;/p&gt;
