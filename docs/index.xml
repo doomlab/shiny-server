@@ -136,6 +136,18 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
+      <title>GES Partial - Mixed SS</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/gesmixss.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/gesmixss.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{error}}$$
+R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, Fvalue, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sss = sum of squares subject variance sse = sum of squares for the error/residual/within Fvalue = F statistic</description>
+    </item>
+    
+    <item>
       <title>GES Partial - Repeated Measures</title>
       <link>https://www.aggieerin.com/shiny-server/tests/gespartialrm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -240,6 +252,19 @@ The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{err
 The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + (N - df_{model}) \times MS_{error}}$$
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
 R Function omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a = 0.</description>
+    </item>
+    
+    <item>
+      <title>Omega Partial RM - SS</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/omegaprmss.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/omegaprmss.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + (N - df_{model}) \times MS_{error}}$$
+The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
+R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a = 0.05)
+Arguments  dfm = degrees of freedom for the model/IV/between
+ dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example NEEDS EXAMPLE</description>
     </item>
     
     <item>
@@ -394,10 +419,12 @@ Arguments  r = correlation coefficient n = sample size a = significance level  E
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapart.html&#34;&gt;Eta Partial - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gespartialrm.html&#34;&gt;Generalized Eta Partial RM - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gespartialrm.html&#34;&gt;Generalized Eta Squared Partial RM - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesmixss.html&#34;&gt;Generalized Eta Squared Partial Mixed - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega - F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Full - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegapartbn.html&#34;&gt;Omega Partial BN - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaprmss.html&#34;&gt;Omega Partial RM - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrm.html&#34;&gt;Generalized Omega RM - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/epsilon.html&#34;&gt;Epsilon&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;Chi-square V&lt;/a&gt;&lt;br /&gt;
