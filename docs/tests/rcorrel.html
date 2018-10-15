@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Chi-square - Odds</title>
+    <title>rcorrel</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,24 +26,24 @@
     
 
     
-    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays odds ratios and their normal confidence intervals. This statistic is calculated as (level 1.1/level 1.2) / (level 2.1/level 2.2), which can be considered the odds of level 1.1 given level1 overall versus level2.1 given level2 overall.
-The formula for odds is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$
-R Function odds(n11, n12, n21, n22, a = 0.05)
-Arguments n11 = sample size for level 1.">
-    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays odds ratios and their normal confidence intervals. This statistic is calculated as (level 1.1/level 1.2) / (level 2.1/level 2.2), which can be considered the odds of level 1.1 given level1 overall versus level2.1 given level2 overall.
-The formula for odds is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$
-R Function odds(n11, n12, n21, n22, a = 0.05)
-Arguments n11 = sample size for level 1.">
+    <meta name="description" content="Description This function displays transformation from r to r2 to calculate the non-central confidence interval for r^2 using the F distribution.
+The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function r.correl(r, n, a = 0.05)
+Arguments  r = correlation coefficient n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+    <meta property="og:description" content="Description This function displays transformation from r to r2 to calculate the non-central confidence interval for r^2 using the F distribution.
+The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function r.correl(r, n, a = 0.05)
+Arguments  r = correlation coefficient n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Chi-square - Odds">
-    <meta property="og:url" content="/tests/chio.html">
+    <meta property="og:title" content="rcorrel">
+    <meta property="og:url" content="/tests/rcorrel.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays odds ratios and their normal confidence intervals. This statistic is calculated as (level 1.1/level 1.2) / (level 2.1/level 2.2), which can be considered the odds of level 1.1 given level1 overall versus level2.1 given level2 overall.
-The formula for odds is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$
-R Function odds(n11, n12, n21, n22, a = 0.05)
-Arguments n11 = sample size for level 1.">
+    <meta name="twitter:description" content="Description This function displays transformation from r to r2 to calculate the non-central confidence interval for r^2 using the F distribution.
+The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function r.correl(r, n, a = 0.05)
+Arguments  r = correlation coefficient n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -198,7 +198,7 @@ Arguments n11 = sample size for level 1.">
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Chi-square - Odds
+      rcorrel
     </h1>
   
   
@@ -214,77 +214,71 @@ Arguments n11 = sample size for level 1.">
               
 
 <script src="//yihui.name/js/math-code.js"></script>
-<script type = "text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [['$', '$']],
-}
-})
-</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 <h1 id="description">Description</h1>
 
-<p>This function displays odds ratios and their normal confidence intervals. This statistic is calculated as (level 1.1/level 1.2) / (level 2.1/level 2.2), which can be considered the odds of level 1.1 given level1 overall versus level2.1 given level2 overall.</p>
+<p>This function displays transformation from r to r2 to calculate the non-central confidence
+interval for <em>r</em>^2 using the F distribution.</p>
 
-<p>The formula for <em>odds</em> is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$</p>
+<p>The formula for <em>t</em> is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>odds(n11, n12, n21, n22, a = 0.05)</p>
+<p>r.correl(r, n, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
-<p>n11 = sample size for level 1.1
-n12 = sample size for level 1.2
-n21 = sample size for level 2.1
-n22 = sample size for level 2.2
-a   = significance level</p>
+<ul>
+<li>r = correlation coefficient</li>
+<li>n = sample size</li>
+<li>a = significance level</li>
+</ul>
 
 <h1 id="example">Example</h1>
 
-<p>Description goes here!</p>
+<p>In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The mean measure of belief on the pretest was 5.571, while the posttest average score was lower, 4.429. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
 <p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20JASP.png" alt="Chi-square JASP" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png" alt="Dependent t JASP" /></p>
 
 <p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20SPSS.png" alt="Chi-square SPSS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png" alt="Dependent t SPSS" /></p>
 
 <p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20SAS.PNG" alt="Chi-square SAS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG" alt="Dependent t SAS" /></p>
 
-<p>n11 = 9
-n12 = 4
-n21 = 7
-n22 = 8
-a   = .05</p>
+<ul>
+<li>r = 5.571</li>
+<li>n = 4.429</li>
+<li>a = .05</li>
+</ul>
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>odds(n11 = 9, n12 = 4, n21 = 7, n22 = 8, a = 0.05)</p>
+<p>r.correl(r, n, a = 0.05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+<p><img src="../images/deptavgmeans.jpg" alt="Single-Sample t - Means Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p>This effect size is traditionally interpreted as like likelihood of group 1 to group 2. Therefore, an odds of 1 indicates they are equally likely. Odds less than 1 indicate that group 2 is more likely, and odds greater than 1 indicate that group 1 is more likely.</p>
-
-<p><em>Odds</em> = 2.57, 95% CI [1.02, 4.13]</p>
+<p><em>d</em> = 0.47, 95% CI [-0.09, 1.01]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>Your confidence interval does not include one, and therefore, you might conclude that this effect size is different from one.</p>
+<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>Not applicable.</p>
+<p>Group 1 Summary Statistics: <em>M</em> = 5.57, <em>SD</em> = 1.99, <em>SE</em> = 0.53, 95% CI [4.42, 6.72]</p>
+
+<p>Group 2 Summary Statistics: <em>M</em> = 4.43, <em>SD</em> = 2.88, <em>SE</em> = 0.77, 95% CI [2.77, 6.09]</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
@@ -296,7 +290,7 @@ a   = .05</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fxNflokgSTs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eq9X4ynxq2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

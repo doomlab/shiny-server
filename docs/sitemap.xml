@@ -33,11 +33,6 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/deptrmm.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/epsilon.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -124,6 +119,21 @@
   
   <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/ztestz.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/dtor.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/gindt.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/rcorrel.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   

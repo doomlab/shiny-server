@@ -86,17 +86,6 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     </item>
     
     <item>
-      <title>Dependent t Repeated Measures</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/deptrmm.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/deptrmm.html</guid>
-      <description>Description This function displays d for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
-Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
-    </item>
-    
-    <item>
       <title>Epsilon</title>
       <link>https://www.aggieerin.com/shiny-server/tests/epsilon.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -325,6 +314,45 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
     </item>
     
     <item>
+      <title>d to r</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/dtor.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/dtor.html</guid>
+      <description>Description Calculates r from d and then translates r to r2 to calculate the non-central confidence interval for r2 using the F distribution.
+The formula for r is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$
+The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function d.to.r(d, n1, n2, sd2, a = 0.05)
+Arguments  d = mean from first level n1 = mean from second level n2 = standard deviation from first level a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
+      <title>d-g corrected for Independent t</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/gindt.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/gindt.html</guid>
+      <description>Description This function displays d-g corrected and the non-central confidence interval for independent t.
+The formula for d is: $$d = \frac{M_1 - M2}{SD{pooled}}(1-\frac{3}{4(N_1+N_2)-9})$$
+The formula for t is: $$t = \frac{M_1 - M2}{SE{pooled}}$$
+R Function g.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
+Arguments  m1 = mean one
+ m2 = mean two sd1 = standard deviation group one sd2 = standard deviation group two n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
+    </item>
+    
+    <item>
+      <title>rcorrel</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/rcorrel.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/rcorrel.html</guid>
+      <description>Description This function displays transformation from r to r2 to calculate the non-central confidence interval for r^2 using the F distribution.
+The formula for t is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function r.correl(r, n, a = 0.05)
+Arguments  r = correlation coefficient n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
       <title>Introduction</title>
       <link>https://www.aggieerin.com/shiny-server/introduction/</link>
       <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
@@ -345,8 +373,8 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
       <guid>https://www.aggieerin.com/shiny-server/tests/</guid>
       <description>&lt;h1 id=&#34;mean-differences&#34;&gt;Mean Differences&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/ztestmeans.html&#34;&gt;Z-Test - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/ztestz.html&#34;&gt;Z-Test - Z&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/zm.html&#34;&gt;Z-Test - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/zz.html&#34;&gt;Z-Test - Z&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletmeans.html&#34;&gt;Single Sample t - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;Single Sample t - t&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;Dependent t Averages - Means&lt;/a&gt;&lt;br /&gt;
@@ -356,20 +384,23 @@ Arguments  z = statistic sig = population standard deviation n = sample size a =
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent t - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent t - t&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtd.html&#34;&gt;Independent t Delta - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gindt.html&#34;&gt;Independent t g - Means&lt;/a&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/independentproportions.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/dtor.html&#34;&gt;d to r&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/rcorrel.html&#34;&gt;r&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etafull.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapart.html&#34;&gt;Eta Partial - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gespartialrm.html&#34;&gt;GES Partial RM - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gespartialrm.html&#34;&gt;Generalized Eta Partial RM - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega - F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Full - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegapartbn.html&#34;&gt;Omega Partial BN - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrm.html&#34;&gt;Generalized Omega RM - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/epsilon.html&#34;&gt;Epsilon&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrm.html&#34;&gt;Generalized Omega - RM&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;Chi-square v&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;Chi-square V&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chio.html&#34;&gt;Chi-square Odds&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
