@@ -42,7 +42,7 @@ plot_neighbors("attention",
                method = "MDS", 
                dims = 2)
 
-choose.target("attention",
+choose.target("blindness",
               lower = .1,
               upper = .4,
               n = 20,

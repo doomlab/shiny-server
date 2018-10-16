@@ -16,6 +16,39 @@ library(DT)
 source("data_tab.R")
 source("ourdata_tab.R")
 
+
+# Figure out this step ----------------------------------------------------
+
+#just to get this nonsense working 
+importdf = read.csv('exam_answers.csv', header = F, stringsAsFactors = F)
+
+##if own file imported
+#Create a corpus from a vector of documents
+#therefore the data needs to be a column in a DF that includes all the text files
+import_corpus = Corpus(VectorSource(importdf$V1)) 
+
+#Lower case all words
+import_corpus = tm_map(import_corpus, tolower) 
+
+#Remove punctuation for creating spaces
+import_corpus = tm_map(import_corpus, removePunctuation) 
+
+#Remove stop words
+import_corpus = tm_map(import_corpus, 
+                       function(x) removeWords(x, stopwords("english")))
+
+#Create the term by document matrix
+import_mat = as.matrix(TermDocumentMatrix(import_corpus))
+
+#Weight the semantic space
+import_weight = lw_logtf(import_mat) * gw_idf(import_mat)
+
+#Run the SVD
+import_lsa = lsa(import_weight)
+
+#Convert to textmatrix for coherence
+import_lsa = as.textmatrix(import_lsa)
+
 # Define UI ---------------------------------------------------------------
 ui <- dashboardPage(
   dashboardHeader(title = "Word Space Creator"),
@@ -68,12 +101,20 @@ server <- function(input, output) {
   }) #close renderDT
   
   output$ourdata_table = renderDataTable({
-    dat()
-    datatable(dataset, rownames = F)
+    
+    #pull in the information from the ourdata_tab input$pick_data
+    if (input$pick_data == "TASA"){
+      load("TASA.rda")
+      prelsa_data = TASA
+      rm(TASA)
+    }
+    
+    
+    datatable(prelsa_data[1:10, 1:10], rownames = T)
   
-   load("TASA.rda")
-   load("EN_100k.rda")
-   load("EN_100k_lsa.rda")
+
+   #load("EN_100k.rda")
+   #load("EN_100k_lsa.rda")
    
   })
   }
