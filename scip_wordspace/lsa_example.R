@@ -36,16 +36,16 @@ import_lsa = as.textmatrix(import_lsa)
 ##if you use either space this is the fun stuff
 ##allow them to pick a word to create neighbors from (use rownames)
 ##allow them to put in a number of neighbors
-plot_neighbors("attention", 
+plot_neighbors("focus", 
                n = 10, 
                tvectors = import_lsa, 
                method = "MDS", 
                dims = 2)
 
-choose.target("blindness",
+choose.target("focus",
               lower = .1,
               upper = .4,
-              n = 20,
+              n = 100,
               tvectors = import_lsa)
 
 #use a multiselect for lists of words
@@ -58,8 +58,8 @@ plot_wordlist(list1,
               tvectors = import_lsa)
 
 #pick a single text document
-coherence(importdf$V1[2], 
+coherence(importdf$V1[3], 
           tvectors = import_lsa)
 
-genericSummary(importdf$V1[2],
+genericSummary(importdf$V1[3],
                k = 1)
