@@ -11,10 +11,12 @@ library(shinydashboard)
 library(kableExtra)
 library(rhandsontable)
 library(DT)
+library(tm)
 
 # Source Files ------------------------------------------------------------
 source("data_tab.R")
 source("ourdata_tab.R")
+source("lsa_tab.R")
 
 
 # Figure out this step ----------------------------------------------------
@@ -55,13 +57,15 @@ ui <- dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       menuItem("1. Upload Data", tabName = "data_tab"),
-      menuItem("2. Use Our Data", tabName = "ourdata_tab")
+      menuItem("2. Use Our Data", tabName = "ourdata_tab"),
+      menuItem("3. LSA", tabName = "lsa_tab")
     )
   ),
   dashboardBody(
     tabItems(
       data_tab,
-      ourdata_tab
+      ourdata_tab,
+      lsa_tab
     ) # end tabItems
   ) # end dashboardBody
 ) # end dashboardPage
@@ -108,15 +112,21 @@ server <- function(input, output) {
       prelsa_data = TASA
       rm(TASA)
     }
-    
+    if (input$pick_data == "EN"){
+      load("EN_100k.rda")
+      prelsa_data = EN
+      rm(EN)
+    }
+    if (input$pick_data == "ENLSA"){
+      load("EN_100k_lsa.rda")
+      prelsa_data = ENLSA
+      rm(ENLSA)
+    }
     
     datatable(prelsa_data[1:10, 1:10], rownames = T)
   
-
-   #load("EN_100k.rda")
-   #load("EN_100k_lsa.rda")
    
-  })
+  }) #close renderDataTable
   }
 
 # Run the application 
