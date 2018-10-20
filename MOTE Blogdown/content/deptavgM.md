@@ -16,7 +16,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays *d* for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
 
-The formula for *d* is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+The formula for *d* is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
 
 # R Function
 
@@ -34,7 +34,7 @@ d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05)
 
 # Example  
 
-In a study to test the effects of science fiction movies on people's belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The mean measure of belief on the pretest was 5.571, while the posttest average score was lower, 4.429. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
+In a study to test the effects of science fiction movies on people's belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The mean measure of belief on the pretest was 5.57, while the posttest average score was lower, 4.43. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
 ![Dependent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png)
@@ -49,12 +49,12 @@ In a study to test the effects of science fiction movies on people's belief in t
 + m2 = 4.429
 + sd1 = 1.988
 + sd2	= 2.878
-+ n = 14
++ n = 7
 + a	= .05
 
 # Function in R: 
 
-d.dep.t.avg(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, n = 14, a = .05)
+d.dep.t.avg(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, n = 7, a = .05)
 
 # MOTE
 
@@ -64,7 +64,7 @@ d.dep.t.avg(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, n = 14, a = .05)
 
 ## Effect Size:
 
-*d* = 0.47, 95% CI [-0.09, 1.01]
+*d_av* = 0.47, 95% CI [-0.33, 1.24]
 
 ## Interpretation: 
 
@@ -72,9 +72,10 @@ Your confidence interval does include zero, and therefore, you might conclude th
 
 ## Summary Statistics: 
 
-Group 1 Summary Statistics: *M* = 5.57, *SD* = 1.99, *SE* = 0.53, 95% CI [4.42, 6.72]
+Group 1 Summary Statistics: *M* = 5.57, *SD* = 1.99, *SE* = 0.75, 95% CI [3.73,  7.41]
 
-Group 2 Summary Statistics: *M* = 4.43, *SD* = 2.88, *SE* = 0.77, 95% CI [2.77, 6.09]
+Group 2 Summary Statistics: *M* = 4.43, *SD* = 2.88, *SE* = 1.09, 95% CI [1.77, 7.09]
+
 ## Test Statistic: 
 
 Not applicable.
