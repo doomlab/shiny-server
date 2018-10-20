@@ -36,16 +36,16 @@ import_lsa = as.textmatrix(import_lsa)
 ##if you use either space this is the fun stuff
 ##allow them to pick a word to create neighbors from (use rownames)
 ##allow them to put in a number of neighbors
-plot_neighbors("focus", 
+plot_neighbors("information", 
                n = 10, 
                tvectors = import_lsa, 
                method = "MDS", 
                dims = 2)
 
-choose.target("focus",
-              lower = .1,
+choose.target("information",
+              lower = .3,
               upper = .4,
-              n = 100,
+              n = 10,
               tvectors = import_lsa)
 
 #use a multiselect for lists of words
