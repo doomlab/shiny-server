@@ -48,12 +48,12 @@ In a study to test the effects of science fiction movies on people's belief in t
 
 + mdiff	= 1.143
 + sddiff = 2.116
-+ n	= 14
++ n	= 7
 + a	= .05
 
 # Function in R: 
 
-d.dep.t.diff(mdiff = 1.143, sddiff = 2.116, n = 14, a = .05)
+d.dep.t.diff(mdiff = 1.143, sddiff = 2.116, n = 7, a = .05)
 
 # MOTE
 
@@ -63,7 +63,7 @@ d.dep.t.diff(mdiff = 1.143, sddiff = 2.116, n = 14, a = .05)
 
 ## Effect Size:
 
-*d* = 0.54, 95% CI [-0.03, 1.09]
+*d_z* = 0.54, 95% CI [-0.03, 1.09]
 
 ## Interpretation: 
 
