@@ -13,11 +13,6 @@ library(rhandsontable)
 library(DT)
 library(tm)
 
-# Source Files ------------------------------------------------------------
-source("data_tab.R")
-source("ourdata_tab.R")
-source("lsa_tab.R")
-
 
 # Figure out this step ----------------------------------------------------
 
@@ -46,10 +41,18 @@ import_mat = as.matrix(TermDocumentMatrix(import_corpus))
 import_weight = lw_logtf(import_mat) * gw_idf(import_mat)
 
 #Run the SVD
-import_lsa = lsa(import_weight)
+import_lsa <<- lsa(import_weight)
 
 #Convert to textmatrix for coherence
 import_lsa = as.textmatrix(import_lsa)
+
+
+# Source Files ------------------------------------------------------------
+source("data_tab.R")
+source("ourdata_tab.R")
+source("lsa_tab.R")
+source("lsa_tab_target.R")
+
 
 # Define UI ---------------------------------------------------------------
 ui <- dashboardPage(
@@ -58,14 +61,16 @@ ui <- dashboardPage(
     sidebarMenu(
       menuItem("1. Upload Data", tabName = "data_tab"),
       menuItem("2. Use Our Data", tabName = "ourdata_tab"),
-      menuItem("3. LSA", tabName = "lsa_tab")
+      menuItem("3. LSA", tabName = "lsa_tab"),
+      menuItem("4. LSA Choose Target", tabName = "lsa_tab_target")
     )
   ),
   dashboardBody(
     tabItems(
       data_tab,
       ourdata_tab,
-      lsa_tab
+      lsa_tab,
+      lsa_tab_target
     ) # end tabItems
   ) # end dashboardBody
 ) # end dashboardPage
