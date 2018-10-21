@@ -41,10 +41,10 @@ import_mat = as.matrix(TermDocumentMatrix(import_corpus))
 import_weight = lw_logtf(import_mat) * gw_idf(import_mat)
 
 #Run the SVD
-import_lsa <<- lsa(import_weight)
+import_lsa = lsa(import_weight)
 
 #Convert to textmatrix for coherence
-import_lsa = as.textmatrix(import_lsa)
+import_lsa <<- as.textmatrix(import_lsa)
 
 
 # Source Files ------------------------------------------------------------
