@@ -132,6 +132,14 @@ server <- function(input, output) {
   
    
   }) #close renderDataTable
+  
+  output$lsa_table = renderDataTable({
+    plot_neighbors("information", 
+                   n = 10, 
+                   tvectors = import_lsa, 
+                   method = "MDS", 
+                   dims = 2)
+  }) #close renderDataTable
   }
 
 # Run the application 
