@@ -10,7 +10,8 @@ lsa_tab_target <- tabItem(tabName = "lsa_tab_target",
                                      label = "Select range:", 
                                      min = -1, 
                                      max = 1,
-                                     value = c(-1,1)),
+                                     value = c(-1,1),
+                                     step = .01),
                          mainPanel(DTOutput("lsa_data.table2"))
                        ) #close fluidRow
 ) #close tabItem

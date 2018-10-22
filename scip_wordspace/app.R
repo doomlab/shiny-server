@@ -140,6 +140,14 @@ server <- function(input, output) {
                    method = "MDS", 
                    dims = 2)
   }) #close renderDataTable
+  
+  output$lsa_tab_target = renderDataTable({
+    choose.target(input$rownames_select_2,
+                  lower = input$select_range.min,
+                  upper = input$select_range.max,
+                  n = input$neighbors2,
+                  tvectors = import_lsa)
+  }) #close renderDataTable
   }
 
 # Run the application 
