@@ -6,6 +6,7 @@ lsa_tab <- tabItem(tabName = "lsa_tab",
                                      choices = rownames(import_lsa)
                                      ), #close selectInput
                          numericInput("neighbors", "Neighbors:", 10, min = 1, max = 100),
-                         mainPanel(DTOutput("lsa_data.table"))
+                         mainPanel(plotOutput("lsa_plotneighbors"),
+                                   textOutput("information"))
                        ) #close fluidRow
 ) #close tabItem

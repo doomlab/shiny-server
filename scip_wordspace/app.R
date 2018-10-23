@@ -41,7 +41,7 @@ import_mat = as.matrix(TermDocumentMatrix(import_corpus))
 import_weight = lw_logtf(import_mat) * gw_idf(import_mat)
 
 #Run the SVD
-import_lsa = lsa(import_weight)
+import_lsa <<- lsa(import_weight)
 
 #Convert to textmatrix for coherence
 import_lsa <<- as.textmatrix(import_lsa)
@@ -133,13 +133,17 @@ server <- function(input, output) {
    
   }) #close renderDataTable
   
-  output$lsa_table = renderDataTable({
-    plot_neighbors("information", 
-                   n = 10, 
+  # Single Words LSA Functions ----------------------------------------------
+
+    output$lsa_plotneighbors = renderPlot({
+    plot_neighbors(input$rownames_select, 
+                   n = input$neighbors, 
                    tvectors = import_lsa, 
                    method = "MDS", 
                    dims = 2)
-  }) #close renderDataTable
+      }) #close plot
+  
+  output$information = renderText(class(import_lsa))
   
   output$lsa_tab_target = renderDataTable({
     choose.target(input$rownames_select_2,
