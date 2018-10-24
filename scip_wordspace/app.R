@@ -51,8 +51,6 @@ import_lsa <<- as.textmatrix(import_lsa)
 source("data_tab.R")
 source("ourdata_tab.R")
 source("lsa_tab.R")
-source("lsa_tab_target.R")
-
 
 # Define UI ---------------------------------------------------------------
 ui <- dashboardPage(
@@ -61,8 +59,7 @@ ui <- dashboardPage(
     sidebarMenu(
       menuItem("1. Upload Data", tabName = "data_tab"),
       menuItem("2. Use Our Data", tabName = "ourdata_tab"),
-      menuItem("3. LSA", tabName = "lsa_tab"),
-      menuItem("4. LSA Choose Target", tabName = "lsa_tab_target")
+      menuItem("3. LSA", tabName = "lsa_tab")
     )
   ),
   dashboardBody(
@@ -143,15 +140,16 @@ server <- function(input, output) {
                    dims = 2)
       }) #close plot
   
-  output$information = renderText(class(import_lsa))
-  
-  output$lsa_tab_target = renderDataTable({
-    choose.target(input$rownames_select_2,
-                  lower = input$select_range.min,
-                  upper = input$select_range.max,
-                  n = input$neighbors2,
-                  tvectors = import_lsa)
-  }) #close renderDataTable
+  output$lsa_choosetarget = renderDataTable({
+    targets = as.data.frame(choose.target(input$rownames_select,
+                  lower = input$select_range[1],
+                  upper = input$select_range[2],
+                  n = input$neighbors,
+                  tvectors = import_lsa))
+    colnames(targets) = "cosine"
+    
+    datatable(targets)
+  }) #close renderDT
   }
 
 # Run the application 
