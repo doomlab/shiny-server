@@ -61,7 +61,7 @@ ui <- dashboardPage(
       menuItem("1. Upload Data", tabName = "data_tab"),
       menuItem("2. Use Our Data", tabName = "ourdata_tab"),
       menuItem("3. LSA", tabName = "lsa_tab"),
-      menuItem("4. LSA- Word Plot", tabName = "lsa_tab_plot.R")
+      menuItem("4. LSA Word Plot", tabName = "lsa_tab_plot.R")
     )
   ),
   dashboardBody(
