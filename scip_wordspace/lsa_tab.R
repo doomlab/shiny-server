@@ -1,7 +1,7 @@
 lsa_tab <- tabItem(tabName = "lsa_tab",
                        fluidRow(
                          mainPanel(
-                         titlePanel("LSA"),
+                         titlePanel("LSA Single Word Select"),
                          selectInput(inputId = "rownames_select", 
                                      label = "Select Row Names:",
                                      choices = rownames(import_lsa)
@@ -16,6 +16,15 @@ lsa_tab <- tabItem(tabName = "lsa_tab",
                          ), #close main panel 
                          mainPanel(plotOutput("lsa_plotneighbors"),
                                    br(),
-                                   DTOutput("lsa_choosetarget"))
-                       ) #close fluidRow
-) #close tabItem
+                                   DTOutput("lsa_choosetarget"),
+                                   ), #close main panel
+                         br(),
+                         titlePanel("LSA Multiple Word Select"),
+                         mainPanel(selectizeInput("tags", "Select Tags:", 
+                                                  choices = c(
+                                                    rownames(import_lsa), 
+                                                    multiple = TRUE),
+                                                  DTOutput("lsa_multicos"))
+                                   ) #close main panel
+                         ) #close fluidRow
+                   ) #close tabItem

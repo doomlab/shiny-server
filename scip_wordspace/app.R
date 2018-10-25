@@ -150,6 +150,11 @@ server <- function(input, output) {
     
     datatable(targets)
   }) #close renderDT
+  
+  # Multiword LSA functions -------------------------------------------------
+
+  
+  
   }
 
 # Run the application 
