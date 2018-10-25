@@ -50,8 +50,8 @@ import_lsa <<- as.textmatrix(import_lsa)
 # Source Files ------------------------------------------------------------
 source("data_tab.R")
 source("ourdata_tab.R")
-source("lsa_tab.R")
-source("lsa_tab_plot.R")
+source("lsa_tab_single.R")
+source("lsa_tab_multiple.R")
 
 # Define UI ---------------------------------------------------------------
 ui <- dashboardPage(
@@ -60,19 +60,19 @@ ui <- dashboardPage(
     sidebarMenu(
       menuItem("1. Upload Data", tabName = "data_tab"),
       menuItem("2. Use Our Data", tabName = "ourdata_tab"),
-      menuItem("3. LSA", tabName = "lsa_tab"),
-      menuItem("4. LSA Word Plot", tabName = "lsa_tab_plot.R")
+      menuItem("3. LSA Single Word Functions", tabName = "lsa_tab_single"),
+      menuItem("4. LSA Multiple Word Functions", tabName = "lsa_tab_multiple")
     )
   ),
   dashboardBody(
     tabItems(
       data_tab,
       ourdata_tab,
-      lsa_tab,
-      lsa_tab_target
-    ) # end tabItems
-  ) # end dashboardBody
-) # end dashboardPage
+      lsa_tab_single,
+      lsa_tab_multiple
+      ) # end tabItems
+    ) # end dashboardBody
+  ) # end dashboardPage
 
 # Define server logic -----------------------------------------------------
 
@@ -155,7 +155,23 @@ server <- function(input, output) {
   
   # Multiword LSA functions -------------------------------------------------
 
+  output$lsa_multicos = renderDataTable({
+    
+    #run the multicos function here
+    
+    datatable()
+    
+  })
   
+  output$lsa_plotwordlist = renderPlot({
+    
+    plot_wordlist(input$tags,
+                  method = "MDS", 
+                  dims = 2,
+                  tvectors = import_lsa)
+    
+  })
+
   
   }
 
