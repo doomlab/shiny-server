@@ -14,7 +14,7 @@ library(DT)
 library(tm)
 
 
-# Figure out this step ----------------------------------------------------
+# Figure out this step LSA ----------------------------------------------------
 
 #just to get this nonsense working 
 importdf = read.csv('exam_answers.csv', header = F, stringsAsFactors = F)
@@ -46,6 +46,49 @@ import_lsa <<- lsa(import_weight)
 #Convert to textmatrix for coherence
 import_lsa <<- as.textmatrix(import_lsa)
 
+
+# Figure out this step topics ---------------------------------------------
+
+library(tm)
+library(topicmodels)
+library(slam)
+library(lsa)
+
+##just some example data so you can see
+importdf = read.csv('exam_answers.csv', header = F, stringsAsFactors = F)
+
+##if own file imported
+#Create a corpus from a vector of documents
+#therefore the data needs to be a column in a DF that includes all the text files
+import_corpus = Corpus(VectorSource(importdf$V1)) 
+
+#create corpus textmatrix
+import_mat = DocumentTermMatrix(import_corpus,
+                                control = list(stemming = TRUE, stopwords = TRUE, minWordLength = 3,
+                                               removeNumbers = TRUE, removePunctuation = TRUE)) 
+
+#weighting scheme
+import_weight = tapply(import_mat$v/row_sums(import_mat)[import_mat$i], import_mat$j, mean) *
+  log2(nDocs(import_mat)/col_sums(import_mat > 0))
+
+#ignore very frequent and 0 terms
+import_mat = import_mat[ , import_weight >= .1]
+import_mat = import_mat[ row_sums(import_mat) > 0, ]
+
+#make the user pick a number of topics
+k = 5
+SEED = 2010
+
+LDA_fit <<- LDA(import_mat, k = k, control = list(seed = SEED))
+LDA_fixed <<- LDA(import_mat, k = k, control = list(estimate.alpha = FALSE, seed = SEED))
+LDA_gibbs <<- LDA(import_mat, k = k, method = "Gibbs", 
+                control = list(seed = SEED, burnin = 1000, thin = 100, iter = 1000))
+CTM_fit <<- CTM(import_mat, k = k, 
+              control = list(seed = SEED, 
+                             var = list(tol = 10^-4), 
+                             em = list(tol = 10^-3)))
+
+alltogether <<- list(LDA_fit, LDA_fixed, LDA_gibbs, CTM_fit)
 
 # Source Files ------------------------------------------------------------
 source("data_tab.R")
