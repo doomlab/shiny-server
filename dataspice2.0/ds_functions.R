@@ -26,6 +26,6 @@ bib_df <- data.frame(title = character(),
 creators_df <- data.frame(id = character(),
                           givenName = character(),
                           familyName = character(),
-                          affliation = character(),
+                          affiliation = character(),
                           email = character(),
                           stringsAsFactors = F)

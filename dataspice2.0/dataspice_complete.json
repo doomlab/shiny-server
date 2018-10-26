@@ -1,0 +1,101 @@
+{
+  "@context": "http://schema.org",
+  "type": "Dataset",
+  "name": "mtcars",
+  "creator": [
+    {
+      "type": "Person",
+      "id": "your ORC ID",
+      "givenName": "First Name",
+      "familyName": "Last Name",
+      "email": "dsa",
+      "affiliation": "dsa"
+    }
+  ],
+  "description": null,
+  "datePublished": "dsadsa",
+  "keywords": "dsa",
+  "funder": null,
+  "temporalCoverage": "ads/NA",
+  "license": null,
+  "spatialCoverage": {
+    "type": "Place",
+    "name": "dsa"
+  },
+  "variableMeasured": [
+    {
+      "type": "PropertyValue",
+      "unitText": null,
+      "name": "mpg",
+      "description": "cxzcx"
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": "cxz",
+      "name": "cyl",
+      "description": null
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": null,
+      "name": "disp",
+      "description": null
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": "cxz",
+      "name": "hp",
+      "description": "cxz"
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": null,
+      "name": "drat",
+      "description": "xzcx"
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": "cxz",
+      "name": "wt",
+      "description": null
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": null,
+      "name": "qsec",
+      "description": null
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": null,
+      "name": "vs",
+      "description": "cxz"
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": null,
+      "name": "am",
+      "description": null
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": "cxz",
+      "name": "gear",
+      "description": null
+    },
+    {
+      "type": "PropertyValue",
+      "unitText": null,
+      "name": "carb",
+      "description": null
+    }
+  ],
+  "distribution": [
+    {
+      "type": "DataDownload",
+      "name": "mtcars",
+      "contentUrl": "dsadsa",
+      "fileFormat": "csv"
+    }
+  ]
+}

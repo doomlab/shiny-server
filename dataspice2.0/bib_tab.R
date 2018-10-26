@@ -1,50 +1,48 @@
 bib_tab <- tabItem(tabName = "bib_tab",
-      fluidPage(
-        titlePanel(paste0("Populate the Bibliography table")),
-        helpText("Shiny app to read in the", code("dataspice"), "metadata templates and populate with user supplied metadata"),
-        
-        # Header panel
-        wellPanel(
-          fluidRow(
-            column(8, uiOutput("message_bib", inline=TRUE)),
-            column(4, align="right",
-                   h3("Save table"),
-                   actionButton("save_bib", "Save Changes"))
-          ) #close fluid row
-        ), #close wellpanel
-        
-        # side panel
-        sidebarLayout(
-          # side panel contains reference details. conditional on file.
-          sidebarPanel(
-            list(
-              h4("Bibliographic metadata"),
-              h6('title = text: Title of the dataset(s) described.'),
-              h6("description = text: Description of the dataset(s) described"),
-              h6('datePublished = text: The date published in ISO 8601 format (YYYY-MM-DD)'),
-              h6("citation = text: citation for the dataset(s) described"),
-              h6("keywords = text: keywords, separated by commas, associated with the dataset(s) described"),
-              h6("license = text: license under which data are published"),
-              h6("funder = text: Name of funders associated with the work through which data where generated"),
-              
-              br(),
-              h4("Spatial Coverage metadata"),
-              h6('geographicDescription = text: Description of the area of study'),
-              br(),
-              h4("Temporal Coverage metadata"),
-              h6('startDate = text: The start date of the data temporal coverage in ISO 8601 format (YYYY-MM-DD)'),
-              h6("endDate = text: The end date of the data temporal coverage in ISO 8601 format (YYYY-MM-DD)")
-            ) #close list
-          ), #close side bar panel
-          
-          mainPanel(
-            # table editing helptext
-            helpText("Right-click on the table to delete/insert rows.",
-                     "Double-click on a cell to edit"),
-            # table
-            rHandsontableOutput("hot_bib"),
-            br()
-          ) #close main panel
-        ) #close side bar layout
-      ) #close fluid page
-    ) #close bib tab
+
+   fluidPage(
+    wellPanel(
+      titlePanel(paste0("Create the Bibliography Table")),
+        h5("The bibliography table gives the reader information about how to cite and use your data,
+                as well as information about the data collection. Click Save Changes
+                 when you are done inputting information before you move
+                 on to the next tab.")), #close help text and well panel
+
+    fluidRow(
+      # table editing helptext
+      h5("Right-click on the table to delete/insert rows.",
+               "Double-click on a cell to edit. Changes are saved while on this page."),
+      # table
+      rHandsontableOutput("hot_bib"),
+      br()
+    ), #close fluid row
+
+    wellPanel(
+      fluidRow(
+        column(8, uiOutput("message_bib", inline=TRUE),
+               list(
+                 h4("Bibliographic metadata:"),
+                 h5('title = Title of the dataset(s) described.'),
+                 h5("description = Description of the dataset(s) described."),
+                 h5('datePublished = The date published in ISO 8601 format (YYYY-MM-DD).'),
+                 h5("citation = Citation for the dataset(s) described."),
+                 h5("keywords = Keywords, separated by commas, associated with the dataset(s) described."),
+                 h5("license = License under which data are published."),
+                 h5("funder = Name of funders associated with the work through which data where generated."),
+
+                 br(),
+                 h4("Spatial Coverage metadata:"),
+                 h5('geographicDescription = Description of the area of study. For example, you can list the
+                    cities, states, country of the participants involved in the research.'),
+                 br(),
+                 h4("Temporal Coverage metadata:"),
+                 h6('startDate = The start date of the data collection in ISO 8601 format (YYYY-MM-DD).'),
+                 h6("endDate = The end date of the data collection in ISO 8601 format (YYYY-MM-DD).")
+               ) #close list
+        ),
+        column(4, align="right",
+               actionButton("save_bib", "Save Changes"))
+      ) #close fluid row
+    ) #close well panel
+   ) #close fluid page
+) #close access tab
