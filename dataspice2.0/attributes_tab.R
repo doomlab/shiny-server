@@ -21,20 +21,20 @@ attributes_tab <- tabItem(tabName = "attributes_tab",
 
       wellPanel(
         fluidRow(
-          column(8, uiOutput("message_attributes", inline=TRUE),
+          column(8, helpText("Hit the Save Changes button to save this file.", inline=TRUE),
                  list(
                    h4("Attributes Metadata:"),
-                   h5('fileName = the name of the input data file(s). Do Not Change.'),
-                   h5("variableName = the name of the measured variable. Do Not Change."),
-                   h5('description = a written description of what that measured variable is.'),
-                   h5("unitText = the units the variable was measured in, as well as any variable labels
+                   h5('fileName = The name of the input data file(s). Do Not Change.'),
+                   h5("variableName = The name of the measured variable. Do Not Change."),
+                   h5('description = A written description of what that measured variable is.'),
+                   h5("unitText = The units the variable was measured in, as well as any variable labels
                       for data to help the reader understand the measurement of the data. For example,
                       you might include the label values for a Likert-type scale that participants
-                      used to rate the data. ")
+                      used to rate the data.")
                  ) #close list
           ), #close column
           column(4, align="right",
-                 actionButton("save_attributes", "Save Changes"))
+                 downloadButton("save_attributes", "Save Changes"))
         ) #close fluid row
       ) #close well panel
     ) #close fluid page

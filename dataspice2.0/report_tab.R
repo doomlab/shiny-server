@@ -8,12 +8,12 @@ report_tab <- tabItem(tabName = "report_tab",
     
     wellPanel(
       fluidRow(
-        column(8, uiOutput("message_report", inline=TRUE),
+        column(8, helpText("Hit the Save Changes button to save this file.", inline=TRUE),
                h4(textOutput("title")),
                htmlOutput("report")
         ), #close column
         column(4, align="right",
-               actionButton("save_report", "Save Report HTML"))
+               downloadButton("save_report", "Save Report HTML"))
       ) #close fluid row
     ) #close well panel
   ) #close fluid page

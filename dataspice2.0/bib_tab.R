@@ -19,9 +19,9 @@ bib_tab <- tabItem(tabName = "bib_tab",
 
     wellPanel(
       fluidRow(
-        column(8, uiOutput("message_bib", inline=TRUE),
+        column(8, helpText("Hit the Save Changes button to save this file.", inline=TRUE),
                list(
-                 h4("Bibliographic metadata:"),
+                 h4("Bibliographic Metadata:"),
                  h5('title = Title of the dataset(s) described.'),
                  h5("description = Description of the dataset(s) described."),
                  h5('datePublished = The date published in ISO 8601 format (YYYY-MM-DD).'),
@@ -31,17 +31,17 @@ bib_tab <- tabItem(tabName = "bib_tab",
                  h5("funder = Name of funders associated with the work through which data where generated."),
 
                  br(),
-                 h4("Spatial Coverage metadata:"),
+                 h4("Spatial Coverage Metadata:"),
                  h5('geographicDescription = Description of the area of study. For example, you can list the
                     cities, states, country of the participants involved in the research.'),
                  br(),
-                 h4("Temporal Coverage metadata:"),
-                 h6('startDate = The start date of the data collection in ISO 8601 format (YYYY-MM-DD).'),
-                 h6("endDate = The end date of the data collection in ISO 8601 format (YYYY-MM-DD).")
+                 h4("Temporal Coverage Metadata:"),
+                 h5('startDate = The start date of the data collection in ISO 8601 format (YYYY-MM-DD).'),
+                 h5("endDate = The end date of the data collection in ISO 8601 format (YYYY-MM-DD).")
                ) #close list
         ),
         column(4, align="right",
-               actionButton("save_bib", "Save Changes"))
+               downloadButton("save_bib", "Save Changes"))
       ) #close fluid row
     ) #close well panel
    ) #close fluid page

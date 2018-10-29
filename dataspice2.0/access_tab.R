@@ -19,19 +19,19 @@ access_tab <- tabItem(tabName = "access_tab",
 
         wellPanel(
           fluidRow(
-            column(8, uiOutput("message_access", inline=TRUE),
+            column(8, helpText("Hit the Save Changes button to save this file.", inline=TRUE),
                    list(
                      h4("Access Metadata:"),
-                     h5('fileName = the filename of the input data file(s).'),
-                     h5("name = the human readable name for the file. This name allows readers to create
+                     h5('fileName = The filename of the input data file(s).'),
+                     h5("name = The human readable name for the file. This name allows readers to create
                         a reference to your data, as well as understand what is in the data."),
-                     h5('contentUrl = a url to where the data is hosted, if applicable. Consider
+                     h5('contentUrl = A url to where the data is hosted, if applicable. Consider
                         sharing your data on open science websites.'),
-                     h5("fileFormat = the file format, such as .csv, .sav, or .xlsx.")
+                     h5("fileFormat = The file format, such as .csv, .sav, or .xlsx.")
                    ) #close list
             ),
             column(4, align="right",
-                   actionButton("save_access", "Save Changes"))
+                   downloadButton("save_access", "Save Changes"))
           ) #close fluid row
         ) #close well panel
       ) #close fluid page

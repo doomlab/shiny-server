@@ -11,11 +11,11 @@ json_tab <- tabItem(tabName = "json_tab",
       
       wellPanel(
         fluidRow(
-          column(8, uiOutput("message_json", inline=TRUE),
+          column(8, helpText("Hit the Save Changes button to save this file.", inline=TRUE),
                  textOutput("print_json")
           ), #close column
           column(4, align="right",
-                 actionButton("save_json", "Save JSON File"))
+                 downloadButton("save_json", "Save JSON File"))
         ) #close fluid row
       ) #close well panel
     ) #close fluid page

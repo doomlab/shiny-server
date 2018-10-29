@@ -94,7 +94,6 @@ server <- function(input, output, session) {
     datatable(rawdata, rownames = F)
   }) #close renderDT
 
-
   # Attributes Table Editing ------------------------------------------------
 
   #values <- reactiveValues()
@@ -122,25 +121,16 @@ server <- function(input, output, session) {
   })
 
   ## Save
-  observeEvent(input$save_attributes, {
-    finalDF <- hot_to_r(input$hot_attributes)
-    attributes_df_final <<- finalDF
-    # remove padding if none edited
-    finalDF %>%
-      dplyr::filter_all(dplyr::any_vars(!is.na(.))) %>%
-      write.csv(file = "attributes.csv")
-  })
-
-  ## Message
-  output$message_attributes <- renderUI({
-    if(input$save_attributes==0){
-      helpText("Hit the Save Changes button to save this file.")
-    }else{
-      helpText("The attributes file has been saved.")
-    }
-  })
-
-
+  output$save_attributes <- downloadHandler(
+    filename = "attributes.csv",
+    content = function(file) { 
+      finalDF <- hot_to_r(input$hot_attributes)
+      attributes_df_final <<- finalDF
+      # remove padding if none edited
+      finalDF %>%
+        dplyr::filter_all(dplyr::any_vars(!is.na(.)))
+      write.csv(attributes_df_final, file, row.names = FALSE)
+    })
 
   # Access Table Editing ----------------------------------------------------------
 
@@ -165,27 +155,20 @@ server <- function(input, output, session) {
                   useTypes = TRUE,
                   stretchH = "all") %>%
       hot_context_menu(allowColEdit = FALSE)
-  })
+    })
 
-  ## Save
-  observeEvent(input$save_access, {
-    finalDF <- hot_to_r(input$hot_access)
-    access_df_final <<- finalDF
-    # remove padding if none edited
-    finalDF %>%
-      dplyr::filter_all(dplyr::any_vars(!is.na(.))) %>%
-      write.csv(file = "access.csv")
-  })
-
-  ## Message
-  output$message_access <- renderUI({
-    if(input$save_access==0){
-      helpText("Hit the Save Changes button to save this file.")
-    }else{
-      helpText("The access file has been saved.")
-    }
-  })
-
+    ## Save
+    output$save_access <- downloadHandler(
+    filename = "access.csv",
+    content = function(file) { 
+      finalDF <- hot_to_r(input$hot_access)
+      access_df_final <<- finalDF
+      # remove padding if none edited
+         finalDF %>%
+         dplyr::filter_all(dplyr::any_vars(!is.na(.)))
+      write.csv(access_df_final, file, row.names = FALSE)
+      })
+  
   # Bib Table Editing ----------------------------------------------------------
 
   # output for bib table
@@ -209,25 +192,16 @@ server <- function(input, output, session) {
       hot_context_menu(allowColEdit = FALSE)
   })
 
-  ## Save
-  observeEvent(input$save_bib, {
-    finalDF <- hot_to_r(input$hot_bib)
-    bib_df_final <<- finalDF
-    # remove padding if none edited
-    finalDF %>%
-      dplyr::filter_all(dplyr::any_vars(!is.na(.))) %>%
-      write.csv(file = "bib.csv")
-  })
-
-  ## Message
-  output$message_bib <- renderUI({
-    if(input$save_bib==0){
-      helpText("Hit the Save Changes button to save this file.")
-    }else{
-      helpText("The bibliography file has been saved.")
-    }
-  })
-
+  output$save_bib <- downloadHandler(
+    filename = "bib.csv",
+    content = function(file) { 
+      finalDF <- hot_to_r(input$hot_bib)
+      bib_df_final <<- finalDF
+      # remove padding if none edited
+      finalDF %>%
+        dplyr::filter_all(dplyr::any_vars(!is.na(.)))
+      write.csv(bib_df_final, file, row.names = FALSE)
+    })
 
   # Creator Table Editing ----------------------------------------------------------
 
@@ -248,23 +222,16 @@ server <- function(input, output, session) {
   })
 
   ## Save
-  observeEvent(input$save_creators, {
-    finalDF <- hot_to_r(input$hot_creators)
-    creators_df_final <<- finalDF
-    # remove padding if none edited
-    finalDF %>%
-      dplyr::filter_all(dplyr::any_vars(!is.na(.))) %>%
-      write.csv(file = "creators.csv")
-  })
-
-  ## Message
-  output$message_creators <- renderUI({
-    if(input$save_creators==0){
-      helpText("Hit the Save Changes button to save this file.")
-    }else{
-      helpText("The creators file has been saved.")
-    }
-  })
+  output$save_creators <- downloadHandler(
+    filename = "creators.csv",
+    content = function(file) { 
+      finalDF <- hot_to_r(input$hot_creators)
+      creators_df_final <<- finalDF
+      # remove padding if none edited
+      finalDF %>%
+        dplyr::filter_all(dplyr::any_vars(!is.na(.)))
+      write.csv(creators_df_final, file, row.names = FALSE)
+    })
 
 
   # Create json format ------------------------------------------------------
@@ -287,25 +254,14 @@ server <- function(input, output, session) {
 
   })
 
-  ## Save
-  observeEvent(input$save_json, {
-
-    write(
-      write_spice(creators_df_final, access_df_final,
-                  attributes_df_final, bib_df_final, inFile$datapath),
-      file = "dataspice_complete.json") #write out json file
-  })
-
-  ## Message
-  output$message_json <- renderUI({
-    if(input$save_json==0){
-      helpText("Hit the Save Changes button to save this file.")
-    }else{
-      helpText("The json file has been saved.")
-    }
-  })
-
-
+  output$save_json <- downloadHandler(
+    filename = "dataspice_complete.json",
+    content = function(filename) { 
+      write(
+        write_spice(creators_df_final, access_df_final,
+                    attributes_df_final, bib_df_final, inFile$datapath),
+        file = filename)
+    })
 
   # Create Text output ------------------------------------------------------
 
@@ -368,20 +324,11 @@ server <- function(input, output, session) {
   output$report <- renderUI(report_report())
 
   ## Save
-  observeEvent(input$save_report, {
-
-    write(report_report(),
-          file = "report.html") #write out json file
-  })
-
-  ## Message
-  output$message_report <- renderUI({
-    if(input$save_report==0){
-      helpText("Hit the Save Changes button to save this file.")
-    }else{
-      helpText("The report file has been saved.")
-    }
-  })
+  output$save_report <- downloadHandler(
+    filename = "report.html",
+    content = function(filename) { 
+      write(report_report(), file = filename)
+    })
 
 
 

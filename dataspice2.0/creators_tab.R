@@ -19,19 +19,19 @@ creators_tab <- tabItem(tabName = "creators_tab",
       
       wellPanel(
         fluidRow(
-          column(8, uiOutput("message_creators", inline=TRUE),
+          column(8, helpText("Hit the Save Changes button to save this file.", inline=TRUE),
                  list(
                    h4("Creators Metadata:"),
                    h5('id = Your ORCID ID, which you can create at https://orcid.org/.'),
                    h5("givenName = The first name of the creator(s)."),
                    h5('familyName = The last name of the creator(s).'),
                    h5("affiliation = The affiliation of the creator, current or at the 
-                      time of data collection.'"),
+                      time of data collection."),
                    h5("email = The email address of the creator(s).")
                  ) #close list
           ), #close column
           column(4, align="right",
-                 actionButton("save_creators", "Save Changes"))
+                 downloadButton("save_creators", "Save Changes"))
         ) #close fluid row
       ) #close well panel
     ) #close fluid page
