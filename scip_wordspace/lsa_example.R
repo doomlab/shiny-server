@@ -68,8 +68,22 @@ plot_wordlist(list1,
               tvectors = import_lsa)
 
 #pick a single text document
-coherence(importdf$V1[3], 
-          tvectors = import_lsa)
 
-genericSummary(importdf$V1[3],
-               k = 1)
+coh_value = rep(NA, length(importdf$V1))
+gen_summary = rep(NA, length(importdf$V1))
+
+##don't run this unless you got time 
+for (i in 1:length(importdf$V1))
+{
+  tryCatch({
+    coh_value[i] = coherence(importdf$V1[i], 
+                             tvectors = import_lsa)$global
+  }, error = function (x) {})
+  
+  tryCatch({
+    gen_summary[i] = genericSummary(importdf$V1[i],
+                   k = 1)
+  }, error = function (x) {})
+}
+
+
