@@ -36,11 +36,21 @@ import_lsa = as.textmatrix(import_lsa)
 ##if you use either space this is the fun stuff
 ##allow them to pick a word to create neighbors from (use rownames)
 ##allow them to put in a number of neighbors
-plot_neighbors("information", 
+temp = plot_neighbors("information", 
                n = 10, 
                tvectors = import_lsa, 
                method = "MDS", 
                dims = 2)
+library(ggplot2)
+neighbor_plot = ggplot(temp, aes(x,y))
+neighbor_plot + 
+  geom_point() + 
+  xlab("Dimension 1") +
+  ylab("Dimension 2")
+#figure out how to add the labels for the dots 
+#also add clean up 
+#put clean up code in new section at the top
+#update graph section 
 
 choose.target("information",
               lower = .3,

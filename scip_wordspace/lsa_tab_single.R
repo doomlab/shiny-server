@@ -3,10 +3,10 @@ lsa_tab_single <- tabItem(tabName = "lsa_tab_single",
                          
                          mainPanel(
                          
-                           titlePanel("LSA Single Word Select"),
+                           titlePanel("LSA Single Word Functions"),
                          
                          selectInput(inputId = "rownames_select", 
-                                     label = "Select Row Names:",
+                                     label = "Select Target Word:",
                                      choices = rownames(import_lsa)
                                      ), #close selectInput
                          
@@ -22,10 +22,10 @@ lsa_tab_single <- tabItem(tabName = "lsa_tab_single",
                          ), #close main panel 
                          
                          mainPanel(
-                           h4("Plot of Nearest Neighbors"),
+                           h4("Plot of Nearest Neighbors:"),
                            plotOutput("lsa_plotneighbors"),
                            br(),
-                           h4("Neighbors Within Selected Cosine Range"),
+                           h4("Neighbors Within Selected Cosine Range:"),
                            DTOutput("lsa_choosetarget")
                            ) #close main panel
                          ) #close fluidRow
