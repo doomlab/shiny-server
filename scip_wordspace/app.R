@@ -200,10 +200,7 @@ server <- function(input, output) {
 
   output$lsa_multicos = renderDataTable({
     
-    multiple = multicos(ncol(input$tvectors), nrow(input$tvectors),
-             tvectors=import_lsa)
-    
-    datatable(multiple)
+    datatable(multicos(input$tags, tvectors=import_lsa))
     
   })
   
