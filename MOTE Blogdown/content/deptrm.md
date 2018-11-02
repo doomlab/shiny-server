@@ -14,9 +14,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays $*d\_{rm}*$ for repeated measures data controlling for *r* and the non-central confidence interval using the average standard deviation of each level as the denominator.
+This function displays $\*d\_{rm}*$ for repeated measures data controlling for *r* and the non-central confidence interval using the average standard deviation of each level as the denominator.
 
-The formula for $*d\_{rm}*$ is: $$d\_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+The formula for $\*d\_{rm}*$ is: $$d\_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
 
 # R Function
 
