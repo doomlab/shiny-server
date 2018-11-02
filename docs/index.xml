@@ -68,7 +68,7 @@ Arguments  mdiff = mean difference score sddiff = standard deviation of the diff
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</guid>
       <description>Description This function displays d_z for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
-The formula for d_{z} is: $$d_{z} = {M_{1} - M_{2}\over SE_{differences}}$$
+The formula for d_z is: $$d_{z} = {M_{1} - M_{2}\over SE_{differences}}$$
 R Function d.dep.t.diff.t(t, n, a = 0.05)
 Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people’s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
