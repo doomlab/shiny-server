@@ -14,9 +14,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays *d* for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the *t*-statistic.
+This function displays *d_z* for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the *t*-statistic.
 
-The formula for *t* is: $$t = {M\_{1} - M\_{2}\over SE\_{differences}}$$
+The formula for *d_z* is: $$d\_{z} = {M\_{1} - M\_{2}\over SE\_{differences}}$$
 
 # R Function
 
@@ -30,9 +30,7 @@ d.dep.t.diff.t(t, n, a = 0.05)
 
 # Example  
 
-In a study to test the effects of science fiction movies on people's belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The t-test value was 1.429. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
-
-In a study to test the effects of science fiction movies on people's belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Participants' scores are shown with high scores indicating high levels of belief. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
+In a study to test the effects of science fiction movies on people’s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated higher levels of belief. The t-test value was 1.429. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
 ![Dependent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png)
@@ -59,7 +57,7 @@ d.dep.t.diff.t(t = 1.429, n = 7, a = .05)
 
 ## Effect Size:
 
-*d* = 0.54, 95% CI [-0.28, 1.32]
+*d_z* = 0.54, 95% CI [-0.28, 1.32]
 
 ## Interpretation: 
 
@@ -76,6 +74,10 @@ Not applicable.
 ## Interpretation: 
 
 Your p-value is greater than the alpha value, and therefore, this test would be considered not statistically significant.
+
+## Sample Writeup: 
+
+The mean measure of belief on the pretest was 5.57, with a standard deviation of 1.99. The posttest scores appeared lower (M = 4.43, SD = 2.88) but the dependent t-test was not significant using alpha = .05, *t(6)* = 1.43, *p* = .203, *d_z* = 0.54, suggesting the movie may have influenced belief in the supernatural with a medium effect size.
 
 # Tutorial
 

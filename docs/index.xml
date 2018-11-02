@@ -42,9 +42,9 @@ Arguments  x2 = chi-square statistic n = sample size r = number of rows in the c
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</guid>
-      <description>Description This function displays d for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
-R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05)
+      <description>Description This function displays d_av for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for {d_av} is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
     
@@ -55,7 +55,7 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</guid>
       <description>Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{differences}}$$
+The formula for d is: $$d_z = {M_{1} - M_{2}\over SD_{differences}}$$
 The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
 R Function d.dep.t.diff(mdiff, sddiff, n, a = 0.05)
 Arguments  mdiff = mean difference score sddiff = standard deviation of the difference scores n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
@@ -67,10 +67,10 @@ Arguments  mdiff = mean difference score sddiff = standard deviation of the diff
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</guid>
-      <description>Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
+      <description>Description This function displays d_z for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
+The formula for d_{z} is: $$d_{z} = {M_{1} - M_{2}\over SE_{differences}}$$
 R Function d.dep.t.diff.t(t, n, a = 0.05)
-Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people’s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
     
     <item>
@@ -215,11 +215,11 @@ Arguments  t = t-test value
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</guid>
-      <description>Description This function displays d-delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d is $$d = {M_{control} - M_{exp}\over SD_{control}}$$
+      <description>Description This function displays d_delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for d_delta is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
 The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
 R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
+Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Information Provided Provides the effect size (Cohen&amp;rsquo;s d_delta) with associated confidence intervals, the t-statistic, the confidence intervals associated with the means of each group, as well as the standard deviations and standard errors of the means for each group.</description>
     </item>
     
     <item>

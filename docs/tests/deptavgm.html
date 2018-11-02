@@ -26,13 +26,13 @@
     
 
     
-    <meta name="description" content="Description This function displays d for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
-R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05)
+    <meta name="description" content="Description This function displays d_av for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for {d_av} is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
+R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
-    <meta property="og:description" content="Description This function displays d for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
-R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05)
+    <meta property="og:description" content="Description This function displays d_av for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for {d_av} is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
+R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Dependent t Averages - Means">
@@ -40,9 +40,9 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description This function displays d for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
-R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05)
+    <meta name="twitter:description" content="Description This function displays d_av for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for {d_av} is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
+R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     
       <meta name="twitter:creator" content="@statstools">
@@ -220,13 +220,13 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="description">Description</h1>
 
-<p>This function displays <em>d</em> for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.</p>
+<p>This function displays <em>d_av</em> for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.</p>
 
-<p>The formula for <em>d</em> is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$</p>
+<p>The formula for <em>{d_av}</em> is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05)</p>
+<p>d.dep.t.avg(m1, m2, sd1, sd2, n, a)</p>
 
 <h1 id="arguments">Arguments</h1>
 
@@ -241,7 +241,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="example">Example</h1>
 
-<p>In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The mean measure of belief on the pretest was 5.571, while the posttest average score was lower, 4.429. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
+<p>In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The mean measure of belief on the pretest was 5.57, while the posttest average score was lower, 4.43. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
 <p><strong>JASP</strong>
 <img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png" alt="Dependent t JASP" /></p>
@@ -257,13 +257,13 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 <li>m2 = 4.429</li>
 <li>sd1 = 1.988</li>
 <li>sd2   = 2.878</li>
-<li>n = 14</li>
+<li>n = 7</li>
 <li>a = .05</li>
 </ul>
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>d.dep.t.avg(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, n = 14, a = .05)</p>
+<p>d.dep.t.avg(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, n = 7, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
@@ -273,7 +273,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d</em> = 0.47, 95% CI [-0.09, 1.01]</p>
+<p><em>d_av</em> = 0.47, 95% CI [-0.33, 1.24]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
@@ -281,9 +281,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>Group 1 Summary Statistics: <em>M</em> = 5.57, <em>SD</em> = 1.99, <em>SE</em> = 0.53, 95% CI [4.42, 6.72]</p>
+<p>Group 1 Summary Statistics: <em>M</em> = 5.57, <em>SD</em> = 1.99, <em>SE</em> = 0.75, 95% CI [3.73,  7.41]</p>
 
-<p>Group 2 Summary Statistics: <em>M</em> = 4.43, <em>SD</em> = 2.88, <em>SE</em> = 0.77, 95% CI [2.77, 6.09]</p>
+<p>Group 2 Summary Statistics: <em>M</em> = 4.43, <em>SD</em> = 2.88, <em>SE</em> = 1.09, 95% CI [1.77, 7.09]</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
@@ -292,6 +292,11 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 <h2 id="interpretation-1">Interpretation:</h2>
 
 <p>Not applicable.</p>
+
+<h2 id="sample-writeup">Sample Writeup:</h2>
+
+<p>The mean measure of belief on the pretest was 5.57, with a standard deviation of 1.99. The posttest scores appeared lower (M = 4.43, SD = 2.88) but the dependent t-test was not significant using alpha = .05,
+<em>t(6)</em> = 1.43, <em>p</em> = .203, <em>d_av</em> = 0.47. The effect size was a medium effect suggesting that the movie may have influenced belief in the supernatural.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 

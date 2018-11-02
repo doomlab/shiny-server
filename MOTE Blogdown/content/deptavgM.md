@@ -14,16 +14,15 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays *d* for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
+This function displays *d_av* for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
 
-The formula for *d* is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+The formula for *{d\_av}* is: $$d\_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
 
 # R Function
 
-d.dep.t.avg(m1, m2, sd1, sd2, n, a = 0.05) 
+d.dep.t.avg(m1, m2, sd1, sd2, n, a) 
 
 # Arguments 
-
 
 + m1 = mean from first level
 + m2 = mean from second level
@@ -83,6 +82,11 @@ Not applicable.
 ## Interpretation: 
 
 Not applicable.
+
+## Sample Writeup:
+
+The mean measure of belief on the pretest was 5.57, with a standard deviation of 1.99. The posttest scores appeared lower (M = 4.43, SD = 2.88) but the dependent t-test was not significant using alpha = .05,
+*t(6)* = 1.43, *p* = .203, *d_av* = 0.47. The effect size was a medium effect suggesting that the movie may have influenced belief in the supernatural.
 
 # Tutorial
 
