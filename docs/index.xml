@@ -67,8 +67,8 @@ Arguments  mdiff = mean difference score sddiff = standard deviation of the diff
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</guid>
-      <description>Description This function displays ($d_{z}$) for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
-The formula for ($d_{z}$) is: $$d_{z} = {M_{1} - M_{2}\over SE_{differences}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
+The formula for $d_{z}$ is: $$d_{z} = {M_{1} - M_{2}\over SE_{differences}}$$
 R Function d.dep.t.diff.t(t, n, a = 0.05)
 Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people’s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
@@ -79,8 +79,8 @@ Arguments  t = t-test value n = sample size a = significance level  Example In a
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptrm.html</guid>
-      <description>Description This function displays $*d_{rm}*$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for $*d_{rm}*$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{rm}$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
 R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
@@ -215,8 +215,8 @@ Arguments  t = t-test value
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</guid>
-      <description>Description This function displays d_delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d_delta is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for $d_{delta}$ is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
 The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
 R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Information Provided Provides the effect size (Cohen&amp;rsquo;s d_delta) with associated confidence intervals, the t-statistic, the confidence intervals associated with the means of each group, as well as the standard deviations and standard errors of the means for each group.</description>

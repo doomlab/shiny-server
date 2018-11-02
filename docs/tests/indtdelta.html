@@ -26,13 +26,13 @@
     
 
     
-    <meta name="description" content="Description This function displays d_delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d_delta is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
+    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for $d_{delta}$ is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
 The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
 R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Information Provided Provides the effect size (Cohen&rsquo;s d_delta) with associated confidence intervals, the t-statistic, the confidence intervals associated with the means of each group, as well as the standard deviations and standard errors of the means for each group.">
-    <meta property="og:description" content="Description This function displays d_delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d_delta is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
+    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for $d_{delta}$ is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
 The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
 R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Information Provided Provides the effect size (Cohen&rsquo;s d_delta) with associated confidence intervals, the t-statistic, the confidence intervals associated with the means of each group, as well as the standard deviations and standard errors of the means for each group.">
@@ -42,8 +42,8 @@ Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = 
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description This function displays d_delta for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for d_delta is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
+    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for $d_{delta}$ is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
 The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
 R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Information Provided Provides the effect size (Cohen&rsquo;s d_delta) with associated confidence intervals, the t-statistic, the confidence intervals associated with the means of each group, as well as the standard deviations and standard errors of the means for each group.">
@@ -217,15 +217,22 @@ Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = 
               
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 <h1 id="description">Description</h1>
 
-<p>This function displays <em>d_delta</em> for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.</p>
+<p>This function displays $d_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.</p>
 
-<p>The formula for <em>d_delta</em> is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$</p>
+<p>The formula for $d_{delta}$ is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$</p>
 
 <p>The formula for <em>t</em> is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$</p>
 
@@ -309,7 +316,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d_delta</em> = -1.59, 95% CI [-3.57, -0.10]</p>
+<p>$d_{delta}$ = -1.59, 95% CI [-3.57, -0.10]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
@@ -331,7 +338,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="sample-writeup">Sample Writeup</h1>
 
-<p>Contrary to the hypothesized result, the group that underwent hypnosis was significantly less accurate while reporting facts than the control group with a large effect size, <em>t(6)</em> = -2.66, <em>p</em> = .038, <em>d_delta</em> = 1.59.</p>
+<p>Contrary to the hypothesized result, the group that underwent hypnosis was significantly less accurate while reporting facts than the control group with a large effect size, <em>t(6)</em> = -2.66, <em>p</em> = .038, $d_{delta}$ = 1.59.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 

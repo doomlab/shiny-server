@@ -8,15 +8,22 @@ showDate: false
 ---
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 # Description   
 
-This function displays $\*d\_{rm}*$ for repeated measures data controlling for *r* and the non-central confidence interval using the average standard deviation of each level as the denominator.
+This function displays $d\_{rm}$ for repeated measures data controlling for *r* and the non-central confidence interval using the average standard deviation of each level as the denominator.
 
-The formula for $\*d\_{rm}*$ is: $$d\_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+The formula for $d\_{rm}$ is: $$d\_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
 
 # R Function
 
@@ -65,7 +72,7 @@ d.dep.t.rm(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, r = .678, n = 7, a 
 
 ## Effect Size:
 
-*d* = 0.43, 95% CI [-0.68, 0.80]
+$d\_{rm}$ = 0.43, 95% CI [-0.68, 0.80]
 
 ## Interpretation: 
 
@@ -84,6 +91,10 @@ Not applicable.
 ## Interpretation: 
 
 Not applicable. 
+
+# Sample Writeup
+
+The mean measure of belief on the pretest was 5.57, with a standard deviation of 1.99. The posttest scores appeared lower (*M* = 4.43, *SD* = 2.88) but the dependent t-test was not significant using alpha = .05, *t*(6) = 1.43, *p* = .203, $d\_{rm}$ = 0.43. The medium effect size suggests that the movie may have influenced belief in the supernatural.
 
 # Tutorial
 

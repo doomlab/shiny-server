@@ -26,12 +26,12 @@
     
 
     
-    <meta name="description" content="Description This function displays $*d_{rm}*$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for $*d_{rm}*$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
+    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{rm}$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
 R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
-    <meta property="og:description" content="Description This function displays $*d_{rm}*$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for $*d_{rm}*$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
+    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{rm}$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
 R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     <meta property="og:type" content="blog">
@@ -40,8 +40,8 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description This function displays $*d_{rm}*$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for $*d_{rm}*$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
+    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{rm}$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
 R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     
@@ -214,15 +214,22 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
               
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 <h1 id="description">Description</h1>
 
-<p>This function displays $*d_{rm}*$ for repeated measures data controlling for <em>r</em> and the non-central confidence interval using the average standard deviation of each level as the denominator.</p>
+<p>This function displays $d_{rm}$ for repeated measures data controlling for <em>r</em> and the non-central confidence interval using the average standard deviation of each level as the denominator.</p>
 
-<p>The formula for $*d_{rm}*$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$</p>
+<p>The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
@@ -275,7 +282,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d</em> = 0.43, 95% CI [-0.68, 0.80]</p>
+<p>$d_{rm}$ = 0.43, 95% CI [-0.68, 0.80]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
@@ -294,6 +301,10 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 <h2 id="interpretation-1">Interpretation:</h2>
 
 <p>Not applicable.</p>
+
+<h1 id="sample-writeup">Sample Writeup</h1>
+
+<p>The mean measure of belief on the pretest was 5.57, with a standard deviation of 1.99. The posttest scores appeared lower (<em>M</em> = 4.43, <em>SD</em> = 2.88) but the dependent t-test was not significant using alpha = .05, <em>t</em>(6) = 1.43, <em>p</em> = .203, $d_{rm}$ = 0.43. The medium effect size suggests that the movie may have influenced belief in the supernatural.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 

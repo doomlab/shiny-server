@@ -8,15 +8,22 @@ showDate: false
 ---
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 # Description   
 
-This function displays *d_delta* for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+This function displays $d\_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
 
-The formula for *d_delta* is $$d\_{delta} = {M\_{control} - M\_{exp}\over SD\_{control}}$$
+The formula for $d\_{delta}$ is $$d\_{delta} = {M\_{control} - M\_{exp}\over SD\_{control}}$$
 
 The formula for *t* is $$t = {M\_{control} - M\_{exp}\over SE\_{pooled}}$$
 
@@ -94,7 +101,7 @@ delta.ind.t(m1 = 17.75, m2 = 23.00, sd1 = 3.304, sd2 = 2.160, n1 = 4, n2 = 4, a 
 
 ## Effect Size:
 
-*d_delta* = -1.59, 95% CI [-3.57, -0.10]
+$d\_{delta}$ = -1.59, 95% CI [-3.57, -0.10]
 
 ## Interpretation: 
 
@@ -116,7 +123,7 @@ Your p-value is less than the alpha value, and therefore, this test would be con
 
 # Sample Writeup
 
-Contrary to the hypothesized result, the group that underwent hypnosis was significantly less accurate while reporting facts than the control group with a large effect size, *t(6)* = -2.66, *p* = .038, *d_delta* = 1.59.
+Contrary to the hypothesized result, the group that underwent hypnosis was significantly less accurate while reporting facts than the control group with a large effect size, *t(6)* = -2.66, *p* = .038, $d\_{delta}$ = 1.59.
 
 # Tutorial
 
