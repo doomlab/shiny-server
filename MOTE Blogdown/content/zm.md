@@ -2,8 +2,8 @@
 title: Z Test - Means
 author: DOOM Lab
 date: '2018-05-09'
-slug: ztestmeans
-url: /tests/ztestmeans.html
+slug: zm
+url: /tests/zm.html
 showDate: false
 ---
 

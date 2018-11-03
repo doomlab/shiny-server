@@ -2,8 +2,8 @@
 title: Z Test - Z
 author: DOOM Lab
 date: '2018-05-09'
-slug: ztestz
-url: /tests/ztestz.html
+slug: zz
+url: /tests/zz.html
 showDate: false
 ---
 
