@@ -24,6 +24,7 @@ lsa_tab_single <- tabItem(tabName = "lsa_tab_single",
                          mainPanel(
                            h4("Plot of Nearest Neighbors:"),
                            plotOutput("lsa_plotneighbors"),
+                           plotOutput("neighbor_plot"),
                            br(),
                            h4("Neighbors Within Selected Cosine Range:"),
                            DTOutput("lsa_choosetarget")
