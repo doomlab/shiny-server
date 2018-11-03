@@ -409,7 +409,7 @@ Arguments  r = correlation coefficient n = sample size a = significance level  E
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent t - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent t - t&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtdelta.html&#34;&gt;Independent t Delta - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtg.html&#34;&gt;Independent t g - Means&lt;/a&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtg.html&#34;&gt;Independent t g - Means&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtprop.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;

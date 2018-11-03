@@ -19,9 +19,9 @@ tags: []
   [Dependent t Differences - t](https://www.aggieerin.com/shiny-server/tests/deptdifft.html)     
   [Dependent t Repeated Measures](https://www.aggieerin.com/shiny-server/tests/deptrm.html)        
   [Independent t - Means](https://www.aggieerin.com/shiny-server/tests/indtm.html)      
-  [Independent t - t](https://www.aggieerin.com/shiny-server/tests/indtt.html)      
+  [Independent t - t](https://www.aggieerin.com/shiny-server/tests/indtt.html)           
   [Independent t Delta - Means](https://www.aggieerin.com/shiny-server/tests/indtdelta.html)   
-  [Independent t g - Means](https://www.aggieerin.com/shiny-server/tests/indtg.html)
+  [Independent t g - Means](https://www.aggieerin.com/shiny-server/tests/indtg.html)     
   [Independent Proportions](https://www.aggieerin.com/shiny-server/tests/indtprop.html)   
   
 # Variance Overlap
