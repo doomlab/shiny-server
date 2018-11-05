@@ -57,7 +57,8 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
 The formula for $d_{z}$ is: $$d_{z} = {\bar{D}\over S_{D}}$$
 The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
-$\bar{D}$ = Mean difference score $S_{D}$ = Standard deviation of difference scores
+$\bar{D}$ = Mean difference score
+$S_{D}$ = Standard deviation of difference scores
 R Function d.</description>
     </item>
     

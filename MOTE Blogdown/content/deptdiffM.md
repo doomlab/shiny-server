@@ -27,7 +27,7 @@ The formula for $d\_{z}$ is: $$d\_{z} = {\bar{D}\over S\_{D}}$$
  
 The formula for *t* is: $$t = {M\_{1} - M\_{2}\over SE\_{differences}}$$
 
-$\bar{D}$ = Mean difference score
+$\bar{D}$ = Mean difference score     
 $S\_{D}$ = Standard deviation of difference scores
 
 # R Function
