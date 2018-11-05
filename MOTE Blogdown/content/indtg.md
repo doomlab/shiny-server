@@ -23,9 +23,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays $d\_{g}$ corrected and the non-central confidence interval for independent t.
 
-The formula for $d\_{g}$ is: $$d\_{g}$ = M\_{1} - M\_{2}\over{SD\_{pooled}}*(1-{3\over4*(N\_{1}+N\_{2})-9})$$
+The formula for $d\_{g}$ is: $$d\_{g} = M\_{1} - M\_{2}\overSD\_{pooled}*(1-{3\over4*(N\_{1}+N\_{2})-9})$$
  
-The formula for *t* is: $$t = \frac{M\_{1} - M\_{2}{SE\_{pooled}}$$
+The formula for *t* is: $$t = M\_{1} - M\_{2}\overSE\_{pooled}$$
 
 # R Function
 
