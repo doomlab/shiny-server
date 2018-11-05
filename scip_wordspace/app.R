@@ -232,6 +232,17 @@ server <- function(input, output) {
     
   })
 
+  # Topics Tab --------------------------------------------------------------
+
+  #alpha
+  
+  #entropy
+  
+  #number of topics
+  
+  #terms by topic
+  
+  #frequent words for frequent topics
   
   }
 
