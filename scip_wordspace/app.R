@@ -95,6 +95,7 @@ source("data_tab.R")
 source("ourdata_tab.R")
 source("lsa_tab_single.R")
 source("lsa_tab_multiple.R")
+source("topics_tab.R")
 
 # Define UI ---------------------------------------------------------------
 ui <- dashboardPage(
@@ -104,7 +105,8 @@ ui <- dashboardPage(
       menuItem("1. Upload Data", tabName = "data_tab"),
       menuItem("2. Use Our Data", tabName = "ourdata_tab"),
       menuItem("3. LSA Single Word Functions", tabName = "lsa_tab_single"),
-      menuItem("4. LSA Multiple Word Functions", tabName = "lsa_tab_multiple")
+      menuItem("4. LSA Multiple Word Functions", tabName = "lsa_tab_multiple"),
+      menuItem("5. Topic Structure", tabName = "topics_tab")
     )
   ),
   dashboardBody(
@@ -112,7 +114,8 @@ ui <- dashboardPage(
       data_tab,
       ourdata_tab,
       lsa_tab_single,
-      lsa_tab_multiple
+      lsa_tab_multiple,
+      topics_tab
       ) # end tabItems
     ) # end dashboardBody
   ) # end dashboardPage
