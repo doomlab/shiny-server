@@ -23,7 +23,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays $d\_{s}$ for between subjects data and the non-central confidence interval estimating from the t-statistic.
 
-The formula for $d\_{s}$ is: $$d\_{s}$ = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
+The formula for $d\_{s}$ is: $$d\_{s} = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
  
 The formula for *t* is: $$t = \frac{M_1 - M_2}{SE}$$
 
