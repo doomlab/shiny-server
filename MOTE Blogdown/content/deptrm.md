@@ -43,14 +43,6 @@ d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
 
 In a study to test the effects of science fiction movies on people's belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Participants' scores are shown with high scores indicating high levels of belief. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
-+ m1 = 5.571
-+ m2 = 4.429
-+ sd1	= 1.988
-+ sd2	= 2.878
-+ r	= .678
-+ n	= 7
-+ a	= .05
-
 **JASP**
 ![Dependent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png)
 
@@ -59,6 +51,14 @@ In a study to test the effects of science fiction movies on people's belief in t
 
 **SAS**
 ![Dependent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG)
+
++ m1 = 5.571
++ m2 = 4.429
++ sd1	= 1.988
++ sd2	= 2.878
++ r	= .678
++ n	= 7
++ a	= .05
 
 # Function in R: 
 

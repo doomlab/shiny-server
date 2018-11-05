@@ -8,15 +8,22 @@ showDate: false
 ---
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 # Description   
 
-This function displays *d* for between subjects data and the non-central confidence interval estimating from the t-statistic.
+This function displays $d\_{s}$ for between subjects data and the non-central confidence interval estimating from the t-statistic.
 
-The formula for *d* is: $$d = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
+The formula for $d\_{s}$ is: $$d\_{s}$ = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
  
 The formula for *t* is: $$t = \frac{M_1 - M_2}{SE}$$
 
@@ -49,15 +56,6 @@ A forensic psychologist conducted a study to examine whether being hypnotized du
 + n2 = 4
 + a	= .05
 
-**JASP**
-![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
-
-**SPSS**
-![Independent t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png)
-
-**SAS**
-![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
-
 # Function in R: 
 
 d.ind.t.t(t = -2.66, n1 = 4, n2 = 4, a = .05)
@@ -70,7 +68,7 @@ d.ind.t.t(t = -2.66, n1 = 4, n2 = 4, a = .05)
 
 ## Effect Size:
 
-*d* = -2.17, 95% CI [-3.57, -0.10]
+$d\_{s}$ = -2.17, 95% CI [-3.57, -0.10]
 
 ## Interpretation: 
 

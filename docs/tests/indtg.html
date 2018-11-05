@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.50 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>d-g corrected for Independent t</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
@@ -26,15 +26,15 @@
     
 
     
-    <meta name="description" content="Description This function displays d-g corrected and the non-central confidence interval for independent t.
-The formula for d is: $$d = \frac{M_1 - M2}{SD{pooled}}(1-\frac{3}{4(N_1&#43;N_2)-9})$$
-The formula for t is: $$t = \frac{M_1 - M2}{SE{pooled}}$$
+    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{g}$ corrected and the non-central confidence interval for independent t.
+The formula for $d_{g}$ is: $$d_{g}$ = \frac{M_{1} - M_{2}}{SD_{pooled}}(1-\frac{3}{4(N_{1}&#43;N_{2})-9})$$
+The formula for t is: $$t = \frac{M_{1} - M_{2}{SE_{pooled}}$$
 R Function g.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean one
  m2 = mean two sd1 = standard deviation group one sd2 = standard deviation group two n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
-    <meta property="og:description" content="Description This function displays d-g corrected and the non-central confidence interval for independent t.
-The formula for d is: $$d = \frac{M_1 - M2}{SD{pooled}}(1-\frac{3}{4(N_1&#43;N_2)-9})$$
-The formula for t is: $$t = \frac{M_1 - M2}{SE{pooled}}$$
+    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{g}$ corrected and the non-central confidence interval for independent t.
+The formula for $d_{g}$ is: $$d_{g}$ = \frac{M_{1} - M_{2}}{SD_{pooled}}(1-\frac{3}{4(N_{1}&#43;N_{2})-9})$$
+The formula for t is: $$t = \frac{M_{1} - M_{2}{SE_{pooled}}$$
 R Function g.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean one
  m2 = mean two sd1 = standard deviation group one sd2 = standard deviation group two n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
@@ -44,9 +44,9 @@ Arguments  m1 = mean one
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description This function displays d-g corrected and the non-central confidence interval for independent t.
-The formula for d is: $$d = \frac{M_1 - M2}{SD{pooled}}(1-\frac{3}{4(N_1&#43;N_2)-9})$$
-The formula for t is: $$t = \frac{M_1 - M2}{SE{pooled}}$$
+    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{g}$ corrected and the non-central confidence interval for independent t.
+The formula for $d_{g}$ is: $$d_{g}$ = \frac{M_{1} - M_{2}}{SD_{pooled}}(1-\frac{3}{4(N_{1}&#43;N_{2})-9})$$
+The formula for t is: $$t = \frac{M_{1} - M_{2}{SE_{pooled}}$$
 R Function g.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean one
  m2 = mean two sd1 = standard deviation group one sd2 = standard deviation group two n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.">
@@ -220,17 +220,24 @@ Arguments  m1 = mean one
               
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 <h1 id="description">Description</h1>
 
-<p>This function displays <em>d</em>-g corrected and the non-central confidence interval for independent t.</p>
+<p>This function displays $d_{g}$ corrected and the non-central confidence interval for independent t.</p>
 
-<p>The formula for <em>d</em> is: $$d = \frac{M_1 - M<em>2}{SD</em>{pooled}}<em>(1-\frac{3}{4</em>(N_1+N_2)-9})$$</p>
+<p>The formula for $d_{g}$ is: $$d_{g}$ = \frac{M_{1} - M_{2}}{SD_{pooled}}<em>(1-\frac{3}{4</em>(N_{1}+N_{2})-9})$$</p>
 
-<p>The formula for <em>t</em> is: $$t = \frac{M_1 - M<em>2}{SE</em>{pooled}}$$</p>
+<p>The formula for <em>t</em> is: $$t = \frac{M_{1} - M_{2}{SE_{pooled}}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
@@ -266,19 +273,10 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 <li>m2    = 4</li>
 <li>sd1 = 4</li>
 <li>sd2   = .05</li>
-<li>n1 =</li>
-<li>n2 =</li>
-<li>a =</li>
+<li>n1 = 4</li>
+<li>n2 = 4</li>
+<li>a = .05</li>
 </ul>
-
-<p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
-
-<p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
-
-<p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
 
 <h1 id="function-in-r">Function in R:</h1>
 
@@ -292,7 +290,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p><em>d</em> = -2.17, 95% CI [-3.57, -0.10]</p>
+<p>$d_{g}$ = -2.17, 95% CI [-3.57, -0.10]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 

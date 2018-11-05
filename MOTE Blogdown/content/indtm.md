@@ -8,6 +8,13 @@ showDate: false
 ---
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
@@ -16,9 +23,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
 
-The formula for *d* is: $$d = {M\_{1} - M\_{2}\over SD\_{pooled}}$$
+The formula for $d\_{s}$ is: $$d = {M\_{1} - M\_{2}\over SD\_{pooled}}$$
 
-The formula for *t* is: $$t = {M\_{1} - M\_{2}\over SE\_{pooled}}$$
+The formula for $d\_{s}$ is: $$t = {M\_{1} - M\_{2}\over SE\_{pooled}}$$
 
 # R Function
 
@@ -38,14 +45,6 @@ d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 
 A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event. Eight participants watched a short film of a mock robbery, after which each participant was questioned about what he or she had seen. The four participants in the experimental group were questioned while they were hypnotized and gave 14, 22, 18, and 17 accurate responses. The four participants in the control group gave 20, 25, 24, and 23 accurate responses. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
-+ m1 = 17.75  
-+ m2 = 23.00   
-+ sd1	= 3.304  
-+ sd2	= 2.160   
-+ n1	= 4
-+ n2 = 4
-+ a	= .05
-
 **JASP**
 ![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
 
@@ -54,6 +53,14 @@ A forensic psychologist conducted a study to examine whether being hypnotized du
 
 **SAS**
 ![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
+
++ m1 = 17.75  
++ m2 = 23.00   
++ sd1	= 3.304  
++ sd2	= 2.160   
++ n1	= 4
++ n2 = 4
++ a	= .05
 
 # Function in R: 
 

@@ -8,17 +8,24 @@ showDate: false
 ---
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 # Description   
 
-This function displays *d*-g corrected and the non-central confidence interval for independent t.
+This function displays $d\_{g}$ corrected and the non-central confidence interval for independent t.
 
-The formula for *d* is: $$d = \frac{M_1 - M_2}{SD_{pooled}}*(1-\frac{3}{4*(N_1+N_2)-9})$$
+The formula for $d\_{g}$ is: $$d\_{g}$ = \frac{M\_{1} - M\_{2}}{SD\_{pooled}}*(1-\frac{3}{4*(N\_{1}+N\_{2})-9})$$
  
-The formula for *t* is: $$t = \frac{M_1 - M_2}{SE_{pooled}}$$
+The formula for *t* is: $$t = \frac{M\_{1} - M\_{2}{SE\_{pooled}}$$
 
 # R Function
 
@@ -51,18 +58,9 @@ A forensic psychologist conducted a study to examine whether being hypnotized du
 + m2	= 4
 + sd1 = 4
 + sd2	= .05
-+ n1 = 
-+ n2 = 
-+ a = 
-
-**JASP**
-![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
-
-**SPSS**
-![Independent t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png)
-
-**SAS**
-![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
++ n1 = 4
++ n2 = 4
++ a = .05
 
 # Function in R: 
 
@@ -76,7 +74,7 @@ d.ind.t.t(t = -2.66, n1 = 4, n2 = 4, a = .05)
 
 ## Effect Size:
 
-*d* = -2.17, 95% CI [-3.57, -0.10]
+$d\_{g}$ = -2.17, 95% CI [-3.57, -0.10]
 
 ## Interpretation: 
 

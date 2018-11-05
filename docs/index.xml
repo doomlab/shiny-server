@@ -42,8 +42,8 @@ Arguments  x2 = chi-square statistic n = sample size r = number of rows in the c
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</guid>
-      <description>Description This function displays d_av for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for {d_av} is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{av}$ for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for $d_{av}$ is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
 R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a)
 Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
@@ -54,11 +54,11 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</guid>
-      <description>Description This function displays d for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for d is: $$d_z = {M_{1} - M_{2}\over SD_{differences}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $$d_{z} for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
+The formula for $$d_{z} is: $$d_{z} = {D\bar\over S_{D}}$$
 The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
-R Function d.dep.t.diff(mdiff, sddiff, n, a = 0.05)
-Arguments  mdiff = mean difference score sddiff = standard deviation of the difference scores n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+$D\bar$ = Mean difference score $S_{D}$ = Standard deviation of difference scores
+R Function d.</description>
     </item>
     
     <item>
@@ -187,12 +187,11 @@ Arguments  p1 = proportion of people group one p2 = proportion of people group t
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
-      <description>Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
+The formula for $d_{s}$ is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
+The formula for $d_{s}$ is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
 R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two</description>
+Arguments  m1 = mean group one</description>
     </item>
     
     <item>
@@ -201,8 +200,8 @@ Arguments  m1 = mean group one
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtt.html</guid>
-      <description>Description This function displays d for between subjects data and the non-central confidence interval estimating from the t-statistic.
-The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{s}$ for between subjects data and the non-central confidence interval estimating from the t-statistic.
+The formula for $d_{s}$ is: $$d_{s}$ = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
 The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
 R Function d.ind.t.t(t, n1, n2, a = 0.05)
 Arguments  t = t-test value
@@ -219,7 +218,7 @@ Arguments  t = t-test value
 The formula for $d_{delta}$ is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
 The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
 R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Information Provided Provides the effect size (Cohen&amp;rsquo;s d_delta) with associated confidence intervals, the t-statistic, the confidence intervals associated with the means of each group, as well as the standard deviations and standard errors of the means for each group.</description>
+Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
     </item>
     
     <item>
@@ -357,9 +356,9 @@ Arguments  d = mean from first level n1 = mean from second level n2 = standard d
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtg.html</guid>
-      <description>Description This function displays d-g corrected and the non-central confidence interval for independent t.
-The formula for d is: $$d = \frac{M_1 - M2}{SD{pooled}}(1-\frac{3}{4(N_1+N_2)-9})$$
-The formula for t is: $$t = \frac{M_1 - M2}{SE{pooled}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{g}$ corrected and the non-central confidence interval for independent t.
+The formula for $d_{g}$ is: $$d_{g}$ = \frac{M_{1} - M_{2}}{SD_{pooled}}(1-\frac{3}{4(N_{1}+N_{2})-9})$$
+The formula for t is: $$t = \frac{M_{1} - M_{2}{SE_{pooled}}$$
 R Function g.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean one
  m2 = mean two sd1 = standard deviation group one sd2 = standard deviation group two n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>

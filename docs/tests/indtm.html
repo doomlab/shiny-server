@@ -17,7 +17,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.50 with theme Tranquilpeak 0.4.3-BETA">
+    <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
     <title>Independent t - Means</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
@@ -26,30 +26,27 @@
     
 
     
-    <meta name="description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
+    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
+The formula for $d_{s}$ is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
+The formula for $d_{s}$ is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
 R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
-    <meta property="og:description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
+Arguments  m1 = mean group one">
+    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
+The formula for $d_{s}$ is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
+The formula for $d_{s}$ is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
 R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
+Arguments  m1 = mean group one">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Independent t - Means">
     <meta property="og:url" content="/tests/indtm.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for d is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
+    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
+The formula for $d_{s}$ is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
+The formula for $d_{s}$ is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
 R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one
- m2 = mean group two">
+Arguments  m1 = mean group one">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -220,6 +217,13 @@ Arguments  m1 = mean group one
               
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
@@ -228,9 +232,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.</p>
 
-<p>The formula for <em>d</em> is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$</p>
+<p>The formula for $d_{s}$ is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$</p>
 
-<p>The formula for <em>t</em> is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$</p>
+<p>The formula for $d_{s}$ is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
@@ -252,6 +256,15 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event. Eight participants watched a short film of a mock robbery, after which each participant was questioned about what he or she had seen. The four participants in the experimental group were questioned while they were hypnotized and gave 14, 22, 18, and 17 accurate responses. The four participants in the control group gave 20, 25, 24, and 23 accurate responses. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
+
+<p><strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
+
 <ul>
 <li>m1 = 17.75<br /></li>
 <li>m2 = 23.00<br /></li>
@@ -261,15 +274,6 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 <li>n2 = 4</li>
 <li>a = .05</li>
 </ul>
-
-<p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
-
-<p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
-
-<p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
 
 <h1 id="function-in-r">Function in R:</h1>
 
