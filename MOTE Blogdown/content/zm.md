@@ -8,15 +8,22 @@ showDate: false
 ---
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 # Description   
 
-This function displays *d* for *z*-scores with the population mean and standard deviation. The normal confidence interval is also provided. 
+This function displays $d\_{z}$ for *z*-test with the population mean and standard deviation. The normal confidence interval is also provided. 
 
-The formula for *d* is: $$d = \frac{M - \mu}{\sigma}$$
+The formula for $d\_{z}$ is: $$d = \frac{M - \mu}{\sigma}$$
 
 The formula for *Z* is: $$Z = \frac{M - \mu}{\sigma_M}$$
 
@@ -56,7 +63,7 @@ d.z.mean(mu = 22.5, m1 = 19, sig = 10, sd1 = 5, n = 25, a = .05)
 
 ## Effect Size:
 
-*d* = 2.50, 95% CI [-7.30, 12.30]
+$d\_{z}$ = 2.50, 95% CI [-7.30, 12.30]
 
 ## Interpretation: 
 

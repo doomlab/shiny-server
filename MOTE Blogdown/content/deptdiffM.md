@@ -21,9 +21,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays $$d\_{z} for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
+This function displays $d\_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
 
-The formula for $$d\_{z} is: $$d\_{z} = {D\bar\over S\_{D}}$$
+The formula for $d\_{z}$ is: $$d\_{z} = {D\bar\over S\_{D}}$$
  
 The formula for *t* is: $$t = {M\_{1} - M\_{2}\over SE\_{differences}}$$
 

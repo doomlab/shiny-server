@@ -54,8 +54,8 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $$d_{z} for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for $$d_{z} is: $$d_{z} = {D\bar\over S_{D}}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
+The formula for $d_{z}$ is: $$d_{z} = {D\bar\over S_{D}}$$
 The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
 $D\bar$ = Mean difference score $S_{D}$ = Standard deviation of difference scores
 R Function d.</description>
@@ -315,13 +315,12 @@ Summary Statistics: INCLUDE SUMMARY STATISTICS FROM MOTE</description>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/zm.html</guid>
-      <description>Description This function displays d for z-scores with the population mean and standard deviation. The normal confidence interval is also provided.
-The formula for d is: $$d = \frac{M - \mu}{\sigma}$$
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for z-test with the population mean and standard deviation. The normal confidence interval is also provided.
+The formula for $d_{z}$ is: $$d = \frac{M - \mu}{\sigma}$$
 The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
 R Function d.z.mean(mu, m1, sig, sd1, n, a = 0.05)
 Arguments  mu = population mean
- m1 = sample study mean
- sig = population standard deviation</description>
+ m1 = sample study mean</description>
     </item>
     
     <item>
@@ -330,11 +329,10 @@ Arguments  mu = population mean
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/zz.html</guid>
-      <description>Description This function displays d for z-scores when all you have is the z-statistics. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
-The formula for d is: $$d = \frac{Z}{\sqrt(N)}$$
-The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
-R Function d.z.z(z, sig = NA, n, a = 0.05)
-Arguments  z = statistic sig = population standard deviation n = sample size a = significance level  Example A recent study suggested that students (N = 100) learning statistics improved their test scores with the use of visual aids (Z = 2.</description>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for Z-tests based on the Z-statistic. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+The formula for $d_{z}$ is: $$d_{z} = \frac{Z}{\sqrt(N)}$$
+The formula for $d_{z}$ is: $$d_{z} = \frac{M - \mu}{\sigma_M}$$
+R Function d.z.z(z, sig = NA, n, a = 0.</description>
     </item>
     
     <item>

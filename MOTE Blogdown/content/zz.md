@@ -8,17 +8,24 @@ showDate: false
 ---
 
 <script src="//yihui.name/js/math-code.js"></script>
+<script type = "text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$', '$']],
+}
+})
+</script>
 <script async
 src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 # Description   
 
-This function displays *d* for z-scores when all you have is the z-statistics. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+This function displays $d\_{z}$ for *Z*-tests based on the *Z*-statistic. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
 
-The formula for *d* is: $$d = \frac{Z}{\sqrt(N)}$$
+The formula for $d\_{z}$ is: $$d\_{z} = \frac{Z}{\sqrt(N)}$$
  
-The formula for *Z* is: $$Z = \frac{M - \mu}{\sigma_M}$$
+The formula for $d\_{z}$ is: $$d\_{z} = \frac{M - \mu}{\sigma_M}$$
 
 # R Function
 
@@ -52,7 +59,7 @@ d.z.z(z = 2.5, sig = 4, n = 100, a = .05)
 
 ## Effect Size:
 
-Effect Size: *d* = 0.25, 95% CI [-7.59, 8.09]
+Effect Size: $d\_{z}$ = 0.25, 95% CI [-7.59, 8.09]
 
 ## Interpretation: 
 
