@@ -14,6 +14,14 @@ library(DT)
 library(tm)
 library(ggplot2)
 
+cleanup = theme(panel.grid.major = element_blank(), 
+                panel.grid.minor = element_blank(), 
+                panel.background = element_blank(), 
+                axis.line.x = element_line(color = "black"),
+                axis.line.y = element_line(color = "black"),
+                legend.key = element_rect(fill = "white"),
+                text = element_text(size = 15))
+
 # Figure out this step LSA ----------------------------------------------------
 
 #just to get this nonsense working 
@@ -181,26 +189,19 @@ server <- function(input, output) {
   # Single Words LSA Functions ----------------------------------------------
 
     output$lsa_plotneighbors = renderPlot({
-    plot_neighbors(input$rownames_select, 
+    
+      temp = plot_neighbors(input$rownames_select, 
                    n = input$neighbors, 
                    tvectors = import_lsa, 
                    method = "MDS", 
                    dims = 2)
-      cleanup = theme(panel.grid.major = element_blank(), 
-                      panel.grid.minor = element_blank(), 
-                      panel.background = element_blank(), 
-                      axis.line.x = element_line(color = "black"),
-                      axis.line.y = element_line(color = "black"),
-                      legend.key = element_rect(fill = "white"),
-                      text = element_text(size = 15))
-      output$neighbor_plot = renderPlot({
-        neighbor_plot = ggplot(import_lsa, aes(x,y))
+
+      neighbor_plot = ggplot(temp, aes(x,y))
         neighbor_plot + 
           cleanup +
           geom_point() + 
           xlab("Dimension 1") +
           ylab("Dimension 2")
-      })
       }) #close plot
   
   output$lsa_choosetarget = renderDataTable({
