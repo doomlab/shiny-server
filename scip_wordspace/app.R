@@ -25,7 +25,7 @@ cleanup = theme(panel.grid.major = element_blank(),
 # Figure out this step LSA ----------------------------------------------------
 
 #just to get this nonsense working 
-importdf = read.csv('exam_answers.csv', header = F, stringsAsFactors = F)
+importdf <<- read.csv('exam_answers.csv', header = F, stringsAsFactors = F)
 
 ##if own file imported
 #Create a corpus from a vector of documents
@@ -104,6 +104,7 @@ source("ourdata_tab.R")
 source("lsa_tab_single.R")
 source("lsa_tab_multiple.R")
 source("topics_tab.R")
+source("lsa_document_tab.R")
 
 # Define UI ---------------------------------------------------------------
 ui <- dashboardPage(
@@ -114,7 +115,9 @@ ui <- dashboardPage(
       menuItem("2. Use Our Data", tabName = "ourdata_tab"),
       menuItem("3. LSA Single Word Functions", tabName = "lsa_tab_single"),
       menuItem("4. LSA Multiple Word Functions", tabName = "lsa_tab_multiple"),
-      menuItem("5. Topic Structure", tabName = "topics_tab")
+      menuItem("5. LSA Document Functions", tabName = "lsa_document_tab"),
+      menuItem("6. Topic Structure", tabName = "topics_tab")
+
     )
   ),
   dashboardBody(
@@ -123,6 +126,7 @@ ui <- dashboardPage(
       ourdata_tab,
       lsa_tab_single,
       lsa_tab_multiple,
+      lsa_document_tab,
       topics_tab
       ) # end tabItems
     ) # end dashboardBody
