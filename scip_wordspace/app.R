@@ -199,8 +199,8 @@ server <- function(input, output) {
       neighbor_plot = ggplot(temp, aes(x,y))
         neighbor_plot + 
           cleanup +
-          geom_point() + 
-          geom_text(aes(label = x,y)) +
+          geom_point(alpha = .2) + 
+          geom_text(position=position_jitter(width=.01,height=.01), aes(label = rownames(temp))) +
           xlab("Dimension 1") +
           ylab("Dimension 2")
       }) #close plot
