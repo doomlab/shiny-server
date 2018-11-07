@@ -251,24 +251,50 @@ server <- function(input, output) {
   
   #number of topics
   
-  topics(LDA_fit, 1)
-  topics(LDA_fixed, 1)
-  topics(LDA_gibbs, 1)
-  topics(CTM_fit, 1)
+ #frequent words for frequent topics
+ 
+  #datatable
   
-  #terms by topic
+  # Output the table --------------------------------------------------------
   
-  terms(LDA_fit,10)
-  terms(LDA_fixed, 10)
-  terms(LDA_gibbs,10)
-  terms(CTM_fit,10)
+ output$modeltopics_table = renderDataTable({
+   
+  #number of topics within user-defined data
+     
+      if (input$pick_model == "LDA_fit"){
+    num_topics = topics(LDA_fit, 1)
+    num_terms = terms(LDA_fit,10)
+    most_frequent = which.max(tabulate(topics(LDA_fit,1)))
+    
+       }
   
-  #frequent words for frequent topics
+      if (input$pick_model == "LDA_fixed"){
+    num_topics = topics(LDA_fixed, 1)
+    num_terms = terms(LDA_fixed, 10)
+    most_frequent = which.max(tabulate(topics(LDA_fixed,1)))
+    
+      }
   
-  most_frequent = which.max(tabulate(topics(LDA_fit,1)))
-  terms(LDA_fit, 10)[ , most_frequent]
+      if (input$pick_data == "LDA_gibbs"){
+    num_topics = topics(LDA_gibbs, 1)
+    num_terms = terms(LDA_gibbs,10)
+    most_frequent = which.max(tabulate(topics(LDA_gibbs,1)))
+    
+      }
+    
+      if (input$pick_model == "CTM_fit"){
+    num_topics = topics(CTM_fit, 1)
+    num_terms = terms(CTM_fit,10)
+    most_frequent = which.max(tabulate(topics(CTM_fit,1)))
+    
+      }
+    
+ datatable(as.data.frame(matrix(num_terms[ , most_frequent])[1:10]), rownames = T)
   
-  }
+ })
+   
+}    
+ 
 
 # Run the application 
 shinyApp(ui = ui, server = server)
