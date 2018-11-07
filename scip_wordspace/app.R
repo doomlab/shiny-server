@@ -241,13 +241,32 @@ server <- function(input, output) {
 
   #alpha
   
+  sapply(alltogether[1:2], slot, "alpha")
+  
   #entropy
+  
+  sapply(alltogether, function (x)
+    mean(apply(posterior(x)$topics, 1, function(z)
+      - sum(z * log(z)))))
   
   #number of topics
   
+  topics(LDA_fit, 1)
+  topics(LDA_fixed, 1)
+  topics(LDA_gibbs, 1)
+  topics(CTM_fit, 1)
+  
   #terms by topic
   
+  terms(LDA_fit,10)
+  terms(LDA_fixed, 10)
+  terms(LDA_gibbs,10)
+  terms(CTM_fit,10)
+  
   #frequent words for frequent topics
+  
+  most_frequent = which.max(tabulate(topics(LDA_fit,1)))
+  terms(LDA_fit, 10)[ , most_frequent]
   
   }
 
