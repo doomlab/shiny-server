@@ -13,6 +13,8 @@ library(rhandsontable)
 library(DT)
 library(tm)
 library(ggplot2)
+library(dplyr)
+library(tidytext)
 
 cleanup = theme(panel.grid.major = element_blank(), 
                 panel.grid.minor = element_blank(), 
@@ -83,20 +85,7 @@ import_weight = tapply(import_mat$v/row_sums(import_mat)[import_mat$i], import_m
 import_mat = import_mat[ , import_weight >= .1]
 import_mat = import_mat[ row_sums(import_mat) > 0, ]
 
-#make the user pick a number of topics
-k = 5
-SEED = 2010
 
-LDA_fit <<- LDA(import_mat, k = k, control = list(seed = SEED))
-LDA_fixed <<- LDA(import_mat, k = k, control = list(estimate.alpha = FALSE, seed = SEED))
-LDA_gibbs <<- LDA(import_mat, k = k, method = "Gibbs", 
-                control = list(seed = SEED, burnin = 1000, thin = 100, iter = 1000))
-CTM_fit <<- CTM(import_mat, k = k, 
-              control = list(seed = SEED, 
-                             var = list(tol = 10^-4), 
-                             em = list(tol = 10^-3)))
-
-alltogether <<- list(LDA_fit, LDA_fixed, LDA_gibbs, CTM_fit)
 
 # Source Files ------------------------------------------------------------
 source("data_tab.R")
@@ -251,7 +240,9 @@ server <- function(input, output) {
   
   #number of topics
   
- #frequent words for frequent topics
+ 
+  
+  #frequent words for frequent topics
  
   #datatable
   
@@ -259,41 +250,88 @@ server <- function(input, output) {
   
  output$modeltopics_table = renderDataTable({
    
-  #number of topics within user-defined data
+   #make the user pick a number of topics
+   LDA_fit <<- LDA(import_mat, k = input$notopics, control = list(seed = input$SEED))
+   LDA_fixed <<- LDA(import_mat, k = input$notopics, control = list(estimate.alpha = FALSE, seed = input$SEED))
+   LDA_gibbs <<- LDA(import_mat, k = input$notopics, method = "Gibbs", 
+                     control = list(seed = input$SEED, burnin = 1000, thin = 100, iter = 1000))
+   CTM_fit <<- CTM(import_mat, k = input$notopics, 
+                   control = list(seed = input$SEED, 
+                                  var = list(tol = 10^-4), 
+                                  em = list(tol = 10^-3)))
+   
+   alltogether <<- list(LDA_fit, LDA_fixed, LDA_gibbs, CTM_fit)
      
-      if (input$pick_model == "LDA_fit"){
-    num_topics = topics(LDA_fit, 1)
-    num_terms = terms(LDA_fit,10)
-    most_frequent = which.max(tabulate(topics(LDA_fit,1)))
-    
-       }
-  
-      if (input$pick_model == "LDA_fixed"){
-    num_topics = topics(LDA_fixed, 1)
-    num_terms = terms(LDA_fixed, 10)
-    most_frequent = which.max(tabulate(topics(LDA_fixed,1)))
-    
-      }
-  
-      if (input$pick_model == "LDA_gibbs"){
-    num_topics = topics(LDA_gibbs, 1)
-    num_terms = terms(LDA_gibbs,10)
-    most_frequent = which.max(tabulate(topics(LDA_gibbs,1)))
-    
-      }
-    
-      if (input$pick_model == "CTM_fit"){
-    num_topics = topics(CTM_fit, 1)
-    num_terms = terms(CTM_fit,10)
-    most_frequent = which.max(tabulate(topics(CTM_fit,1)))
-    
-      }
+   if (input$pick_model == "LDA_fit"){
+     num_topics = topics(LDA_fit, input$notopics)
+     num_terms = terms(LDA_fit,10)
+     most_frequent = which.max(tabulate(topics(LDA_fit,1)))
+     LDA_fit_topics = tidy(LDA_fit, matrix = "beta")
+     top_terms = LDA_fit_topics %>%
+       group_by(topic) %>%
+       top_n(10, beta) %>%
+       ungroup() %>%
+       arrange(topic, -beta)
+     
+   }
+   
+   if (input$pick_model == "LDA_fixed"){
+     num_topics = topics(LDA_fixed, 1)
+     num_terms = terms(LDA_fixed, 10)
+     most_frequent = which.max(tabulate(topics(LDA_fixed,1)))
+     LDA_fix_topics = tidy(LDA_fixed, matrix = "beta")
+     top_terms = LDA_fix_topics %>%
+       group_by(topic) %>%
+       top_n(10, beta) %>%
+       ungroup() %>%
+       arrange(topic, -beta)
+     
+   }
+   
+   if (input$pick_model == "LDA_gibbs"){
+     num_topics = topics(LDA_gibbs, 1)
+     num_terms = terms(LDA_gibbs,10)
+     most_frequent = which.max(tabulate(topics(LDA_gibbs,1)))
+     LDA_gibbs_topics = tidy(LDA_gibbs, matrix = "beta")
+     top_terms = LDA_gibbs_topics %>%
+       group_by(topic) %>%
+       top_n(10, beta) %>%
+       ungroup() %>%
+       arrange(topic, -beta)
+     
+   }
+   
+   if (input$pick_model == "CTM_fit"){
+     num_topics = topics(CTM_fit, 1)
+     num_terms = terms(CTM_fit,10)
+     most_frequent = which.max(tabulate(topics(CTM_fit,1)))
+     CTM_fit_topics = tidy(CTM_fit, matrix = "beta")
+     top_terms = CTM_fit_topics %>%
+       group_by(topic) %>%
+       top_n(10, beta) %>%
+       ungroup() %>%
+       arrange(topic, -beta)
+     
+   }
     
  datatable(as.data.frame(matrix(num_terms[ , most_frequent])[1:10]), rownames = T)
   
+  
+ #output$beta_plot = renderPlot({
+ #   top_terms %>%
+ #     mutate(term = reorder(term, beta)) %>%
+ #     ggplot(aes(term, beta, fill = factor(topic))) +
+ #     geom_col(show.legend = FALSE) +
+ #     facet_wrap(~ topic, scales = "free") +
+ #     cleanup +
+ #     coord_flip()
+ # })
+
  })
    
 }    
+
+
  
 
 # Run the application 

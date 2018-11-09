@@ -1,6 +1,13 @@
 data_tab <- tabItem(tabName = "data_tab",
   fluidRow(
     box(
+      
+      ##supress red error
+      #tags$style(type="text/css",
+          #       ".shiny-output-error { visibility: hidden; }",
+            #     ".shiny-output-error:before { visibility: hidden; }"),
+      
+      
       title = "Upload Data",
       width = 12,
       p("We can write instructions here."),

@@ -12,7 +12,7 @@ topics_tab <- tabItem(tabName = "topics_tab",
                                          "CTM Fit" = "CTM_fit")
                            ), #close selectInput
                          
-                        numericInput("topics", "Number of Topics to Display:", 10, min = 1, max = 100),
+                        numericInput("notopics", "Number of Topics to Display (k):", 10, min = 1, max = 100),
                         
                         numericInput("SEED", "Seed:", 10, min = 1, max = 10,000)
                         
@@ -20,7 +20,9 @@ topics_tab <- tabItem(tabName = "topics_tab",
                        
                        mainPanel(
                           
-                          DTOutput("modeltopics_table"))
+                          DTOutput("modeltopics_table"),
+                       
+                       plotOutput("beta_plot"))
 
                          ) #close fluidRow
                       
