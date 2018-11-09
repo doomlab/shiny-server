@@ -228,15 +228,7 @@ server <- function(input, output) {
 
   # Topics Tab --------------------------------------------------------------
 
-  #alpha
-  
-  sapply(alltogether[1:2], slot, "alpha")
-  
-  #entropy
-  
-  sapply(alltogether, function (x)
-    mean(apply(posterior(x)$topics, 1, function(z)
-      - sum(z * log(z)))))
+
   
   #number of topics
   
@@ -261,6 +253,17 @@ server <- function(input, output) {
                                   em = list(tol = 10^-3)))
    
    alltogether <<- list(LDA_fit, LDA_fixed, LDA_gibbs, CTM_fit)
+   
+   #alpha
+   
+   sapply(alltogether[1:2], slot, "alpha")
+   
+   #entropy
+   
+   sapply(alltogether, function (x)
+     mean(apply(posterior(x)$topics, 1, function(z)
+       - sum(z * log(z)))))
+   
      
    if (input$pick_model == "LDA_fit"){
      num_topics = topics(LDA_fit, input$notopics)
@@ -317,15 +320,15 @@ server <- function(input, output) {
  datatable(as.data.frame(matrix(num_terms[ , most_frequent])[1:10]), rownames = T)
   
   
- #output$beta_plot = renderPlot({
- #   top_terms %>%
- #     mutate(term = reorder(term, beta)) %>%
- #     ggplot(aes(term, beta, fill = factor(topic))) +
- #     geom_col(show.legend = FALSE) +
- #     facet_wrap(~ topic, scales = "free") +
- #     cleanup +
- #     coord_flip()
- # })
+# output$beta_plot = renderPlot({
+#    top_terms %>%
+#      mutate(term = reorder(term, beta)) %>%
+#      ggplot(aes(term, beta, fill = factor(topic))) +
+#      geom_col(show.legend = FALSE) +
+#      facet_wrap(~ topic, scales = "free") +
+#      cleanup +
+#      coord_flip()
+#  })
 
  })
    
