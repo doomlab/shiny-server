@@ -275,7 +275,7 @@ server <- function(input, output) {
     
       }
   
-      if (input$pick_data == "LDA_gibbs"){
+      if (input$pick_model == "LDA_gibbs"){
     num_topics = topics(LDA_gibbs, 1)
     num_terms = terms(LDA_gibbs,10)
     most_frequent = which.max(tabulate(topics(LDA_gibbs,1)))

@@ -17,8 +17,10 @@ topics_tab <- tabItem(tabName = "topics_tab",
                         numericInput("SEED", "Seed:", 10, min = 1, max = 10,000)
                         
                          ), #close main panel 
+                       
+                       mainPanel(
                           
-                          DTOutput("modeltopics_table")
+                          DTOutput("modeltopics_table"))
 
                          ) #close fluidRow
                       
