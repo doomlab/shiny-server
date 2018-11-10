@@ -34,7 +34,7 @@ attributes_df_final <- NULL
 # Interface ---------------------------------------------------------------
 
 ui <- dashboardPage(
-  dashboardHeader(title = "Data Spice 2.0"),
+  dashboardHeader(title = "DataSchema"),
   dashboardSidebar(
     sidebarMenu(
       menuItem("1. Upload Data", tabName = "data_tab"),
