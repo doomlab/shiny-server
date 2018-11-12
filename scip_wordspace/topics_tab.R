@@ -14,15 +14,17 @@ topics_tab <- tabItem(tabName = "topics_tab",
                          
                         numericInput("notopics", "Number of Topics to Display (k):", 10, min = 1, max = 100),
                         
-                        numericInput("SEED", "Seed:", 10, min = 1, max = 10,000)
+                        numericInput("SEED", "Seed:", 10, min = 1, max = 10000),
+                       
+                        numericInput("noterms", "Number of Terms to Display:", 10, min = 1, max = 10000)
                         
                          ), #close main panel 
                        
                        mainPanel(
                           
                           DTOutput("modeltopics_table"),
-                       
-                       plotOutput("beta_plot"))
+                          br(),
+                          plotOutput("beta_plot"))
 
                          ) #close fluidRow
                       

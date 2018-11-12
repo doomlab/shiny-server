@@ -266,11 +266,11 @@ server <- function(input, output) {
    
      
    if (input$pick_model == "LDA_fit"){
-     num_topics = topics(LDA_fit, input$notopics)
-     num_terms = terms(LDA_fit,10)
+     num_topics = topics(LDA_fit, input$notopics) #picks the most frequent topics
+     num_terms = terms(LDA_fit, input$noterms) #picks the most frequenct terms
      most_frequent = which.max(tabulate(topics(LDA_fit,1)))
      LDA_fit_topics = tidy(LDA_fit, matrix = "beta")
-     top_terms = LDA_fit_topics %>%
+     top_terms <<- LDA_fit_topics %>%
        group_by(topic) %>%
        top_n(10, beta) %>%
        ungroup() %>%
@@ -279,11 +279,11 @@ server <- function(input, output) {
    }
    
    if (input$pick_model == "LDA_fixed"){
-     num_topics = topics(LDA_fixed, 1)
-     num_terms = terms(LDA_fixed, 10)
+     num_topics = topics(LDA_fixed, input$notopics)
+     num_terms = terms(LDA_fixed, input$noterms)
      most_frequent = which.max(tabulate(topics(LDA_fixed,1)))
      LDA_fix_topics = tidy(LDA_fixed, matrix = "beta")
-     top_terms = LDA_fix_topics %>%
+     top_terms <<- LDA_fix_topics %>%
        group_by(topic) %>%
        top_n(10, beta) %>%
        ungroup() %>%
@@ -292,11 +292,11 @@ server <- function(input, output) {
    }
    
    if (input$pick_model == "LDA_gibbs"){
-     num_topics = topics(LDA_gibbs, 1)
-     num_terms = terms(LDA_gibbs,10)
+     num_topics = topics(LDA_gibbs, input$notopics)
+     num_terms = terms(LDA_gibbs,input$noterms)
      most_frequent = which.max(tabulate(topics(LDA_gibbs,1)))
      LDA_gibbs_topics = tidy(LDA_gibbs, matrix = "beta")
-     top_terms = LDA_gibbs_topics %>%
+     top_terms <<- LDA_gibbs_topics %>%
        group_by(topic) %>%
        top_n(10, beta) %>%
        ungroup() %>%
@@ -305,11 +305,11 @@ server <- function(input, output) {
    }
    
    if (input$pick_model == "CTM_fit"){
-     num_topics = topics(CTM_fit, 1)
-     num_terms = terms(CTM_fit,10)
+     num_topics = topics(CTM_fit, input$notopics)
+     num_terms = terms(CTM_fit,input$noterms)
      most_frequent = which.max(tabulate(topics(CTM_fit,1)))
      CTM_fit_topics = tidy(CTM_fit, matrix = "beta")
-     top_terms = CTM_fit_topics %>%
+     top_terms <<- CTM_fit_topics %>%
        group_by(topic) %>%
        top_n(10, beta) %>%
        ungroup() %>%
@@ -319,19 +319,18 @@ server <- function(input, output) {
     
  datatable(as.data.frame(matrix(num_terms[ , most_frequent])[1:10]), rownames = T)
   
-  
-# output$beta_plot = renderPlot({
-#    top_terms %>%
-#      mutate(term = reorder(term, beta)) %>%
-#      ggplot(aes(term, beta, fill = factor(topic))) +
-#      geom_col(show.legend = FALSE) +
-#      facet_wrap(~ topic, scales = "free") +
-#      cleanup +
-#      coord_flip()
-#  })
-
  })
-   
+
+  output$beta_plot = renderPlot({
+    top_terms %>%
+      mutate(term = reorder(term, beta)) %>%
+      ggplot(aes(term, beta, fill = factor(topic))) +
+      geom_bar(stat = "identity", show.legend = FALSE) +
+      facet_wrap(~ topic, scales = "free") +
+      cleanup +
+      coord_flip()
+  })
+     
 }    
 
 
