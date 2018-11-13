@@ -2,21 +2,43 @@
 lsa_tab_multiple <- tabItem(tabName = "lsa_tab_multiple",
                         fluidRow(
                           
+                          box(title = "Output Choices:",
+                              width = 12,
+                              solidHeader = T,
+                              status = "primary",
+                              collapsible = T,
+                              h4("On this page, you can select multiple words to view their relatedness to each other, 
+                              while the single word page selects words based on their relatedness. 
+                                 Please choose a minimum of three words to view output. If you still see an 
+                                 error message, you should select additional options, as that indicates that at 
+                                 least one of the selected words is not related to the other concepts."),
+                              selectizeInput("multiple_select", "Select Words:", 
+                                           #choices = c(rownames(import_lsa)), 
+                                           choices = "",
+                                           multiple = TRUE) #close selectizeInput
+                          ), #close box
                           
-                          p("Please choose a minimum of three tags for model to work."),
-                          mainPanel(
-                           
-                            titlePanel("LSA Multiple Word Select"),
-                            selectizeInput("tags", "Select Tags:", 
-                                           choices = c(rownames(import_lsa)), 
-                                           multiple = TRUE), #close selectizeInput
-                            p("This graph is demonstrating how close the different tags choosen are related relative to work neighborhoods."),
-                            DTOutput("lsa_multicos"), 
-                            br(),
-                            
-                            plotOutput("lsa_plotwordlist")
-                            
-                            ) #close main panel
+                          box(title = "Plot of Neighbors:",
+                              width = 6,
+                              solidHeader = T,
+                              status = "primary",
+                              collapsible = T,
+                              h4("This plot displays relationship of the selected words in two-dimensional space. 
+                              The closeness of the concepts (i.e., how far apart they are) 
+                              indicates how related they are to each other in this corpus."),
+                              plotOutput("lsa_plotwordlist")
+                          ) , #close box
+                          
+                          box(title = "Cosine Values:",
+                              width = 6,
+                              solidHeader = T,
+                              status = "primary",
+                              collapsible = T,
+                              h4("This table includes the cosine values for all the selected words compared 
+                                 against each other. Use the buttons at the bottom of the table to download 
+                                 or save the data."),
+                              DTOutput("lsa_multicos")
+                              ) # close box
                           ) #close fluidRow
                         ) #close tabItem
 

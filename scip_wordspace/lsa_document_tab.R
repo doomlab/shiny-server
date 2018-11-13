@@ -7,7 +7,8 @@ lsa_document_tab <- tabItem(tabName = "lsa_document_tab",
                            
                            selectInput(inputId = "document_select",
                                        label = "Select Document:",
-                                       choices = 1:nrow(importdf))
+                                       #choices = 1:nrow(importdf))
+                                       choices = 1:3)
                          
                          ), #close main panel 
                          

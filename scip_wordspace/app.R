@@ -1,5 +1,6 @@
 #Shiny Word Space App for SCIP 2018
-#Written by Erin M. Buchanan, ... add your names here
+#Written by Erin M. Buchanan, William Padfield, Arielle Cunningham, 
+#Addie Wikowsky, Abbie Van Nuland, Amber Gillenwaters
 
 # Load Libraries ----------------------------------------------------------
 library(shiny)
@@ -15,6 +16,8 @@ library(tm)
 library(ggplot2)
 library(dplyr)
 library(tidytext)
+library(topicmodels)
+library(slam)
 
 cleanup = theme(panel.grid.major = element_blank(), 
                 panel.grid.minor = element_blank(), 
@@ -24,48 +27,12 @@ cleanup = theme(panel.grid.major = element_blank(),
                 legend.key = element_rect(fill = "white"),
                 text = element_text(size = 15))
 
-# Figure out this step LSA ----------------------------------------------------
-
-#just to get this nonsense working 
-importdf <<- read.csv('exam_answers.csv', header = F, stringsAsFactors = F)
-
-##if own file imported
-#Create a corpus from a vector of documents
-#therefore the data needs to be a column in a DF that includes all the text files
-import_corpus = Corpus(VectorSource(importdf$V1)) 
-
-#Lower case all words
-import_corpus = tm_map(import_corpus, tolower) 
-
-#Remove punctuation for creating spaces
-import_corpus = tm_map(import_corpus, removePunctuation) 
-
-#Remove stop words
-import_corpus = tm_map(import_corpus, 
-                       function(x) removeWords(x, stopwords("english")))
-
-#Create the term by document matrix
-import_mat = as.matrix(TermDocumentMatrix(import_corpus))
-
-#Weight the semantic space
-import_weight = lw_logtf(import_mat) * gw_idf(import_mat)
-
-#Run the SVD
-import_lsa <<- lsa(import_weight)
-
-#Convert to textmatrix for coherence
-import_lsa <<- as.textmatrix(import_lsa)
 
 
 # Figure out this step topics ---------------------------------------------
 
-library(tm)
-library(topicmodels)
-library(slam)
-library(lsa)
-
 ##just some example data so you can see
-importdf = read.csv('exam_answers.csv', header = F, stringsAsFactors = F)
+importdf = read.csv('examples/exam_answers.csv', header = F, stringsAsFactors = F)
 
 ##if own file imported
 #Create a corpus from a vector of documents
@@ -85,34 +52,29 @@ import_weight = tapply(import_mat$v/row_sums(import_mat)[import_mat$i], import_m
 import_mat = import_mat[ , import_weight >= .1]
 import_mat = import_mat[ row_sums(import_mat) > 0, ]
 
-
-
 # Source Files ------------------------------------------------------------
 source("data_tab.R")
-source("ourdata_tab.R")
 source("lsa_tab_single.R")
 source("lsa_tab_multiple.R")
 source("topics_tab.R")
 source("lsa_document_tab.R")
 
 # Define UI ---------------------------------------------------------------
-ui <- dashboardPage(
-  dashboardHeader(title = "Word Space Creator"),
+ui <- dashboardPage(skin = "blue",
+  dashboardHeader(title = tags$b("Word Space Creator")),
   dashboardSidebar(
     sidebarMenu(
-      menuItem("1. Upload Data", tabName = "data_tab"),
-      menuItem("2. Use Our Data", tabName = "ourdata_tab"),
-      menuItem("3. LSA Single Word Functions", tabName = "lsa_tab_single"),
-      menuItem("4. LSA Multiple Word Functions", tabName = "lsa_tab_multiple"),
-      menuItem("5. LSA Document Functions", tabName = "lsa_document_tab"),
-      menuItem("6. Topic Structure", tabName = "topics_tab")
+      menuItem(tags$b("1. Select Data"), tabName = "data_tab"),
+      menuItem(tags$b("2. LSA Single Word Functions"), tabName = "lsa_tab_single"),
+      menuItem(tags$b("3. LSA Multiple Word Functions"), tabName = "lsa_tab_multiple"),
+      menuItem(tags$b("4. LSA Document Functions"), tabName = "lsa_document_tab"),
+      menuItem(tags$b("5. Topic Structure"), tabName = "topics_tab")
 
     )
   ),
   dashboardBody(
     tabItems(
       data_tab,
-      ourdata_tab,
       lsa_tab_single,
       lsa_tab_multiple,
       lsa_document_tab,
@@ -123,7 +85,7 @@ ui <- dashboardPage(
 
 # Define server logic -----------------------------------------------------
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   
   # Load Data ---------------------------------------------------------------
   dat <- reactive({
@@ -132,15 +94,15 @@ server <- function(input, output) {
     
     file_extension <- tools::file_ext(inFile$datapath)
     if (file_extension == "csv") {
-      rawdata <<- read.csv(inFile$datapath, header = input$header,
+      input_data <<- read.csv(inFile$datapath, header = input$header,
                            stringsAsFactors = F)
     } else if (file_extension %in% c("xls", "xlsx")) {
-      rawdata <<- as.data.frame(readxl::read_excel(inFile$datapath, 
+      input_data <<- as.data.frame(readxl::read_excel(inFile$datapath, 
                                                    col_names = input$header))
     } else if (file_extension %in% c("sav")) {
-      rawdata <<- haven::read_sav(inFile$datapath)
+      input_data <<- haven::read_sav(inFile$datapath)
     } else if (file_extension %in% c("sas")) {
-      rawdata <<- haven::read_sas(inFile$datapath)
+      input_data <<- haven::read_sas(inFile$datapath)
     }
     
     #save file name as global variable for writing
@@ -150,9 +112,17 @@ server <- function(input, output) {
   
   # Output the table --------------------------------------------------------
   
-  output$rawdata_table <- renderDataTable({
+  output$inputdata_table <- renderDataTable({
     dat()
-    datatable(rawdata, rownames = F)
+    
+    if (exists("input_data")) {
+    #shorten view
+    if (ncol(input_data) > 3){
+      datatable(input_data[ , 1:3], rownames = F)
+    } else { datatable(input_data, rownames = F) }
+    }
+    
+    
   }) #close renderDT
   
   output$ourdata_table = renderDataTable({
@@ -160,32 +130,82 @@ server <- function(input, output) {
     #pull in the information from the ourdata_tab input$pick_data
     if (input$pick_data == "TASA"){
       load("TASA.rda")
-      prelsa_data = TASA
+      ourlsa_data <<- TASA
       rm(TASA)
-    }
-    if (input$pick_data == "EN"){
-      load("EN_100k.rda")
-      prelsa_data = EN
-      rm(EN)
     }
     if (input$pick_data == "ENLSA"){
       load("EN_100k_lsa.rda")
-      prelsa_data = ENLSA
-      rm(ENLSA)
+      ourlsa_data <<- EN_100k_lsa
+      rm(EN_100k_lsa)
     }
     
-    datatable(prelsa_data[1:10, 1:10], rownames = T)
+    datatable(ourlsa_data[ , 1:3], rownames = T)
   
-   
   }) #close renderDataTable
+  
+  # Run a LSA ---------------------------------------------------------------
+
+  run_lsa <- reactive({
+  if (exists("input_data")) { #if user defined data
+    
+    #run the lsa stuff
+    #Create a corpus from a vector of documents
+    #therefore the data needs to be a column in a DF that includes all the text files
+    import_corpus = Corpus(VectorSource(input_data[ , 1])) 
+    
+    #Lower case all words
+    import_corpus = tm_map(import_corpus, tolower) 
+    
+    #Remove punctuation for creating spaces
+    import_corpus = tm_map(import_corpus, removePunctuation) 
+    
+    #Remove stop words
+    import_corpus = tm_map(import_corpus, 
+                           function(x) removeWords(x, stopwords("english")))
+    
+    #Create the term by document matrix
+    import_mat = as.matrix(TermDocumentMatrix(import_corpus))
+    
+    #Weight the semantic space
+    import_weight = lw_logtf(import_mat) * gw_idf(import_mat)
+    
+    #Run the SVD
+    import_lsa = lsa(import_weight)
+    
+    #Convert to textmatrix for coherence
+    final_lsa_data <<- as.textmatrix(import_lsa)
+
+  } else { #otherwise use our data they picked above 
+    final_lsa_data <<- ourlsa_data
+  }
+    
+  }) #close reactive 
+    
+  # Update the inputs -------------------------------------------------------
+  observe({
+    run_lsa()
+    updateSelectInput(session, "rownames_select",
+                      label = "rownames_select",
+                      choices = rownames(final_lsa_data))
+  })
+  
+  observe({
+    run_lsa()
+    updateSelectInput(session, "multiple_select",
+                      label = "multiple_select",
+                      choices = rownames(final_lsa_data))
+  })
+  
   
   # Single Words LSA Functions ----------------------------------------------
 
     output$lsa_plotneighbors = renderPlot({
+      
+      run_lsa()
     
       temp = plot_neighbors(input$rownames_select, 
                    n = input$neighbors, 
-                   tvectors = import_lsa, 
+                   tvectors = final_lsa_data, 
                    method = "MDS", 
                    dims = 2)
 
@@ -203,26 +223,50 @@ server <- function(input, output) {
                   lower = input$select_range[1],
                   upper = input$select_range[2],
                   n = input$neighbors,
-                  tvectors = import_lsa))
+                  tvectors = final_lsa_data))
     colnames(targets) = "cosine"
     
-    datatable(targets)
+    datatable(targets,
+              extensions = 'Buttons',
+              options = list(
+                searching = T,
+                dom = 'frtpB',
+                buttons = c('copy')
+              ) #close list
+    ) #close datatable
   }) #close renderDT
   
   # Multiword LSA functions -------------------------------------------------
 
   output$lsa_multicos = renderDataTable({
     
-    datatable(multicos(input$tags, tvectors=import_lsa))
+    run_lsa()
+    
+    datatable(multicos(input$multiple_select, tvectors=final_lsa_data),
+              extensions = 'Buttons',
+              options = list(
+                searching = T,
+                dom = 'frtpB',
+                buttons = c('copy')
+              ) #close list
+              ) #close datatable
     
   })
   
   output$lsa_plotwordlist = renderPlot({
     
-    plot_wordlist(input$tags,
-                  method = "MDS", 
-                  dims = 2,
-                  tvectors = import_lsa)
+    temp_wl = plot_wordlist(input$multiple_select,
+                             method = "MDS", 
+                             dims = 2,
+                             tvectors = final_lsa_data)
+    
+    wordlist_plot = ggplot(temp_wl, aes(x,y))
+    wordlist_plot + 
+      cleanup +
+      geom_point(alpha = .2) + 
+      geom_text(position=position_jitter(width=.01,height=.01), aes(label = rownames(temp_wl))) +
+      xlab("Dimension 1") +
+      ylab("Dimension 2")
     
   })
 
