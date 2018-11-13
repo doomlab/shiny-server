@@ -27,31 +27,6 @@ cleanup = theme(panel.grid.major = element_blank(),
                 legend.key = element_rect(fill = "white"),
                 text = element_text(size = 15))
 
-
-
-# Figure out this step topics ---------------------------------------------
-
-##just some example data so you can see
-importdf = read.csv('examples/exam_answers.csv', header = F, stringsAsFactors = F)
-
-##if own file imported
-#Create a corpus from a vector of documents
-#therefore the data needs to be a column in a DF that includes all the text files
-import_corpus = Corpus(VectorSource(importdf$V1)) 
-
-#create corpus textmatrix
-import_mat = DocumentTermMatrix(import_corpus,
-                                control = list(stemming = TRUE, stopwords = TRUE, minWordLength = 3,
-                                               removeNumbers = TRUE, removePunctuation = TRUE)) 
-
-#weighting scheme
-import_weight = tapply(import_mat$v/row_sums(import_mat)[import_mat$i], import_mat$j, mean) *
-  log2(nDocs(import_mat)/col_sums(import_mat > 0))
-
-#ignore very frequent and 0 terms
-import_mat = import_mat[ , import_weight >= .1]
-import_mat = import_mat[ row_sums(import_mat) > 0, ]
-
 # Source Files ------------------------------------------------------------
 source("data_tab.R")
 source("lsa_tab_single.R")
@@ -68,7 +43,7 @@ ui <- dashboardPage(skin = "blue",
       menuItem(tags$b("2. LSA Single Word Functions"), tabName = "lsa_tab_single"),
       menuItem(tags$b("3. LSA Multiple Word Functions"), tabName = "lsa_tab_multiple"),
       menuItem(tags$b("4. LSA Document Functions"), tabName = "lsa_document_tab"),
-      menuItem(tags$b("5. Topic Structure"), tabName = "topics_tab")
+      menuItem(tags$b("5. Topics Models"), tabName = "topics_tab")
 
     )
   ),
@@ -180,7 +155,44 @@ server <- function(input, output, session) {
   }
     
   }) #close reactive 
+
+  # Run Topics Models ---------------------------------------------
+  
+  run_topics = reactive({
+    if (exists("input_data")) { #if user defined data
+      
+      #run the lsa stuff
+      #Create a corpus from a vector of documents
+      #therefore the data needs to be a column in a DF that includes all the text files
+      import_corpus = Corpus(VectorSource(input_data[ , 1])) 
+      
+      
+      #create corpus textmatrix
+      import_mat = DocumentTermMatrix(import_corpus,
+                                      control = list(stemming = TRUE, stopwords = TRUE, minWordLength = 3,
+                                                     removeNumbers = TRUE, removePunctuation = TRUE)) 
+      
+      #weighting scheme
+      import_weight = tapply(import_mat$v/row_sums(import_mat)[import_mat$i], import_mat$j, mean) *
+        log2(nDocs(import_mat)/col_sums(import_mat > 0))
+      
+      #ignore very frequent and 0 terms
+      final_topics = import_mat[ , import_weight >= .1]
+      final_topics = final_topics[ row_sums(final_topics) > 0, ]  
+      
+      #make the user pick a number of topics
+      LDA_fit <<- LDA(final_topics, k = input$notopics, control = list(seed = input$SEED))
+      LDA_fixed <<- LDA(final_topics, k = input$notopics, control = list(estimate.alpha = FALSE, seed = input$SEED))
+      LDA_gibbs <<- LDA(final_topics, k = input$notopics, method = "Gibbs", 
+                        control = list(seed = input$SEED, burnin = 1000, thin = 100, iter = 1000))
+      CTM_fit <<- CTM(final_topics, k = input$notopics, 
+                      control = list(seed = input$SEED, 
+                                     var = list(tol = 10^-4), 
+                                     em = list(tol = 10^-3)))
+    }
     
+  }) #close reactive 
+  
   # Update the inputs -------------------------------------------------------
   observe({
     run_lsa()
@@ -194,6 +206,12 @@ server <- function(input, output, session) {
     updateSelectInput(session, "multiple_select",
                       label = "multiple_select",
                       choices = rownames(final_lsa_data))
+  })
+  
+  observe({
+    updateSelectInput(session, "document_select",
+                      label = "document_select",
+                      choices = rownames(input_data))
   })
   
   
@@ -270,43 +288,101 @@ server <- function(input, output, session) {
     
   })
 
+
+  # Document LSA Functions --------------------------------------------------
+  
+  output$local_coherence = renderDataTable({
+    
+    temp_lc = as.data.frame(coherence(input_data[input$document_select, 1], 
+              tvectors = final_lsa_data)$local)
+    colnames(temp_lc)= "Coherence"
+    
+    datatable(temp_lc,
+              extensions = 'Buttons',
+              options = list(
+                searching = T,
+                dom = 'frtpB',
+                buttons = c('copy')
+              ) #close list
+    ) # close data table 
+    
+  })
+  
+  output$global_coherence = renderText({
+    
+    coherence(input_data[input$document_select, 1], 
+                                      tvectors = final_lsa_data)$global
+  })
+  
+  output$generic_summary = renderText({
+    
+   genericSummary(input_data[input$document_select, 1], k = 1)
+    
+  })
+  
+
+  
+  
   # Topics Tab --------------------------------------------------------------
 
+  output$alpha_topics = renderText({
+    run_topics()
 
+    if (input$pick_model == "LDA_fit"){
+      alpha_print = LDA_fit@alpha
+    }
+    
+    if (input$pick_model == "LDA_fixed"){
+      alpha_print = LDA_fixed@alpha
+    }
+    
+    if (input$pick_model == "LDA_gibbs"){
+      alpha_print = LDA_gibbs@alpha
+    }
+    
+    if(input$pick_model == "CTM_fit"){
+      alpha_print = "No alpha provided with this model"
+    }
+    
+    alpha_print
+    
+  })
   
-  #number of topics
-  
- 
-  
-  #frequent words for frequent topics
- 
-  #datatable
+  output$entropy_topics = renderText({
+    
+    entropy_numbers = sapply(list(LDA_fit, LDA_fixed, LDA_gibbs, CTM_fit), function (x)
+      mean(apply(posterior(x)$topics, 1, function(z)
+        - sum(z * log(z)))))
+    
+    if (input$pick_model == "LDA_fit"){
+      entropy_print = entropy_numbers[1]
+    }
+    
+    if (input$pick_model == "LDA_fixed"){
+      entropy_print = entropy_numbers[2]
+    }
+    
+    if (input$pick_model == "LDA_gibbs"){
+      entropy_print = entropy_numbers[3]
+    }
+    
+    if(input$pick_model == "CTM_fit"){
+      entropy_print = entropy_numbers[4]
+    }
+    
+    entropy_print
+    
+  })
+
+
   
   # Output the table --------------------------------------------------------
   
  output$modeltopics_table = renderDataTable({
    
-   #make the user pick a number of topics
-   LDA_fit <<- LDA(import_mat, k = input$notopics, control = list(seed = input$SEED))
-   LDA_fixed <<- LDA(import_mat, k = input$notopics, control = list(estimate.alpha = FALSE, seed = input$SEED))
-   LDA_gibbs <<- LDA(import_mat, k = input$notopics, method = "Gibbs", 
-                     control = list(seed = input$SEED, burnin = 1000, thin = 100, iter = 1000))
-   CTM_fit <<- CTM(import_mat, k = input$notopics, 
-                   control = list(seed = input$SEED, 
-                                  var = list(tol = 10^-4), 
-                                  em = list(tol = 10^-3)))
+
    
-   alltogether <<- list(LDA_fit, LDA_fixed, LDA_gibbs, CTM_fit)
    
-   #alpha
-   
-   sapply(alltogether[1:2], slot, "alpha")
-   
-   #entropy
-   
-   sapply(alltogether, function (x)
-     mean(apply(posterior(x)$topics, 1, function(z)
-       - sum(z * log(z)))))
    
      
    if (input$pick_model == "LDA_fit"){

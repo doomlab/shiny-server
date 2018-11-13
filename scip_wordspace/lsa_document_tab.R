@@ -1,23 +1,50 @@
 lsa_document_tab <- tabItem(tabName = "lsa_document_tab",
                        fluidRow(
                          
-                         mainPanel(
-                         
-                           titlePanel("LSA Document Functions"),
-                           
-                           selectInput(inputId = "document_select",
+                           box(title = "Output Choices:",
+                               width = 12,
+                               solidHeader = T,
+                               status = "primary",
+                               collapsible = T,
+                               h4("On this page, you can select a specific document from your uploaded data 
+                                  to calculate coherence values and summaries from based on the LSA model 
+                                  calculated from the uploaded corpus."),
+                               selectInput(inputId = "document_select",
                                        label = "Select Document:",
                                        #choices = 1:nrow(importdf))
-                                       choices = 1:3)
+                                       choices = "")
+                           ), #close box
                          
-                         ), #close main panel 
-                         
-                         mainPanel(
-                           DTOutput("local_coherence"),
-                           br(),
-                           textOutput("global_coherence"),
-                           br(),
+                           box(title = "Local Coherence:",
+                               width = 6,
+                               solidHeader = T,
+                               status = "primary",
+                               collapsible = T,
+                               h4("Local coherence is the cosine calculated between two adjacent sentences. 
+                                  These values represent the relationship between each sentence where higher 
+                                  positive numbers represent more similar sentences. Use the buttons at the bottom of the table to download 
+                                 or save the data."),
+                               DTOutput("local_coherence")
+                           ), #close box
+                           
+                           box(title = "Global Coherence:",
+                               width = 6,
+                               solidHeader = T,
+                               status = "primary",
+                               collapsible = T,
+                               h4("Global coherence represent the average of each of the local coherence values, 
+                                  representing an overall relatedness between sentences in a document."),
+                               textOutput("global_coherence")
+                           ), #close box
+                           
+                           box(title = "Generic Summary:",
+                               width = 6,
+                               solidHeader = T,
+                               status = "primary",
+                               collapsible = T,
+                               h4("The generic summary of a document is a single sentence selected such that 
+                                  the sentence has the highest coverage of the main document."),
                            textOutput("generic_summary")
-                           ) #close main panel
+                           ) # close box
                          ) #close fluidRow
                    ) #close tabItem
