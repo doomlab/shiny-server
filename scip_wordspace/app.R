@@ -209,9 +209,11 @@ server <- function(input, output, session) {
   })
   
   observe({
+    if (exists("input_data")) {
     updateSelectInput(session, "document_select",
                       label = "document_select",
                       choices = rownames(input_data))
+    }
   })
   
   
@@ -374,74 +376,131 @@ server <- function(input, output, session) {
     
   })
 
-
-  
-  # Output the table --------------------------------------------------------
-  
- output$modeltopics_table = renderDataTable({
-   
-
-   
-   
-   
-     
-   if (input$pick_model == "LDA_fit"){
-     num_topics = topics(LDA_fit, input$notopics) #picks the most frequent topics
-     num_terms = terms(LDA_fit, input$noterms) #picks the most frequenct terms
-     most_frequent = which.max(tabulate(topics(LDA_fit,1)))
-     LDA_fit_topics = tidy(LDA_fit, matrix = "beta")
-     top_terms <<- LDA_fit_topics %>%
-       group_by(topic) %>%
-       top_n(10, beta) %>%
-       ungroup() %>%
-       arrange(topic, -beta)
-     
-   }
-   
-   if (input$pick_model == "LDA_fixed"){
-     num_topics = topics(LDA_fixed, input$notopics)
-     num_terms = terms(LDA_fixed, input$noterms)
-     most_frequent = which.max(tabulate(topics(LDA_fixed,1)))
-     LDA_fix_topics = tidy(LDA_fixed, matrix = "beta")
-     top_terms <<- LDA_fix_topics %>%
-       group_by(topic) %>%
-       top_n(10, beta) %>%
-       ungroup() %>%
-       arrange(topic, -beta)
-     
-   }
-   
-   if (input$pick_model == "LDA_gibbs"){
-     num_topics = topics(LDA_gibbs, input$notopics)
-     num_terms = terms(LDA_gibbs,input$noterms)
-     most_frequent = which.max(tabulate(topics(LDA_gibbs,1)))
-     LDA_gibbs_topics = tidy(LDA_gibbs, matrix = "beta")
-     top_terms <<- LDA_gibbs_topics %>%
-       group_by(topic) %>%
-       top_n(10, beta) %>%
-       ungroup() %>%
-       arrange(topic, -beta)
-     
-   }
-   
-   if (input$pick_model == "CTM_fit"){
-     num_topics = topics(CTM_fit, input$notopics)
-     num_terms = terms(CTM_fit,input$noterms)
-     most_frequent = which.max(tabulate(topics(CTM_fit,1)))
-     CTM_fit_topics = tidy(CTM_fit, matrix = "beta")
-     top_terms <<- CTM_fit_topics %>%
-       group_by(topic) %>%
-       top_n(10, beta) %>%
-       ungroup() %>%
-       arrange(topic, -beta)
-     
-   }
+  output$topic_matrix = renderDataTable({
     
- datatable(as.data.frame(matrix(num_terms[ , most_frequent])[1:10]), rownames = T)
+    if (input$pick_model == "LDA_fit"){
+      matrix_print = topics(LDA_fit, input$notopics)
+    }
+    
+    if (input$pick_model == "LDA_fixed"){
+      matrix_print = topics(LDA_fixed, input$notopics)
+    }
+    
+    if (input$pick_model == "LDA_gibbs"){
+      matrix_print = topics(LDA_gibbs, input$notopics)
+    }
+    
+    if(input$pick_model == "CTM_fit"){
+      matrix_print = topics(CTM_fit, input$notopics)
+    }
+    
+    datatable(matrix_print, 
+              extensions = 'Buttons',
+              options = list(
+                searching = T,
+                dom = 'frtpB',
+                buttons = c('copy')
+              ) #close list
+    ) # close data table 
+    
+  }) #close datatable 
   
- })
+  output$topic_summary = renderDataTable({
+    
+    if (input$pick_model == "LDA_fit"){
+      topic_print = as.data.frame(table(topics(LDA_fit, 1)))
+    }
+    
+    if (input$pick_model == "LDA_fixed"){
+      topic_print = as.data.frame(table(topics(LDA_fixed, 1)))
+    }
+    
+    if (input$pick_model == "LDA_gibbs"){
+      topic_print = as.data.frame(table(topics(LDA_gibbs, 1)))
+    }
+    
+    if(input$pick_model == "CTM_fit"){
+      topic_print = as.data.frame(table(topics(CTM_fit, 1)))
+    }
+    
+    datatable(topic_print, 
+              extensions = 'Buttons',
+              options = list(
+                searching = T,
+                dom = 'frtpB',
+                buttons = c('copy')
+              ) #close list
+    ) # close data table 
+    
+  }) #close datatable 
+  
+  output$topic_summary = renderDataTable({
+    
+    if (input$pick_model == "LDA_fit"){
+      term_print = terms(LDA_fit, input$noterms)
+    }
+    
+    if (input$pick_model == "LDA_fixed"){
+      term_print = terms(LDA_fixed, input$noterms)
+    }
+    
+    if (input$pick_model == "LDA_gibbs"){
+      term_print = terms(LDA_gibbs, input$noterms)
+    }
+    
+    if(input$pick_model == "CTM_fit"){
+      term_print = terms(CTM_fit, input$noterms)
+    }
+    
+    datatable(term_print, 
+              extensions = 'Buttons',
+              options = list(
+                searching = T,
+                dom = 'frtpB',
+                buttons = c('copy')
+              ) #close list
+    ) # close data table 
+    
+  }) #close datatable 
 
   output$beta_plot = renderPlot({
+  
+    if (input$pick_model == "LDA_fit"){
+     LDA_fit_topics = tidy(LDA_fit, matrix = "beta")
+     top_terms = LDA_fit_topics %>%
+       group_by(topic) %>%
+       top_n(10, beta) %>%
+       ungroup() %>%
+       arrange(topic, -beta)
+     }
+   
+   if (input$pick_model == "LDA_fixed"){
+     LDA_fix_topics = tidy(LDA_fixed, matrix = "beta")
+     top_terms = LDA_fix_topics %>%
+       group_by(topic) %>%
+       top_n(10, beta) %>%
+       ungroup() %>%
+       arrange(topic, -beta)
+     }
+   
+   if (input$pick_model == "LDA_gibbs"){
+     LDA_gibbs_topics = tidy(LDA_gibbs, matrix = "beta")
+     top_terms = LDA_gibbs_topics %>%
+       group_by(topic) %>%
+       top_n(10, beta) %>%
+       ungroup() %>%
+       arrange(topic, -beta)
+     }
+   
+   if (input$pick_model == "CTM_fit"){
+     CTM_fit_topics = tidy(CTM_fit, matrix = "beta")
+     top_terms = CTM_fit_topics %>%
+       group_by(topic) %>%
+       top_n(10, beta) %>%
+       ungroup() %>%
+       arrange(topic, -beta)
+   }
+
     top_terms %>%
       mutate(term = reorder(term, beta)) %>%
       ggplot(aes(term, beta, fill = factor(topic))) +
@@ -451,10 +510,7 @@ server <- function(input, output, session) {
       coord_flip()
   })
      
-}    
-
-
- 
+}  #close server  
 
 # Run the application 
 shinyApp(ui = ui, server = server)
