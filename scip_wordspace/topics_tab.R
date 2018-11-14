@@ -12,7 +12,7 @@ topics_tab <- tabItem(tabName = "topics_tab",
                                 expect to find in your documents, the number of terms you want to view in your 
                                 output, and a random number (seed) to start the analysis on."),
                              br(),
-                             h4("LDA stands for Latent Dirichlet Allocation, which estimates topcis based on 
+                             h4("LDA stands for Latent Dirichlet Allocation, which estimates topics based on 
                                 the idea that every document includes a mix of topics, and every topic includes 
                                 a mix of words. The LDA Fit model includes this analysis with VEM 
                                 (variational expectation-maximization) algorithm and estimating an alpha, while the 

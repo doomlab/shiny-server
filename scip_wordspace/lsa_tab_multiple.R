@@ -12,10 +12,7 @@ lsa_tab_multiple <- tabItem(tabName = "lsa_tab_multiple",
                                  Please choose a minimum of three words to view output. If you still see an 
                                  error message, you should select additional options, as that indicates that at 
                                  least one of the selected words is not related to the other concepts."),
-                              selectizeInput("multiple_select", "Select Words:", 
-                                           #choices = c(rownames(import_lsa)), 
-                                           choices = "",
-                                           multiple = TRUE) #close selectizeInput
+                              htmlOutput("multiple_selectUI")
                           ), #close box
                           
                           box(title = "Plot of Neighbors:",

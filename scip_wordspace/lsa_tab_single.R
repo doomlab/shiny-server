@@ -10,10 +10,7 @@ lsa_tab_single <- tabItem(tabName = "lsa_tab_single",
            words in the corpus. First, select the word that you are interested in viewing. Next, select the number 
            of related words that you would like to view. Last, select the range of cosine values that you would like 
            to view."),
-        selectInput(inputId = "rownames_select", 
-                    label = "Select Target Word:",
-                    choices = ""
-        ), #close selectInput
+        htmlOutput("rownames_selectUI"),
         numericInput("neighbors", "Number of Neighbors to Display:", 10, min = 1, max = 100),
         sliderInput(inputId = "select_range", 
                     label = "Set Cosine Range:", 

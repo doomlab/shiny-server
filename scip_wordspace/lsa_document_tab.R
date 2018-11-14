@@ -9,10 +9,7 @@ lsa_document_tab <- tabItem(tabName = "lsa_document_tab",
                                h4("On this page, you can select a specific document from your uploaded data 
                                   to calculate coherence values and summaries from based on the LSA model 
                                   calculated from the uploaded corpus."),
-                               selectInput(inputId = "document_select",
-                                       label = "Select Document:",
-                                       #choices = 1:nrow(importdf))
-                                       choices = "")
+                               htmlOutput("document_selectUI")
                            ), #close box
                          
                            box(title = "Local Coherence:",

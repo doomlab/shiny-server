@@ -1,12 +1,14 @@
 data_tab <- tabItem(tabName = "data_tab",
   fluidRow(
+    
     box(title = "Upload Data",
-        width = 6,
+        width = 12,
         solidHeader = T,
         status = "primary",
         collapsible = T,
-        h4("Upload your data here."),
-        
+        h4("Upload your data to analyze here. You can use .csv or Excel files. The file 
+           should be formated where each document is in one cell in and these documents are 
+           one column of data. By default, only the first column will be analyzed."),
       ##supress red error
       #tags$style(type="text/css",
           #       ".shiny-output-error { visibility: hidden; }",
@@ -26,22 +28,6 @@ data_tab <- tabItem(tabName = "data_tab",
       ),
       checkboxInput("header", "Data file has a header", TRUE),
       DTOutput("inputdata_table")
-    ), #close box one
-    
-    box(title = "Use Our Data",
-        width = 6,
-        solidHeader = T,
-        status = "primary",
-        collapsible = T,
-        h4("Use our data."),
-        selectInput("pick_data", "Data Set:",
-                    c(#"None" = "none_selected",
-                      "English LSA Space: TASA" = "TASA",
-                      "English LSA Space: BNC/ukWaC/Wikipedia" = "ENLSA")
-        ),
-        mainPanel(DTOutput("ourdata_table"))
-        ) #close box two
-  
+      ) #close box one
     ) #close fluid row
-  
-) #close tab item
+  ) #close tab item
