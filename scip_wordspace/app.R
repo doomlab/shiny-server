@@ -434,7 +434,7 @@ server <- function(input, output, session) {
     
   }) #close datatable 
   
-  output$topic_summary = renderDataTable({
+  output$topic_terms = renderDataTable({
     
     if (input$pick_model == "LDA_fit"){
       term_print = terms(LDA_fit, input$noterms)
@@ -467,7 +467,7 @@ server <- function(input, output, session) {
   
     if (input$pick_model == "LDA_fit"){
      LDA_fit_topics = tidy(LDA_fit, matrix = "beta")
-     top_terms = LDA_fit_topics %>%
+     top_terms <<- LDA_fit_topics %>%
        group_by(topic) %>%
        top_n(10, beta) %>%
        ungroup() %>%
@@ -476,7 +476,7 @@ server <- function(input, output, session) {
    
    if (input$pick_model == "LDA_fixed"){
      LDA_fix_topics = tidy(LDA_fixed, matrix = "beta")
-     top_terms = LDA_fix_topics %>%
+     top_terms <<- LDA_fix_topics %>%
        group_by(topic) %>%
        top_n(10, beta) %>%
        ungroup() %>%
@@ -484,7 +484,7 @@ server <- function(input, output, session) {
      }
    
    if (input$pick_model == "LDA_gibbs"){
-     LDA_gibbs_topics = tidy(LDA_gibbs, matrix = "beta")
+     LDA_gibbs_topics <<- tidy(LDA_gibbs, matrix = "beta")
      top_terms = LDA_gibbs_topics %>%
        group_by(topic) %>%
        top_n(10, beta) %>%
@@ -493,7 +493,7 @@ server <- function(input, output, session) {
      }
    
    if (input$pick_model == "CTM_fit"){
-     CTM_fit_topics = tidy(CTM_fit, matrix = "beta")
+     CTM_fit_topics <<- tidy(CTM_fit, matrix = "beta")
      top_terms = CTM_fit_topics %>%
        group_by(topic) %>%
        top_n(10, beta) %>%

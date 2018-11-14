@@ -26,11 +26,11 @@ topics_tab <- tabItem(tabName = "topics_tab",
                                          "CTM Fit" = "CTM_fit")
                            ), #close selectInput
                          
-                        numericInput("notopics", "Number of Topics to Analyze:", 10, min = 1, max = 100),
+                        numericInput("notopics", "Number of Topics to Analyze:", 3, min = 1, max = 100),
                              
                         numericInput("noterms", "Number of Terms to Display:", 10, min = 1, max = 10000),
                         
-                        numericInput("SEED", "Pick a Random Seed:", 10, min = 1, max = 10000)
+                        numericInput("SEED", "Pick a Random Seed:", 6410, min = 1, max = 10000)
                         
                          ), #close box
                        
@@ -94,7 +94,7 @@ topics_tab <- tabItem(tabName = "topics_tab",
                             h4("This graph shows the number of terms you selected for each topic 
                             graphed by beta, which is the probability that the term was included 
                             in that topic."),
-                            renderPlot("beta_plot")
+                            plotOutput("beta_plot")
                         ) #close box
                         ) #close fluidRow
                       ) #close tab
