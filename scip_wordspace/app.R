@@ -266,6 +266,7 @@ server <- function(input, output, session) {
               extensions = 'Buttons',
               options = list(
                 searching = T,
+                scrollX = T,
                 dom = 'frtpB',
                 buttons = c('copy')
               ) #close list
