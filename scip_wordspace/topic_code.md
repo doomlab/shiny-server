@@ -4,7 +4,7 @@ author: "Erin M. Buchanan"
 date: "11/14/2018"
 output: 
   html_document:
-        self_contained: no
+        #self_contained: no
 ---
 
 First, you would need to load the libraries for the Topic Modeling packages:

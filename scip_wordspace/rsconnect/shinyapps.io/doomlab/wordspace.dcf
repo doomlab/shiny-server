@@ -1,0 +1,13 @@
+name: wordspace
+title: wordspace
+username:
+account: doomlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 571919
+bundleId: 1701567
+url: https://doomlab.shinyapps.io/wordspace/
+when: 1542239557.2913
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: examples/exam_answers.csv|examples/full_exam.csv|examples/lsa_example.R|examples/topics_example.R

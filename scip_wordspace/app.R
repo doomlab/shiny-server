@@ -56,7 +56,7 @@ ui <- dashboardPage(skin = "blue",
       lsa_tab_single,
       lsa_tab_multiple,
       lsa_document_tab,
-      topics_tab, 
+      topics_tab,
       code_tab
       ) # end tabItems
     ) # end dashboardBody

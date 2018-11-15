@@ -6,7 +6,7 @@ code_tab <- tabItem(tabName = "code_tab",
         solidHeader = T,
         status = "primary",
         collapsible = T,
-        HTML(markdown::markdownToHTML(knit("lsa_code.Rmd", quiet = T)))
+        includeMarkdown("lsa_code.md")
         ),#close box one
     
     box(title = "Topic Models Code:",
@@ -14,7 +14,7 @@ code_tab <- tabItem(tabName = "code_tab",
         solidHeader = T,
         status = "primary",
         collapsible = T,
-        HTML(markdown::markdownToHTML(knit("topic_code.Rmd", quiet = T)))
+        includeMarkdown("topic_code.md")
         ) #close box two
     
     ) #close fluid row
