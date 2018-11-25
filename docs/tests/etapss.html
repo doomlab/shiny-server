@@ -27,13 +27,15 @@
 
     
     <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_p^2$ is: $$\frac{SS_{model}} {SS_{model} &#43; SS_{error}}$$
-R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a)
 Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic">
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic
+ a = significance level  Example We looked at two year’s worth of athletic spending data (treating each receipt and years as separate between subjects’ events) for four different sports.">
     <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_p^2$ is: $$\frac{SS_{model}} {SS_{model} &#43; SS_{error}}$$
-R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a)
 Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic">
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic
+ a = significance level  Example We looked at two year’s worth of athletic spending data (treating each receipt and years as separate between subjects’ events) for four different sports.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Eta Partial - SS">
     <meta property="og:url" content="/tests/etapss.html">
@@ -41,9 +43,10 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
     <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_p^2$ is: $$\frac{SS_{model}} {SS_{model} &#43; SS_{error}}$$
-R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a)
 Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic">
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic
+ a = significance level  Example We looked at two year’s worth of athletic spending data (treating each receipt and years as separate between subjects’ events) for four different sports.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -231,7 +234,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="r-function">R Function</h1>
 
-<p>eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)</p>
+<p>eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a)</p>
 
 <h1 id="arguments">Arguments</h1>
 
@@ -246,43 +249,43 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="example">Example</h1>
 
-<p>NEEDS EXAMPLE</p>
+<p>We looked at two year’s worth of athletic spending data (treating each receipt and years as separate between subjects’ events) for four different sports. Are there differences across sports and years in spending?</p>
+
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20JASP.png" alt="Between Subjects Two Way ANOVA JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20SPSS.png" alt="Between Subjects Two Way ANOVA SPSS" /></p>
+
+<p><strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20SAS.PNG" alt="Between Subjects Two Way ANOVA SAS" /></p>
 
 <ul>
-<li>dfm = 2<br /></li>
-<li>dfe = 8</li>
-<li>ssm = 25.24</li>
-<li>sse = 44.91</li>
-<li>Fvalue = 5.13<br /></li>
+<li>dfm = 1<br /></li>
+<li>dfe = 18250</li>
+<li>ssm = 1675682.823</li>
+<li>sse = 620442270.8</li>
+<li>Fvalue = 49.289</li>
 <li>a = .05</li>
 </ul>
 
-<p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
-
-<p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
-
-<p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
-
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>eta.partial.SS(dfm = 2, dfe = 100, ssm = 435, sse = 659, Fvalue = 5.46, a = .05)</p>
+<p>eta.partial.SS(dfm = 1, dfe = 18250, ssm = 1675682.823, sse = 620442270.8, Fvalue = 49.289, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+<p><img src="../images/etapartialss.jpg" alt="Eta Partial SS Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p>$$\eta^2$$ = .56, 95% CI [.00, .83]</p>
+<p>$$\eta_p^2$$ = .00, 95% CI [.00, .00]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
+<p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
@@ -290,7 +293,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p><em>F</em>(2, 8) = 5.13, <em>p</em> = .037</p>
+<p><em>F</em>(1, 18250) = 49.29, <em>p</em> &lt; .001</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
@@ -298,7 +301,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qVeBv2yqVTM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

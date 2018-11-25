@@ -131,9 +131,10 @@ Arguments  dfm = degrees of freedom for the model/IV/between
       
       <guid>https://www.aggieerin.com/shiny-server/tests/etapss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_p^2$ is: $$\frac{SS_{model}} {SS_{model} + SS_{error}}$$
-R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a = 0.05)
+R Function eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a)
 Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic</description>
+ dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within Fvalue = F statistic
+ a = significance level  Example We looked at two year’s worth of athletic spending data (treating each receipt and years as separate between subjects’ events) for four different sports.</description>
     </item>
     
     <item>
