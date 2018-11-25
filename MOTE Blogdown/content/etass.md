@@ -38,7 +38,16 @@ eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a = 0.05)
 
 # Example  
 
-NEEDS EXAMPLE
+A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. 
+
+**JASP**
+![One-Way ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20ANOVA%20JASP.png)
+
+**SPSS**
+![One-Way ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SPSS.png)
+
+**SAS**
+![One-Way ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SAS.PNG)
 
 + dfm = 2  
 + dfe = 8 
@@ -46,15 +55,6 @@ NEEDS EXAMPLE
 + sst = 44.91
 + Fvalue = 5.13   
 + a	= .05
-
-**JASP**
-![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
-
-**SPSS**
-![Independent t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png)
-
-**SAS**
-![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
 
 # Function in R: 
 
@@ -64,7 +64,7 @@ eta.full.SS(dfm = 2, dfe = 8, ssm = 25.24, sst = 44.91, Fvalue = 5.13, a = 0.05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Eta Full SS Screenshot](../images/etafullss.jpg)
 
 ## Effect Size:
 
@@ -88,4 +88,4 @@ Your *p*-value is less than the alpha value, and therefore, this test would be c
 
 # Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5yfUgJB4mwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

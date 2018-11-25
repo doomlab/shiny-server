@@ -121,7 +121,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
 R Function eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sst = sum of squares total Fvalue = F statistic
- a = significance level  Example NEEDS EXAMPLE</description>
+ a = significance level  Example A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health.</description>
     </item>
     
     <item>
