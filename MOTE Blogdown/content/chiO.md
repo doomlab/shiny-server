@@ -39,7 +39,13 @@ a	= significance level
 
 # Example  
 
-Description goes here!
+A health psychologist was interested in the rates of anxiety in first generation and regular college students. They polled campus and found the following data:
+
+|              | First Generation | Regular |
+|--------------|------------------|---------|
+| Low Anxiety  | 10               | 50      |
+| High Anxiety | 20               | 15      |
+
 
 **JASP**
 ![Chi-square JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20JASP.png)

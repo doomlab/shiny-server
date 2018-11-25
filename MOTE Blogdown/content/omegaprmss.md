@@ -43,36 +43,36 @@ omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a = 0.05)
 
 # Example  
 
-NEEDS EXAMPLE
+Participants were tested over several days to measure variations in their pulse given different types of stimuli. One stimulus was a neutral picture (like a toaster), while other stimuli were cute/happy pictures (puppies, babies), and negative stimuli (mutilated faces, pictures of war). Were there differences in pulse for each participant across the stimuli? 
 
 + dfm = 2  
-+ dfe = 100
-+ msm = 214
-+ mse = 100
-+ mss = 20
-+ ssm = 5339
-+ sse = 435
++ dfe = 34
++ msm = 18786.06
++ mse = 74.17
++ mss = 37572
++ ssm = 23369
++ sse = 2522
 + sss = 53  
 + a	= .05
 
 **JASP**
-![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
+![Repeated Measures One-Way ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20JASP.png)
 
 **SPSS**
-![Independent t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png)
+![Repeated Measures One-Way ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20SPSS.png)
 
 **SAS**
-![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
+![Repeated Measures One-Way ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20SAS.PNG)
 
 # Function in R: 
 
-ges.partial.SS.rm(dfm = 2, dfe = 100, ssm = 435, sss = 659, sse1 = 435, sse2 = 446, sse3 = 546, Fvalue = 5.46, a = .05)
+omega.partial.SS.rm(dfm = 2, dfe = 34, msm = 18786.06, mse = 74.17, mss = 1375, ssm = 37572, sse = 2522, sss = 23369, a = .05)
 
 # MOTE
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Repeated Measures One-Way ANOVA Screenshot](../images/anovarm.jpg)
 
 ## Effect Size:
 

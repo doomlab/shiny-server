@@ -18,7 +18,7 @@ Calculates r from d and then translates r to r2 to calculate the non-central con
 
 The formula for *r* is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$
 
-The formula for *t* is: \frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+The formula for *t* is: $$t = \frac{r} {\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 
 
 # R Function
@@ -28,9 +28,9 @@ d.to.r(d, n1, n2, sd2, a = 0.05)
 # Arguments 
 
 
-+ d = mean from first level
-+ n1 = mean from second level
-+ n2 = standard deviation from first level
++ d = effect size statistic
++ n1 = sample size group one
++ n2 = sample size group two
 + a	= significance level
 
 # Example  
@@ -46,16 +46,14 @@ In a study to test the effects of science fiction movies on people's belief in t
 **SAS**
 ![Dependent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG)
 
-+ m1 = 5.571
-+ m2 = 4.429
-+ sd1 = 1.988
-+ sd2	= 2.878
-+ n = 14
++ d = .5
++ n1 = 50
++ n2 = 50
 + a	= .05
 
 # Function in R: 
 
-r.correl(r, n, a = 0.05)
+d.to.r(d, n1, n2, a = 0.05)
 
 # MOTE
 

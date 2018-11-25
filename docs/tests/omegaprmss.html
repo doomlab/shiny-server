@@ -30,12 +30,12 @@
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
 R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example NEEDS EXAMPLE">
+ dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example Participants were tested over several days to measure variations in their pulse given different types of stimuli.">
     <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; (N - df_{model}) \times MS_{error}}$$
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
 R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example NEEDS EXAMPLE">
+ dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example Participants were tested over several days to measure variations in their pulse given different types of stimuli.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Omega Partial RM - SS">
     <meta property="og:url" content="/tests/omegaprmss.html">
@@ -46,7 +46,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
 R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example NEEDS EXAMPLE">
+ dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example Participants were tested over several days to measure variations in their pulse given different types of stimuli.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -254,38 +254,38 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="example">Example</h1>
 
-<p>NEEDS EXAMPLE</p>
+<p>Participants were tested over several days to measure variations in their pulse given different types of stimuli. One stimulus was a neutral picture (like a toaster), while other stimuli were cute/happy pictures (puppies, babies), and negative stimuli (mutilated faces, pictures of war). Were there differences in pulse for each participant across the stimuli?</p>
 
 <ul>
 <li>dfm = 2<br /></li>
-<li>dfe = 100</li>
-<li>msm = 214</li>
-<li>mse = 100</li>
-<li>mss = 20</li>
-<li>ssm = 5339</li>
-<li>sse = 435</li>
+<li>dfe = 34</li>
+<li>msm = 18786.06</li>
+<li>mse = 74.17</li>
+<li>mss = 37572</li>
+<li>ssm = 23369</li>
+<li>sse = 2522</li>
 <li>sss = 53<br /></li>
 <li>a = .05</li>
 </ul>
 
 <p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20JASP.png" alt="Repeated Measures One-Way ANOVA JASP" /></p>
 
 <p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20SPSS.png" alt="Repeated Measures One-Way ANOVA SPSS" /></p>
 
 <p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20SAS.PNG" alt="Repeated Measures One-Way ANOVA SAS" /></p>
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>ges.partial.SS.rm(dfm = 2, dfe = 100, ssm = 435, sss = 659, sse1 = 435, sse2 = 446, sse3 = 546, Fvalue = 5.46, a = .05)</p>
+<p>omega.partial.SS.rm(dfm = 2, dfe = 34, msm = 18786.06, mse = 74.17, mss = 1375, ssm = 37572, sse = 2522, sss = 23369, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+<p><img src="../images/anovarm.jpg" alt="Repeated Measures One-Way ANOVA Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
