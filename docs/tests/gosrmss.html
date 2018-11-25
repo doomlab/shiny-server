@@ -228,15 +228,19 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="r-function">R Function</h1>
 
-<p>omega.F(dfm, dfe, Fvalue, n, a = 0.05)</p>
+<p>omega.gen.SS.rm(dfm, dfe, ssm, ssm2, sst, mss, j, Fvalue, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
 <ul>
 <li>dfm   = degrees of freedom for the model/IV/between</li>
 <li>dfe   = degrees of freedom for the error/residual/within</li>
-<li>Fvalue = F statistic</li>
-<li>n = full sample size</li>
+<li>ssm = sum of squares for the MAIN model/IV/between</li>
+<li>ssm2 = sum of squares for the OTHER model/IV/between</li>
+<li>sst = sum of squares total across the whole ANOVA</li>
+<li>mss = mean square for the subject variance</li>
+<li>j = number of levels in the OTHER IV</li>
+<li>Fvalue = F statistic from the output for your IV</li>
 <li>a = significance level</li>
 </ul>
 
@@ -245,25 +249,17 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 <p>A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. The data is included at <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
 <p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20JASP.png" alt="BN ANOVA 1 JASP" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20ANOVA%20JASP.png" alt="BN ANOVA 1 JASP" /></p>
 
 <p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20SPSS.png" alt="BN ANOVA 1 SPSS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SPSS.png" alt="BN ANOVA 1 SPSS" /></p>
 
 <p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20SAS.PNG" alt="BN ANOVA 1 SAS" /></p>
-
-<ul>
-<li>dfm   = 2</li>
-<li>dfe   = 8</li>
-<li>Fvalue = 5.13</li>
-<li>n = 11</li>
-<li>a = .05</li>
-</ul>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SAS.PNG" alt="BN ANOVA 1 SAS" /></p>
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>omega.F(dfm = 2, dfe = 8, Fvalue = 5.13, n = 11, a = 0.05)</p>
+<p>omega.gen.SS.rm(dfm = 1, dfe = 156, ssm = 14994.636, ssm2 = 50700.145, sst = 68084.034, mss = 492.999, j = 1, Fvalue = 953.042, a = 0.05)</p>
 
 <h1 id="mote">MOTE</h1>
 
@@ -273,27 +269,27 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p>INCLUDE THE OUTPUT FROM MOTE</p>
+<p>omega_g^2 = .12, 95% CI [.04, .23]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>INCLUDE INTERPRETATION FROM MOTE</p>
+<p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>INCLUDE SUMMARY STATISTICS FROM MOTE</p>
+<p>Not applicable.</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p>INCLUDE TEST STATISTICS FROM MOTE</p>
+<p>F(1, 156) = 953.04, p &lt; .001</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
-<p>INCLUDE INTERPRETATION FROM MOTE</p>
+<p>Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5yfUgJB4mwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

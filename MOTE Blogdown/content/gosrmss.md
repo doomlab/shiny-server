@@ -28,15 +28,18 @@ The formula for $\omega^2$ is: $$\frac{SS\_{model} - (df\_{model} \times MS\_{su
 
 # R Function
 
- omega.F(dfm, dfe, Fvalue, n, a = 0.05) 
+omega.gen.SS.rm(dfm, dfe, ssm, ssm2, sst, mss, j, Fvalue, a = 0.05)
 
 # Arguments 
 
-
 + dfm	= degrees of freedom for the model/IV/between
 + dfe	= degrees of freedom for the error/residual/within
-+ Fvalue = F statistic
-+ n	= full sample size
++ ssm = sum of squares for the MAIN model/IV/between
++ ssm2 = sum of squares for the OTHER model/IV/between
++ sst = sum of squares total across the whole ANOVA
++ mss = mean square for the subject variance
++ j = number of levels in the OTHER IV
++ Fvalue = F statistic from the output for your IV
 + a	= significance level
 
 # Example  
@@ -44,23 +47,17 @@ The formula for $\omega^2$ is: $$\frac{SS\_{model} - (df\_{model} \times MS\_{su
 A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
-![BN ANOVA 1 JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20JASP.png)
+![BN ANOVA 1 JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20ANOVA%20JASP.png)
 
 **SPSS**
-![BN ANOVA 1 SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20SPSS.png)
+![BN ANOVA 1 SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SPSS.png)
 
 **SAS**
-![BN ANOVA 1 SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20SAS.PNG)
-
-+ dfm	= 2
-+ dfe	= 8
-+ Fvalue = 5.13
-+ n	= 11
-+ a	= .05
+![BN ANOVA 1 SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SAS.PNG)
 
 # Function in R: 
 
- omega.F(dfm = 2, dfe = 8, Fvalue = 5.13, n = 11, a = 0.05) 
+omega.gen.SS.rm(dfm = 1, dfe = 156, ssm = 14994.636, ssm2 = 50700.145, sst = 68084.034, mss = 492.999, j = 1, Fvalue = 953.042, a = 0.05)
 
 # MOTE
 
@@ -70,24 +67,24 @@ A health psychologist recorded the number of close inter-personal attachments of
 
 ## Effect Size:
 
-INCLUDE THE OUTPUT FROM MOTE
+omega_g^2 = .12, 95% CI [.04, .23]
 
 ## Interpretation: 
 
-INCLUDE INTERPRETATION FROM MOTE
+Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.
 
 ## Summary Statistics: 
 
-INCLUDE SUMMARY STATISTICS FROM MOTE
+Not applicable. 
 
 ## Test Statistic: 
 
-INCLUDE TEST STATISTICS FROM MOTE
+F(1, 156) = 953.04, p < .001
 
 ## Interpretation: 
 
-INCLUDE INTERPRETATION FROM MOTE
+Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.
 
 # Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5yfUgJB4mwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
