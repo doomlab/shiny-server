@@ -29,7 +29,7 @@ This value will be $\eta^{2}$ when you use a one-way ANOVA and will be $\eta\_{p
 
 # R Function
 
-eta.F(dfm, dfe, Fvalue, a)
+eta.F(dfm, dfe, Fvalue, a = .05)
 
 # Arguments 
 
@@ -41,11 +41,6 @@ eta.F(dfm, dfe, Fvalue, a)
 # Example  
 
 A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. 
-
-+ dfm = degrees of freedom for the model/IV/between   
-+ dfe = degrees of freedom for the error/residual/within   
-+ Fvalue	= F statistic   
-+ a	= significance level
 
 **JASP**
 ![One-Way ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20ANOVA%20JASP.png)
@@ -64,11 +59,11 @@ eta.F(dfm = 2, dfe = 8, Fvalue = 5.134, a = 0.05)
 
 ## Screenshot
 
-![One-Way ANOVA Screenshot](../images/anovabn1.png)
+![One-Way ANOVA Screenshot](../images/anovabn1.jpg)
 
 ## Effect Size:
 
-$$\eta^2$$ = .56, 95% CI [.00, .83]
+$\eta^2$ = .56, 95% CI [.00, .83]
 
 ## Interpretation: 
 
