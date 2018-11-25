@@ -45,16 +45,6 @@ omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a)
 
 In this experiment people were given word pairs to rate based on their “relatedness”. How many people out of a 100 would put LOST-FOUND together? Participants were given pairs of words and asked to rate them on how often they thought 100 people would give the second word if shown the first word.  The strength of the word pairs was manipulated through the actual rating (forward strength: FSG) and the strength of the reverse rating (backward strength: BSG). Is there an interaction between FSG and BSG when participants are estimating the relation between word pairs?
 
-+ dfm = 1  
-+ dfe = 156
-+ msm = 4995
-+ mse = 35.52
-+ mss = 493
-+ ssm = 4995
-+ sse = 5541
-+ sss = 76908  
-+ a	= .05
-
 **JASP**
 ![Repeated Measures Two-Way ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%202%20ANOVA%20JASP.png)
 

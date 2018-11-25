@@ -33,7 +33,6 @@ omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a)
 
 # Arguments 
 
-
 + dfm =	degrees of freedom for the model/IV/between
 + dfe	= degrees of freedom for the error/residual/within
 + msm	= mean square for the model/IV/between
@@ -46,38 +45,45 @@ omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a)
 
 A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. 
 
+**JASP**
+![Two Way ANOVA Between-Subjects JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20JASP.png)
+
+**SPSS**
+![Two-Way Between-Subjects SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20SPSS.png)
+
+**SAS**
+![Two-Way Between-Subjects ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20SAS.PNG)
+
 # Function in R: 
 
-omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a = 0.05)
+omega.partial.SS.bn(dfm = 1, dfe = 18250, msm = 1675682.823, mse = 33996.837, ssm = 1675682.823, n = 18260, a = 0.05)
 
 # MOTE
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Omega Partial SS Screenshot](../images/omegapartbnss.jpg)
 
 ## Effect Size:
 
-INCLUDE THE OUTPUT FROM MOTE
+$\omega\_p^2$ = .00, 95% CI [.00, .00]
 
 ## Interpretation: 
 
-INCLUDE INTERPRETATION FROM MOTE
+Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.
 
 ## Summary Statistics: 
 
-INCLUDE SUMMARY STATISTICS FROM MOTE
+Not applicable.
 
 ## Test Statistic: 
 
-INCLUDE TEST STATISTICS FROM MOTE
+F(1, 18250) = 49.29, p < .001
 
 ## Interpretation: 
 
-INCLUDE INTERPRETATION FROM MOTE
+Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.
 
 # Tutorial
 
-ONLY CHANGE THE NUMBERS/LETTERS AFTER EMBED HERE. 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CyfOS7Ew-Hw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N-Vy9gaVNP4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

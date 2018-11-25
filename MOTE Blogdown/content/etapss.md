@@ -68,7 +68,7 @@ eta.partial.SS(dfm = 1, dfe = 18250, ssm = 1675682.823, sse = 620442270.8, Fvalu
 
 ## Effect Size:
 
-$$\eta\_p^2$$ = .00, 95% CI [.00, .00]
+$\eta\_p^2$ = .00, 95% CI [.00, .00]
 
 ## Interpretation: 
 
