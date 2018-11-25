@@ -27,7 +27,7 @@ The formula for *odds* is: $$\frac{(N\_{11}/N\_{12})}{(N\_{21}/N\_{22})}$$
 
 # R Function
 
-odds(n11, n12, n21, n22, a = 0.05) 
+odds(n11, n12, n21, n22, a) 
 
 # Arguments 
 

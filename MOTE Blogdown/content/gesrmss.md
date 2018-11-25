@@ -27,7 +27,7 @@ The labels A and B here indicate the two IVs in a two-way design. AxB indicates 
 
 # R Function
 
-ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.05)
+ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a)
 
 # Arguments 
 

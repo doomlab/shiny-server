@@ -42,42 +42,54 @@ epsilon.full.SS(dfm, dfe, msm, mse, sst, a = 0.05)
 
 # Example  
 
-INCLUDE AN EXAMPLE FROM 527
+A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. 
 
-INCLUDE THE NUMBERS FOR THE ARGUMENT LISTED OUT 
+**JASP**
+![One-Way ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20ANOVA%20JASP.png)
+
+**SPSS**
+![One-Way ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SPSS.png)
+
+**SAS**
+![One-Way ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SAS.PNG)
+
++ dfm = 2  
++ dfe = 8 
++ msm = 12.621
++ mse = 2.458
++ sst = 44.909  
++ a	= .05
 
 # Function in R: 
 
-INCLUDE THE FUNCTION HOW YOU WOULD WRITE IT IN R
+epsilon.full.SS(dfm = 2, dfe = 8, msm = 12.621, mse = 2.458, sst = 44.909, a)
 
 # MOTE
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Epsilon for ANOVA Screenshot](../images/epsilon.jpg)
 
 ## Effect Size:
 
-INCLUDE THE OUTPUT FROM MOTE
+$$\epsilon\^2$$ = .45, 95% CI [.00, .77]
 
 ## Interpretation: 
 
-INCLUDE INTERPRETATION FROM MOTE
+Your confidence interval does include zero, and therefore, you might conclude that this effect is similar to zero. 
 
 ## Summary Statistics: 
 
-INCLUDE SUMMARY STATISTICS FROM MOTE
+*F*(2, 8) = 5.13, *p* = .037
 
 ## Test Statistic: 
 
-INCLUDE TEST STATISTICS FROM MOTE
+Not applicable. 
 
 ## Interpretation: 
 
-INCLUDE INTERPRETATION FROM MOTE
+Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant. 
 
 # Tutorial
 
-ONLY CHANGE THE NUMBERS/LETTERS AFTER EMBED HERE. 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CyfOS7Ew-Hw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5yfUgJB4mwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

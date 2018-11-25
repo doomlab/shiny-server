@@ -25,7 +25,7 @@ The formula for $\eta^2$ is: $$\frac{SS\_{model}} {SS\_{total}}$$
 
 # R Function
 
-eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a = 0.05)
+eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a)
 
 # Arguments 
 
@@ -64,7 +64,7 @@ eta.full.SS(dfm = 2, dfe = 8, ssm = 25.24, sst = 44.91, Fvalue = 5.13, a = 0.05)
 
 ## Screenshot
 
-![Eta Full SS Screenshot](../images/etafullss.jpg)
+![Eta for ANOVA from F and Sum of Squares Screenshot](../images/etafullss.jpg)
 
 ## Effect Size:
 

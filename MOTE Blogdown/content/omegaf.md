@@ -30,7 +30,7 @@ This value will be $\omega^2$ for one-way ANOVA designs and will be $\omega_p^2$
 
 # R Function
 
-omega.F(dfm, dfe, Fvalue, n, a = 0.05)
+omega.F(dfm, dfe, Fvalue, n, a)
 
 # Arguments 
 

@@ -29,7 +29,7 @@ This value will be $\eta^{2}$ when you use a one-way ANOVA and will be $\eta\_{p
 
 # R Function
 
-eta.F(dfm, dfe, Fvalue, a = 0.05)
+eta.F(dfm, dfe, Fvalue, a)
 
 # Arguments 
 

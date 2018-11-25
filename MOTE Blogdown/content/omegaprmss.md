@@ -27,7 +27,7 @@ The formula for *F* is: $$\frac{MS\_{model}}{MS\_{error}}$$
 
 # R Function
 
-omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a = 0.05)
+omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a)
 
 # Arguments 
 

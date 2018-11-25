@@ -19,7 +19,7 @@
       <guid>https://www.aggieerin.com/shiny-server/tests/chio.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays odds ratios and their normal confidence intervals. This statistic is calculated as (level 1.1/level 1.2) / (level 2.1/level 2.2), which can be considered the odds of level 1.1 given level1 overall versus level2.1 given level2 overall.
 The formula for odds is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$
-R Function odds(n11, n12, n21, n22, a = 0.05)
+R Function odds(n11, n12, n21, n22, a)
 Arguments n11 = sample size for level 1.</description>
     </item>
     
@@ -106,7 +106,7 @@ R Function epsilon.</description>
       <guid>https://www.aggieerin.com/shiny-server/tests/etaf.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta^{2}$ is: $${df_{model} \times F_{model}\over df_{model} \times F_{model} + df_{error}}$$
 This value will be $\eta^{2}$ when you use a one-way ANOVA and will be $\eta_{p}^{2}$ when you use a multi-way ANOVA (more than one IV).
-R Function eta.F(dfm, dfe, Fvalue, a = 0.05)
+R Function eta.F(dfm, dfe, Fvalue, a)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within</description>
     </item>
@@ -118,7 +118,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
       
       <guid>https://www.aggieerin.com/shiny-server/tests/etass.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta^2$ is: $$\frac{SS_{model}} {SS_{total}}$$
-R Function eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a = 0.05)
+R Function eta.full.SS(dfm, dfe, ssm, sst, Fvalue, a)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sst = sum of squares total Fvalue = F statistic
  a = significance level  Example A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health.</description>
@@ -156,7 +156,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
       <guid>https://www.aggieerin.com/shiny-server/tests/gesrmss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{errorA} + SS_{errorB} + SS_{errorAxB}}$$
 The labels A and B here indicate the two IVs in a two-way design. AxB indicates the interaction term for A by B. This formula does not cover more than two-way designs.
-R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.</description>
+R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a)</description>
     </item>
     
     <item>
@@ -251,7 +251,7 @@ The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{err
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula is appropriate for multi-way between subjects designs.
 The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + (N - df_{model}) \times MS_{error}}$$
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
-R Function omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a = 0.</description>
+R Function omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a)</description>
     </item>
     
     <item>
@@ -262,7 +262,7 @@ R Function omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a = 0.</description>
       <guid>https://www.aggieerin.com/shiny-server/tests/omegaprmss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + (N - df_{model}) \times MS_{error}}$$
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
-R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a = 0.05)
+R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example In this experiment people were given word pairs to rate based on their “relatedness”.</description>
     </item>
@@ -371,7 +371,7 @@ Arguments  m1 = mean one
       <guid>https://www.aggieerin.com/shiny-server/tests/rcorrel.html</guid>
       <description>Description This function displays transformation from r to r2 to calculate the non-central confidence interval for $r^2$ using the F distribution.
 The formula for t is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
-R Function r.correl(r, n, a = 0.05)
+R Function r.correl(r, n, a)
 Arguments  r = correlation coefficient n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
     

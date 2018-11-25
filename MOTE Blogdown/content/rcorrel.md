@@ -21,7 +21,7 @@ The formula for *t* is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 
 # R Function
 
-r.correl(r, n, a = 0.05)
+r.correl(r, n, a)
 
 # Arguments 
 
