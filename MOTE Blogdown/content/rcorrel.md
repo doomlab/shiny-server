@@ -15,7 +15,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 # Description   
 
 This function displays transformation from r to r2 to calculate the non-central confidence 
-interval for *r*^2 using the F distribution. 
+interval for $r^2$ using the F distribution. 
 
 The formula for *t* is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 

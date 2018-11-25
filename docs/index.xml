@@ -369,7 +369,7 @@ Arguments  m1 = mean one
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/rcorrel.html</guid>
-      <description>Description This function displays transformation from r to r2 to calculate the non-central confidence interval for r^2 using the F distribution.
+      <description>Description This function displays transformation from r to r2 to calculate the non-central confidence interval for $r^2$ using the F distribution.
 The formula for t is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 R Function r.correl(r, n, a = 0.05)
 Arguments  r = correlation coefficient n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
