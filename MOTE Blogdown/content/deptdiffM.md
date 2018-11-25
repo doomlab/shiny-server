@@ -32,7 +32,7 @@ $S\_{D}$ = Standard deviation of difference scores
 
 # R Function
 
-d.dep.t.diff(mdiff, sddiff, n, a = 0.05)
+d.dep.t.diff(mdiff, sddiff, n, a)
 
 # Arguments 
 

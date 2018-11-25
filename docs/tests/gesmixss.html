@@ -27,11 +27,11 @@
 
     
     <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} &#43; SS_{subject} &#43; SS_{error}}$$
-R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, Fvalue, a = 0.05)
+R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, sse, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sss = sum of squares subject variance sse = sum of squares for the error/residual/within Fvalue = F statistic">
     <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} &#43; SS_{subject} &#43; SS_{error}}$$
-R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, Fvalue, a = 0.05)
+R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, sse, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sss = sum of squares subject variance sse = sum of squares for the error/residual/within Fvalue = F statistic">
     <meta property="og:type" content="blog">
@@ -41,7 +41,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
     <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} &#43; SS_{subject} &#43; SS_{error}}$$
-R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, Fvalue, a = 0.05)
+R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, sse, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sss = sum of squares subject variance sse = sum of squares for the error/residual/within Fvalue = F statistic">
     
@@ -231,7 +231,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="r-function">R Function</h1>
 
-<p>ges.partial.SS.mix(dfm, dfe, ssm, sss, Fvalue, a = 0.05)</p>
+<p>ges.partial.SS.mix(dfm, dfe, ssm, sss, sse, Fvalue, a = 0.05)</p>
 
 <h1 id="arguments">Arguments</h1>
 
@@ -247,44 +247,44 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="example">Example</h1>
 
-<p>NEEDS EXAMPLE</p>
+<p>Given previous research, we know that backward strength in free association tends to increase the ratings participants give when you ask them how many people out of 100 would say a word in response to a target word (like Family Feud). This result is tied to people’s overestimation of how well they think they know something, which is bad for studying. So, we gave people instructions on how to ignore the BSG.  Did it help? Is there an interaction between BSG and instructions given?</p>
+
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20JASP.png" alt="Two Way Mixed ANOVA JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20SPSS.png" alt="Two Way Mixed ANOVA SPSS" /></p>
+
+<p><strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20SAS.PNG" alt="Two Way Mixed ANOVA SAS" /></p>
 
 <ul>
-<li>dfm = 2<br /></li>
-<li>dfe = 100</li>
-<li>ssm = 435</li>
-<li>sss = 235</li>
-<li>sse = 659</li>
-<li>Fvalue = 5.46<br /></li>
+<li>dfm = 1</li>
+<li>dfe = 156</li>
+<li>ssm = 50860.89</li>
+<li>sss = 64251</li>
+<li>sse = 8301.74</li>
+<li>Fvalue = 955.740<br /></li>
 <li>a = .05</li>
 </ul>
 
-<p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png" alt="Independent t JASP" /></p>
-
-<p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png" alt="Independent t SPSS" /></p>
-
-<p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG" alt="Independent t SAS" /></p>
-
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>ges.partial.SS.rm(dfm = 2, dfe = 100, ssm = 435, sss = 659, sse1 = 435, sse2 = 446, sse3 = 546, Fvalue = 5.46, a = .05)</p>
+<p>ges.partial.SS.mix(dfm = 1, dfe = 156, ssm = 50860.89, sss = 64251, sse = 8301.74, Fvalue = 955.740, a = .05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+<p><img src="../images/gespartmixss.jpg" alt="GES Partial Mixed SS Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p>$$\eta^2$$ = .56, 95% CI [.00, .83]</p>
+<p>$\eta_G^2$ = .41, 95% CI [.29, .52]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
+<p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
@@ -292,7 +292,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p><em>F</em>(2, 8) = 5.13, <em>p</em> = .037</p>
+<p><em>F</em>(1, 156) = 955.74, <em>p</em> &lt; .001</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
@@ -300,7 +300,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1piNdNdMbc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

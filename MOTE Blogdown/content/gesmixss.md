@@ -25,7 +25,7 @@ The formula for $\eta\_G^2$ is: $$\frac{SS\_{model}}{SS\_{model} + SS\_{subject}
 
 # R Function
 
-ges.partial.SS.mix(dfm, dfe, ssm, sss, Fvalue, a = 0.05)
+ges.partial.SS.mix(dfm, dfe, ssm, sss, sse, Fvalue, a = 0.05)
 
 # Arguments 
 
@@ -39,42 +39,42 @@ ges.partial.SS.mix(dfm, dfe, ssm, sss, Fvalue, a = 0.05)
 
 # Example  
 
-NEEDS EXAMPLE
-
-+ dfm = 2  
-+ dfe = 100
-+ ssm = 435
-+ sss = 235
-+ sse = 659
-+ Fvalue = 5.46   
-+ a	= .05
+Given previous research, we know that backward strength in free association tends to increase the ratings participants give when you ask them how many people out of 100 would say a word in response to a target word (like Family Feud). This result is tied to people’s overestimation of how well they think they know something, which is bad for studying. So, we gave people instructions on how to ignore the BSG.  Did it help? Is there an interaction between BSG and instructions given?
 
 **JASP**
-![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
+![Two Way Mixed ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20JASP.png)
 
 **SPSS**
-![Independent t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png)
+![Two Way Mixed ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20SPSS.png)
 
 **SAS**
-![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
+![Two Way Mixed ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20SAS.PNG)
+
++ dfm = 1 
++ dfe = 156
++ ssm = 50860.89
++ sss = 64251
++ sse = 8301.74
++ Fvalue = 955.740  
++ a	= .05
 
 # Function in R: 
 
-ges.partial.SS.rm(dfm = 2, dfe = 100, ssm = 435, sss = 659, sse1 = 435, sse2 = 446, sse3 = 546, Fvalue = 5.46, a = .05)
+ges.partial.SS.mix(dfm = 1, dfe = 156, ssm = 50860.89, sss = 64251, sse = 8301.74, Fvalue = 955.740, a = .05)
 
 # MOTE
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![GES Partial Mixed SS Screenshot](../images/gespartmixss.jpg)
 
 ## Effect Size:
 
-$$\eta^2$$ = .56, 95% CI [.00, .83]
+$\eta\_G^2$ = .41, 95% CI [.29, .52]
 
 ## Interpretation: 
 
-Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.
+Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.
 
 ## Summary Statistics: 
 
@@ -82,7 +82,7 @@ Not applicable.
 
 ## Test Statistic: 
 
-*F*(2, 8) = 5.13, *p* = .037
+*F*(1, 156) = 955.74, *p* < .001
 
 ## Interpretation: 
 
@@ -90,4 +90,4 @@ Your *p*-value is less than the alpha value, and therefore, this test would be c
 
 # Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1piNdNdMbc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

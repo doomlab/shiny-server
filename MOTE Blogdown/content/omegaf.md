@@ -30,10 +30,9 @@ This value will be $\omega^2$ for one-way ANOVA designs and will be $\omega_p^2$
 
 # R Function
 
-omega.F(dfm, dfe, Fvalue, n, a)
+omega.F(dfm, dfe, Fvalue, n, a = .05)
 
 # Arguments 
-
 
 + dfm =	degrees of freedom for the model/IV/between
 + dfe =	degrees of freedom for the error/residual/within
@@ -43,42 +42,46 @@ omega.F(dfm, dfe, Fvalue, n, a)
 
 # Example  
 
-INCLUDE AN EXAMPLE FROM 527
-
-INCLUDE THE NUMBERS FOR THE ARGUMENT LISTED OUT 
-
-# Function in R: 
-
-INCLUDE THE FUNCTION HOW YOU WOULD WRITE IT IN R
+Participants were tested over several days to measure variations in their pulse given different types of stimuli. One stimulus was a neutral picture (like a toaster), while other stimuli were cute/happy pictures (puppies, babies), and negative stimuli (mutilated faces, pictures of war). Were there differences in pulse for each participant across the stimuli? 
 
 # MOTE
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+**JASP**
+![One-Way Repeated Measures ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20JASP.png)
+
+**SPSS**
+![One-Way Repeated Measures ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20SPSS.png)
+
+**SAS**
+![One-Way Repeated Measures ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20SAS.PNG)
+
+![Z-Test Means Screenshot](../images/omegaf.jpg)
+# Function in R: 
+
+omega.F(dfm = 2, dfe = 34, Fvalue = 253.273, n = 40, a = .05)
 
 ## Effect Size:
 
-INCLUDE THE OUTPUT FROM MOTE
+$\omega^2$ = .93, 95% CI [.85, .96]
 
 ## Interpretation: 
 
-INCLUDE INTERPRETATION FROM MOTE
+Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.
 
 ## Summary Statistics: 
 
-INCLUDE SUMMARY STATISTICS FROM MOTE
+Not applicable. 
 
 ## Test Statistic: 
 
-INCLUDE TEST STATISTICS FROM MOTE
+F(2, 34) = 253.27, p < .001
 
 ## Interpretation: 
 
-INCLUDE INTERPRETATION FROM MOTE
+Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.
 
 # Tutorial
 
-ONLY CHANGE THE NUMBERS/LETTERS AFTER EMBED HERE. 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CyfOS7Ew-Hw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/40XnVCphLFA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

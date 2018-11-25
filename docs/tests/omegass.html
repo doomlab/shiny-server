@@ -27,9 +27,9 @@
 
     
     <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.
-The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; SS_{error} &#43; SS_{subject} &#43; MS_{subject} }$$">
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; SS_{error} &#43; SS_{subject} &#43; MS_{subject} }$$">
     <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.
-The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; SS_{error} &#43; SS_{subject} &#43; MS_{subject} }$$">
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; SS_{error} &#43; SS_{subject} &#43; MS_{subject} }$$">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Omega Full - SS">
     <meta property="og:url" content="/tests/omegass.html">
@@ -37,7 +37,7 @@ The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{err
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
     <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.
-The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; SS_{error} &#43; SS_{subject} &#43; MS_{subject} }$$">
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; SS_{error} &#43; SS_{subject} &#43; MS_{subject} }$$">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -223,7 +223,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.</p>
 
-<p>The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$</p>
+<p>The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$</p>
 
 <p>The formula for <em>F</em> is: $$\frac{MS_{model}}{MS_{error}}$$</p>
 
@@ -244,45 +244,50 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="example">Example</h1>
 
-<p>INCLUDE AN EXAMPLE FROM 527</p>
+<p>A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments.</p>
 
-<p>INCLUDE THE NUMBERS FOR THE ARGUMENT LISTED OUT</p>
+<p><strong>JASP</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20ANOVA%20JASP.png" alt="One-Way ANOVA JASP" /></p>
+
+<p><strong>SPSS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SPSS.png" alt="One-Way ANOVA SPSS" /></p>
+
+<p><strong>SAS</strong>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SAS.PNG" alt="One-Way ANOVA SAS" /></p>
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>INCLUDE THE FUNCTION HOW YOU WOULD WRITE IT IN R</p>
+<p>omega.full.SS(dfm = 2, dfe = 8, msm = 12.621, mse = 2.458, sst = 44.909, a = 0.05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/z-test-means-screen.png" alt="Z-Test Means Screenshot" /></p>
+<p><img src="../images/omegafullss.jpg" alt="Omega Full SS Screenshot" /></p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p>INCLUDE THE OUTPUT FROM MOTE</p>
+<p>$\omega^2$ = .43, 95% CI [.00, .76]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
-<p>INCLUDE INTERPRETATION FROM MOTE</p>
+<p>Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.</p>
 
 <h2 id="summary-statistics">Summary Statistics:</h2>
 
-<p>INCLUDE SUMMARY STATISTICS FROM MOTE</p>
+<p>Not applicable.</p>
 
 <h2 id="test-statistic">Test Statistic:</h2>
 
-<p>INCLUDE TEST STATISTICS FROM MOTE</p>
+<p>F(2, 8) = 5.13, p = .037</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
-<p>INCLUDE INTERPRETATION FROM MOTE</p>
+<p>Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<p>ONLY CHANGE THE NUMBERS/LETTERS AFTER EMBED HERE.</p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CyfOS7Ew-Hw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5yfUgJB4mwY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

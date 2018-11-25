@@ -22,7 +22,7 @@ The formula for *Z* is: $$Z = \frac{P_1 - P_2}{SE}$$
 
 # R Function
 
-d.prop(p1, p2, n1, n2, a = 0.05)
+d.prop(p1, p2, n1, n2, a)
 
 # Arguments 
 

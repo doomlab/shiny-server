@@ -144,7 +144,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
       
       <guid>https://www.aggieerin.com/shiny-server/tests/gesmixss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\eta_G^2$ is: $$\frac{SS_{model}}{SS_{model} + SS_{subject} + SS_{error}}$$
-R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, Fvalue, a = 0.05)
+R Function ges.partial.SS.mix(dfm, dfe, ssm, sss, sse, Fvalue, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
  dfe = degrees of freedom for the error/residual/within ssm = sum of squares for the model/IV/between sss = sum of squares subject variance sse = sum of squares for the error/residual/within Fvalue = F statistic</description>
     </item>
@@ -179,7 +179,7 @@ The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subje
       <description>Description This function displays d and central confidence interval calculated from differences in independent proportions.
 The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
 The formula for Z is: $$Z = \frac{P_1 - P_2}{SE}$$
-R Function d.prop(p1, p2, n1, n2, a = 0.05)
+R Function d.prop(p1, p2, n1, n2, a)
 Arguments  p1 = proportion of people group one p2 = proportion of people group two n1 = sample size group one n2 = sample size group two a = significance level  Example Several researchers were examining the data on the number of students who retake a course after they receive a D, F, or withdraw from the course.</description>
     </item>
     
@@ -240,7 +240,7 @@ The formula for $\omega^2$ is: $$\frac{df_{model} \times (F_{model} - 1)}{df_{mo
       
       <guid>https://www.aggieerin.com/shiny-server/tests/omegass.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.
-The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$</description>
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$</description>
     </item>
     
     <item>
