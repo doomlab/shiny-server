@@ -41,21 +41,16 @@ v.chi.sq(x2, n, r, c, a = 0.05)
 
 # Example  
 
+Individuals were polled about their number of friends (low, medium, high) and their number of kids (1, 2, 3+) to determine if there was a relationship between friend groups and number of children, as we might expect that those with more children may have less time for friendship maintaining activities. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
+
 **JASP**
-![BN ANOVA 1 JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20JASP.png)
+![Chi-square JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20JASP.png)
 
 **SPSS**
-![BN ANOVA 1 SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20SPSS.png)
+![Chi-square SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20SPSS.png)
 
 **SAS**
-![BN ANOVA 1 SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%20anova%20SAS.PNG)
-
-
-+ x2 = 2.05
-+ n	= 60
-+ r	= 3
-+ c	= 3
-+ a	= .05 
+![Chi-square SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20SAS.PNG)
 
 # Function in R: 
 
@@ -65,7 +60,7 @@ v.chi.sq(x2 = 2.05, n = 60, r = 3, c = 3, a = 0.05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Chi-Square V Screenshot](../images/chisqv.jpg)
 
 ## Effect Size:
 This effect size is traditionally interpreted as the percent of variance accounted for in the DV by the IV(s).
@@ -78,11 +73,11 @@ Your confidence interval does not include zero, and therefore, you might conclud
 
 ## Summary Statistics: 
 
-Not applicable
+Not applicable.
 
 ## Test Statistic: 
 
-X^2(4) = 2.05, p = .727
+$X^2(4)$ = 2.05, p = .727
 
 ## Interpretation: 
 

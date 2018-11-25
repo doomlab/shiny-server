@@ -72,7 +72,7 @@ epsilon.full.SS(dfm = 2, dfe = 8, msm = 12.621, mse = 2.458, sst = 44.909, a)
 
 ## Effect Size:
 
-$$\epsilon\^2$$ = .45, 95% CI [.00, .77]
+$\epsilon\^2$ = .45, 95% CI [.00, .77]
 
 ## Interpretation: 
 

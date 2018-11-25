@@ -57,12 +57,6 @@ A health psychologist was interested in the rates of anxiety in first generation
 ![Chi-square SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20SAS.PNG)
 
 
-n11	= 9
-n12	= 4
-n21	= 7
-n22	= 8
-a	= .05
-
 # Function in R: 
 
 odds(n11 = 9, n12 = 4, n21 = 7, n22 = 8, a = 0.05) 
@@ -71,7 +65,7 @@ odds(n11 = 9, n12 = 4, n21 = 7, n22 = 8, a = 0.05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![Chi-Square Odds Screenshot](../images/chisqo.jpg)
 
 ## Effect Size:
 
