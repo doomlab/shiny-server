@@ -264,7 +264,7 @@ R Function omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a = 0.</description>
 The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
 R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a = 0.05)
 Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example Participants were tested over several days to measure variations in their pulse given different types of stimuli.</description>
+ dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example In this experiment people were given word pairs to rate based on their “relatedness”.</description>
     </item>
     
     <item>
