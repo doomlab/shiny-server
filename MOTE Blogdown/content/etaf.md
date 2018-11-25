@@ -40,7 +40,7 @@ eta.F(dfm, dfe, Fvalue, a = 0.05)
 
 # Example  
 
-NEEDS EXAMPLE
+A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. 
 
 + dfm = degrees of freedom for the model/IV/between   
 + dfe = degrees of freedom for the error/residual/within   
@@ -48,13 +48,13 @@ NEEDS EXAMPLE
 + a	= significance level
 
 **JASP**
-![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
+![One-Way ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20ANOVA%20JASP.png)
 
 **SPSS**
-![Independent t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SPSS.png)
+![One-Way ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SPSS.png)
 
 **SAS**
-![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
+![One-Way ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SAS.PNG)
 
 # Function in R: 
 
@@ -64,7 +64,7 @@ eta.F(dfm = 2, dfe = 8, Fvalue = 5.134, a = 0.05)
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![One-Way ANOVA Screenshot](../images/anovabn1.png)
 
 ## Effect Size:
 

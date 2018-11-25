@@ -44,10 +44,10 @@ ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a = 0.05)
 
 In this experiment people were given word pairs to rate based on their “relatedness”. How many people out of a 100 would put LOST-FOUND together? Participants were given pairs of words and asked to rate them on how often they thought 100 people would give the second word if shown the first word.  The strength of the word pairs was manipulated through the actual rating (forward strength: FSG) and the strength of the reverse rating (backward strength: BSG). Is there an interaction between FSG and BSG when participants are estimating the relation between word pairs?
 
-+ dfm = 2  
-+ dfe = 100
-+ ssm = 435
-+ sss = 659
++ dfm = 1  
++ dfe = 156
++ ssm = 4995
++ sss = 76908
 + sse1 = 435
 + sse2 = 446
 + sse3 = 546
@@ -71,7 +71,7 @@ ges.partial.SS.rm(dfm = 2, dfe = 100, ssm = 435, sss = 659, sse1 = 435, sse2 = 4
 
 ## Screenshot
 
-![Repeated Measures One-Way ANOVA Screenshot](../images/anovarm2.jpg)
+![Repeated Measures Two-Way ANOVA Screenshot](../images/anovarm2.jpg)
 
 ## Effect Size:
 
