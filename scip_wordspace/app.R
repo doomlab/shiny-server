@@ -30,11 +30,13 @@
 
 # Source Files ------------------------------------------------------------
   source("data_tab.R")
+  load("engbnc.rda")
   source("lsa_tab_single.R")
   source("lsa_tab_multiple.R")
   source("lsa_document_tab.R")
   source("topics_tab.R")
   source("code_tab.R")
+
 
 # Define UI ---------------------------------------------------------------
 ui <- dashboardPage(skin = "blue",
@@ -43,18 +45,21 @@ ui <- dashboardPage(skin = "blue",
     sidebarMenu(
       menuItem(tags$b("1. Select Data"), tabName = "data_tab"),
       menuItem(tags$b("2. LSA Single Word Functions"), tabName = "lsa_tab_single"),
+      menuItem(tags$b("2a. LSA Single English Corpus"), tabName = "lsa_tab_single_corpus"),
       menuItem(tags$b("3. LSA Multiple Word Functions"), tabName = "lsa_tab_multiple"),
+      menuItem(tags$b("3a. LSA Multiple English Corpus"), tabName = "lsa_tab_multiple_corpus"),
       menuItem(tags$b("4. LSA Document Functions"), tabName = "lsa_document_tab"),
       menuItem(tags$b("5. Topics Models"), tabName = "topics_tab"),
       menuItem(tags$b("6. See the Code"), tabName = "code_tab")
-
     )
   ),
   dashboardBody(
     tabItems(
       data_tab,
       lsa_tab_single,
+      lsa_tab_single_corpus,
       lsa_tab_multiple,
+      lsa_tab_multiple_corpus,
       lsa_document_tab,
       topics_tab,
       code_tab
@@ -193,6 +198,43 @@ server <- function(input, output, session) {
     ) #close datatable
   }) #close renderDT
 
+  # Single Words LSA Corpus -------------------------------------------------
+  
+  output$lsa_plotneighbors_corpus = renderPlot({
+    
+    temp = plot_neighbors(input$rownames_select_corpus,
+                          n = input$neighbors_corpus,
+                          tvectors = EN_100k_lsa,
+                          method = "MDS",
+                          dims = 2)
+    
+    neighbor_plot = ggplot(temp, aes(x,y))
+    neighbor_plot +
+      cleanup +
+      geom_point(alpha = .2) +
+      geom_text(position=position_jitter(width=.01,height=.01), aes(label = rownames(temp))) +
+      xlab("Dimension 1") +
+      ylab("Dimension 2")
+  }) #close plot
+  
+  output$lsa_choosetarget_corpus = renderDataTable({
+    targets = as.data.frame(choose.target(input$rownames_select_corpus,
+                                          lower = input$select_range_corpus[1],
+                                          upper = input$select_range_corpus[2],
+                                          n = input$neighbors_corpus,
+                                          tvectors = EN_100k_lsa))
+    colnames(targets) = "cosine"
+    
+    datatable(targets,
+              extensions = 'Buttons',
+              options = list(
+                searching = T,
+                dom = 'frtpB',
+                buttons = c('copy')
+              ) #close list
+    ) #close datatable
+  }) #close renderDT
+
   # Multiword LSA functions -------------------------------------------------
 
   output$lsa_multicos = renderDataTable({
@@ -224,6 +266,39 @@ server <- function(input, output, session) {
       xlab("Dimension 1") +
       ylab("Dimension 2")
 
+  })
+  
+  # Multiword LSA Corpus -------------------------------------------------
+  
+  output$lsa_multicos_corpus = renderDataTable({
+    
+    datatable(multicos(input$multiple_select_corpus, tvectors=EN_100k_lsa),
+              extensions = 'Buttons',
+              options = list(
+                searching = T,
+                scrollX = T,
+                dom = 'frtpB',
+                buttons = c('copy')
+              ) #close list
+    ) #close datatable
+    
+  })
+  
+  output$lsa_plotwordlist_corpus = renderPlot({
+    
+    temp_wl = plot_wordlist(input$multiple_select_corpus,
+                            method = "MDS",
+                            dims = 2,
+                            tvectors = EN_100k_lsa)
+    
+    wordlist_plot = ggplot(temp_wl, aes(x,y))
+    wordlist_plot +
+      cleanup +
+      geom_point(alpha = .2) +
+      geom_text(position=position_jitter(width=.01,height=.01), aes(label = rownames(temp_wl))) +
+      xlab("Dimension 1") +
+      ylab("Dimension 2")
+    
   })
 
   # Document LSA Functions --------------------------------------------------

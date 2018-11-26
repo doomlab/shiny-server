@@ -19,6 +19,9 @@ topics_tab <- tabItem(tabName = "topics_tab",
                                 LDA Fixed model using the VEM algorithm with a fixed alpha value. Last, the LDA Gibbs 
                                 option uses a Gibbs (Bayesian) algorithm to fit the data. CTM stands for correlated topics models, 
                                 which allows the correlation between topics, and this method uses a VEM algorithm."),
+                             br(),
+                             h4("If a box doesn't appear to update, try clicking on a different Model and then clicking back 
+                                to the model you were interested in."),
                              selectInput("pick_model", "Model:",
                                        c("LDA Fit" = "LDA_fit",
                                          "LDA Fixed" = "LDA_fixed",
