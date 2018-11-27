@@ -5,9 +5,9 @@ account: doomlab
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 571919
-bundleId: 1701567
+bundleId: 1723822
 url: https://doomlab.shinyapps.io/wordspace/
-when: 1542239557.2913
+when: 1543340246.52266
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: examples/exam_answers.csv|examples/full_exam.csv|examples/lsa_example.R|examples/topics_example.R
+ignoredFiles: scip_wordspace_18.pptx|examples/exam_answers.csv|examples/full_exam.csv|examples/lsa_example.R|examples/topics_example.R
