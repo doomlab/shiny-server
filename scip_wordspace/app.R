@@ -29,14 +29,14 @@
                   text = element_text(size = 15))
 
 # Source Files ------------------------------------------------------------
-  source("data_tab.R")
   load("engbnc.rda")
+  EN_100k_lsa <<- EN_100k_lsa
+  source("data_tab.R")
   source("lsa_tab_single.R")
   source("lsa_tab_multiple.R")
   source("lsa_document_tab.R")
   source("topics_tab.R")
   source("code_tab.R")
-
 
 # Define UI ---------------------------------------------------------------
 ui <- dashboardPage(skin = "blue",
