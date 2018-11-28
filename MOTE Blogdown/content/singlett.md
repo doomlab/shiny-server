@@ -1,5 +1,5 @@
 ---
-title: Single Sample t - t
+title: d for Single t from t
 author: DOOM Lab
 date: '2018-05-09'
 slug: singlett

@@ -1,5 +1,5 @@
 ---
-title: Dependent t Differences - Means
+title: d for Dependent t with SD Difference Scores Denominator - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: deptdiffm
@@ -32,7 +32,7 @@ $S\_{D}$ = Standard deviation of difference scores
 
 # R Function
 
-d.dep.t.diff(mdiff, sddiff, n, a)
+d.dep.t.diff(mdiff, sddiff, n, a = .05)
 
 # Arguments 
 

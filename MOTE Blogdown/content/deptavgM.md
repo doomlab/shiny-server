@@ -1,5 +1,5 @@
 ---
-title: Dependent t Averages - Means
+title: d for Dependent t with Average SD Denominator - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: deptavgm
@@ -27,7 +27,7 @@ The formula for $d\_{av}$ is: $$d\_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}
 
 # R Function
 
-d.dep.t.avg(m1, m2, sd1, sd2, n, a) 
+d.dep.t.avg(m1, m2, sd1, sd2, n, a = .05) 
 
 # Arguments 
 

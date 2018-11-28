@@ -37,44 +37,6 @@ Arguments  x2 = chi-square statistic n = sample size r = number of rows in the c
     </item>
     
     <item>
-      <title>Dependent t Averages - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{av}$ for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for $d_{av}$ is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
-R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a)
-Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
-    </item>
-    
-    <item>
-      <title>Dependent t Differences - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for $d_{z}$ is: $$d_{z} = {\bar{D}\over S_{D}}$$
-The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
-$\bar{D}$ = Mean difference score
-$S_{D}$ = Standard deviation of difference scores
-R Function d.</description>
-    </item>
-    
-    <item>
-      <title>Dependent t Differences - t</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
-The formula for $d_{z}$ is: $$d_{z} = {M_{1} - M_{2}\over SE_{differences}}$$
-R Function d.dep.t.diff.t(t, n, a = 0.05)
-Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people’s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
-    </item>
-    
-    <item>
       <title>Dependent t Repeated Measures</title>
       <link>https://www.aggieerin.com/shiny-server/tests/deptrm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -269,32 +231,6 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
-      <title>Single Sample t - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/singletm.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/singletm.html</guid>
-      <description>Description This function displays d and non-central confidence interval for single t from means.
-The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
-The formula for t is: $$t = \frac{M - \mu}{SE}$$
-R Function d.single.t(m, u, sd, n, a = 0.05)
-Arguments  m = sample mean u = population mean sd = sample standard deviation n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.</description>
-    </item>
-    
-    <item>
-      <title>Single Sample t - t</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/singlett.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/singlett.html</guid>
-      <description>Description This function displays d and non-central confidence interval for single t estimated from the t-statistic.
-The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
-The formula for t is: $$t = \frac{M - \mu}{SE}$$
-R Function d.single.t.t(t, n, a = 0.05)
-Arguments  t = t-test value n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.</description>
-    </item>
-    
-    <item>
       <title>TITLE OF THE PAGE HERE</title>
       <link>https://www.aggieerin.com/shiny-server/tests/shorttitle.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -312,6 +248,58 @@ Summary Statistics: INCLUDE SUMMARY STATISTICS FROM MOTE</description>
     </item>
     
     <item>
+      <title>d for Dependent t with Average SD Denominator - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{av}$ for repeated measures data and the non-central confidence interval using the average standard deviation of each level as the denominator.
+The formula for $d_{av}$ is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+R Function d.dep.t.avg(m1, m2, sd1, sd2, n, a = .05)
+Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
+      <title>d for Dependent t with SD Difference Scores Denominator - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
+The formula for $d_{z}$ is: $$d_{z} = {\bar{D}\over S_{D}}$$
+The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
+$\bar{D}$ = Mean difference score
+$S_{D}$ = Standard deviation of difference scores
+R Function d.</description>
+    </item>
+    
+    <item>
+      <title>d for Single t from Means</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/singletm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/singletm.html</guid>
+      <description>Description This function displays d and non-central confidence interval for single t from means.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t(m, u, sd, n, a = 0.05)
+Arguments  m = sample mean u = population mean sd = sample standard deviation n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.</description>
+    </item>
+    
+    <item>
+      <title>d for Single t from t</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/singlett.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/singlett.html</guid>
+      <description>Description This function displays d and non-central confidence interval for single t estimated from the t-statistic.
+The formula for d is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for t is: $$t = \frac{M - \mu}{SE}$$
+R Function d.single.t.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.</description>
+    </item>
+    
+    <item>
       <title>d for Z-test from Population Mean and SD</title>
       <link>https://www.aggieerin.com/shiny-server/tests/zm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -323,6 +311,18 @@ The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
 R Function d.z.mean(mu, m1, sig, sd1, n, a = 0.05)
 Arguments  mu = population mean
  m1 = sample study mean</description>
+    </item>
+    
+    <item>
+      <title>d from t for Repeated Measures with SD Difference Scores Denominator - t</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the t-statistic.
+The formula for $d_{z}$ is: $$d_{z} = {M_{1} - M_{2}\over SE_{differences}}$$
+R Function d.dep.t.diff.t(t, n, a = 0.05)
+Arguments  t = t-test value n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people’s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
     </item>
     
     <item>

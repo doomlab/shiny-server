@@ -1,5 +1,5 @@
 ---
-title: Dependent t Differences - t
+title: d from t for Repeated Measures with SD Difference Scores Denominator - t
 author: DOOM Lab
 date: '2018-05-09'
 slug: deptdifft

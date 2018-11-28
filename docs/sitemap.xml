@@ -13,21 +13,6 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/deptrm.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -108,6 +93,21 @@
   </url>
   
   <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/shorttitle.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/singletm.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -118,12 +118,12 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/shorttitle.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/zm.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/zm.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
