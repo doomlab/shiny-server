@@ -38,7 +38,7 @@ eta.partial.SS(dfm, dfe, ssm, sse, Fvalue, a)
 
 # Example  
 
-We looked at two year’s worth of athletic spending data (treating each receipt and years as separate between subjects’ events) for four different sports. Are there differences across sports and years in spending? The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
+We looked at two year’s worth of athletic spending data (treating each receipt and years as separate between subjects’ events) for four different sports. Are there differences across sports and years in spending? The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
 ![Between Subjects Two Way ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20JASP.png)

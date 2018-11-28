@@ -39,7 +39,7 @@ ges.partial.SS.mix(dfm, dfe, ssm, sss, sse, Fvalue, a = 0.05)
 
 # Example  
 
-Given previous research, we know that backward strength in free association tends to increase the ratings participants give when you ask them how many people out of 100 would say a word in response to a target word (like Family Feud). This result is tied to people’s overestimation of how well they think they know something, which is bad for studying. So, we gave people instructions on how to ignore the BSG.  Did it help? Is there an interaction between BSG and instructions given?
+Given previous research, we know that backward strength in free association tends to increase the ratings participants give when you ask them how many people out of 100 would say a word in response to a target word (like Family Feud). This result is tied to people’s overestimation of how well they think they know something, which is bad for studying. So, we gave people instructions on how to ignore the BSG.  Did it help? Is there an interaction between BSG and instructions given? The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
 ![Two Way Mixed ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20JASP.png)

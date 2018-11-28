@@ -41,7 +41,7 @@ v.chi.sq(x2, n, r, c, a = 0.05)
 
 # Example  
 
-Individuals were polled about their number of friends (low, medium, high) and their number of kids (1, 2, 3+) to determine if there was a relationship between friend groups and number of children, as we might expect that those with more children may have less time for friendship maintaining activities. The data is included at [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
+Individuals were polled about their number of friends (low, medium, high) and their number of kids (1, 2, 3+) to determine if there was a relationship between friend groups and number of children, as we might expect that those with more children may have less time for friendship maintaining activities. The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
 ![Chi-square JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20JASP.png)
