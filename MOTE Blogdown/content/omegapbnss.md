@@ -43,7 +43,7 @@ omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a)
 
 # Example  
 
-A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. 
+A health psychologist recorded the number of close inter-personal attachments of 45-year-olds who were in excellent, fair, or poor health. People in the Excellent Health group had 4, 3, 2, and 3 close attachments; people in the Fair Health group had 3, 5, and 8 close attachments; and people in the Poor Health group had 3, 1, 0, and 2 close attachments. The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
 ![Two Way ANOVA Between-Subjects JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20JASP.png)

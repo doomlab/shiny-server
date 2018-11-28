@@ -36,12 +36,6 @@ d.prop(p1, p2, n1, n2, a)
 
 Several researchers were examining the data on the number of students who retake a course after they receive a D, F, or withdraw from the course. They randomly sampled form a large university two groups of students: traditional (less than 25 years old) and non-traditional (25 and older). Each group included 100 participants. The traditional group showed about 25% of students who would retake a course, while the non-traditional group showed about 35% would retake the course. 
 
-+ p1 = .25
-+ p2 = .35
-+ n1 = 100
-+ n2 = 100
-+ a = .05
-
 # Function in R: 
 
 d.prop(p1 = .25, p2 = .35, n1 = 100, n2 = 100, a = .05)

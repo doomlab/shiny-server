@@ -42,7 +42,7 @@ omega.F(dfm, dfe, Fvalue, n, a = .05)
 
 # Example  
 
-Participants were tested over several days to measure variations in their pulse given different types of stimuli. One stimulus was a neutral picture (like a toaster), while other stimuli were cute/happy pictures (puppies, babies), and negative stimuli (mutilated faces, pictures of war). Were there differences in pulse for each participant across the stimuli? 
+Participants were tested over several days to measure variations in their pulse given different types of stimuli. One stimulus was a neutral picture (like a toaster), while other stimuli were cute/happy pictures (puppies, babies), and negative stimuli (mutilated faces, pictures of war). Were there differences in pulse for each participant across the stimuli? The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 # MOTE
 
