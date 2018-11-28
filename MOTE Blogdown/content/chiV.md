@@ -77,7 +77,7 @@ Not applicable.
 
 ## Test Statistic: 
 
-$\chi\^2(4)$ = 2.05, p = .727
+$\chi^2(4)$ = 2.05, p = .727
 
 ## Interpretation: 
 
@@ -85,4 +85,4 @@ Your *p*-value is greater than the alpha value, and therefore, this test would b
 
 # Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fxNflokgSTs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fxNfIokgSTs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
