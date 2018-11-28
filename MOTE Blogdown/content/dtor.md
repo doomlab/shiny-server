@@ -65,7 +65,7 @@ d.to.r(d = 1.881, n1 = 4, n2 = 4, a = 0.05)
 
 ## Effect Size:
 
-*d* = *r* = .69, 95% CI [.00, .92]
+*r* = .69, 95% CI [.00, .92]
 
 ## Interpretation: 
 
@@ -73,7 +73,7 @@ Your confidence interval does include zero, and therefore, you might conclude th
 
 ## Effect Size:
 
-$R\^2$ = .47, 95% CI [.00, .84]
+$R^{2}$ = .47, 95% CI [.00, .84]
 
 ## Interpretation: 
 
