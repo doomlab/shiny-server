@@ -23,7 +23,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays $d\_{g}$ corrected and the non-central confidence interval for independent t.
 
-The formula for $d\_{g}$ is: $$d\_{g} = \frac{M_1 - M_2}{SD_{pooled}}*(1-\frac{3}{4*(N_1+N_2)-9})$$
+The formula for $d\_{g}$ is: $$d\_{g} = \frac{M_1 - M_2}{SD_pooled}*(1-\frac{3}{4*(N_1+N_2)-9})$$
 
 The formula for *t* is: $$t = \frac{M\_{1} - M\_{2}}{SE\_{pooled}}$$
 

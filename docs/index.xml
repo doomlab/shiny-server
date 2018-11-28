@@ -344,7 +344,7 @@ Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = 
       
       <guid>https://www.aggieerin.com/shiny-server/tests/indtg.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{g}$ corrected and the non-central confidence interval for independent t.
-The formula for $d_{g}$ is: $$d_{g} = \frac{M_1 - M2}{SD{pooled}}(1-\frac{3}{4(N_1+N_2)-9})$$
+The formula for $d_{g}$ is: $$d_{g} = \frac{M_1 - M_2}{SD_pooled}(1-\frac{3}{4(N_1+N_2)-9})$$
 The formula for t is: $$t = \frac{M_{1} - M_{2}}{SE_{pooled}}$$
 R Function g.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 Arguments  m1 = mean one
