@@ -46,13 +46,6 @@ A school has a gifted/honors program that they claim is significantly better tha
 **SAS**
 ![Single t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/single%20t%20SAS.PNG)
 
-
-+ m = 1370
-+ u	= 1080
-+ sd = 112.7
-+ n = 15
-+ a = .05
-
 # Function in R: 
 
 d.single.t(m = 1370, u = 1080, sd = 112.7, n = 15, a = .05)

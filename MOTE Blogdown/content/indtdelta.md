@@ -43,7 +43,7 @@ delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
 
 # Example  
 
-A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event. Eight participants watched a short film of a mock robbery, after which each participant was questioned about what he or she had seen. The four participants in the experimental group were questioned while they were hypnotized, and had an average score of 17.75 with a standard deviation of 3.304. The four participants in the control group recieved the same questioning without hypnosis, and recieved an average score of 23 with a standard deviation of 2.160. The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
+A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event. Eight participants watched a short film of a mock robbery, after which each participant was questioned about what he or she had seen. The four participants in the experimental group were questioned while they were hypnotized and gave 14, 22, 18, and 17 accurate responses. The four participants in the control group gave 20, 25, 24, and 23 accurate responses. The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
 ![Independent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20JASP.png)
@@ -53,14 +53,6 @@ A forensic psychologist conducted a study to examine whether being hypnotized du
 
 **SAS**
 ![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
-
-+ m1 = 17.75
-+ m2 = 23.00
-+ sd1	= 3.304
-+ sd2	= 2.160
-+ n1	= 4
-+ n2 = 4
-+ a	= .05
 
 # Function in R: 
 

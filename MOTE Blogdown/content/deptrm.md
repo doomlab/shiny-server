@@ -52,14 +52,6 @@ In a study to test the effects of science fiction movies on people's belief in t
 **SAS**
 ![Dependent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG)
 
-+ m1 = 5.571
-+ m2 = 4.429
-+ sd1	= 1.988
-+ sd2	= 2.878
-+ r	= .678
-+ n	= 7
-+ a	= .05
-
 # Function in R: 
 
 d.dep.t.rm(m1 = 5.571, m2 = 4.429, sd1 = 1.988, sd2 = 2.878, r = .678, n = 7, a = .05)

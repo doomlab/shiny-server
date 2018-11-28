@@ -51,11 +51,6 @@ A forensic psychologist conducted a study to examine whether being hypnotized du
 **SAS**
 ![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
 
-+ t = -2.66
-+ n1	= 4
-+ n2 = 4
-+ a	= .05
-
 # Function in R: 
 
 d.ind.t.t(t = -2.66, n1 = 4, n2 = 4, a = .05)
