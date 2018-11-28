@@ -235,10 +235,10 @@ R Function d.</description>
     
     <item>
       <title>d for Independent Proportions</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indetprop.html</link>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtprop.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/indetprop.html</guid>
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtprop.html</guid>
       <description>Description This function displays d and central confidence interval calculated from differences in independent proportions.
 The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
 The formula for Z is: $$Z = \frac{P_1 - P_2}{SE}$$

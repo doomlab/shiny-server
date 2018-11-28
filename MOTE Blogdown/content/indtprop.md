@@ -3,7 +3,7 @@ title: d for Independent Proportions
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtprop
-url: /tests/indetprop.html
+url: /tests/indtprop.html
 showDate: false
 ---
 
