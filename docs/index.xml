@@ -357,7 +357,7 @@ Arguments  m1 = mean one
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/dtor.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description Calculates r from d and then translates r to $r\^{2}$ to calculate the non-central confidence interval for $r\^{2}$ using the F distribution.
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description Calculates r from d and then translates r to $\r^{2}$ to calculate the non-central confidence interval for $\r^{2}$ using the F distribution.
 The formula for r is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$
 The formula for t is: $$t = \frac{r} {\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 R Function d.to.r(d, n1, n2, sd2, a = 0.</description>

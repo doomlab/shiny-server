@@ -21,7 +21,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-Calculates *r* from *d* and then translates *r* to $r\^{2}$ to calculate the non-central confidence interval for $r\^{2}$ using the *F* distribution. 
+Calculates *r* from *d* and then translates *r* to $\r^{2}$ to calculate the non-central confidence interval for $\r^{2}$ using the *F* distribution. 
 
 The formula for *r* is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$
 
