@@ -9,7 +9,7 @@ categories: []
 tags: []
 ---
 
-This page provides supplemental information for the use of MOTE Effect Size Calculator. Often, an overreliance on *p*-values conceals the fact that a study is underpowered. A test may be statistically significant, yet practically inconsequential. Although the APA Task Force on Statistical Inference has long advocated for the inclusion of effect sizes, the vast majority of peer-reviewed, published academic studies stop short of reporting effect sizes and confidence intervals. 
+This page provides supplemental information for the use of [MOTE Effect Size Calculator](https://doomlab.shinyapps.io/mote/). Often, an overreliance on *p*-values conceals the fact that a study is underpowered. A test may be statistically significant, yet practically inconsequential. Although the APA Task Force on Statistical Inference has long advocated for the inclusion of effect sizes, the vast majority of peer-reviewed, published academic studies stop short of reporting effect sizes and confidence intervals. 
 
 
 To simplify the use and interpretation of effect sizes and confidence intervals, our team designed MOTE with Shiny, a package in R. The application relies on mathematical operations provided by the MOTE package, developed by Buchanan, Scofield, and Valentine. To begin, the user simply selects the research design and corresponding effect size with intuitive drop-down menus. The output includes a helpful description, a video tutorial, and statistics in APA style, including the effect size and the confidence interval. This application is designed for future implementation in statistics classrooms at the undergraduate and graduate level. 
