@@ -1,5 +1,5 @@
 ---
-title: Z Test - Z
+title: d from z-statistic for Z-test
 author: DOOM Lab
 date: '2018-05-09'
 slug: zz
@@ -21,7 +21,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays $d\_{z}$ for *Z*-tests based on the *Z*-statistic. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+This function displays $d\_{z}$ for *Z*-tests based on the *Z*-statistic. The normal confidence interval is also provided if you have sigma ($\sigma$). If "sig" is left blank, then you will not see a confidence interval.
 
 The formula for $d\_{z}$ is: $$d\_{z} = \frac{Z}{\sqrt(N)}$$
  
@@ -41,11 +41,6 @@ d.z.z(z, sig = NA, n, a = 0.05)
 # Example  
 
 A recent study suggested that students (N = 100) learning statistics improved their test scores with the use of visual aids (*Z* = 2.5, *SD* = 4). 
-
-+ z = 2.5
-+ sig	= 4
-+ n	= 100
-+ a =	.05
 
 # Function in R: 
 

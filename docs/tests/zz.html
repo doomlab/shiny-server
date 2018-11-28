@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Z Test - Z</title>
+    <title>d from z-statistic for Z-test</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,21 +26,21 @@
     
 
     
-    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for Z-tests based on the Z-statistic. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for Z-tests based on the Z-statistic. The normal confidence interval is also provided if you have sigma ($\sigma$). If &ldquo;sig&rdquo; is left blank, then you will not see a confidence interval.
 The formula for $d_{z}$ is: $$d_{z} = \frac{Z}{\sqrt(N)}$$
 The formula for $d_{z}$ is: $$d_{z} = \frac{M - \mu}{\sigma_M}$$
 R Function d.z.z(z, sig = NA, n, a = 0.">
-    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for Z-tests based on the Z-statistic. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for Z-tests based on the Z-statistic. The normal confidence interval is also provided if you have sigma ($\sigma$). If &ldquo;sig&rdquo; is left blank, then you will not see a confidence interval.
 The formula for $d_{z}$ is: $$d_{z} = \frac{Z}{\sqrt(N)}$$
 The formula for $d_{z}$ is: $$d_{z} = \frac{M - \mu}{\sigma_M}$$
 R Function d.z.z(z, sig = NA, n, a = 0.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Z Test - Z">
+    <meta property="og:title" content="d from z-statistic for Z-test">
     <meta property="og:url" content="/tests/zz.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for Z-tests based on the Z-statistic. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.
+    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for Z-tests based on the Z-statistic. The normal confidence interval is also provided if you have sigma ($\sigma$). If &ldquo;sig&rdquo; is left blank, then you will not see a confidence interval.
 The formula for $d_{z}$ is: $$d_{z} = \frac{Z}{\sqrt(N)}$$
 The formula for $d_{z}$ is: $$d_{z} = \frac{M - \mu}{\sigma_M}$$
 R Function d.z.z(z, sig = NA, n, a = 0.">
@@ -198,7 +198,7 @@ R Function d.z.z(z, sig = NA, n, a = 0.">
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Z Test - Z
+      d from z-statistic for Z-test
     </h1>
   
   
@@ -227,7 +227,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="description">Description</h1>
 
-<p>This function displays $d_{z}$ for <em>Z</em>-tests based on the <em>Z</em>-statistic. The normal confidence interval is also provided if you have sigma. If sigma is left blank, then you will not see a confidence interval.</p>
+<p>This function displays $d_{z}$ for <em>Z</em>-tests based on the <em>Z</em>-statistic. The normal confidence interval is also provided if you have sigma ($\sigma$). If &ldquo;sig&rdquo; is left blank, then you will not see a confidence interval.</p>
 
 <p>The formula for $d_{z}$ is: $$d_{z} = \frac{Z}{\sqrt(N)}$$</p>
 
@@ -249,13 +249,6 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 <h1 id="example">Example</h1>
 
 <p>A recent study suggested that students (N = 100) learning statistics improved their test scores with the use of visual aids (<em>Z</em> = 2.5, <em>SD</em> = 4).</p>
-
-<ul>
-<li>z = 2.5</li>
-<li>sig   = 4</li>
-<li>n = 100</li>
-<li>a =   .05</li>
-</ul>
 
 <h1 id="function-in-r">Function in R:</h1>
 
@@ -487,37 +480,37 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
               </span>
               <div class="media-content hide-xs font-merryweather"><h1 id="mean-differences">Mean Differences</h1>
 
-<p><a href="https://www.aggieerin.com/shiny-server/tests/zm.html">Z-Test - Means</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/zz.html">Z-Test - Z</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/singletm.html">Single Sample t - Means</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/singlett.html">Single Sample t - t</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/deptavgm.html">Dependent t Averages - Means</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/deptdiffm.html">Dependent t Differences - Means</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/deptdifft.html">Dependent t Differences - t</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/deptrm.html">Dependent t Repeated Measures</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/indtm.html">Independent t - Means</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/indtt.html">Independent t - t</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/indtdelta.html">Independent t Delta - Means</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/indtg.html">Independent t g - Means</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/indtprop.html">Independent Proportions</a></p>
+<p><a href="https://www.aggieerin.com/shiny-server/tests/zm.html">d for Z-test from Population Mean and SD</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/zz.html">d from z-statistic for Z-test</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/singletm.html">d for Single t from Means</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/singlett.html">d for Single t from t</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/deptavgm.html">d for Dependent t with Average SD Denominator - Means</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/deptdiffm.html">d for Dependent t with SD Difference Scores Denominator - Means</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/deptdifft.html">d from t for Repeated Measures with SD Difference Scores Denominator - t</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/deptrm.html">d for Repeated Measures with Average SD Denominator</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/indtm.html">d for Between Subjects with Pooled SD Denominator</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/indtt.html">d from t for Between Subjects</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/indtdelta.html">d-delta for Between Subjects with Control Group SD Denominator - Means</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/indtg.html">d-g Corrected for Independent t</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/indtprop.html">d for Independent Proportions</a></p>
 
 <h1 id="variance-overlap">Variance Overlap</h1>
 
-<p><a href="https://www.aggieerin.com/shiny-server/tests/dtor.html">d to r</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/rcorrel.html">r</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/etaf.html">Eta - F</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/etass.html">Eta Full - SS</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/etapss.html">Eta Partial - SS</a><br />
+<p><a href="https://www.aggieerin.com/shiny-server/tests/dtor.html">r and Coefficient of Determination (R2) from d</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/rcorrel.html">r to Coefficient of Determination (R2) from F</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/etaf.html">Eta and Coefficient of Determination (R2) for ANOVA from F</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/etass.html">Eta for ANOVA from F and Sum of Squares</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/etapss.html">Partial Eta Squared for ANOVA from F and Sum of Squares</a><br />
   <a href="https://www.aggieerin.com/shiny-server/tests/gesrmss.html">Generalized Eta Squared Partial RM - SS</a><br />
   <a href="https://www.aggieerin.com/shiny-server/tests/gesmixss.html">Generalized Eta Squared Partial Mixed - SS</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/omegaf.html">Omega - F</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/omegass.html">Omega Full - SS</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/omegapbnss.html">Omega Partial BN - SS</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/omegaprmss.html">Omega Partial RM - SS</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/gosrmss.html">Generalized Omega RM - SS</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/epsilon.html">Epsilon</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/chiv.html">Chi-square V</a><br />
-  <a href="https://www.aggieerin.com/shiny-server/tests/chio.html">Chi-square Odds</a></p>
+  <a href="https://www.aggieerin.com/shiny-server/tests/omegaf.html">Omega Squared for ANOVA from F</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/omegass.html">Omega Squared for One-Way and Multi-Way ANOVA from F</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/omegapbnss.html">Partial Omega Squared for Between Subjects ANOVA from F</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/omegaprmss.html">Partial Omega Squared for Repeated Measures ANOVA from F</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/gosrmss.html">Generalized Omega Squared for Multi-Way and Mixed ANOVA from F</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/epsilon.html">Epsilon for ANOVA from F and Sum of Squares</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/chiv.html">V for Chi-Square</a><br />
+  <a href="https://www.aggieerin.com/shiny-server/tests/chio.html">Chi-Square Odds Ratios</a></p>
 
 <p></p></div>
             </div>

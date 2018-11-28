@@ -32,37 +32,37 @@
       <guid>https://www.aggieerin.com/shiny-server/tests/</guid>
       <description>&lt;h1 id=&#34;mean-differences&#34;&gt;Mean Differences&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/zm.html&#34;&gt;Z-Test - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/zz.html&#34;&gt;Z-Test - Z&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletm.html&#34;&gt;Single Sample t - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;Single Sample t - t&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;Dependent t Averages - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;Dependent t Differences - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdifft.html&#34;&gt;Dependent t Differences - t&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptrm.html&#34;&gt;Dependent t Repeated Measures&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;Independent t - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;Independent t - t&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtdelta.html&#34;&gt;Independent t Delta - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtg.html&#34;&gt;Independent t g - Means&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtprop.html&#34;&gt;Independent Proportions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/zm.html&#34;&gt;d for Z-test from Population Mean and SD&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/zz.html&#34;&gt;d from z-statistic for Z-test&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singletm.html&#34;&gt;d for Single t from Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/singlett.html&#34;&gt;d for Single t from t&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptavgm.html&#34;&gt;d for Dependent t with Average SD Denominator - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdiffm.html&#34;&gt;d for Dependent t with SD Difference Scores Denominator - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptdifft.html&#34;&gt;d from t for Repeated Measures with SD Difference Scores Denominator - t&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/deptrm.html&#34;&gt;d for Repeated Measures with Average SD Denominator&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtm.html&#34;&gt;d for Between Subjects with Pooled SD Denominator&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtt.html&#34;&gt;d from t for Between Subjects&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtdelta.html&#34;&gt;d-delta for Between Subjects with Control Group SD Denominator - Means&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtg.html&#34;&gt;d-g Corrected for Independent t&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/indtprop.html&#34;&gt;d for Independent Proportions&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;variance-overlap&#34;&gt;Variance Overlap&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/dtor.html&#34;&gt;d to r&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/rcorrel.html&#34;&gt;r&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta - F&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etass.html&#34;&gt;Eta Full - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapss.html&#34;&gt;Eta Partial - SS&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/dtor.html&#34;&gt;r and Coefficient of Determination (R2) from d&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/rcorrel.html&#34;&gt;r to Coefficient of Determination (R2) from F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta and Coefficient of Determination (R2) for ANOVA from F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etass.html&#34;&gt;Eta for ANOVA from F and Sum of Squares&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapss.html&#34;&gt;Partial Eta Squared for ANOVA from F and Sum of Squares&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesrmss.html&#34;&gt;Generalized Eta Squared Partial RM - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesmixss.html&#34;&gt;Generalized Eta Squared Partial Mixed - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega - F&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Full - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegapbnss.html&#34;&gt;Omega Partial BN - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaprmss.html&#34;&gt;Omega Partial RM - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrmss.html&#34;&gt;Generalized Omega RM - SS&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/epsilon.html&#34;&gt;Epsilon&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;Chi-square V&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chio.html&#34;&gt;Chi-square Odds&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega Squared for ANOVA from F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Squared for One-Way and Multi-Way ANOVA from F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegapbnss.html&#34;&gt;Partial Omega Squared for Between Subjects ANOVA from F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaprmss.html&#34;&gt;Partial Omega Squared for Repeated Measures ANOVA from F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gosrmss.html&#34;&gt;Generalized Omega Squared for Multi-Way and Mixed ANOVA from F&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/epsilon.html&#34;&gt;Epsilon for ANOVA from F and Sum of Squares&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chiv.html&#34;&gt;V for Chi-Square&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/chio.html&#34;&gt;Chi-Square Odds Ratios&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
