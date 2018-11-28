@@ -55,21 +55,21 @@ In this experiment people were given word pairs to rate based on their “relate
 
 # Function in R: 
 
-ges.partial.SS.rm(dfm = 2, dfe = 100, ssm = 435, sss = 659, sse1 = 435, sse2 = 446, sse3 = 546, Fvalue = 5.46, a = .05)
+ges.partial.SS.rm(dfm = 1, dfe = 157, ssm = 51184, sss = 76988, sse1 = 8319, sse2 = 6074, sse3 = 5403, Fvalue = 5.46, a = .05)
 
 # MOTE
 
 ## Screenshot
 
-![Repeated Measures Two-Way ANOVA Screenshot](../images/anovarm2.jpg)
+![Repeated Measures Two-Way ANOVA Screenshot](../images/gespartrm.jpg)
 
 ## Effect Size:
 
-$\eta^2$ = .56, 95% CI [.00, .83]
+$\eta^2$ = .35, 95% CI [.23, .46]
 
 ## Interpretation: 
 
-Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.
+Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.
 
 ## Summary Statistics: 
 
@@ -77,7 +77,7 @@ Not applicable.
 
 ## Test Statistic: 
 
-*F*(2, 8) = 5.13, *p* = .037
+*F*(1, 157) = 5.46, *p* = .021
 
 ## Interpretation: 
 

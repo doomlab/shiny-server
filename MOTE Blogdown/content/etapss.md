@@ -49,13 +49,6 @@ We looked at two year’s worth of athletic spending data (treating each receipt
 **SAS**
 ![Between Subjects Two Way ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%202%20anova%20SAS.PNG)
 
-+ dfm = 1  
-+ dfe = 18250 
-+ ssm = 1675682.823
-+ sse = 620442270.8
-+ Fvalue = 49.289 
-+ a	= .05
-
 # Function in R: 
 
 eta.partial.SS(dfm = 1, dfe = 18250, ssm = 1675682.823, sse = 620442270.8, Fvalue = 49.289, a = .05)

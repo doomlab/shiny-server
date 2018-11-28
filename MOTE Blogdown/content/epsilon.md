@@ -53,13 +53,6 @@ A health psychologist recorded the number of close inter-personal attachments of
 **SAS**
 ![One-Way ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/bn%201%20anova%20SAS.PNG)
 
-+ dfm = 2  
-+ dfe = 8 
-+ msm = 12.621
-+ mse = 2.458
-+ sst = 44.909  
-+ a	= .05
-
 # Function in R: 
 
 epsilon.full.SS(dfm = 2, dfe = 8, msm = 12.621, mse = 2.458, sst = 44.909, a)
