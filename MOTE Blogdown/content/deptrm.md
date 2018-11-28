@@ -84,10 +84,6 @@ Not applicable.
 
 Not applicable. 
 
-# Sample Writeup
-
-The mean measure of belief on the pretest was 5.57, with a standard deviation of 1.99. The posttest scores appeared lower (*M* = 4.43, *SD* = 2.88) but the dependent t-test was not significant using alpha = .05, *t*(6) = 1.43, *p* = .203, $d\_{rm}$ = 0.43. The medium effect size suggests that the movie may have influenced belief in the supernatural.
-
 # Tutorial
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eq9X4ynxq2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
