@@ -77,7 +77,7 @@ Not applicable.
 
 ## Test Statistic: 
 
-$X^2(4)$ = 2.05, p = .727
+$X\^2(4)$ = 2.05, p = .727
 
 ## Interpretation: 
 

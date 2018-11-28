@@ -1,5 +1,5 @@
 ---
-title: Z Test - Means
+title: d for Z-test from Population Mean and SD
 author: DOOM Lab
 date: '2018-05-09'
 slug: zm
