@@ -54,27 +54,19 @@ A forensic psychologist conducted a study to examine whether being hypnotized du
 **SAS**
 ![Independent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/independent%20t%20SAS.PNG)
 
-+ m1 = -2.66
-+ m2	= 4
-+ sd1 = 4
-+ sd2	= .05
-+ n1 = 4
-+ n2 = 4
-+ a = .05
-
 # Function in R: 
 
-d.ind.t.t(t = -2.66, n1 = 4, n2 = 4, a = .05)
+g.ind.t(m1 = 17.75, m2 = 23, sd1 = 3.304, sd2 = 3.304, n1 = 4, n2 = 4, a = 0.05)
 
 # MOTE
 
 ## Screenshot
 
-![Independent t - Means Screenshot](../images/indtt.jpg)
+![Independent t - Means Screenshot](../images/indtg.jpg)
 
 ## Effect Size:
 
-$d\_{g}$ = -2.17, 95% CI [-3.57, -0.10]
+$d\_{g}$ = -1.64, 95% CI [-3.10, -0.09]
 
 ## Interpretation: 
 
@@ -82,7 +74,9 @@ Your confidence interval does not include zero, and therefore, you might conclud
 
 ## Summary Statistics: 
 
-Not applicable. 
+*M* = 17.75, *SD* = 3.30, *SE* = 1.65, 95% CI [12.49, 23.01]
+
+*M* = 23.00, *SD* = 2.16, *SE* = 1.08, 95% CI [19.56, 26.44]
 
 ## Test Statistic: 
 
