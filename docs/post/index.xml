@@ -53,7 +53,7 @@
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta and Coefficient of Determination (R2) for ANOVA from F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etass.html&#34;&gt;Eta for ANOVA from F and Sum of Squares&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapss.html&#34;&gt;Partial Eta Squared for ANOVA from F and Sum of Squares&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesrmss.html&#34;&gt;Generalized Eta Squared Partial RM - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesrmss.html&#34;&gt;Partial Generalized Eta-Squared for Repeated Measures ANOVA from F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesmixss.html&#34;&gt;Generalized Eta Squared Partial Mixed - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega Squared for ANOVA from F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Squared for One-Way and Multi-Way ANOVA from F&lt;/a&gt;&lt;br /&gt;

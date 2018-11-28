@@ -1,5 +1,5 @@
 ---
-title: Omega - F
+title: Omega Squared for ANOVA from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: omegaf

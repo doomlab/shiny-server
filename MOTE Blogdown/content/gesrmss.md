@@ -1,5 +1,5 @@
 ---
-title: Generalized Eta Squared Partial Repeated Measures SS
+title: Partial Generalized Eta-Squared for Repeated Measures ANOVA from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: gesrmss

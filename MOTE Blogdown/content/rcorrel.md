@@ -1,5 +1,5 @@
 ---
-title: rcorrel
+title: r to Coefficient of Determination (R2) from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: dtor

@@ -1,5 +1,5 @@
 ---
-title: Omega Partial RM - SS
+title: Partial Omega Squared for Repeated Measures ANOVA from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: omegaprmss

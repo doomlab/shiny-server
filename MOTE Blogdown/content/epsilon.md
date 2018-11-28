@@ -1,5 +1,5 @@
 ---
-title: Epsilon
+title: Epsilon for ANOVA from F and Sum of Squares
 author: DOOM Lab
 date: '2018-05-09'
 slug: epsilon

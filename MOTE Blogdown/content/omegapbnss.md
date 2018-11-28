@@ -1,5 +1,5 @@
 ---
-title: Omega Partial BN - SS
+title: Partial Omega Squared for Between Subjects ANOVA from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: omegapbnss

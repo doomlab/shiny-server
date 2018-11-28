@@ -1,5 +1,5 @@
 ---
-title: Omega Full - SS
+title: Omega Squared for One-Way and Multi-Way ANOVA from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: omegass

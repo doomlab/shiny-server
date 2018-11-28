@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/chiv.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/deptrm.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -33,6 +28,21 @@
   </url>
   
   <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/omegaf.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/omegass.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/etapss.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -44,41 +54,6 @@
   
   <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/gesrmss.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/indetprop.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/indtm.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/indtt.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/omegaf.html</loc>
-    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/omegass.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,12 +73,27 @@
   </url>
   
   <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/chiv.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indtm.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/deptdiffm.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indetprop.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -123,6 +113,11 @@
   </url>
   
   <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indtt.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
@@ -133,12 +128,17 @@
   </url>
   
   <url>
-    <loc>https://www.aggieerin.com/shiny-server/tests/dtor.html</loc>
+    <loc>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.aggieerin.com/shiny-server/tests/indtg.html</loc>
+    <lastmod>2018-05-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.aggieerin.com/shiny-server/tests/dtor.html</loc>
     <lastmod>2018-05-09T00:00:00+00:00</lastmod>
   </url>
   

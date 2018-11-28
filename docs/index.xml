@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Chi-square - Odds</title>
+      <title>Chi-Square Odds Ratios</title>
       <link>https://www.aggieerin.com/shiny-server/tests/chio.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -21,19 +21,6 @@
 The formula for odds is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$
 R Function odds(n11, n12, n21, n22, a)
 Arguments n11 = sample size for level 1.</description>
-    </item>
-    
-    <item>
-      <title>Chi-square V</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/chiv.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/chiv.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays V and non-central confidence interval for the specified chi-square statistic.
-The formula for V is: $$\sqrt{ \frac{\chi^2} {N \times df_{smaller}} } $$
-$df_{smaller}$ is defined by the minimum of (rows - 1) or (columns - 1).
-R Function v.chi.sq(x2, n, r, c, a = 0.05)
-Arguments  x2 = chi-square statistic n = sample size r = number of rows in the contingency table c = number of columns in the contingency table a = significance level  Example Individuals were polled about their number of friends (low, medium, high) and their number of kids (1, 2, 3+) to determine if there was a relationship between friend groups and number of children, as we might expect that those with more children may have less time for friendship maintaining activities.</description>
     </item>
     
     <item>
@@ -49,7 +36,7 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     </item>
     
     <item>
-      <title>Epsilon</title>
+      <title>Epsilon for ANOVA from F and Sum of Squares</title>
       <link>https://www.aggieerin.com/shiny-server/tests/epsilon.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -61,7 +48,7 @@ R Function epsilon.</description>
     </item>
     
     <item>
-      <title>Eta - F</title>
+      <title>Eta and Coefficient of Determination (R2) for ANOVA from F</title>
       <link>https://www.aggieerin.com/shiny-server/tests/etaf.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -74,7 +61,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
-      <title>Eta Full - SS</title>
+      <title>Eta for ANOVA from F and Sum of Squares</title>
       <link>https://www.aggieerin.com/shiny-server/tests/etass.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -87,7 +74,37 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
-      <title>Eta Partial - SS</title>
+      <title>Generalized Omega Squared for Multi-Way and Mixed ANOVA from F</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
+The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</description>
+    </item>
+    
+    <item>
+      <title>Omega Squared for ANOVA from F</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/omegaf.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/omegaf.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (F_{model} - 1)}{df_{model} \times (F_{model} - 1) + N}$$</description>
+    </item>
+    
+    <item>
+      <title>Omega Squared for One-Way and Multi-Way ANOVA from F</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/omegass.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/omegass.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.
+The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$</description>
+    </item>
+    
+    <item>
+      <title>Partial Eta Squared for ANOVA from F and Sum of Squares</title>
       <link>https://www.aggieerin.com/shiny-server/tests/etapss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -100,7 +117,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
-      <title>GES Partial - Mixed SS</title>
+      <title>Partial Generalized Eta-Squared for Mixed Design ANOVA from F</title>
       <link>https://www.aggieerin.com/shiny-server/tests/gesmixss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -112,7 +129,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
     </item>
     
     <item>
-      <title>Generalized Eta Squared Partial Repeated Measures SS</title>
+      <title>Partial Generalized Eta-Squared for Repeated Measures ANOVA from F</title>
       <link>https://www.aggieerin.com/shiny-server/tests/gesrmss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -123,90 +140,7 @@ R Function ges.partial.SS.rm(dfm, dfe, ssm, sss, sse1, sse2, sse3, Fvalue, a)</d
     </item>
     
     <item>
-      <title>Generalized Omega - RM</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</description>
-    </item>
-    
-    <item>
-      <title>Independent Proportions</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indetprop.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/indetprop.html</guid>
-      <description>Description This function displays d and central confidence interval calculated from differences in independent proportions.
-The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
-The formula for Z is: $$Z = \frac{P_1 - P_2}{SE}$$
-R Function d.prop(p1, p2, n1, n2, a)
-Arguments  p1 = proportion of people group one p2 = proportion of people group two n1 = sample size group one n2 = sample size group two a = significance level  Example Several researchers were examining the data on the number of students who retake a course after they receive a D, F, or withdraw from the course.</description>
-    </item>
-    
-    <item>
-      <title>Independent t - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtm.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
-The formula for $d_{s}$ is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
-The formula for $d_{s}$ is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
-R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean group one</description>
-    </item>
-    
-    <item>
-      <title>Independent t - t</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtt.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{s}$ for between subjects data and the non-central confidence interval estimating from the t-statistic.
-The formula for $d_{s}$ is: $$d_{s} = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
-The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
-R Function d.ind.t.t(t, n1, n2, a = 0.05)
-Arguments  t = t-test value
- n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
-    </item>
-    
-    <item>
-      <title>Independent t Delta - Means</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
-The formula for $d_{delta}$ is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
-The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
-R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
-Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
-    </item>
-    
-    <item>
-      <title>Omega - F</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/omegaf.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/omegaf.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omega^2$ is: $$\frac{df_{model} \times (F_{model} - 1)}{df_{model} \times (F_{model} - 1) + N}$$</description>
-    </item>
-    
-    <item>
-      <title>Omega Full - SS</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/omegass.html</link>
-      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.aggieerin.com/shiny-server/tests/omegass.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. This formula works for one way and multi way designs with careful focus on which error term you are using for the calculation.
-The formula for $\omega^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + SS_{error} + SS_{subject} + MS_{subject} }$$</description>
-    </item>
-    
-    <item>
-      <title>Omega Partial BN - SS</title>
+      <title>Partial Omega Squared for Between Subjects ANOVA from F</title>
       <link>https://www.aggieerin.com/shiny-server/tests/omegapbnss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -218,7 +152,7 @@ R Function omega.partial.SS.bn(dfm, dfe, msm, mse, ssm, n, a)</description>
     </item>
     
     <item>
-      <title>Omega Partial RM - SS</title>
+      <title>Partial Omega Squared for Repeated Measures ANOVA from F</title>
       <link>https://www.aggieerin.com/shiny-server/tests/omegaprmss.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -248,6 +182,32 @@ Summary Statistics: INCLUDE SUMMARY STATISTICS FROM MOTE</description>
     </item>
     
     <item>
+      <title>V for Chi-Square</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/chiv.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/chiv.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays V and non-central confidence interval for the specified chi-square statistic.
+The formula for V is: $$\sqrt{ \frac{\chi^2} {N \times df_{smaller}} } $$
+$df_{smaller}$ is defined by the minimum of (rows - 1) or (columns - 1).
+R Function v.chi.sq(x2, n, r, c, a = 0.05)
+Arguments  x2 = chi-square statistic n = sample size r = number of rows in the contingency table c = number of columns in the contingency table a = significance level  Example Individuals were polled about their number of friends (low, medium, high) and their number of kids (1, 2, 3+) to determine if there was a relationship between friend groups and number of children, as we might expect that those with more children may have less time for friendship maintaining activities.</description>
+    </item>
+    
+    <item>
+      <title>d for Between Subjects with Pooled SD Denominator</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtm.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtm.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
+The formula for $d_{s}$ is: $$d = {M_{1} - M_{2}\over SD_{pooled}}$$
+The formula for $d_{s}$ is: $$t = {M_{1} - M_{2}\over SE_{pooled}}$$
+R Function d.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
+Arguments  m1 = mean group one</description>
+    </item>
+    
+    <item>
       <title>d for Dependent t with Average SD Denominator - Means</title>
       <link>https://www.aggieerin.com/shiny-server/tests/deptavgm.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -271,6 +231,19 @@ The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
 $\bar{D}$ = Mean difference score
 $S_{D}$ = Standard deviation of difference scores
 R Function d.</description>
+    </item>
+    
+    <item>
+      <title>d for Independent Proportions</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/indetprop.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/indetprop.html</guid>
+      <description>Description This function displays d and central confidence interval calculated from differences in independent proportions.
+The formula for d is: $$d = \frac{P_1}{SE_1} - \frac{P_2}{SE_2}$$
+The formula for Z is: $$Z = \frac{P_1 - P_2}{SE}$$
+R Function d.prop(p1, p2, n1, n2, a)
+Arguments  p1 = proportion of people group one p2 = proportion of people group two n1 = sample size group one n2 = sample size group two a = significance level  Example Several researchers were examining the data on the number of students who retake a course after they receive a D, F, or withdraw from the course.</description>
     </item>
     
     <item>
@@ -314,6 +287,20 @@ Arguments  mu = population mean
     </item>
     
     <item>
+      <title>d from t for Between Subjects</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtt.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtt.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{s}$ for between subjects data and the non-central confidence interval estimating from the t-statistic.
+The formula for $d_{s}$ is: $$d_{s} = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
+The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
+R Function d.ind.t.t(t, n1, n2, a = 0.05)
+Arguments  t = t-test value
+ n1 = sample size group one n2 = sample size group two a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
+    </item>
+    
+    <item>
       <title>d from t for Repeated Measures with SD Difference Scores Denominator - t</title>
       <link>https://www.aggieerin.com/shiny-server/tests/deptdifft.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
@@ -338,20 +325,20 @@ R Function d.z.z(z, sig = NA, n, a = 0.</description>
     </item>
     
     <item>
-      <title>d to r</title>
-      <link>https://www.aggieerin.com/shiny-server/tests/dtor.html</link>
+      <title>d-delta for Between Subjects with Control Group SD Denominator - Means</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.aggieerin.com/shiny-server/tests/dtor.html</guid>
-      <description>Description Calculates r from d and then translates r to $r\^2$ to calculate the non-central confidence interval for $r\^2$ using the F distribution.
-The formula for r is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$
-The formula for t is: $$t = \frac{r} {\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
-R Function d.to.r(d, n1, n2, sd2, a = 0.05)
-Arguments  d = effect size statistic n1 = sample size group one n2 = sample size group two a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+      <guid>https://www.aggieerin.com/shiny-server/tests/indtdelta.html</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+The formula for $d_{delta}$ is $$d_{delta} = {M_{control} - M_{exp}\over SD_{control}}$$
+The formula for t is $$t = {M_{control} - M_{exp}\over SE_{pooled}}$$
+R Function delta.ind.t(m1, m2, sd1, sd2, n1, n2, a = 0.05)
+Arguments  m1 = mean from control group m2 = mean from experimental group sd1 = standard deviation from control group sd2 = standard deviation from experimental group n1 = sample size from control group n2 = sample size from experimental group a = significance level  Example A forensic psychologist conducted a study to examine whether being hypnotized during recall affects how well a witness can remember facts about an event.</description>
     </item>
     
     <item>
-      <title>d-g corrected for Independent t</title>
+      <title>d-g Corrected for Independent t</title>
       <link>https://www.aggieerin.com/shiny-server/tests/indtg.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -365,7 +352,20 @@ Arguments  m1 = mean one
     </item>
     
     <item>
-      <title>rcorrel</title>
+      <title>r and Coefficient of Determination (R2) from d</title>
+      <link>https://www.aggieerin.com/shiny-server/tests/dtor.html</link>
+      <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.aggieerin.com/shiny-server/tests/dtor.html</guid>
+      <description>Description Calculates r from d and then translates r to $r\^2$ to calculate the non-central confidence interval for $r\^2$ using the F distribution.
+The formula for r is: $$r = \frac{d} {\sqrt{d^2 + \frac{(n_1 + n_2)^2}{(n_1 \times n_2)}}}$$
+The formula for t is: $$t = \frac{r} {\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function d.to.r(d, n1, n2, sd2, a = 0.05)
+Arguments  d = effect size statistic n1 = sample size group one n2 = sample size group two a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+    </item>
+    
+    <item>
+      <title>r to Coefficient of Determination (R2) from F</title>
       <link>https://www.aggieerin.com/shiny-server/tests/rcorrel.html</link>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
@@ -418,7 +418,7 @@ Arguments  r = correlation coefficient n = sample size a = significance level  E
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etaf.html&#34;&gt;Eta and Coefficient of Determination (R2) for ANOVA from F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etass.html&#34;&gt;Eta for ANOVA from F and Sum of Squares&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/etapss.html&#34;&gt;Partial Eta Squared for ANOVA from F and Sum of Squares&lt;/a&gt;&lt;br /&gt;
-  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesrmss.html&#34;&gt;Generalized Eta Squared Partial RM - SS&lt;/a&gt;&lt;br /&gt;
+  &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesrmss.html&#34;&gt;Partial Generalized Eta-Squared for Repeated Measures ANOVA from F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/gesmixss.html&#34;&gt;Generalized Eta Squared Partial Mixed - SS&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegaf.html&#34;&gt;Omega Squared for ANOVA from F&lt;/a&gt;&lt;br /&gt;
   &lt;a href=&#34;https://www.aggieerin.com/shiny-server/tests/omegass.html&#34;&gt;Omega Squared for One-Way and Multi-Way ANOVA from F&lt;/a&gt;&lt;br /&gt;

@@ -30,7 +30,7 @@ tags: []
   [Eta and Coefficient of Determination (R2) for ANOVA from F](https://www.aggieerin.com/shiny-server/tests/etaf.html)       
   [Eta for ANOVA from F and Sum of Squares](https://www.aggieerin.com/shiny-server/tests/etass.html)    
   [Partial Eta Squared for ANOVA from F and Sum of Squares](https://www.aggieerin.com/shiny-server/tests/etapss.html)   
-  [Generalized Eta Squared Partial RM - SS](https://www.aggieerin.com/shiny-server/tests/gesrmss.html)      
+  [Partial Generalized Eta-Squared for Repeated Measures ANOVA from F](https://www.aggieerin.com/shiny-server/tests/gesrmss.html)      
   [Generalized Eta Squared Partial Mixed - SS](https://www.aggieerin.com/shiny-server/tests/gesmixss.html)     
   [Omega Squared for ANOVA from F](https://www.aggieerin.com/shiny-server/tests/omegaf.html)  
   [Omega Squared for One-Way and Multi-Way ANOVA from F](https://www.aggieerin.com/shiny-server/tests/omegass.html)  

@@ -1,5 +1,5 @@
 ---
-title: Independent t - Means
+title: d for Between Subjects with Pooled SD Denominator
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtm

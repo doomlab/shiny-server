@@ -1,5 +1,5 @@
 ---
-title: Generalized Omega - RM
+title: Generalized Omega Squared for Multi-Way and Mixed ANOVA from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: gosrmss

@@ -1,5 +1,5 @@
 ---
-title: Eta Partial - SS
+title: Partial Eta Squared for ANOVA from F and Sum of Squares
 author: DOOM Lab
 date: '2018-05-09'
 slug: etapss

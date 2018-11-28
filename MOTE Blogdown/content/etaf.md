@@ -1,5 +1,5 @@
 ---
-title: Eta - F
+title: Eta and Coefficient of Determination (R2) for ANOVA from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: etaf

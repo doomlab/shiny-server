@@ -1,5 +1,5 @@
 ---
-title: Chi-square V
+title: V for Chi-Square
 author: DOOM Lab
 date: '2018-05-09'
 slug: chiv

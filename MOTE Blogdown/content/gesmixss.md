@@ -1,5 +1,5 @@
 ---
-title: GES Partial - Mixed SS
+title: Partial Generalized Eta-Squared for Mixed Design ANOVA from F
 author: DOOM Lab
 date: '2018-05-09'
 slug: gesmixss

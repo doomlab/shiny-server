@@ -1,5 +1,5 @@
 ---
-title: d to r
+title: r and Coefficient of Determination (R2) from d
 author: DOOM Lab
 date: '2018-05-09'
 slug: dtor

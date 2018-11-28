@@ -1,5 +1,5 @@
 ---
-title: Independent Proportions
+title: d for Independent Proportions
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtprop

@@ -1,5 +1,5 @@
 ---
-title: Chi-square - Odds
+title: Chi-Square Odds Ratios
 author: DOOM Lab
 date: '2018-05-09'
 slug: chio

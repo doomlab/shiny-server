@@ -1,5 +1,5 @@
 ---
-title: Independent t - t
+title: d from t for Between Subjects
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtt

@@ -1,5 +1,5 @@
 ---
-title: Independent t Delta - Means
+title: d-delta for Between Subjects with Control Group SD Denominator - Means
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtdelta

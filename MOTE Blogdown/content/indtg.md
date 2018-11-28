@@ -1,5 +1,5 @@
 ---
-title: d-g corrected for Independent t
+title: d-g Corrected for Independent t
 author: DOOM Lab
 date: '2018-05-09'
 slug: indtg
