@@ -14,7 +14,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays *d* and non-central confidence interval for single *t* estimated from the *t*-statistic.
+This function displays *d* and non-central confidence interval for *d* for single *t* tests estimated from the *t*-statistic.
 
 The formula for *d* is: $$d = \frac{t}{\sqrt(N)}$$
  

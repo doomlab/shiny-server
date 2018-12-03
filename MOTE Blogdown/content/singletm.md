@@ -14,9 +14,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays *d* and non-central confidence interval for single *t* from means.
+This function displays *d* and non-central confidence interval for *d* for single *t* tests from means.
 
-The formula for *d* is: $$d = \frac{t}{\sqrt(N)}$$
+The formula for *d* is: $$d = \frac{M - \mu}{\SD}$$
  
 The formula for *t* is: $$t = \frac{M - \mu}{SE}$$
 
@@ -66,7 +66,7 @@ Your confidence interval does not include zero, and therefore, you might conclud
 
 ## Summary Statistics: 
 
-Not applicable.
+ADD INFORMATION HERE WITH NEW IMAGE. 
 
 ## Test Statistic: 
 
