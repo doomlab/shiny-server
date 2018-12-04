@@ -110,7 +110,7 @@ apa_M = function(saved.d, meanno = 1, alpha, digits = 2) {
                    ", <i>SE</i> = ", apa(saved.d$se, digits), #report se
                    ", ", (1-as.numeric(alpha))*100, "% CI [", apa(saved.d$Mlow, 2), #report low
                    ", ", apa(saved.d$Mhigh, digits), "]", sep = "") #report high
-  }
+    return(output)}
 
   if (meanno == 1) {
     output = paste("<i>M</i> = ", apa(saved.d$M1, digits), #report mean
