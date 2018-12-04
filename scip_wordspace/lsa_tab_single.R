@@ -92,7 +92,8 @@ lsa_tab_single_corpus <- tabItem(tabName = "lsa_tab_single_corpus",
                                 h4("This table presents words that are related to the selected word in the cosine range that you selected. 
            You will see the same number of related words as your choice in Numbers of Neighbors to Display. 
            Note: these are a random selection of words in the target cosine range. Use the buttons at the bottom of 
-           the table to download or save the data."),
+           the table to download or save the data. If one or more of the buttons are grayed out 
+                                   be sure your Adobe Flash plug-in is enabled."),
                                 DTOutput("lsa_choosetarget_corpus")
                             ) #close box
                           ) #close fluidRow
