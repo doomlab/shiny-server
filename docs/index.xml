@@ -253,7 +253,7 @@ Arguments  p1 = proportion of people group one p2 = proportion of people group t
       
       <guid>https://www.aggieerin.com/shiny-server/tests/singletm.html</guid>
       <description>Description This function displays d and non-central confidence interval for d for single t tests from means.
-The formula for d is: $$d = \frac{M - \mu}{\SD}$$
+The formula for d is: $$d = \frac{M - \mu}{SD}$$
 The formula for t is: $$t = \frac{M - \mu}{SE}$$
 R Function d.single.t(m, u, sd, n, a = 0.05)
 Arguments  m = sample mean u = population mean sd = sample standard deviation n = sample size a = significance level  Example A school has a gifted/honors program that they claim is significantly better than others in the country.</description>

@@ -40,7 +40,7 @@ d.z.z(z, sig = NA, n, a = 0.05)
 
 # Example  
 
-A recent study suggested that students (N = 100) learning statistics improved their test scores with the use of visual aids (*Z* = 2.5, *SD* = 4). 
+A recent study suggested that students (N = 100) learning statistics improved their test scores with the use of visual aids (*Z* = 2.50, *SD* = 4.00). 
 
 # Function in R: 
 

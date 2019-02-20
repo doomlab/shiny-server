@@ -16,7 +16,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays *d* and non-central confidence interval for *d* for single *t* tests from means.
 
-The formula for *d* is: $$d = \frac{M - \mu}{\SD}$$
+The formula for *d* is: $$d = \frac{M - \mu}{SD}$$
  
 The formula for *t* is: $$t = \frac{M - \mu}{SE}$$
 
