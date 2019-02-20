@@ -1,6 +1,7 @@
 ####Measure of the Effect: A Shiny App using the MOTE library####
 ##Developed by: Erin M. Buchanan, Will Padfield, Abbie Van Nuland, Addie Wikowsky
-##MOTE library maintained by Erin M. Buchanan, John E. Scofield, K.D. Valentine
+##MOTE library maintained by Erin M. Buchanan, John E. Scofield, 
+        ##K.D. Valentine, and Amber Gillenwaters
 
 ####libraries####
 library(shiny)
@@ -67,7 +68,7 @@ ui <- fluidPage(
                           tabPanel("Omega Partial RM - SS",
                                    source("omegaSSrm_page.R")$value),
                           tabPanel("Generalized Omega - RM",
-                                   source("GOSRM_page.R")$value),
+                                   source("gosRM_page.R")$value),
                           tabPanel("Epsilon",
                                    source("epsilon_page.R")$value),
                           tabPanel("Chi-square V",

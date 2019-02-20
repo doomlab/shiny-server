@@ -50,7 +50,7 @@ fluidRow( #open fluid row
          tabsetPanel(
            tabPanel("Summary", htmlOutput("GOSRMsummary")),
            tabPanel("Code", withMathJax(),
-                    HTML(markdown::markdownToHTML(knit("GOSRM_code.md", quiet = T)))),
+                    HTML(markdown::markdownToHTML(knit("gosRM_code.Rmd", quiet = T)))),
           tabPanel("Help", HTML("<iframe width=\"560\" height=\"315\"
                                  src=\"https://www.youtube.com/embed/5yfUgJB4mwY\"
                                  frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>"))
