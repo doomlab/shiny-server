@@ -65,7 +65,7 @@ ges.partial.SS.rm(dfm = 1, dfe = 157, ssm = 51184, sss = 76988, sse1 = 8319, sse
 
 ## Effect Size:
 
-$\eta^2$ = .35, 95% CI [.23, .46]
+$\eta_{G}^2$ = .35, 95% CI [.23, .46]
 
 ## Interpretation: 
 

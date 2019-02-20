@@ -20,7 +20,7 @@
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays odds ratios and their normal confidence intervals. This statistic is calculated as (level 1.1/level 1.2) / (level 2.1/level 2.2), which can be considered the odds of level 1.1 given level1 overall versus level2.1 given level2 overall.
 The formula for odds is: $$\frac{(N_{11}/N_{12})}{(N_{21}/N_{22})}$$
 R Function odds(n11, n12, n21, n22, a)
-Arguments n11 = sample size for level 1.</description>
+Arguments  n11 = sample size for level 1.</description>
     </item>
     
     <item>
@@ -78,8 +78,8 @@ Arguments  dfm = degrees of freedom for the model/IV/between
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</guid>
-      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} {SS_{total} + SS_{IV1} + J \times MS_{subject}}$$</description>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays generalized omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
+The formula for $\omegaG^2$ is: $$\frac{SS{modelA} - (df{modelA} \times MS{subjectA})} {SS{total} + SS{modelB} + JB \times MS{subjectA}}$$</description>
     </item>
     
     <item>
@@ -367,7 +367,7 @@ R Function d.to.r(d, n1, n2, sd2, a = 0.</description>
       <pubDate>Wed, 09 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.aggieerin.com/shiny-server/tests/rcorrel.html</guid>
-      <description>Description This function displays transformation from r to r2 to calculate the non-central confidence interval for $r^{2}$ using the F distribution.
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays transformation from r to r2 to calculate the non-central confidence interval for $r^{2}$ using the F distribution.
 The formula for t is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 R Function r.correl(r, n, a)
 Arguments  r = correlation coefficient n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>

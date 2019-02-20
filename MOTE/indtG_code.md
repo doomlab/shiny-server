@@ -7,7 +7,7 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = \frac{M_1 - M_2}{SD_{pooled}}*(1-\frac{3}{4*(N_1+N_2)-9})$$
+The formula for d is: $$d_{g} = \frac{M_1 - M_2}{SD_{pooled}} \times (1-\frac{3}{4 \times (N_1+N_2)-9})$$
  
 The formula for t is: $$t = \frac{M_1 - M_2}{SE_{pooled}}$$
  

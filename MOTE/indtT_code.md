@@ -7,9 +7,9 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = 2*\frac{t}{\sqrt{N_1 + N_2 - 2}}$$
+The formula for d is: $$d = 2 \times \frac{t}{\sqrt{N_1 + N_2 - 2}}$$
  
-The formula for t is: $$t = \frac{M_1 - M_2}{SE}$$
+The formula for t is: $$t = \frac{M_1 - M_2}{SE_{pooled}}$$
  
 The code to use MOTE in R is: 
  

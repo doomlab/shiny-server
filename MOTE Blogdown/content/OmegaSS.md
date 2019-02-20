@@ -77,7 +77,7 @@ Not applicable.
 
 ## Test Statistic: 
 
- F(2, 8) = 5.13, p = .037
+*F*(2, 8) = 5.13, *p* = .037
 
 ## Interpretation: 
 

@@ -7,7 +7,7 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = \frac{M_1 - M_2}{SD_{differences}}$$
+The formula for d is: $$d_{z} = \frac{M_1 - M_2}{SD_{differences}}$$
  
 The formula for t is: $$t = \frac{M_1 - M_2}{SE_{differences}}$$
  

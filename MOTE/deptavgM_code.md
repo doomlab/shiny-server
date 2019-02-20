@@ -7,7 +7,7 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
+The formula for d is: $$d_{av} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$
  
 The t-test is not given in this example, as you do not have the information needed to calculate it. 
  

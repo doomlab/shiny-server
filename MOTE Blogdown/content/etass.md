@@ -68,7 +68,7 @@ eta.full.SS(dfm = 2, dfe = 8, ssm = 25.24, sst = 44.91, Fvalue = 5.13, a = 0.05)
 
 ## Effect Size:
 
-$\eta\^2$ = .56, 95% CI [.00, .83]
+$\eta^2$ = .56, 95% CI [.00, .83]
 
 ## Interpretation: 
 

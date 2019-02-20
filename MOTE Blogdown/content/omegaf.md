@@ -44,23 +44,24 @@ omega.F(dfm, dfe, Fvalue, n, a = .05)
 
 Participants were tested over several days to measure variations in their pulse given different types of stimuli. One stimulus was a neutral picture (like a toaster), while other stimuli were cute/happy pictures (puppies, babies), and negative stimuli (mutilated faces, pictures of war). Were there differences in pulse for each participant across the stimuli? The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
-# MOTE
-
-## Screenshot
-
 **JASP**
 ![One-Way Repeated Measures ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20JASP.png)
 
 **SPSS**
-![One-Way Repeated Measures ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20SPSS.png)
+![One-Way Repeated Measures ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20SPSS.png)
 
 **SAS**
 ![One-Way Repeated Measures ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%201%20anova%20SAS.PNG)
 
-![Z-Test Means Screenshot](../images/omegaf.jpg)
 # Function in R: 
 
 omega.F(dfm = 2, dfe = 34, Fvalue = 253.273, n = 40, a = .05)
+
+# MOTE
+
+## Screenshot
+
+![Omega-F Screenshot](../images/omegaf.jpg)
 
 ## Effect Size:
 
@@ -76,7 +77,7 @@ Not applicable.
 
 ## Test Statistic: 
 
-F(2, 34) = 253.27, p < .001
+*F*(2, 34) = 253.27, *p* < .001
 
 ## Interpretation: 
 

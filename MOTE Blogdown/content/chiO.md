@@ -31,11 +31,11 @@ odds(n11, n12, n21, n22, a)
 
 # Arguments 
 
-n11	= sample size for level 1.1
-n12	= sample size for level 1.2
-n21	= sample size for level 2.1
-n22	= sample size for level 2.2
-a	= significance level
++ n11	= sample size for level 1.1
++ n12	= sample size for level 1.2
++ n21	= sample size for level 2.1
++ n22	= sample size for level 2.2
++ a	= significance level
 
 # Example  
 
@@ -46,20 +46,9 @@ A health psychologist was interested in the rates of anxiety in first generation
 | Low Anxiety  | 10               | 50      |
 | High Anxiety | 20               | 15      |
 
-
-**JASP**
-![Chi-square JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20JASP.png)
-
-**SPSS**
-![Chi-square SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20SPSS.png)
-
-**SAS**
-![Chi-square SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/chisq%20SAS.PNG)
-
-
 # Function in R: 
 
-odds(n11 = 9, n12 = 4, n21 = 7, n22 = 8, a = 0.05) 
+odds(n11 = 10, n12 = 50, n21 = 20, n22 = 15, a = 0.05) 
 
 # MOTE
 
@@ -71,7 +60,7 @@ odds(n11 = 9, n12 = 4, n21 = 7, n22 = 8, a = 0.05)
 
 This effect size is traditionally interpreted as like likelihood of group 1 to group 2. Therefore, an odds of 1 indicates they are equally likely. Odds less than 1 indicate that group 2 is more likely, and odds greater than 1 indicate that group 1 is more likely.
 
-*Odds* = 2.57, 95% CI [1.02, 4.13]
+*Odds* = .15, 95% CI [-.80, 1.10]
 
 ## Interpretation: 
 

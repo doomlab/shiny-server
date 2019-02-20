@@ -21,10 +21,12 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared. 
+This function displays generalized omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared. 
 
-The formula for $\omega^2$ is: $$\frac{SS\_{model} - (df\_{model} \times MS\_{subject})} 
-{SS\_{total} + SS\_{IV1} + J \times MS\_{subject}}$$
+The formula for $\omega_G^2$ is: $$\frac{SS_{modelA} - (df_{modelA} \times MS_{subjectA})} 
+{SS_{total} + SS_{modelB} + J_B \times MS_{subjectA}}$$
+
+Note: A is the target IV to calculate generalized omega squared on. B is the other IV. J is the number of levels for IV B. 
 
 # R Function
 
@@ -57,17 +59,17 @@ In this experiment people were given word pairs to rate based on their “relate
 
 # Function in R: 
 
-omega.gen.SS.rm(dfm = 1, dfe = 156, ssm = 14994.636, ssm2 = 50700.145, sst = 68084.034, mss = 492.999, j = 1, Fvalue = 953.042, a = 0.05)
+omega.gen.SS.rm(dfm = 1, dfe = 156, ssm = 14994.636, ssm2 = 50700.145, sst = 68084.034, mss = 492.999, j = 2, Fvalue = 953.042, a = 0.05)
 
 # MOTE
 
 ## Screenshot
 
-![Z-Test Means Screenshot](../images/z-test-means-screen.png)
+![GOS Screenshot](../images/gosrmSS.png)
 
 ## Effect Size:
 
-omega_g^2 = .12, 95% CI [.04, .23]
+$\omega_g^2$ = .12, 95% CI [.04, .23]
 
 ## Interpretation: 
 
@@ -79,7 +81,7 @@ Not applicable.
 
 ## Test Statistic: 
 
-F(1, 156) = 953.04, p < .001
+*F*(1, 156) = 953.04, *p* < .001
 
 ## Interpretation: 
 

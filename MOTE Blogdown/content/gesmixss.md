@@ -50,14 +50,6 @@ Given previous research, we know that backward strength in free association tend
 **SAS**
 ![Two Way Mixed ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/mix%202%20anova%20SAS.PNG)
 
-+ dfm = 1 
-+ dfe = 156
-+ ssm = 50860.89
-+ sss = 64251
-+ sse = 8301.74
-+ Fvalue = 955.740  
-+ a	= .05
-
 # Function in R: 
 
 ges.partial.SS.mix(dfm = 1, dfe = 156, ssm = 50860.89, sss = 64251, sse = 8301.74, Fvalue = 955.740, a = .05)
