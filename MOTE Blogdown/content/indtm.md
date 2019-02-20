@@ -23,9 +23,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays d for between subjects data and the non-central confidence interval using the pooled standard deviation as the denominator.
 
-The formula for $d\_{s}$ is: $$d = {M\_{1} - M\_{2}\over SD\_{pooled}}$$
+The formula for $d\_{s}$ is: $$d_{s} = {M\_{1} - M\_{2}\over SD\_{pooled}}$$
 
-The formula for $d\_{s}$ is: $$t = {M\_{1} - M\_{2}\over SE\_{pooled}}$$
+The formula for $t$ is: $$t = {M\_{1} - M\_{2}\over SE\_{pooled}}$$
 
 # R Function
 

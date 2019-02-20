@@ -66,7 +66,7 @@ Your confidence interval does not include zero, and therefore, you might conclud
 
 ## Summary Statistics: 
 
-ADD INFORMATION HERE WITH NEW IMAGE. 
+*M* = 1370.00, *S*D = 112.70, *S*E = 29.10, *95% CI* [1307.59, 1432.41]
 
 ## Test Statistic: 
 

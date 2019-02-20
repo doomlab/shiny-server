@@ -7,7 +7,7 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = \frac{M_1 - M_2}{\sqrt{(SD_1^2 + SD_2^2)  - (2*r*SD_1*SD_2)}} * \sqrt{2*(1-r)}$$
+The formula for d is: $$d_{rm} = \frac{M_1 - M_2}{\sqrt{(SD_1^2 + SD_2^2)  - (2 \times r \times SD_1 \times SD_2)}} \times \sqrt{2 \times (1-r)}$$
  
 The t-test is not given in this example, as you do not have the information needed to calculate it. 
  

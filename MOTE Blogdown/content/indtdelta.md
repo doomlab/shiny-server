@@ -21,9 +21,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 # Description   
 
-This function displays $d\_{delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
+This function displays $d\_{\Delta}$ for between subjects data and the non-central confidence interval using the control group standard deviation as the denominator.
 
-The formula for $d\_{delta}$ is $$d\_{delta} = {M\_{control} - M\_{exp}\over SD\_{control}}$$
+The formula for $d\_{\Delta}$ is $$d\_{\Delta} = {M\_{control} - M\_{exp}\over SD\_{control}}$$
 
 The formula for *t* is $$t = {M\_{control} - M\_{exp}\over SE\_{pooled}}$$
 
@@ -66,7 +66,7 @@ delta.ind.t(m1 = 17.75, m2 = 23.00, sd1 = 3.304, sd2 = 2.160, n1 = 4, n2 = 4, a 
 
 ## Effect Size:
 
-$d\_{delta}$ = -1.59, 95% CI [-3.57, -0.10]
+$d_{\Delta}$ = -1.59, 95% CI [-3.57, -0.10]
 
 ## Interpretation: 
 
@@ -74,9 +74,9 @@ Your confidence interval does not include zero, and therefore, you might conclud
 
 ## Summary Statistics: 
 
-Control Group Summary Statistics: M = 17.75, SD = 3.30, SE = 1.65, 95% CI [12.49, 23.01]
+Control Group Summary Statistics: *M* = 17.75, *SD* = 3.30, *SE* = 1.65, *95% CI* [12.49, 23.01]
 
-Experimental Group Summary Statistics: M = 23.00, SD = 2.16, SE = 1.08, 95% CI [19.56, 26.44]
+Experimental Group Summary Statistics: *M* = 23.00, *SD* = 2.16, *SE* = 1.08, *95% CI* [19.56, 26.44]
 
 ## Test Statistic: 
 
@@ -85,10 +85,6 @@ Experimental Group Summary Statistics: M = 23.00, SD = 2.16, SE = 1.08, 95% CI [
 ## Interpretation: 
 
 Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.
-
-# Sample Writeup
-
-Contrary to the hypothesized result, the group that underwent hypnosis was significantly less accurate while reporting facts than the control group with a large effect size, *t(6)* = -2.66, *p* = .038, $d\_{delta}$ = 1.59.
 
 # Tutorial
 

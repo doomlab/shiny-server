@@ -7,7 +7,7 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = \frac{M_{control} - M_{exp}}{SD_{control}}$$
+The formula for d is: $$d_\Delta = \frac{M_{control} - M_{exp}}{SD_{control}}$$
  
 The formula for t is: $$t = \frac{M_{control} - M_{exp}}{SE_{pooled}}$$
  

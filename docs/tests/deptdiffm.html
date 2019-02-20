@@ -27,17 +27,15 @@
 
     
     <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for $d_{z}$ is: $$d_{z} = {\bar{D}\over S_{D}}$$
+The formula for $d_{z}$ is: $$d_{z} = \frac{M_1 - M2}{SD{differences}}$$
 The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
-$\bar{D}$ = Mean difference score
-$S_{D}$ = Standard deviation of difference scores
-R Function d.">
+R Function d.dep.t.diff(mdiff, sddiff, n, a = .05)
+Arguments  mdiff = mean difference score sddiff = standard deviation of the difference scores n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for $d_{z}$ is: $$d_{z} = {\bar{D}\over S_{D}}$$
+The formula for $d_{z}$ is: $$d_{z} = \frac{M_1 - M2}{SD{differences}}$$
 The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
-$\bar{D}$ = Mean difference score
-$S_{D}$ = Standard deviation of difference scores
-R Function d.">
+R Function d.dep.t.diff(mdiff, sddiff, n, a = .05)
+Arguments  mdiff = mean difference score sddiff = standard deviation of the difference scores n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="d for Dependent t with SD Difference Scores Denominator - Means">
     <meta property="og:url" content="/tests/deptdiffm.html">
@@ -45,11 +43,10 @@ R Function d.">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
     <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.
-The formula for $d_{z}$ is: $$d_{z} = {\bar{D}\over S_{D}}$$
+The formula for $d_{z}$ is: $$d_{z} = \frac{M_1 - M2}{SD{differences}}$$
 The formula for t is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$
-$\bar{D}$ = Mean difference score
-$S_{D}$ = Standard deviation of difference scores
-R Function d.">
+R Function d.dep.t.diff(mdiff, sddiff, n, a = .05)
+Arguments  mdiff = mean difference score sddiff = standard deviation of the difference scores n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -235,12 +232,9 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>This function displays $d_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator.</p>
 
-<p>The formula for $d_{z}$ is: $$d_{z} = {\bar{D}\over S_{D}}$$</p>
+<p>The formula for $d_{z}$ is: $$d_{z} = \frac{M_1 - M<em>2}{SD</em>{differences}}$$</p>
 
 <p>The formula for <em>t</em> is: $$t = {M_{1} - M_{2}\over SE_{differences}}$$</p>
-
-<p>$\bar{D}$ = Mean difference score<br />
-$S_{D}$ = Standard deviation of difference scores</p>
 
 <h1 id="r-function">R Function</h1>
 

@@ -23,7 +23,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays $d\_{z}$ for repeated measures data and the non-central confidence interval using the standard deviation of the differences as the denominator estimating from the *t*-statistic.
 
-The formula for $d\_{z}$ is: $$d\_{z} = {M\_{1} - M\_{2}\over SE\_{differences}}$$
+The formula for d is: $$d_{z} = \frac{t}{\sqrt{N}}$$
 
 # R Function
 

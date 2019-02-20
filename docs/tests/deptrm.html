@@ -27,13 +27,11 @@
 
     
     <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{rm}$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
-R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
-Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\sqrt{(SD_1^2 &#43; SD_2^2) - (2 \times r \times SD_1 \times SD_2)}} \times \sqrt{2 \times (1-r)}$$
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.">
     <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{rm}$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
-R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
-Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\sqrt{(SD_1^2 &#43; SD_2^2) - (2 \times r \times SD_1 \times SD_2)}} \times \sqrt{2 \times (1-r)}$$
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Dependent t Repeated Measures">
     <meta property="og:url" content="/tests/deptrm.html">
@@ -41,9 +39,8 @@ Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
     <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{rm}$ for repeated measures data controlling for r and the non-central confidence interval using the average standard deviation of each level as the denominator.
-The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 &#43; SD_2}{2}}$$
-R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.05)
-Arguments  m1 = mean from first level m2 = mean from second level sd1 = standard deviation from first level sd2 = standard deviation from second level r = correlation between first and second level n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.">
+The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\sqrt{(SD_1^2 &#43; SD_2^2) - (2 \times r \times SD_1 \times SD_2)}} \times \sqrt{2 \times (1-r)}$$
+R Function d.dep.t.rm(m1, m2, sd1, sd2, r, n, a = 0.">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -229,7 +226,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <p>This function displays $d_{rm}$ for repeated measures data controlling for <em>r</em> and the non-central confidence interval using the average standard deviation of each level as the denominator.</p>
 
-<p>The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\frac{SD_1 + SD_2}{2}}$$</p>
+<p>The formula for $d_{rm}$ is: $$d_{rm} = \frac{M_1 - M_2}{\sqrt{(SD_1^2 + SD_2^2)  - (2 \times r \times SD_1 \times SD_2)}} \times \sqrt{2 \times (1-r)}$$</p>
 
 <h1 id="r-function">R Function</h1>
 

@@ -7,7 +7,7 @@ output:
         self_contained: no
 ---
  
-The formula for d is: $$d = \frac{M_1 - M_2}{SD_{pooled}}$$
+The formula for d is: $$d_{s} = \frac{M_1 - M_2}{SD_{pooled}}$$
  
 The formula for t is: $$t = \frac{M_1 - M_2}{SE_{pooled}}$$
  
