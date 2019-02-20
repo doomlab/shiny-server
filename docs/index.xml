@@ -279,7 +279,7 @@ Arguments  t = t-test value n = sample size a = significance level  Example A sc
       
       <guid>https://www.aggieerin.com/shiny-server/tests/zm.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays $d_{z}$ for z-test with the population mean and standard deviation. The normal confidence interval is also provided.
-The formula for $d_{z}$ is: $$d = \frac{M - \mu}{\sigma}$$
+The formula for $d_{z}$ is: $$d_{z} = \frac{M - \mu}{\sigma}$$
 The formula for Z is: $$Z = \frac{M - \mu}{\sigma_M}$$
 R Function d.z.mean(mu, m1, sig, sd1, n, a = 0.05)
 Arguments  mu = population mean

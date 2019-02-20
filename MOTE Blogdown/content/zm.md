@@ -23,7 +23,7 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays $d\_{z}$ for *z*-test with the population mean and standard deviation. The normal confidence interval is also provided. 
 
-The formula for $d\_{z}$ is: $$d = \frac{M - \mu}{\sigma}$$
+The formula for $d\_{z}$ is: $$d_{z} = \frac{M - \mu}{\sigma}$$
 
 The formula for *Z* is: $$Z = \frac{M - \mu}{\sigma_M}$$
 
