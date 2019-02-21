@@ -28,9 +28,13 @@ doublewordtable$SD[3:10] = c(apa(apply(doubleworddata[ , 3:10], 2, sd, na.rm = T
 
 On this page, you will find information about our paired word norms used in our projects. We have split our single and paired word norms into two separate databases to speed database processing time for the user. Word pair norms are cue-target groupings that require both concepts to be included to understand the relation between these concepts. For example, cat-dog can be understood in context of association (i.e., it's raining cats and dogs) or though semantics (i.e., cats and dogs have many similar features). This dataset includes all cues-target pairings from the Buchanan et al. (2013) semantic word-pair norms, our extension project ([OSF](https://osf.io/cjyzw/) and [GitHub](https://github.com/doomlab/Word-Norms-2)), and their overlap with the McRae, Cree, Seidenberg, and McNorgan (2005) and Vinson and Vigliocco (2008) norms. If two concepts are included in the dataset, but do not appear together as a row on this site, you can assume their feature overlap is very close to or zero. We calculated these cosine values for pairs that included at least two features in common. With over 4000 pairs, the possible combinations are 16+ million, and therefore, we used this restriction to give word pair combinations that were effectively non-zero while still being able to view and manipulate the database. When downloading the applications to run locally on RStudio, please be sure to download the entire folder on our [GitHub repository](https://github.com/doomlab/shiny-server/tree/master/wn_double).
 
-### Variable Table
+### Measures of Similarity
 
-You can view the complete variable table that lists the variables, their descriptions, min, max, mean, and standard deviation. Norms are taken from the University of South Florida Free Association Norms (Nelson, McEvoy, & Schreiber, 2004), JCN semantic dictionary distance (Maki, McKinley, & Thompson, 2004; Maki, 2008), and LSA values (Landauer & Dumais, 1997). The Shiny app below calculates statistics based on the current dataset. Please contact us if the link or any others below are not loading. 
+You can view the complete similarity variable table that lists the variables, their descriptions, min, max, mean, and standard deviation. Norms are taken from the University of South Florida Free Association Norms (Nelson, McEvoy, & Schreiber, 2004), JCN semantic dictionary distance (Maki, McKinley, & Thompson, 2004; Maki, 2008), and LSA values (Landauer & Dumais, 1997). The Shiny app below calculates statistics based on the current dataset. Please contact us if the link or any others below are not loading. 
+
+The cosine values in the semantic variables were collected via the feature listing task. In this task, each participant views a cue word (zebra) and asked to list the defining features of that word (stripes, tail). This creates cue-feature pairings, which are searchable below. These cue-feature lists are then compared to each other to calculate cue-target (target is a second cue word) cosine values. The difference in cosine values below is defined by the translation of the original feature (raw) to a root word (root) and coded affixes (affix) based on this change. All of these rows and translations are shown in the cue-feature set below, so it can be clear what features are being compared for cosine values. The other two semantic measures, JCN and LSA are calculated based on their respective datasets - JCN is a word distance measure calculated on WordNet, while LSA is a semantic vector model based on a corpus (TASA from the original LSA models).
+
+For association values, the free association task was used. Free association is often thought of as the "first word that comes to mind when you think of CUE". This task is often compared to the TV show Family Feud. Over many trials, the probability of these cue-target (target is the word listed in the task) pairings is calculated. However, the probability of target-cue pairings is often different, as the target word in the original pair likely has a different output set. For example, cheese includes many target words like mouse, cheddar, macaroni but the target set for mouse also includes things like keyboard, computer, rat, etc. Therefore both the forward (cue-target) and backward (target-cue) probabilities are provided. 
 
 ```{r double_var_table, echo=FALSE}
 ui = fluidPage(
@@ -52,7 +56,7 @@ server = function(input, output) {
 shinyApp(ui, server, options = list(height = 1050))
 ```
 
-### View and Search the Words
+### View and Search the Similarity Values 
 
 You can use the app table provided below to view all the words and their information. The top boxes in this datatable allow you to filter the columns for specific ranges you might be interested in. Use the search filters at the top of the table to pick specific ranges of variables or categories. A complete variable list can be found on the single word norms page.
 
@@ -87,3 +91,6 @@ shinyApp(ui = ui, server = server, options = list(height = 550))
 ### Download the Data
 
 You can download the csv file of the double word information [here](https://github.com/doomlab/shiny-server/blob/master/wn_double/double_words.csv).
+
+### Cue-Feature Lists
+
