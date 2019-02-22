@@ -1,0 +1,12 @@
+name: single_words
+title:
+username:
+account: doomlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 385069
+bundleId: 1890728
+url: https://doomlab.shinyapps.io/single_words/
+when: 1550797131.12707
+asMultiple: FALSE
+asStatic: FALSE

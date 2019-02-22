@@ -126,7 +126,7 @@ shinyApp(ui, server, options = list(height = 550))
 
 ### View and Search the Cue-Feature Data
 
-The table below provides a searchable option for the cue-feature lists. As described above, the participants in our and others' studies completed a feature listing task where they listed the defining feaures of a cue word.
+The table below provides a searchable option for the cue-feature lists. As described above, the participants in our and others' studies completed a feature listing task where they listed the defining features of a cue word.
 
 ```{r cuefeature_table, echo=FALSE}
 
