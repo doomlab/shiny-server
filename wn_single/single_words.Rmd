@@ -1,5 +1,8 @@
 ---
-output: html_document
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
 resource_files:
 - _site.yml
 - single_words.Rproj

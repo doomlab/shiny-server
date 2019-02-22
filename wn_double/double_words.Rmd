@@ -1,5 +1,8 @@
 ---
-output: html_document
+output:
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
 resource_files:
 - _site.yml
 - double_words.Rproj
@@ -23,13 +26,14 @@ doublewordtable$M[3:10] = c(apa(apply(doubleworddata[ , 3:10], 2, mean, na.rm = 
 doublewordtable$SD[3:10] = c(apa(apply(doubleworddata[ , 3:10], 2, sd, na.rm = T), 2))
 
 cuefeatures = read.csv("final words 2017.csv")
+cuefeaturesvar = read.csv("cuefeaturetab.csv")
 ```
 
 ### Word Pair Norms
 
 On this page, you will find information about our paired word norms used in our projects. We have split our single and paired word norms into two separate databases to speed database processing time for the user. Word pair norms are cue-target groupings that require both concepts to be included to understand the relation between these concepts. For example, cat-dog can be understood in context of association (i.e., it's raining cats and dogs) or though semantics (i.e., cats and dogs have many similar features). This dataset includes all cues-target pairings from the Buchanan et al. (2013) semantic word-pair norms, our extension project ([OSF](https://osf.io/cjyzw/) and [GitHub](https://github.com/doomlab/Word-Norms-2)), and their overlap with the McRae, Cree, Seidenberg, and McNorgan (2005) and Vinson and Vigliocco (2008) norms. If two concepts are included in the dataset, but do not appear together as a row on this site, you can assume their feature overlap is very close to or zero. We calculated these cosine values for pairs that included at least two features in common. With over 4000 pairs, the possible combinations are 16+ million, and therefore, we used this restriction to give word pair combinations that were effectively non-zero while still being able to view and manipulate the database. When downloading the applications to run locally on RStudio, please be sure to download the entire folder on our [GitHub repository](https://github.com/doomlab/shiny-server/tree/master/wn_double).
 
-### Measures of Similarity
+### Similarity Measures Variable Table
 
 You can view the complete similarity variable table that lists the variables, their descriptions, min, max, mean, and standard deviation. Norms are taken from the University of South Florida Free Association Norms (Nelson, McEvoy, & Schreiber, 2004), JCN semantic dictionary distance (Maki, McKinley, & Thompson, 2004; Maki, 2008), and LSA values (Landauer & Dumais, 1997). The Shiny app below calculates statistics based on the current dataset. Please contact us if the link or any others below are not loading. 
 
@@ -54,10 +58,11 @@ server = function(input, output) {
   )
 }
 
-shinyApp(ui, server, options = list(height = 1050))
+shinyApp(ui, server, options = list(height = 550))
 ```
 
-### View and Search the Similarity Values 
+
+### View and Search the Similarity Data
 
 You can use the app table provided below to view all the words and their information. The top boxes in this datatable allow you to filter the columns for specific ranges you might be interested in. Use the search filters at the top of the table to pick specific ranges of variables or categories. 
 
@@ -89,14 +94,37 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server, options = list(height = 550))
 ```
 
-### Download the Data
+
+### Download the Similarity Data
 
 You can download the csv file of the double word information [here](https://github.com/doomlab/shiny-server/blob/master/wn_double/double_words.csv), and the description table [here](https://github.com/doomlab/shiny-server/blob/master/wn_double/DoubleWordTab.csv).
 
+
 ### Cue-Feature Variable Table
 
+In the table below, we provide a description of all the columns that are present in the cue feature table. You can search these values in the app provided below or download the data (links below).
 
-### View and Search the Cue-Feature Lists
+```{r cuefeature_var_table, echo=FALSE}
+ui = fluidPage(
+  DTOutput('tbl'))
+
+server = function(input, output) {
+  output$tbl = renderDT(
+    cuefeaturesvar, 
+    extensions = 'Responsive',
+    options = list(
+      dom = 'tp'
+    ),
+    rownames = FALSE
+    
+  )
+}
+
+shinyApp(ui, server, options = list(height = 550))
+```
+
+
+### View and Search the Cue-Feature Data
 
 The table below provides a searchable option for the cue-feature lists. As described above, the participants in our and others' studies completed a feature listing task where they listed the defining feaures of a cue word.
 
@@ -128,6 +156,7 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server, options = list(height = 550))
 ```
 
-### Download the Data
 
-You can download the csv file of the cue feature lists [here](https://github.com/doomlab/shiny-server/blob/master/wn_double/final%20words%202017.csv).
+### Download the Cue-Feature Data
+
+You can download the csv file of the cue feature variable table [here](https://github.com/doomlab/shiny-server/blob/master/wn_double/cuefeaturetab.csv), and the cue feature lists [here](https://github.com/doomlab/shiny-server/blob/master/wn_double/final%20words%202017.csv). The affix coding document can be found [here](https://github.com/doomlab/Word-Norms-2/blob/master/3%20parsed/affix%20list.docx).
