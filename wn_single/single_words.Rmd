@@ -7,7 +7,9 @@ resource_files:
 - _site.yml
 - single_words.Rproj
 runtime: shiny
+title: "Single Word Norms"
 ---
+
 <p>
 
 ```{r setup, echo = FALSE, warning=FALSE, include=FALSE}
@@ -31,9 +33,7 @@ singlewordtable$SD = c(apa(apply(singleworddata[ , 2:9], 2, sd, na.rm = T), 2),
                        NA, apa(apply(singleworddata[ , 11:15], 2, sd, na.rm = T), 2))
 ```
 
-### Single Word Norms
-
-On this page, you will find information about our single word norms used in our projects. We have split our single and paired word norms into two separate databases to speed database processing time for the user. Single word norms (i.e., variables) are concept information that is only tied to a single concept, such as imaginability, concreteness, or number of phonemes. This dataset includes all cues, targets, and features from the Buchanan et al. semantic word-pair norms (2013) and our extension project, which can be found on [OSF](https://osf.io/cjyzw/) and [GitHub](https://github.com/doomlab/Word-Norms-2). When downloading the applications to run locally on RStudio, please be sure to download the entire folder on our [GitHub repository](https://github.com/doomlab/shiny-server/tree/master/wn_single).
+On this page, you will find information about our single word norms used in our projects. We have split our single and paired word norms into two separate databases to speed database processing time for the user. Single word norms (i.e., variables) are concept information that are only tied to a single concept, such as imaginability, concreteness, or number of phonemes. This dataset includes all cues, targets, and features from the Buchanan et al. semantic word-pair norms (2013) and our extension project, which can be found on [OSF](https://osf.io/cjyzw/) and [GitHub](https://github.com/doomlab/Word-Norms-2). When downloading the applications to run locally on RStudio, please be sure to download the entire folder on our [GitHub repository](https://github.com/doomlab/shiny-server/tree/master/wn_single).
 
 ### Variable Table
 
@@ -58,6 +58,8 @@ server <- function(input, output) {
 
 shinyApp(ui, server, options = list(height = 600))
 ```
+
+<br>
 
 ### View and Search the Words
 
@@ -90,6 +92,8 @@ server <- function(input, output) {
 # Run the application 
 shinyApp(ui = ui, server = server, options = list(height = 550))
 ```
+
+<br>
 
 ### Download the Data
 
