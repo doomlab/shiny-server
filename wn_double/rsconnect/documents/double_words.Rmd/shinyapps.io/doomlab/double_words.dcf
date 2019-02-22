@@ -5,8 +5,8 @@ account: doomlab
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 384612
-bundleId: 1495688
+bundleId: 1890923
 url: https://doomlab.shinyapps.io/double_words/
-when: 1532370150.64365
+when: 1550805785.29728
 asMultiple: FALSE
 asStatic: FALSE
