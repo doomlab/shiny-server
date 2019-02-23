@@ -78,7 +78,7 @@ Your confidence interval does not include zero, and therefore, you might conclud
 
 ## Effect Size:
 
-$R^{2}$* = .75, 95% CI [.55, .87]
+$R^{2}$ = .75, 95% CI [.55, .87]
 
 ## Interpretation: 
 
