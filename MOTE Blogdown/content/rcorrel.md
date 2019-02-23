@@ -64,7 +64,7 @@ r.correl(r = -0.868, n = 32, a = 0.05)
 
 ## Screenshot
 
-![Single-Sample t - Means Screenshot](../images/deptavgmeans.jpg)
+![Correlation Screenshot](../images/corr.jpg)
 
 Definition: This effect size is traditionally interpreted as the percent of variance accounted for in the DV by the IV(s).
 
