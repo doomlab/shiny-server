@@ -39,10 +39,12 @@ r.correl(r, n, a)
 
 # Example  
 
-In a study to test the effects of science fiction movies on people's belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie. Higher scores indicated high levels of belief. The mean measure of belief on the pretest was 5.571, while the posttest average score was lower, 4.429. The data are available on [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
+What is the correlation between miles per gallon and car weight?  Are lighter cars more fuel-efficient?  
+
+This example is derived from the mtcars dataset, provided in R. An amended dataset is available on our [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
-![Dependent t JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20JASP.png)
+![Correlation JASP](https://github.com/doomlab/shiny-server/blob/master/MOTE/examples/correlation%20JASP.png)
 
 **SPSS**
 ![Dependent t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png)
@@ -50,13 +52,13 @@ In a study to test the effects of science fiction movies on people's belief in t
 **SAS**
 ![Dependent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG)
 
-+ r = 5.571
-+ n = 4.429
++ r = -0.868
++ n = 32
 + a	= .05
 
 # Function in R: 
 
-r.correl(r = 5.571, n = 7, a = 0.05)
+r.correl(r = -0.868, n = 32, a = 0.05)
 
 # MOTE
 
@@ -64,27 +66,32 @@ r.correl(r = 5.571, n = 7, a = 0.05)
 
 ![Single-Sample t - Means Screenshot](../images/deptavgmeans.jpg)
 
+Definition: This effect size is traditionally interpreted as the percent of variance accounted for in the DV by the IV(s).
+
 ## Effect Size:
 
-*d* = 0.47, 95% CI [-0.09, 1.01]
+*r* = -.87, 95% CI [-.74, -.93]
 
 ## Interpretation: 
 
-Your confidence interval does include zero, and therefore, you might conclude that this effect size is similar to zero.
+Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.
 
-## Summary Statistics: 
+## Effect Size:
 
-Group 1 Summary Statistics: *M* = 5.57, *SD* = 1.99, *SE* = 0.53, 95% CI [4.42, 6.72]
+$R^{2}$* = .75, 95% CI [.55, .87]
 
-Group 2 Summary Statistics: *M* = 4.43, *SD* = 2.88, *SE* = 0.77, 95% CI [2.77, 6.09]
+## Interpretation: 
+
+Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.
+
 ## Test Statistic: 
 
-Not applicable.
+*t*(30) = -9.57, *p* < .001
 
 ## Interpretation: 
 
-Not applicable.
+Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.
 
 # Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eq9X4ynxq2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_3mBy7gnK3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
