@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Partial Omega Squared for Repeated Measures ANOVA from F</title>
+    <title>r to Coefficient of Determination (R2) from F</title>
     <meta name="author" content="DOOM Lab">
     <meta name="keywords" content="">
 
@@ -26,27 +26,24 @@
     
 
     
-    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; (N - df_{model}) \times MS_{error}}$$
-The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
-R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a)
-Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example In this experiment people were given word pairs to rate based on their “relatedness”.">
-    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; (N - df_{model}) \times MS_{error}}$$
-The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
-R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a)
-Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example In this experiment people were given word pairs to rate based on their “relatedness”.">
+    <meta name="description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays transformation from r to r2 to calculate the non-central confidence interval for $r^{2}$ using the F distribution.
+The formula for t is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function r.correl(r, n, a)
+Arguments  r = correlation coefficient n = sample size a = significance level  Example What is the correlation between miles per gallon and car weight?">
+    <meta property="og:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays transformation from r to r2 to calculate the non-central confidence interval for $r^{2}$ using the F distribution.
+The formula for t is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function r.correl(r, n, a)
+Arguments  r = correlation coefficient n = sample size a = significance level  Example What is the correlation between miles per gallon and car weight?">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Partial Omega Squared for Repeated Measures ANOVA from F">
-    <meta property="og:url" content="/tests/omegaprmss.html">
+    <meta property="og:title" content="r to Coefficient of Determination (R2) from F">
+    <meta property="og:url" content="/tests/rcorrel.html">
     <meta property="og:site_name" content="MOTE Effect Size Calculator">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="MOTE Effect Size Calculator">
-    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} &#43; (N - df_{model}) \times MS_{error}}$$
-The formula for F is: $$\frac{MS_{model}}{MS_{error}}$$
-R Function omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a)
-Arguments  dfm = degrees of freedom for the model/IV/between
- dfe = degrees of freedom for the error/residual/within msm = mean square for the model/IV/between mse = mean square for the error/residual/within mss = mean square for the subject variance ssm = sum of squares for the model/IV/between sse = sum of squares for the error/residual/within sss = sum of squares subject variance a = significance level  Example In this experiment people were given word pairs to rate based on their “relatedness”.">
+    <meta name="twitter:description" content="MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays transformation from r to r2 to calculate the non-central confidence interval for $r^{2}$ using the F distribution.
+The formula for t is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
+R Function r.correl(r, n, a)
+Arguments  r = correlation coefficient n = sample size a = significance level  Example What is the correlation between miles per gallon and car weight?">
     
       <meta name="twitter:creator" content="@statstools">
     
@@ -201,7 +198,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Partial Omega Squared for Repeated Measures ANOVA from F
+      r to Coefficient of Determination (R2) from F
     </h1>
   
   
@@ -230,74 +227,83 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <h1 id="description">Description</h1>
 
-<p>The formula for $\omega_p^2$ is: $$\frac{df_{model} \times (MS_{model} - MS_{error})}{SS_{model} + (N - df_{model}) \times MS_{error}}$$</p>
+<p>This function displays transformation from r to r2 to calculate the non-central confidence
+interval for $r^{2}$ using the F distribution.</p>
 
-<p>The formula for <em>F</em> is: $$\frac{MS_{model}}{MS_{error}}$$</p>
+<p>The formula for <em>t</em> is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$</p>
 
 <h1 id="r-function">R Function</h1>
 
-<p>omega.partial.SS.rm(dfm, dfe, msm, mse, ssm, sse, sss, a)</p>
+<p>r.correl(r, n, a)</p>
 
 <h1 id="arguments">Arguments</h1>
 
 <ul>
-<li>dfm = degrees of freedom for the model/IV/between<br /></li>
-<li>dfe = degrees of freedom for the error/residual/within</li>
-<li>msm = mean square for the model/IV/between</li>
-<li>mse = mean square for the error/residual/within</li>
-<li>mss = mean square for the subject variance</li>
-<li>ssm = sum of squares for the model/IV/between</li>
-<li>sse = sum of squares for the error/residual/within</li>
-<li>sss = sum of squares subject variance</li>
+<li>r = correlation coefficient</li>
+<li>n = sample size</li>
 <li>a = significance level</li>
 </ul>
 
 <h1 id="example">Example</h1>
 
-<p>In this experiment people were given word pairs to rate based on their “relatedness”. How many people out of a 100 would put LOST-FOUND together? Participants were given pairs of words and asked to rate them on how often they thought 100 people would give the second word if shown the first word.  The strength of the word pairs was manipulated through the actual rating (forward strength: FSG) and the strength of the reverse rating (backward strength: BSG). Is there an interaction between FSG and BSG when participants are estimating the relation between word pairs? The data are available on <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
+<p>What is the correlation between miles per gallon and car weight?  Are lighter cars more fuel-efficient?</p>
+
+<p>This example is derived from the mtcars dataset, provided in R. An amended dataset is available on our <a href="https://github.com/doomlab/shiny-server/tree/master/MOTE/examples">GitHub</a>. Example output from JASP, SPSS, and SAS are shown below.</p>
 
 <p><strong>JASP</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%202%20ANOVA%20JASP.png" alt="Repeated Measures Two-Way ANOVA JASP" /></p>
+<img src="https://github.com/doomlab/shiny-server/blob/master/MOTE/examples/correlation%20JASP.png" alt="Correlation JASP" /></p>
 
 <p><strong>SPSS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%202%20anova%20SPSS.png" alt="Repeated Measures Two-Way ANOVA SPSS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png" alt="Dependent t SPSS" /></p>
 
 <p><strong>SAS</strong>
-<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%202%20anova%20SAS.PNG" alt="Repeated Measures Two-Way ANOVA SAS" /></p>
+<img src="https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG" alt="Dependent t SAS" /></p>
+
+<ul>
+<li>r = -0.868</li>
+<li>n = 32</li>
+<li>a = .05</li>
+</ul>
 
 <h1 id="function-in-r">Function in R:</h1>
 
-<p>omega.partial.SS.rm(dfm = 1, dfe = 156, msm = 4995, mse = 35.52, mss = 493, ssm = 4995, sse = 5541, sss = 76908, a = .05)</p>
+<p>r.correl(r = -0.868, n = 32, a = 0.05)</p>
 
 <h1 id="mote">MOTE</h1>
 
 <h2 id="screenshot">Screenshot</h2>
 
-<p><img src="../images/anovarm2.jpg" alt="Repeated Measures One-Way ANOVA Screenshot" /></p>
+<p><img src="../images/corr.jpg" alt="Correlation Screenshot" /></p>
+
+<p>Definition: This effect size is traditionally interpreted as the percent of variance accounted for in the DV by the IV(s).</p>
 
 <h2 id="effect-size">Effect Size:</h2>
 
-<p>$\omega_p^2$ = .15, 95% CI [.06, .26]</p>
+<p><em>r</em> = -.87, 95% CI [-.74, -.93]</p>
 
 <h2 id="interpretation">Interpretation:</h2>
 
 <p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
 
-<h2 id="summary-statistics">Summary Statistics:</h2>
+<h2 id="effect-size-1">Effect Size:</h2>
 
-<p>Not applicable.</p>
-
-<h2 id="test-statistic">Test Statistic:</h2>
-
-<p><em>F</em>(1, 156) = 422.16, <em>p</em> &lt; .001</p>
+<p>$R^{2}$* = .75, 95% CI [.55, .87]</p>
 
 <h2 id="interpretation-1">Interpretation:</h2>
 
-<p>Your <em>p</em>-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
+<p>Your confidence interval does not include zero, and therefore, you might conclude that this effect size is different from zero.</p>
+
+<h2 id="test-statistic">Test Statistic:</h2>
+
+<p><em>t</em>(30) = -9.57, <em>p</em> &lt; .001</p>
+
+<h2 id="interpretation-2">Interpretation:</h2>
+
+<p>Your p-value is less than the alpha value, and therefore, this test would be considered statistically significant.</p>
 
 <h1 id="tutorial">Tutorial</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Y1piNdNdMbc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_3mBy7gnK3Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
               
             </div>

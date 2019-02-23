@@ -370,7 +370,7 @@ R Function d.to.r(d, n1, n2, sd2, a = 0.</description>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays transformation from r to r2 to calculate the non-central confidence interval for $r^{2}$ using the F distribution.
 The formula for t is: $$\frac{r}{\sqrt{ \frac{1-r^2} {(N - 2)}}}$$
 R Function r.correl(r, n, a)
-Arguments  r = correlation coefficient n = sample size a = significance level  Example In a study to test the effects of science fiction movies on people&amp;rsquo;s belief in the supernatural, seven people completed a measure of belief in the supernatural before and after watching a popular science fiction movie.</description>
+Arguments  r = correlation coefficient n = sample size a = significance level  Example What is the correlation between miles per gallon and car weight?</description>
     </item>
     
     <item>
