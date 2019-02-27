@@ -32,7 +32,6 @@ r.correl(r, n, a)
 
 # Arguments 
 
-
 + r = correlation coefficient
 + n = sample size
 + a	= significance level
@@ -44,10 +43,10 @@ What is the correlation between miles per gallon and car weight?  Are lighter ca
 This example is derived from the mtcars dataset, provided in R. An amended dataset is available on our [GitHub](https://github.com/doomlab/shiny-server/tree/master/MOTE/examples). Example output from JASP, SPSS, and SAS are shown below.
 
 **JASP**
-![Correlation JASP](https://github.com/doomlab/shiny-server/blob/master/MOTE/examples/correlation%20JASP.png)
+![Correlation JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/correlation%20JASP.png)
 
 **SPSS**
-![Dependent t SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SPSS.png)
+![Correlation SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/correlation%20SPSS.png)
 
 **SAS**
 ![Dependent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG)
