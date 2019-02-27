@@ -49,7 +49,7 @@ This example is derived from the mtcars dataset, provided in R. An amended datas
 ![Correlation SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/correlation%20SPSS.png)
 
 **SAS**
-![Dependent t SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/dependent%20t%20SAS.PNG)
+![Correlation SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/correlation%20SAS.png)
 
 + r = -0.868
 + n = 32
