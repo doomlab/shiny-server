@@ -23,8 +23,8 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 
 This function displays generalized omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared. 
 
-The formula for $\omega_G^2$ is: $$\frac{SS_{modelA} - (df_{modelA} \times MS_{subjectA})} 
-{SS_{total} + SS_{modelB} + J_B \times MS_{subjectA}}$$
+The formula for $\omega\_G^2$ is: $$\frac{SS\_{modelA} - (df\_{modelA} \times MS\_{subjectA})} 
+{SS\_{total} + SS\_{modelB} + J_B \times MS\_{subjectA}}$$
 
 Note: A is the target IV to calculate generalized omega squared on. B is the other IV. J is the number of levels for IV B. 
 
@@ -52,7 +52,7 @@ In this experiment people were given word pairs to rate based on their “relate
 ![Repeated Measures Two-Way ANOVA JASP](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%202%20ANOVA%20JASP.png)
 
 **SPSS**
-![Repeated Measures Two-Way ANOVA SPSS](https://github.com/doomlab/shiny-server/blob/master/MOTE/examples/rm%202%20anova%20SPSS.png)
+![Repeated Measures Two-Way ANOVA SPSS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%202%20anova%20SPSS.png)
 
 **SAS**
 ![Repeated Measures Two-Way ANOVA SAS](https://raw.githubusercontent.com/doomlab/shiny-server/master/MOTE/examples/rm%202%20anova%20SAS.PNG)

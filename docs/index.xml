@@ -79,7 +79,7 @@ Arguments  dfm = degrees of freedom for the model/IV/between
       
       <guid>https://www.aggieerin.com/shiny-server/tests/gosrmss.html</guid>
       <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;, &#39;$&#39;]], } })   Description This function displays generalized omega squared from ANOVA analyses and its non-central confidence interval based on the F distribution. These values are calculated directly from F statistics and can be used for between subjects and repeated measures designs. Remember if you have two or more IVs, these values are partial omega squared.
-The formula for $\omegaG^2$ is: $$\frac{SS{modelA} - (df{modelA} \times MS{subjectA})} {SS{total} + SS{modelB} + JB \times MS{subjectA}}$$</description>
+The formula for $\omega_G^2$ is: $$\frac{SS_{modelA} - (df_{modelA} \times MS_{subjectA})} {SS_{total} + SS_{modelB} + J_B \times MS_{subjectA}}$$</description>
     </item>
     
     <item>
