@@ -52,11 +52,11 @@ lsa_tab_multiple_corpus <- tabItem(tabName = "lsa_tab_multiple_corpus",
                                   collapsible = T,
                                   h4("On this page, you can select multiple words to view their relatedness to each other, 
                                   while the single word page selects words based on their relatedness. 
-                                  This page shows you the English Wikipedia and British National Corpus data, and only the 
+                                  This page shows you the Wonderland data included in the LSAfun package. Only the 
                                   first 200 most common words are shown to keep the app running smoothly. 
-                                 Please choose a minimum of three words to view output. If you still see an 
-                                 error message, you should select additional options, as that indicates that at 
-                                 least one of the selected words is not related to the other concepts."),
+                                  Please choose a minimum of three words to view output. If no output is given, this may 
+                                  indicate that at least one of the selected words is not related to the other concepts; 
+                                  try selecting additional terms."),
                                   selectizeInput("multiple_select_corpus", "Select Words:", 
                                                  choices = rownames(wonderland)[1:100],
                                                  multiple = TRUE) #close selectizeInput

@@ -57,11 +57,12 @@ lsa_tab_single_corpus <- tabItem(tabName = "lsa_tab_single_corpus",
                                 status = "primary",
                                 collapsible = T,
                                 h4("This page shows you the relation between a single selected word in the corpus to other related 
-           words in the corpus using our preloaded English corpus from Wikipedia and the British National Corpus.  
-           First, select the word that you are interested in viewing, and only the first 200 most frequent 
-           words are shown to keep the app running smoothly. Next, select the number 
-           of related words that you would like to view. Last, select the range of cosine values 
-           that you would like to view."),
+                                  words in the corpus using the Wonderland data, derived from the LSAfun package. Only the 
+                                  first 200 most common words are shown to keep the app running smoothly. 
+                                  Please choose a minimum of three words to view output. If no output is given, this may 
+                                  indicate that at least one of the selected words is not related to the other concepts; 
+                                  try selecting additional terms Next, select the number of related words that you would like 
+                                  to view. Last, select a range of cosine values."),
                                 selectInput("rownames_select_corpus", 
                                             "Select target word:", rownames(wonderland)[1:200]),
                                 numericInput("neighbors_corpus", "Number of Neighbors to Display:", 10, min = 1, max = 100),
