@@ -5,9 +5,9 @@ account: doomlab
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 384167
-bundleId: 1887659
+bundleId: 2001376
 url: https://doomlab.shinyapps.io/mote/
-when: 1550695079.36113
+when: 1554927779.18893
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: MOTE Poster.pptx|examples
+ignoredFiles: MOTE Poster.pptx

@@ -7,10 +7,10 @@ html_document:
  self_contained: no
 ---
 
-The formula for $\omega^2$ is: $$\frac{SS_{model} - (df_{model} \times MS_{subject})} 
-{SS_{total} + SS_{model.IV} + J \times MS_{subject}}$$
+The formula for $\omega_G^2$ is: $$\frac{SS_{modelA} - (df_{modelA} \times MS_{subjectA})} 
+{SS_{total} + SS_{modelB} + J_B \times MS_{subjectA}}$$
 
-Note: J = the number of levels in the other IV, and the model.IV is the sum of squares for the other IV. All other values are for the primary IV. 
+Note: A is the target IV to calculate generalized omega squared on. B is the other IV. J is the number of levels for IV B. 
 
 The code to use MOTE in R is: 
  
