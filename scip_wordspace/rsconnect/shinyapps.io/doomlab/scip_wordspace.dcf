@@ -1,0 +1,12 @@
+name: scip_wordspace
+title: scip_wordspace
+username:
+account: doomlab
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 926583
+bundleId: 2080350
+url: https://doomlab.shinyapps.io/scip_wordspace/
+when: 1557753459.71573
+asMultiple: FALSE
+asStatic: FALSE
